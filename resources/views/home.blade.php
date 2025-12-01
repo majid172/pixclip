@@ -1025,14 +1025,6 @@
     </section>
 
     <section class="py-20 lg:py-28">
-
-        <div
-            class="absolute -bottom-20 -right-20 w-[600px] h-[600px] bg-slate-200/50 rounded-full blur-3xl -z-10 pointer-events-none">
-        </div>
-        <div
-            class="absolute bottom-0 right-0 w-1/3 h-1/2 bg-gradient-to-tl from-blue-100 to-transparent rounded-tl-[100px] -z-10 opacity-60">
-        </div>
-
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
             <!-- Header -->
@@ -1052,9 +1044,9 @@
                 <!-- Left Column: Illustration -->
                 <div class="relative flex justify-center lg:justify-end">
                     <!--
-                                NOTE: Replace the src below with your actual "Laptop/Dashboard" illustration asset.
-                                I am using a placeholder that resembles the layout.
-                            -->
+                                    NOTE: Replace the src below with your actual "Laptop/Dashboard" illustration asset.
+                                    I am using a placeholder that resembles the layout.
+                                -->
                     <div class="relative w-full max-w-lg">
                         <!-- Floating elements simulation (if you don't have a single image) -->
                         <div class="absolute -top-10 -right-10 bg-gray-50 rounded-full p-4 animate-bounce delay-700"></div>
@@ -1139,11 +1131,10 @@
         </div>
     </section>
 
-    <section class="py-20 lg:py-28 overflow-hidden bg-white">
+    <section class="py-10 lg:py-10 overflow-hidden bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-
                 <div class="order-2 lg:order-1">
 
                     <!-- Label with Dash -->
@@ -1268,9 +1259,8 @@
 
                 <!-- Right Column: Illustration -->
                 <div class="order-1 lg:order-2 flex justify-center">
-                  
-                    <img src="{{ asset('public/assets/images/banner/home2.png') }}"
-                        alt="Portal Illustration"
+
+                    <img src="{{ asset('public/assets/images/banner/home2.png') }}" alt="Portal Illustration"
                         class="w-full max-w-lg lg:max-w-xl h-auto object-contain drop-shadow-xl">
                 </div>
 
@@ -1278,24 +1268,27 @@
         </div>
     </section>
 
-     <section class="bg-stone-200 py-6 w-full">
+    <section class="bg-[#0f172a] py-6 w-full">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8 text-center md:text-left">
-                
+
                 <!-- Text -->
-                <h2 class="text-rose-800 text-md md:text-md font-normal tracking-wide">
-                    We are dedicated to editing photos in your style and <span class="font-semibold">enhancing perfection</span>.
+                <h2 class="text-white text-md md:text-md font-normal tracking-wide">
+                    We are dedicated to editing photos in your style and <span class="font-semibold">enhancing
+                        perfection</span>.
                 </h2>
 
                 <!-- Buttons -->
                 <div class="flex items-center gap-4">
                     <!-- Filled Button -->
-                    <a href="#" class="bg-rose-600 hover:bg-rose-700 text-white text-sm font-medium px-6 py-2.5 rounded shadow-sm transition-colors duration-200">
+                    <a href="#"
+                        class="bg-rose-600 hover:bg-rose-700 text-white text-sm font-medium px-6 py-2.5 rounded shadow-sm transition-colors duration-200">
                         Free Trial
                     </a>
 
                     <!-- Outline Button -->
-                    <a href="#" class="bg-transparent border border-white hover:bg-white/10 text-white text-sm font-medium px-6 py-2.5 rounded transition-colors duration-200">
+                    <a href="#"
+                        class="bg-transparent border border-white hover:bg-white/10 text-white text-sm font-medium px-6 py-2.5 rounded transition-colors duration-200">
                         Get Started
                     </a>
                 </div>
