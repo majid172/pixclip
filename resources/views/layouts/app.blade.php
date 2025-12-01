@@ -18,7 +18,7 @@
     @include('layouts.includes.navbar')
 
     <!-- 3. BODY CONTENT -->
-    <main class="flex-grow  py-10">
+    <main class="flex-grow  pt-10">
        @yield('content')
     </main>
 

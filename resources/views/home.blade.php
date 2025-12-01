@@ -852,7 +852,8 @@
             <div class="text-center mb-20">
                 <span
                     class="bg-rose-100 text-rose-600 px-4 py-1.5 rounded-full text-xs font-semibold uppercase">Pricing</span>
-                <h2 class="mt-6 text-4xl font-semibold text-slate-800">Choose Your <span class="text-rose-600">Perfect Plan</span> </h2>
+                <h2 class="mt-6 text-4xl font-semibold text-slate-800">Choose Your <span class="text-rose-600">Perfect
+                        Plan</span> </h2>
                 <p class="mt-2 text-slate-500 max-w-xl mx-auto text-sm">Flexible pricing built for individuals, agencies &
                     large volume clients.</p>
             </div>
@@ -1023,21 +1024,25 @@
         </div>
     </section>
 
-        <section class="py-20 lg:py-28">
-        
-        <!-- Background Curve Decoration -->
-        <!-- This simulates the blue curve in the bottom right of your image -->
-        <div class="absolute -bottom-20 -right-20 w-[600px] h-[600px] bg-slate-200/50 rounded-full blur-3xl -z-10 pointer-events-none"></div>
-        <div class="absolute bottom-0 right-0 w-1/3 h-1/2 bg-gradient-to-tl from-blue-100 to-transparent rounded-tl-[100px] -z-10 opacity-60"></div>
+    <section class="py-20 lg:py-28">
+
+        <div
+            class="absolute -bottom-20 -right-20 w-[600px] h-[600px] bg-slate-200/50 rounded-full blur-3xl -z-10 pointer-events-none">
+        </div>
+        <div
+            class="absolute bottom-0 right-0 w-1/3 h-1/2 bg-gradient-to-tl from-blue-100 to-transparent rounded-tl-[100px] -z-10 opacity-60">
+        </div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
             <!-- Header -->
             <div class="text-center max-w-3xl mx-auto mb-20">
-                <h2 class="mt-6 text-4xl font-semibold text-slate-800 mb-4">Simplify Editing: <span class="text-rose-600">Easy, Efficient Steps</span> </h2>
-               
+                <h2 class="mt-6 text-4xl font-semibold text-slate-800 mb-4">Simplify Editing: <span
+                        class="text-rose-600">Easy, Efficient Steps</span> </h2>
+
                 <p class="text-slate-500 text-base md:text-lg leading-relaxed">
-                    Create your account, send us your images, and download your professionally edited images within the allotted time – it truly is that effortless.
+                    Create your account, send us your images, and download your professionally edited images within the
+                    allotted time – it truly is that effortless.
                 </p>
             </div>
 
@@ -1046,18 +1051,16 @@
 
                 <!-- Left Column: Illustration -->
                 <div class="relative flex justify-center lg:justify-end">
-                    <!-- 
-                        NOTE: Replace the src below with your actual "Laptop/Dashboard" illustration asset.
-                        I am using a placeholder that resembles the layout.
-                    -->
+                    <!--
+                                NOTE: Replace the src below with your actual "Laptop/Dashboard" illustration asset.
+                                I am using a placeholder that resembles the layout.
+                            -->
                     <div class="relative w-full max-w-lg">
                         <!-- Floating elements simulation (if you don't have a single image) -->
                         <div class="absolute -top-10 -right-10 bg-gray-50 rounded-full p-4 animate-bounce delay-700"></div>
-                        
-                        <img src="https://cdni.iconscout.com/illustration/premium/thumb/web-development-illustration-download-in-svg-png-gif-file-formats--coding-programming-language-search-engine-optimization-pack-seo-web-illustrations-4343363.png" 
-                             alt="Dashboard Illustration" 
-                             class="w-full h-auto object-contain drop-shadow-xl z-10 relative"
-                        >
+
+                        <img src="{{ asset('public/assets/images/home/workflow.png') }}" alt="Dashboard Illustration"
+                            class="w-full h-auto object-contain drop-shadow-xl z-10 relative">
                     </div>
                 </div>
 
@@ -1065,13 +1068,16 @@
                 <div class="space-y-8">
 
                     <!-- Step 1: Place Order -->
-                    <div class="bg-white rounded-2xl p-6 shadow-md border border-slate-100 flex items-start gap-6 hover:-translate-y-1 transition-transform duration-300">
+                    <div
+                        class="bg-white rounded-2xl p-6 shadow-md border border-slate-100 flex items-start gap-6 hover:-translate-y-1 transition-transform duration-300">
                         <div class="flex-shrink-0">
                             <!-- Icon Container -->
                             <div class="w-12 h-12 flex items-center justify-center rounded-lg bg-rose-50 text-rose-600">
                                 <!-- List/Form Icon -->
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
                                 </svg>
                             </div>
                         </div>
@@ -1084,13 +1090,16 @@
                     </div>
 
                     <!-- Step 2: Make Payment -->
-                    <div class="bg-white rounded-2xl p-6 shadow-md border border-slate-100 flex items-start gap-6 hover:-translate-y-1 transition-transform duration-300">
+                    <div
+                        class="bg-white rounded-2xl p-6 shadow-md border border-slate-100 flex items-start gap-6 hover:-translate-y-1 transition-transform duration-300">
                         <div class="flex-shrink-0">
                             <!-- Icon Container -->
                             <div class="w-12 h-12 flex items-center justify-center rounded-lg bg-rose-50 text-rose-600">
                                 <!-- Credit Card Icon -->
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
                                 </svg>
                             </div>
                         </div>
@@ -1103,13 +1112,16 @@
                     </div>
 
                     <!-- Step 3: Download Output -->
-                    <div class="bg-white rounded-2xl p-6 shadow-md border border-slate-100 flex items-start gap-6 hover:-translate-y-1 transition-transform duration-300">
+                    <div
+                        class="bg-white rounded-2xl p-6 shadow-md border border-slate-100 flex items-start gap-6 hover:-translate-y-1 transition-transform duration-300">
                         <div class="flex-shrink-0">
                             <!-- Icon Container -->
                             <div class="w-12 h-12 flex items-center justify-center rounded-lg bg-rose-50 text-rose-600">
                                 <!-- Download Cloud Icon -->
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3 3m0 0l-3-3m3 3V8" />
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3 3m0 0l-3-3m3 3V8" />
                                 </svg>
                             </div>
                         </div>
@@ -1121,6 +1133,171 @@
                         </div>
                     </div>
 
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 lg:py-28 overflow-hidden bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+
+                <div class="order-2 lg:order-1">
+
+                    <!-- Label with Dash -->
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="w-6 h-0.5 bg-rose-600 rounded-full"></span>
+                        <span class="text-xs font-bold text-slate-500 uppercase tracking-widest">Portal</span>
+                    </div>
+
+                    <!-- Headline -->
+                    <h2 class="text-3xl md:text-3xl font-semibold text-slate-700 mb-6">
+                        Use Our Portal <span class="text-rose-600">at Ease</span>
+                    </h2>
+
+                    <!-- Description -->
+                    <p class="text-slate-500 text-base md:text-md leading-relaxed mb-8">
+                        We have designed our Portal with lots of user-focused features so that you can complete the order
+                        easily. Give it a try to efficient Portal Service to speed up your business.
+                    </p>
+
+                    <!-- Features List -->
+                    <div class="mb-10">
+                        <h3 class="text-md font-medium text-slate-600 mb-4">Features:</h3>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-6">
+
+                            <!-- List Item 1 -->
+                            <div class="flex items-center gap-2.5">
+                                <svg class="w-5 h-5 text-rose-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                <span class="text-slate-500 text-sm md:text-base">Simple User Interface</span>
+                            </div>
+
+                            <!-- List Item 2 -->
+                            <div class="flex items-center gap-2.5">
+                                <svg class="w-5 h-5 text-rose-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                <span class="text-slate-500 text-sm md:text-base">Big Size Image Upload</span>
+                            </div>
+
+                            <!-- List Item 3 -->
+                            <div class="flex items-center gap-2.5">
+                                <svg class="w-5 h-5 text-rose-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                <span class="text-slate-500 text-sm md:text-base">On Fly Navigation</span>
+                            </div>
+
+                            <!-- List Item 4 -->
+                            <div class="flex items-center gap-2.5">
+                                <svg class="w-5 h-5 text-rose-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                <span class="text-slate-500 text-sm md:text-base">Live Order Status</span>
+                            </div>
+
+                            <!-- List Item 5 -->
+                            <div class="flex items-center gap-2.5">
+                                <svg class="w-5 h-5 text-rose-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                <span class="text-slate-500 text-sm md:text-base">Resumable Upload</span>
+                            </div>
+
+                            <!-- List Item 6 -->
+                            <div class="flex items-center gap-2.5">
+                                <svg class="w-5 h-5 text-rose-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                <span class="text-slate-500 text-sm md:text-base">Easy Sorting, Quick Search</span>
+                            </div>
+
+                            <!-- List Item 7 -->
+                            <div class="flex items-center gap-2.5">
+                                <svg class="w-5 h-5 text-rose-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                <span class="text-slate-500 text-sm md:text-base">Quick Access Dashboard</span>
+                            </div>
+
+                            <!-- List Item 8 -->
+                            <div class="flex items-center gap-2.5">
+                                <svg class="w-5 h-5 text-rose-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                <span class="text-slate-500 text-sm md:text-base">Separate Billing Profile</span>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Buttons -->
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#"
+                            class="px-8 py-3 bg-rose-600 text-white font-medium rounded hover:bg-rose-700 transition shadow-md shadow-rose-200">
+                            Login Now
+                        </a>
+                        <a href="#"
+                            class="px-8 py-3 bg-white border border-rose-600 text-rose-600 font-medium rounded hover:bg-rose-50 transition">
+                            Get Started
+                        </a>
+                    </div>
+
+                </div>
+
+                <!-- Right Column: Illustration -->
+                <div class="order-1 lg:order-2 flex justify-center">
+                  
+                    <img src="{{ asset('public/assets/images/banner/home2.png') }}"
+                        alt="Portal Illustration"
+                        class="w-full max-w-lg lg:max-w-xl h-auto object-contain drop-shadow-xl">
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+     <section class="bg-stone-200 py-6 w-full">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8 text-center md:text-left">
+                
+                <!-- Text -->
+                <h2 class="text-rose-800 text-md md:text-md font-normal tracking-wide">
+                    We are dedicated to editing photos in your style and <span class="font-semibold">enhancing perfection</span>.
+                </h2>
+
+                <!-- Buttons -->
+                <div class="flex items-center gap-4">
+                    <!-- Filled Button -->
+                    <a href="#" class="bg-rose-600 hover:bg-rose-700 text-white text-sm font-medium px-6 py-2.5 rounded shadow-sm transition-colors duration-200">
+                        Free Trial
+                    </a>
+
+                    <!-- Outline Button -->
+                    <a href="#" class="bg-transparent border border-white hover:bg-white/10 text-white text-sm font-medium px-6 py-2.5 rounded transition-colors duration-200">
+                        Get Started
+                    </a>
                 </div>
 
             </div>
