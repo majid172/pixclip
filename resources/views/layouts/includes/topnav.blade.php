@@ -46,12 +46,12 @@
 
                 <!-- Dashboard Button -->
                 @guest
-                    <a href="#" class="bg-rose-600 hover:bg-rose-400 text-white px-5 py-1.5 rounded text-sm font-semibold transition">
+                    <a href="{{ url('login') }}" class="bg-rose-600 hover:bg-rose-400 text-white px-5 py-1.5 rounded text-sm font-semibold transition">
                     Sign In
                 </a>
                 @endguest
                 @auth
-                    <a href="#" class="bg-rose-600 hover:bg-rose-400 text-white px-5 py-1.5 rounded text-sm font-semibold transition">
+                    <a href="{{url('dashboard')}}" class="bg-rose-600 hover:bg-rose-400 text-white px-5 py-1.5 rounded text-sm font-semibold transition">
                     Dashboard
                 </a>
                 @endauth
