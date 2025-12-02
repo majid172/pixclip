@@ -64,7 +64,7 @@
                 </button>
                 <div class="absolute top-full right-0 pt-6 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2 w-48">
                     <div class="bg-white rounded-lg shadow-xl border-t-4 border-rose-600 py-2 px-1">
-                        <a href="#" class="block px-4 py-2 text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-600 rounded transition">About Company</a>
+                        <a href="{{ url('about') }}" class="block px-4 py-2 text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-600 rounded transition">About Company</a>
                         <a href="#" class="block px-4 py-2 text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-600 rounded transition">Career</a>
                         <a href="#" class="block px-4 py-2 text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-600 rounded transition">Our Team</a>
                         <a href="{{ url('contact') }}" class="block px-4 py-2 text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-600 rounded transition">Contact Us</a>

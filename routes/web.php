@@ -11,6 +11,9 @@ Route::get("/workflow", function () {
 Route::get("/price", function () {
     return view("price");
 });
+Route::get("/about", function () {
+    return view("about");
+});
 Route::get("/contact", function () {
     return view("contact");
 });
