@@ -1,9 +1,9 @@
 <!-- 2. MAIN NAVIGATION -->
-<nav class="bg-white shadow-sm sticky top-0 z-50 font-sans">
+<nav class="bg-amber-50 shadow-sm sticky top-0 z-50 font-sans">
     <div class="container mx-auto px-4 md:px-8 py-4 flex justify-between items-center">
 
         <!-- Logo -->
-        <a href="#" class="flex items-center gap-2">
+        <a href="{{ url('/') }}" class="flex items-center gap-2">
             <div class="w-8 h-8 relative">
                 <div class="absolute inset-0 bg-rose-600 transform rotate-45 opacity-20 rounded"></div>
                 <div class="absolute inset-0 flex items-center justify-center text-rose-600 font-bold text-xl">P</div>
@@ -17,7 +17,7 @@
         <!-- Desktop Menu Links -->
         <div class="hidden lg:flex items-center space-x-8 text-[15px] font-medium text-blue-900">
 
-            <a href="#" class="hover:text-rose-600 transition">Home</a>
+            <a href="{{ url('/') }}" class="hover:text-rose-600 transition">Home</a>
             <!--<a href="#" class="hover:text-rose-600 transition">About Us</a>-->
 
             <!-- DROPDOWN: Services -->
@@ -38,8 +38,8 @@
                 </div>
             </div>
 
-            <a href="#" class="hover:text-rose-600 transition">Workflow</a>
-            <a href="#" class="hover:text-rose-600 transition">Price</a>
+            <a href="{{url('/workflow')}}" class="hover:text-rose-600 transition">Workflow</a>
+            <a href="{{ url('/price') }}" class="hover:text-rose-600 transition">Price</a>
 
             <!-- DROPDOWN: Resources -->
             <div class="relative group h-full flex items-center">
@@ -67,7 +67,7 @@
                         <a href="#" class="block px-4 py-2 text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-600 rounded transition">About Company</a>
                         <a href="#" class="block px-4 py-2 text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-600 rounded transition">Career</a>
                         <a href="#" class="block px-4 py-2 text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-600 rounded transition">Our Team</a>
-                        <a href="#" class="block px-4 py-2 text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-600 rounded transition">Contact Us</a>
+                        <a href="{{ url('contact') }}" class="block px-4 py-2 text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-600 rounded transition">Contact Us</a>
                     </div>
                 </div>
             </div>

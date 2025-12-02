@@ -45,9 +45,16 @@
                 <div class="h-4 w-px bg-gray-300 mx-1"></div>
 
                 <!-- Dashboard Button -->
-                <a href="#" class="bg-rose-600 hover:bg-rose-400 text-white px-5 py-1.5 rounded text-sm font-semibold transition">
+                @guest
+                    <a href="#" class="bg-rose-600 hover:bg-rose-400 text-white px-5 py-1.5 rounded text-sm font-semibold transition">
+                    Sign In
+                </a>
+                @endguest
+                @auth
+                    <a href="#" class="bg-rose-600 hover:bg-rose-400 text-white px-5 py-1.5 rounded text-sm font-semibold transition">
                     Dashboard
                 </a>
+                @endauth
             </div>
         </div>
     </div>
