@@ -12,7 +12,7 @@
                     <h5 class="text-lg font-medium">Today's Order</h5>
                 </div>
                 <div>
-                    <div class="text-base-content text-xl font-semibold">17,356</div>
+                    <div class="text-base-content text-xl font-semibold">{{ $today_orders->count() }}</div>
                     <div class="flex items-center gap-2 text-sm font-semibold">
                         <span class="text-success inline-flex items-center gap-1">
                             <span class="icon-[tabler--arrow-up] size-4"></span>
@@ -33,7 +33,7 @@
                     <h5 class="text-lg font-medium">Order Progress</h5>
                 </div>
                 <div>
-                    <div class="text-base-content text-xl font-semibold">2,784</div>
+                    <div class="text-base-content text-xl font-semibold">{{ $progress->count() }}</div>
                     <div class="flex items-center gap-2 text-sm font-semibold">
                         <span class="text-error inline-flex items-center gap-1">
                             <span class="icon-[tabler--arrow-down] size-4"></span>
@@ -56,7 +56,7 @@
                     <h5 class="text-lg font-medium">Total Orders</h5>
                 </div>
                 <div>
-                    <div class="text-base-content text-xl font-semibold">$1,658</div>
+                    <div class="text-base-content text-xl font-semibold">{{ $total_orders->count() }}</div>
                     <div class="flex items-center gap-2 text-sm font-semibold">
                         <span class="text-success inline-flex items-center gap-1">
                             <span class="icon-[tabler--arrow-up] size-4"></span>

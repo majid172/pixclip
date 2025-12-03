@@ -13,6 +13,7 @@ class DashboardController extends Controller
 
         $data = [
             'orders'        => (clone $orderQuery)->where('status', '!=', 'Redo')->latest()->take(5)->get(),
+            'recent_orders'  => (clone $orderQuery)->latest()->take(10)->get(),
             'total_orders'  => (clone $orderQuery)->latest()->take(10)->get(),
             'progress'      => (clone $orderQuery)->where('status', 'Processing')->get(),
             'unpaid_amount' => (clone $orderQuery)->where('is_paid', 0)->sum('price'),
