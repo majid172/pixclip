@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Backend\DashboardController;
+use App\Http\Controllers\Backend\UserListController;
 
 Route::get("/", function () {
     return view("home");
@@ -29,6 +31,14 @@ Route::post("/login-store", [LoginController::class, "login"])->name(
 );
 Route::get("/logout", [LoginController::class, "logout"])->name("logout");
 
-Route::get("/dashboard", function () {
-    return view("panel.dashboard");
-})->middleware("auth");
+Route::middleware(["auth"])->group(function () {
+   Route::get('dashboard',[DashboardController::class,'dashboard'])->name('dashboard');
+
+    Route::get("/users-list", [UserListController::class, "list"])->name(
+        "users.list",
+    );
+    Route::get("/user-edit/{user}",[UserListController::class,'edit'])->name('user.edit');
+    Route::put("/user-update/{user}",[UserListController::class,'update'])->name('user.update');
+    Route::delete('/user-remove/{user}', [UserListController::class, 'destroy'])->name('user.destroy');
+
+});

@@ -62,23 +62,12 @@
               <hr class="border-base-content/20 -mx-2 my-1" />
             </li>
             <li>
-              <a class="dropdown-item px-3" href="#">
+              <a class="dropdown-item px-3" href="{{url('/')}}">
                 <span class="icon-[tabler--users] size-5"></span>
-                Manage team
+                Back to Home
               </a>
             </li>
-            <li>
-              <a class="dropdown-item px-3" href="#">
-                <span class="icon-[tabler--edit] size-5"></span>
-                Customisation
-              </a>
-            </li>
-            <li class="mb-1">
-              <a class="dropdown-item px-3" href="#">
-                <span class="icon-[tabler--circle-plus] size-5"></span>
-                Add team account
-              </a>
-            </li>
+
             <li class="dropdown-footer p-2 pt-1">
                 <a class="btn btn-text btn-error btn-block h-11 justify-start px-3 font-normal" href="{{route('logout')}}">
                 <span class="icon-[tabler--logout] size-5"></span>

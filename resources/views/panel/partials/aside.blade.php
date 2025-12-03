@@ -265,14 +265,14 @@
                       <span class="icon-[tabler--user] size-4.5"></span>
                     </span>
                     <span class="grow">User</span>
-                    <span class="badge badge-primary badge-sm badge-soft me-2">Pro</span>
+                   
                     <span class="icon-[tabler--chevron-right] accordion-item-active:rotate-90 size-4.5 shrink-0 transition-transform duration-300 rtl:rotate-180"></span>
                   </button>
                   <div id="app-user-collapse-app-user" class="accordion-content mt-1 hidden w-full overflow-hidden transition-[height] duration-300" aria-labelledby="app-user" role="region">
                     <ul class="accordion space-y-1">
                       <!-- Simple Link Item (for nested items) -->
                       <li>
-                        <a href="https://demos.flyonui.com/templates/html/dashboard-default/app-user-list.html" class="inline-flex w-full items-center px-2" target="_blank">
+                          <a href="{{route('users.list')}}" class="inline-flex w-full items-center px-2">
                           <span>List</span>
                         </a>
                       </li>
@@ -394,41 +394,7 @@
                   </div>
                 </li>
 
-                <!-- Accordion Menu Item (Level 0) -->
-                <li class="accordion-item" id="Vendor">
-                  <button class="accordion-toggle accordion-item-active:bg-neutral/10 inline-flex w-full items-center p-2 text-start text-sm font-normal" aria-controls="Vendor-collapse-Vendor" aria-expanded="true">
-                    <span class="text-bg-neutral rounded-field flex size-6 items-center justify-center">
-                      <span class="icon-[tabler--building-store] size-4.5"></span>
-                    </span>
-                    <span class="grow">Vendor</span>
-                    <span class="badge badge-primary badge-sm badge-soft me-2">Pro</span>
-                    <span class="icon-[tabler--chevron-right] accordion-item-active:rotate-90 size-4.5 shrink-0 transition-transform duration-300 rtl:rotate-180"></span>
-                  </button>
-                  <div id="Vendor-collapse-Vendor" class="accordion-content mt-1 hidden w-full overflow-hidden transition-[height] duration-300" aria-labelledby="Vendor" role="region">
-                    <ul class="space-y-1">
-                      <!-- Simple Link Item (for nested items) -->
-                      <li>
-                        <a href="https://demos.flyonui.com/templates/html/dashboard-ecommerce/ecommerce-vendor-list.html" class="inline-flex w-full items-center px-2" target="_blank">
-                          <span>Vendor List</span>
-                        </a>
-                      </li>
 
-                      <!-- Simple Link Item (for nested items) -->
-                      <li>
-                        <a href="https://demos.flyonui.com/templates/html/dashboard-ecommerce/ecommerce-vendor-create.html" class="inline-flex w-full items-center px-2" target="_blank">
-                          <span>Vendor Create</span>
-                        </a>
-                      </li>
-
-                      <!-- Simple Link Item (for nested items) -->
-                      <li>
-                        <a href="https://demos.flyonui.com/templates/html/dashboard-ecommerce/ecommerce-vendor-details.html" class="inline-flex w-full items-center px-2" target="_blank">
-                          <span>Vendor Details</span>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
               </ul>
             </div>
             <div class="dropdown relative inline-flex w-full p-2 [--offset:5] [--placement:bottom]">

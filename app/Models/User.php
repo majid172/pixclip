@@ -45,4 +45,10 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function userDetails()
+    {
+        return $this->belongsTo(UserDetails::class,'user_id');
+    }
+
 }
