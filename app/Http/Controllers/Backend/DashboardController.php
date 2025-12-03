@@ -2,6 +2,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Notice;
 use App\Models\Order;
 
 class DashboardController extends Controller
@@ -24,6 +25,7 @@ class DashboardController extends Controller
 
         $data['statusLabels'] = $data['statusCount']->keys();
         $data['statusValues'] = array_map('intval', $data['statusCount']->values()->toArray());
+        $notices = Notice::where('status',1)->limit(5)->latest()->get();
         // $payment              = Payment::select('gateway')
         //     ->selectRaw('count(*) as count')
         //     ->groupBy('gateway')
@@ -32,6 +34,6 @@ class DashboardController extends Controller
 
         // $paymentLabels = $payment->keys();
         // $paymentValues = array_map('intval', $payment->values()->toArray());
-        return view('panel.dashboard',$data);
+        return view('panel.dashboard',$data,compact('notices'));
     }
 }

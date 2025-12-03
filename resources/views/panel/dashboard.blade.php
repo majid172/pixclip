@@ -9,7 +9,7 @@
                             <span class="icon-[tabler--eye] size-5"></span>
                         </div>
                     </div>
-                    <h5 class="text-lg font-medium">Pageviews</h5>
+                    <h5 class="text-lg font-medium">Today's Order</h5>
                 </div>
                 <div>
                     <div class="text-base-content text-xl font-semibold">17,356</div>
@@ -30,7 +30,7 @@
                             <span class="icon-[tabler--mouse] size-6"></span>
                         </div>
                     </div>
-                    <h5 class="text-lg font-medium">Click</h5>
+                    <h5 class="text-lg font-medium">Order Progress</h5>
                 </div>
                 <div>
                     <div class="text-base-content text-xl font-semibold">2,784</div>
@@ -53,7 +53,7 @@
                             <span class="icon-[tabler--chart-bar] size-6"></span>
                         </div>
                     </div>
-                    <h5 class="text-lg font-medium">Commission</h5>
+                    <h5 class="text-lg font-medium">Total Orders</h5>
                 </div>
                 <div>
                     <div class="text-base-content text-xl font-semibold">$1,658</div>
@@ -95,7 +95,7 @@
             <!-- Meeting Schedules -->
             <div class="card shadow-base-300/10 grow shadow-md">
                 <div class="card-header flex items-center justify-between gap-2">
-                    <h4 class="card-title text-xl">Meeting Schedules</h4>
+                    <h4 class="card-title text-xl">Latest Notices</h4>
                     <div class="dropdown relative inline-flex">
                         <button id="dropdown-meeting-schedules" type="button"
                             class="dropdown-toggle btn btn-text text-base-content/50 btn-circle btn-sm" aria-haspopup="menu"
@@ -112,78 +112,55 @@
                 </div>
                 <div class="card-body">
                     <ul class="flex h-full flex-col justify-between gap-6">
-                        <li>
-                            <div class="flex items-center gap-3">
-                                <div class="avatar">
-                                    <div class="rounded-field size-10">
-                                        <img src="../assets/img/avatars/1.png" alt="avatar" />
+                        @forelse ($notices as $item)
+                            <li class="py-3">
+                                <div class="flex items-start gap-3">
+                                    <!-- Icon Container -->
+                                    <div class="avatar placeholder">
+                                        <div
+                                            class="bg-blue-50 text-blue-600 rounded-full size-10 flex items-center justify-center">
+                                            <!-- You can swap this icon based on the update type -->
+                                            <span class="icon-[tabler--bell] size-5"></span>
+                                        </div>
                                     </div>
-                                </div>
 
-                                <div class="grow">
-                                    <h6 class="text-base-content mb-px font-medium">Call with woods</h6>
-                                    <div class="text-base-content/50 flex items-center gap-1 text-sm">
-                                        <span class="icon-[tabler--calendar] size-4.5"></span>
-                                        <span>1 Jul | 08:20-10:20</span>
+                                    <div class="grow">
+                                        <h6 class="text-base-content font-medium text-sm leading-snug">
+                                            {{ $item->title }}
+                                        </h6>
+                                        <div class="flex items-center gap-2 mt-1">
+                                            <span
+                                                class="text-xs font-medium bg-base-200 px-2 py-0.5 rounded text-base-content/70">
+                                                {{ $item->created_at->format('d M, Y') }}
+                                            </span>
+                                            <span class="text-[10px] text-base-content/40">•</span>
+                                            <span class="text-xs text-base-content/50">Update</span>
+                                        </div>
                                     </div>
                                 </div>
-                                <span class="badge badge-primary badge-soft rounded-field font-medium">Business</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="flex items-center gap-3">
-                                <div class="avatar">
-                                    <div class="rounded-field size-10">
-                                        <img src="../assets/img/avatars/2.png" alt="avatar" />
+                            </li>
+                        @empty
+                            <li>
+                                <div class="flex items-center gap-3">
+                                    <div class="avatar">
+                                        <div class="rounded-field size-10">
+                                            <img src="../assets/img/avatars/1.png" alt="avatar" />
+                                        </div>
                                     </div>
-                                </div>
 
-                                <div class="grow">
-                                    <h6 class="text-base-content mb-px font-medium">Conference call</h6>
-                                    <div class="text-base-content/50 flex items-center gap-1 text-sm">
-                                        <span class="icon-[tabler--calendar] size-4.5"></span>
-                                        <span>22 Jul | 02:00-3:30</span>
+                                    <div class="grow">
+                                        <h6 class="text-base-content mb-px font-medium">Empty Notice</h6>
+                                        <div class="text-base-content/50 flex items-center gap-1 text-sm">
+                                            <span class="icon-[tabler--calendar] size-4.5"></span>
+                                            <span>No data found</span>
+                                        </div>
                                     </div>
+                                    <span class="badge badge-primary badge-soft rounded-field font-medium">Empty</span>
                                 </div>
-                                <span class="badge badge-warning badge-soft rounded-field font-medium">Dinner</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="flex items-center gap-3">
-                                <div class="avatar">
-                                    <div class="rounded-field size-10">
-                                        <img src="../assets/img/avatars/3.png" alt="avatar" />
-                                    </div>
-                                </div>
+                            </li>
+                        @endforelse
 
-                                <div class="grow">
-                                    <h6 class="text-base-content mb-px font-medium">Meeting with John</h6>
-                                    <div class="text-base-content/50 flex items-center gap-1 text-sm">
-                                        <span class="icon-[tabler--calendar] size-4.5"></span>
-                                        <span>22 Jul | 11:15-12:15</span>
-                                    </div>
-                                </div>
-                                <span class="badge badge-neutral badge-soft rounded-field font-medium">Meetup</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="flex items-center gap-3">
-                                <div class="avatar">
-                                    <div class="rounded-field size-10">
-                                        <img src="../assets/img/avatars/4.png" alt="avatar" />
-                                    </div>
-                                </div>
 
-                                <div class="grow">
-                                    <h6 class="text-base-content mb-px font-medium">Meeting with Sara</h6>
-                                    <div class="text-base-content/50 flex items-center gap-1 text-sm">
-                                        <span class="icon-[tabler--calendar] size-4.5"></span>
-                                        <span>23 Jul | 07:30-08:30</span>
-                                    </div>
-                                </div>
-                                <span class="badge badge-error badge-soft rounded-field font-medium">Dinner</span>
-                            </div>
-                        </li>
                     </ul>
                 </div>
             </div>
@@ -192,15 +169,11 @@
             <div class="card shadow-base-300/10 shadow-md">
                 <div class="card-header flex items-start justify-between gap-2">
                     <div>
-                        <h4 class="card-title text-lg">Student by Countries</h4>
-                        <span class="text-base-content/50 text-sm">Monthly Sales Overview</span>
+                        <h4 class="card-title text-lg">User by Countries</h4>
+
                     </div>
                     <div class="dropdown relative inline-flex">
-                        <button id="dropdown-students-by-countries" type="button"
-                            class="dropdown-toggle btn btn-text text-base-content/50 btn-circle btn-sm"
-                            aria-haspopup="menu" aria-expanded="false" aria-label="Dropdown">
-                            <span class="icon-[tabler--dots-vertical] size-5.5"></span>
-                        </button>
+
                         <ul class="dropdown-menu dropdown-open:opacity-100 hidden" role="menu"
                             aria-orientation="vertical" aria-labelledby="dropdown-students-by-countries">
                             <li><a class="dropdown-item" href="#">Last 28 Days</a></li>
@@ -298,7 +271,7 @@
             <div class="card-body gap-6">
                 <div class="flex w-full items-start gap-6 max-md:flex-col">
                     <div class="gap-7.5 flex grow flex-col max-md:w-full">
-                        <h2 class="card-title text-xl">Sales Metrics</h2>
+                        <h2 class="card-title text-xl">Order Chart</h2>
 
                         <!-- Company Info -->
                         <div class="flex items-center gap-4">
@@ -347,8 +320,8 @@
                                 </defs>
                             </svg>
                             <div>
-                                <h3 class="text-base-content text-xl font-medium">Flyonui Company</h3>
-                                <p class="text-base-content/80">flyonui@company.com</p>
+                                <h3 class="text-base-content text-xl font-medium">PixClipping Company</h3>
+                                <p class="text-base-content/80">info@company.com</p>
                             </div>
                         </div>
 
@@ -487,7 +460,7 @@
                                 @if ($item->is_paid == 1)
                                     <span class="badge badge-soft badge-primary text-xs">@lang('Paid')</span>
                                 @else
-                                    <span class="badge badge-soft badge-warning text-xs">@lang('Unpaid')</span>
+                                    <span class="badge badge-soft badge-error text-xs">@lang('Unpaid')</span>
                                 @endif
 
                             </td>
@@ -512,7 +485,7 @@
                                 @elseif ($item->status == 'Downloaded')
                                     <a href="" class="badge badge-soft badge-warning text-xs">Downloaded</a>
                                 @elseif ($item->status == 'Canceled')
-                                    <a href="" class="badge badge-soft badge-danger text-xs">Canceled</a>
+                                    <a href="" class="badge badge-soft badge-error text-xs">Canceled</a>
                                 @endif
 
 
