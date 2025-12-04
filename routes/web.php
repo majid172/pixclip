@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Backend\DashboardController;
+use App\Http\Controllers\Backend\NoticeController;
 use App\Http\Controllers\Backend\UserListController;
 
 Route::get("/", function () {
@@ -40,5 +41,8 @@ Route::middleware(["auth"])->group(function () {
     Route::get("/user-edit/{user}",[UserListController::class,'edit'])->name('user.edit');
     Route::put("/user-update/{user}",[UserListController::class,'update'])->name('user.update');
     Route::delete('/user-remove/{user}', [UserListController::class, 'destroy'])->name('user.destroy');
+
+    // notice list
+    Route::resource('notice', NoticeController::class);
 
 });

@@ -12,14 +12,14 @@
                     <h5 class="text-lg font-medium">Today's Order</h5>
                 </div>
                 <div>
-                    <div class="text-base-content text-xl font-semibold">{{ $today_orders->count() }}</div>
-                    <div class="flex items-center gap-2 text-sm font-semibold">
+                    <div class="text-base-content text-xl font-semibold text-success">{{ $today_orders->count() }}</div>
+                    {{-- <div class="flex items-center gap-2 text-sm font-semibold">
                         <span class="text-success inline-flex items-center gap-1">
                             <span class="icon-[tabler--arrow-up] size-4"></span>
                             25.6%
                         </span>
                         <span class="text-base-content/50 font-medium">EPC: 308.20</span>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
             <div class="divider sm:divider-horizontal"></div>
@@ -33,14 +33,14 @@
                     <h5 class="text-lg font-medium">Order Progress</h5>
                 </div>
                 <div>
-                    <div class="text-base-content text-xl font-semibold">{{ $progress->count() }}</div>
-                    <div class="flex items-center gap-2 text-sm font-semibold">
+                    <div class="text-base-content text-xl font-semibold text-error">{{ $progress->count() }}</div>
+                    {{-- <div class="flex items-center gap-2 text-sm font-semibold">
                         <span class="text-error inline-flex items-center gap-1">
                             <span class="icon-[tabler--arrow-down] size-4"></span>
                             25.6%
                         </span>
                         <span class="text-base-content/50 font-medium">Related Value: 77,359</span>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>
@@ -56,14 +56,14 @@
                     <h5 class="text-lg font-medium">Total Orders</h5>
                 </div>
                 <div>
-                    <div class="text-base-content text-xl font-semibold">{{ $total_orders->count() }}</div>
-                    <div class="flex items-center gap-2 text-sm font-semibold">
+                    <div class="text-base-content text-xl font-semibold text-success">{{ $total_orders->count() }}</div>
+                    {{-- <div class="flex items-center gap-2 text-sm font-semibold">
                         <span class="text-success inline-flex items-center gap-1">
                             <span class="icon-[tabler--arrow-up] size-4"></span>
                             25.6%
                         </span>
                         <span class="text-base-content/50 font-medium">Related Value: 77,359</span>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
             <div class="divider sm:divider-horizontal"></div>
@@ -77,14 +77,14 @@
                     <h5 class="text-lg font-medium">Sales</h5>
                 </div>
                 <div>
-                    <div class="text-base-content text-xl font-semibold">$8,759</div>
-                    <div class="flex items-center gap-2 text-sm font-semibold">
+                    <div class="text-base-content text-xl font-semibold">${{ $total_price }}</div>
+                    {{-- <div class="flex items-center gap-2 text-sm font-semibold">
                         <span class="text-success inline-flex items-center gap-1">
                             <span class="icon-[tabler--arrow-up] size-4"></span>
                             25.6%
                         </span>
                         <span class="text-base-content/50 font-medium">Related Value: 13.85</span>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>
@@ -111,9 +111,9 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <ul class="flex h-full flex-col justify-between gap-6">
+                    <ul class="flex h-full flex-col justify-between gap-3">
                         @forelse ($notices as $item)
-                            <li class="py-3">
+                            <li class="py-1">
                                 <div class="flex items-start gap-3">
                                     <!-- Icon Container -->
                                     <div class="avatar placeholder">
@@ -131,7 +131,7 @@
                                         <div class="flex items-center gap-2 mt-1">
                                             <span
                                                 class="text-xs font-medium bg-base-200 px-2 py-0.5 rounded text-base-content/70">
-                                                {{ $item->created_at->format('d M, Y') }}
+                                                {{ dateFormat($item->publish_date) }}
                                             </span>
                                             <span class="text-[10px] text-base-content/40">•</span>
                                             <span class="text-xs text-base-content/50">Update</span>
@@ -184,33 +184,33 @@
                 </div>
                 <div class="card-body">
                     <ul class="flex h-full flex-col justify-between gap-6">
-                        <li>
+                        @foreach ($countries as $item)
+                            <li>
                             <div class="flex items-center gap-3">
                                 <div class="avatar">
                                     <div class="size-11 rounded-full">
-                                        <img src="../assets/img/united-states.png" alt="united states flag" />
+                                        <img src="data:image/jpeg;base64,{{ base64_encode($item->country?->image) }}" alt="united states flag" />
                                     </div>
                                 </div>
 
                                 <div class="grow">
                                     <div class="flex items-center gap-2.5">
-                                        <h6 class="text-base-content font-semibold">164k</h6>
-                                        <div class="text-error flex items-center">
+                                        <h6 class="text-base-content font-semibold">{{ $item->total }}</h6>
+                                        {{-- <div class="text-error flex items-center">
                                             <span class="icon-[tabler--chevron-down] size-4"></span>
                                             <p class="text-sm">7.0%</p>
-                                        </div>
+                                        </div> --}}
                                     </div>
-                                    <p class="text-base-content/50 text-sm">USA</p>
+                                    <p class="text-base-content/50 text-sm">{{ $item->country?->name}}</p>
                                 </div>
 
-                                <div>
-                                    <span class="text-base-content font-medium">452k</span>
-                                    <span class="text-base-content/50 text-sm">/new</span>
-                                </div>
+                               
                             </div>
                         </li>
+                        @endforeach
+                        
 
-                        <li>
+                        {{-- <li>
                             <div class="flex items-center gap-3">
                                 <div class="avatar">
                                     <div class="size-11 rounded-full">
@@ -234,33 +234,9 @@
                                     <span class="text-base-content/50 text-sm">/new</span>
                                 </div>
                             </div>
-                        </li>
+                        </li> --}}
 
-                        <li>
-                            <div class="flex items-center gap-3">
-                                <div class="avatar">
-                                    <div class="size-11 rounded-full">
-                                        <img src="../assets/img/australia.png" alt="australia flag" />
-                                    </div>
-                                </div>
 
-                                <div class="grow">
-                                    <div class="flex items-center gap-2.5">
-                                        <h6 class="text-base-content font-semibold">88k</h6>
-                                        <div class="text-success flex items-center">
-                                            <span class="icon-[tabler--chevron-up] size-4"></span>
-                                            <p class="text-sm">5.0%</p>
-                                        </div>
-                                    </div>
-                                    <p class="text-base-content/50 text-sm">Australia</p>
-                                </div>
-
-                                <div>
-                                    <span class="text-base-content font-medium">186k</span>
-                                    <span class="text-base-content/50 text-sm">/new</span>
-                                </div>
-                            </div>
-                        </li>
                     </ul>
                 </div>
             </div>
@@ -377,7 +353,7 @@
                     <!-- Revenue Goal Section -->
                     <div class="bg-base-200 item-center rounded-box flex justify-center max-md:w-full">
                         <div class="bg-base-200 rounded-box space-y-4 p-4">
-                            <h3 class="text-base-content text-xl font-medium">Revenue Goal</h3>
+                            <h3 class="text-base-content text-xl font-medium">Order Chart</h3>
                             <!-- Radial Progress -->
                             <div id="revenue-chart" class="w-full"></div>
                             <div class="flex items-center justify-between gap-6">
@@ -389,7 +365,7 @@
                 </div>
 
                 <!-- Bottom Section -->
-                <div class="border-base-content/20 rounded-box flex gap-8 border p-6 max-md:flex-col">
+                {{-- <div class="border-base-content/20 rounded-box flex gap-8 border p-6 max-md:flex-col">
                     <!-- Sales Plan -->
                     <div class="space-y-4">
                         <h3 class="card-title">Sales Plan</h3>
@@ -423,7 +399,7 @@
                             <div class="progress-bar bg-primary/10 w-1/4"></div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>
@@ -433,7 +409,7 @@
         <div class="overflow-x-auto">
             <table class="table">
                 <thead>
-                    <tr>
+                    <tr class="text-center">
                         <th>Date</th>
                         <th>Order No.</th>
                         <th>Job Title</th>
@@ -448,7 +424,7 @@
 
                     @forelse ($total_orders as $item)
                         <tr class="text-center">
-                            <td>{{ $item->created_at }}</td>
+                            <td>{{ dateFormat($item->created_at) }}</td>
                             <td>
                                 <a href="/admin/order/{{ $item->id }}" class="text-primary">#{{ $item->order_id }}</a>
                             </td>
