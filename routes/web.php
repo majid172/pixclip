@@ -6,6 +6,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\NoticeController;
 use App\Http\Controllers\Backend\UserListController;
+use App\Http\Controllers\ServiceController;
 
 Route::get("/", function () {
     return view("home");
@@ -22,6 +23,7 @@ Route::get("/about", function () {
 Route::get("/contact", function () {
     return view("contact");
 });
+Route::get('service/{slug}',[ServiceController::class,'show'])->name('services.slug');
 
 Route::get("/register", [RegisterController::class, "show"]);
 Route::post("/register", [RegisterController::class, "register"]);

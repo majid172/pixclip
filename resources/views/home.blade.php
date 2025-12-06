@@ -445,9 +445,9 @@
                                 </div>
                             </div>
                             <div>
-                                <h4
+                                <a href="{{route('services.slug','clipping-path')}}"
                                     class="text-slate-800 font-bold text-lg mb-2 group-hover:text-rose-600 transition-colors">
-                                    Clipping Path</h4>
+                                    Clipping Path</a>
                                 <p class="text-slate-500 text-sm leading-relaxed">Hand-drawn photo clipping service
                                     expertly shapes and isolates subjects for a perfect cut.</p>
                             </div>
@@ -467,9 +467,9 @@
                                 </div>
                             </div>
                             <div>
-                                <h4
+                                <a href="{{route('services.slug','background-remove')}}"
                                     class="text-slate-800 font-bold text-lg mb-2 group-hover:text-rose-600 transition-colors">
-                                    Background Remove</h4>
+                                    Background Remove</a>
                                 <p class="text-slate-500 text-sm leading-relaxed">Refine your images by eliminating
                                     background distractions, allowing your subject to shine.</p>
                             </div>
@@ -489,9 +489,9 @@
                                 </div>
                             </div>
                             <div>
-                                <h4
+                                <a href="{{route('services.slug','shadow-making')}}"
                                     class="text-slate-800 font-bold text-lg mb-2 group-hover:text-rose-600 transition-colors">
-                                    Shadow Making</h4>
+                                    Shadow Making</a>
                                 <p class="text-slate-500 text-sm leading-relaxed">Enhance realism by adding natural-looking
                                     shadows and depth to your images.</p>
                             </div>

@@ -1,5 +1,5 @@
 <!-- 2. MAIN NAVIGATION -->
-<nav class="bg-amber-50 shadow-sm sticky top-0 z-50 font-sans">
+<nav class="bg-rose-50 shadow-sm sticky top-0 z-50 font-sans">
     <div class="container mx-auto px-4 md:px-8 py-4 flex justify-between items-center">
 
         <!-- Logo -->

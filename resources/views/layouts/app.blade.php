@@ -17,7 +17,7 @@
     @vite('resources/css/app.css')
 </head>
 
-<body class="flex flex-col min-h-screen bg-amber-50">
+<body class="flex flex-col min-h-screen bg-rose-50">
 
     @include('layouts.includes.topnav')
     @include('layouts.includes.navbar')
@@ -40,7 +40,7 @@
         });
     </script>
     <script src="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.js"></script>
-
+{{-- <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> --}}
 </body>
 
 </html>
