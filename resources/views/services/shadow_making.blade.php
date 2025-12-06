@@ -5,7 +5,7 @@
             <!-- Left Side: Image -->
             <div class="flex justify-center md:justify-end pr-0 md:pr-8">
                 <!-- Using a similar bicycle image from Unsplash -->
-                <img src="{{ asset('public/assets/images/images/background_remove/main_image.png') }}" alt="Grey Road Bike"
+                <img src="{{ asset('public/assets/images/images/shadow/drop-shadow.png') }}" alt="Grey Road Bike"
                     class="w-full max-w-md object-contain drop-shadow-2xl grayscale-[30%]">
             </div>
 
@@ -20,8 +20,8 @@
 
                 <!-- Description Paragraph -->
                 <p class="text-slate-400 text-sm md:text-base leading-relaxed max-w-lg mb-8">
-                    Eliminate unwanted image backdrops effortlessly while ensuring the utmost quality. Restore focus and
-                    clarity by correcting background imperfections with our exceptional expertise.
+                    Enhance your images with expertly crafted shadows, for a naturally vivid and authentically beautiful
+                    photo finish.
                 </p>
 
                 <!-- Buttons Container -->
@@ -70,9 +70,9 @@
                         </svg>
                     </div>
                     <!-- Text Content -->
-                    <h3 class="text-xl font-bold text-slate-600 mb-3">10K /Day</h3>
+                    <h3 class="text-xl font-bold text-slate-600 mb-3">5000k /Day</h3>
                     <p class="text-slate-500 text-sm leading-relaxed max-w-xs mx-auto">
-                        High-quality background removal service for big volumes of images.
+                        Transform your images with high-volume, lifelike shadow making services.
                     </p>
                 </div>
 
@@ -89,7 +89,7 @@
                     <!-- Text Content -->
                     <h3 class="text-xl font-bold text-slate-600 mb-3">12 Hours</h3>
                     <p class="text-slate-500 text-sm leading-relaxed max-w-xs mx-auto">
-                        Get your images within 12 hours - save time, stress-free!"
+                        Save your time - receive stunning images in just 12 hours!"
                     </p>
                 </div>
 
@@ -106,7 +106,7 @@
                     <!-- Text Content -->
                     <h3 class="text-xl font-bold text-slate-600 mb-3">Unlimited</h3>
                     <p class="text-slate-500 text-sm leading-relaxed max-w-xs mx-auto">
-                        Limitless revisions, lightning-fast delivery, and dedicated support - unleash your vision!
+                        Limitless revisions, lightning-fast delivery, and devoted support – guaranteed.
                     </p>
                 </div>
 
@@ -114,311 +114,110 @@
         </div>
     </section>
 
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
 
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+        <!-- Header Section -->
+        <div class="text-center mb-16 max-w-3xl mx-auto">
+            <!-- Badge -->
+            <span
+                class="inline-block bg-rose-50 text-rose-500 text-[11px] font-bold px-4 py-1.5 rounded-full mb-6 uppercase tracking-wide">
+                Variety
+            </span>
 
-            <!-- Left Column: Main Text -->
-            <div class="flex flex-col items-start">
-                <!-- Badge -->
-                <span class="inline-block bg-rose-100 text-rose-600 text-xs font-semibold px-4 py-1.5 rounded-full mb-6">
-                    What we do?
-                </span>
+            <!-- Main Title -->
+            <h2 class="text-3xl md:text-4xl font-semibold text-slate-600 mb-6 leading-tight">
+                What Shadow Effect Services
+            </h2>
 
-                <!-- Main Heading -->
-                <h2 class="text-3xl md:text-4xl font-bold text-slate-600 mb-6">
-                    Get next-level photos
-                </h2>
-
-                <!-- Description Paragraphs -->
-                <div class="space-y-6 text-slate-500 leading-relaxed text-[15px]">
-                    <p>
-                        Experience excellence with our precision cutout services: Expert background removal, precise subject
-                        focus, and unparalleled quality results. Optimise your time and budget by entrusting us with your
-                        project.
-
-                    </p>
-                    <p>
-                        When dealing with blurry images, we employ a zoom-in technique to enhance accuracy. Following your
-                        instructions, we meticulously cut with precision, whether it's 1px, 2px, inline, or maintaining the
-                        original Path name. We prioritise preserving image details and implementing active clipping paths.
-
-                    </p>
-                    <p>
-                        Save time, maintain your schedule, and enjoy peace of mind with our exceptional services.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Right Column: Feature Grid -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-12 mt-4 lg:mt-0">
-
-                <!-- Feature 1: Inhouse Clipping Team -->
-                <div class="flex flex-col items-start">
-                    <!-- Icon: Team/People -->
-                    <div class="mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" class="w-10 h-10 text-rose-500">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
-                        </svg>
-                    </div>
-                    <h3 class="text-lg font-semibold text-slate-600 mb-2">Image Cutouts</h3>
-                    <p class="text-slate-500 text-sm leading-relaxed">
-                        Effortlessly extract subjects of any shape or products in record time.
-                    </p>
-                </div>
-
-                <!-- Feature 2: Hand-drawn Clipping -->
-                <div class="flex flex-col items-start">
-                    <!-- Icon: Pen Tool / Bezier -->
-                    <div class="mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" class="w-10 h-10 text-rose-500">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125" />
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 7.5L12 12" />
-                            <circle cx="6" cy="18" r="2" fill="currentColor" class="text-rose-200" />
-                            <circle cx="18" cy="6" r="1" fill="currentColor" class="text-rose-500" />
-                        </svg>
-                    </div>
-                    <h3 class="text-lg font-semibold text-slate-600 mb-2">Transparent/Any Colour</h3>
-                    <p class="text-slate-500 text-sm leading-relaxed">
-                        Subject shines on your chosen backdrop - your vision, our expertise.
-                    </p>
-                </div>
-
-                <!-- Feature 3: Accurate Shape & Feathering -->
-                <div class="flex flex-col items-start">
-                    <!-- Icon: Shapes -->
-                    <div class="mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" class="w-10 h-10 text-rose-500">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M5.25 7.5A2.25 2.25 0 017.5 5.25h9a2.25 2.25 0 012.25 2.25v9a2.25 2.25 0 01-2.25 2.25h-9a2.25 2.25 0 01-2.25-2.25v-9z" />
-                            <circle cx="16" cy="16" r="4" class="text-rose-300" stroke="currentColor"
-                                stroke-width="1.5" fill="white" />
-                        </svg>
-                    </div>
-                    <h3 class="text-lg font-semibold text-slate-600 mb-2">Customised Editing</h3>
-                    <p class="text-slate-500 text-sm leading-relaxed">
-                        Cut, replace, amaze: Elevate your visuals with stunning backgrounds.
-                    </p>
-                </div>
-
-                <!-- Feature 4: Satisfaction Guaranteed -->
-                <div class="flex flex-col items-start">
-                    <!-- Icon: Thumbs Up -->
-                    <div class="mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" class="w-10 h-10 text-rose-500">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M6.633 10.5c.806 0 1.533-.446 2.031-1.08a9.041 9.041 0 012.861-2.4c.723-.384 1.35-.956 1.653-1.715a4.498 4.498 0 00.322-1.672V3a.75.75 0 01.75-.75A2.25 2.25 0 0116.5 4.5c0 1.152-.26 2.247-.723 3.218-.266.558.107 1.282.725 1.282h3.126c1.026 0 1.945.694 2.054 1.715.045.422.068.85.068 1.285a11.95 11.95 0 01-2.649 7.521c-.388.482-.987.729-1.605.729H13.48c-.483 0-.964-.078-1.423-.23l-3.114-1.04a4.501 4.501 0 00-1.423-.23H5.904M14.25 9h2.25M5.904 18.75c.083.205.173.405.27.602.197.4-.078.898-.523.898h-.908c-.889 0-1.713-.518-1.972-1.368a12 12 0 01-.521-3.507c0-1.553.295-3.036.831-4.396C3.387 10.203 4.167 9.75 5 9.75h1.053c.472 0 .745.556.5.96a8.958 8.958 0 00-1.302 4.665c0 1.194.232 2.333.654 3.375z" />
-                        </svg>
-                    </div>
-                    <h3 class="text-lg font-semibold text-slate-600 mb-2">Background Composition</h3>
-                    <p class="text-slate-500 text-sm leading-relaxed">
-                        Transform your images with stunning on-demand creative backgrounds.
-                    </p>
-                </div>
-
-            </div>
-
-        </div>
-    </section>
-
-    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-            <!-- Left Column: Text Content -->
-            <div class="order-2 md:order-1">
-                <h2 class="text-2xl md:text-3xl font-medium text-slate-600 mb-4 leading-tight">
-                    Cutting out backgrounds with razor-sharp precision <br>
-                    <span class="font-bold text-rose-600">Pen Tool magic</span>
-                </h2>
-
-                <p class="text-slate-400 text-sm leading-relaxed mb-8 max-w-md">
-                    Get premium-quality image background removal with our special offer! Our skilled team meticulously
-                    outlines every edge, guaranteeing the finest results within your deadline.
-                </p>
-
-                <!-- Check List -->
-                <ul class="space-y-4">
-
-                    <!-- Item 1 -->
-                    <li class="flex items-center gap-4">
-                        <div class="flex-shrink-0 w-6 h-6 rounded-full bg-rose-50 flex items-center justify-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3"
-                                stroke="currentColor" class="w-3 h-3 text-rose-500">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                            </svg>
-                        </div>
-                        <span class="text-slate-600 text-sm font-medium">Crafted by our skilled team</span>
-                    </li>
-
-                    <!-- Item 2 -->
-                    <li class="flex items-center gap-4">
-                        <div class="flex-shrink-0 w-6 h-6 rounded-full bg-rose-50 flex items-center justify-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3"
-                                stroke="currentColor" class="w-3 h-3 text-rose-500">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                            </svg>
-                        </div>
-                        <span class="text-slate-600 text-sm font-medium"> Precision to the max.</span>
-                    </li>
-
-                    <!-- Item 3 -->
-                    <li class="flex items-center gap-4">
-                        <div class="flex-shrink-0 w-6 h-6 rounded-full bg-rose-50 flex items-center justify-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3"
-                                stroke="currentColor" class="w-3 h-3 text-rose-500">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                            </svg>
-                        </div>
-                        <span class="text-slate-600 text-sm font-medium">Quality without compromise</span>
-                    </li>
-
-                </ul>
-            </div>
-
-            <!-- Right Column: Image with Zoom Effect -->
-            <div class="order-1 md:order-2 relative flex justify-center items-center mt-12 md:mt-0">
-
-                <!-- Main Product Image -->
-                <div class="relative z-10 ">
-                    <img src="{{ asset('public/assets/images/images/background_remove/main_imge_2.png') }}" alt=" Jar"
-                        class="w-full h-auto object-contain">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="bg-white px-4 sm:px-6 lg:px-8 py-20">
-        <div class="max-w-6xl mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-
-                <!-- Left Column: Image (NOW LEFT) -->
-                <div class="order-1 md:order-1 relative flex justify-center items-center mt-12 md:mt-0">
-                    <div class="relative z-10 ">
-                        <img src="{{ asset('public/assets/images/images/background_remove/main_image_3.png') }}"
-                            alt="Jar" class="w-full h-auto object-contain">
-                    </div>
-                </div>
-
-                <!-- Right Column: Text (NOW RIGHT) -->
-                <div class="order-2 md:order-2">
-                    <h2 class="text-2xl md:text-3xl font-medium text-slate-600 mb-4 leading-tight">
-                        Instantly erase backgrounds with the magical touch of the <br>
-                        <span class="font-bold text-rose-600">Wand Tool</span>
-                    </h2>
-
-                    <p class="text-slate-400 text-sm leading-relaxed mb-8 max-w-md">
-                        Attention E-commerce Sellers! "Enhance your e-commerce visuals with lightning-fast image processing:
-                        vibrant subjects, contrasting backgrounds, and fewer details for swift cutout perfection.
-                    </p>
-
-                    <ul class="space-y-4">
-                        <li class="flex items-center gap-4">
-                            <div class="flex-shrink-0 w-6 h-6 rounded-full bg-rose-50 flex items-center justify-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="3" stroke="currentColor" class="w-3 h-3 text-rose-500">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                                </svg>
-                            </div>
-                            <span class="text-slate-600 text-sm font-medium"> High volume Image Processing</span>
-                        </li>
-
-                        <li class="flex items-center gap-4">
-                            <div class="flex-shrink-0 w-6 h-6 rounded-full bg-rose-50 flex items-center justify-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="3" stroke="currentColor" class="w-3 h-3 text-rose-500">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                                </svg>
-                            </div>
-                            <span class="text-slate-600 text-sm font-medium">Fast Turnaround</span>
-                        </li>
-
-                        <li class="flex items-center gap-4">
-                            <div class="flex-shrink-0 w-6 h-6 rounded-full bg-rose-50 flex items-center justify-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="3" stroke="currentColor" class="w-3 h-3 text-rose-500">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                                </svg>
-                            </div>
-                            <span class="text-slate-600 text-sm font-medium">Cost Savings.</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+            <!-- Subtitle -->
+            <p class="text-slate-400 text-sm md:text-base leading-relaxed max-w-2xl mx-auto">
+                Tailor-made shadows crafted to your precise needs and photo requirements. Explore our range of shadow making
+                services and choose the perfect option for your visuals.
+            </p>
         </div>
 
-    </section>
+        <!-- Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 
-    <section class="bg-white px-4 sm:px-6 lg:px-8 py-20">
-        <div class="max-w-6xl mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-                <!-- Left Column: Text Content -->
-                <div class="order-2 md:order-1">
-                    <h2 class="text-2xl md:text-3xl font-medium text-slate-600 mb-4 leading-tight">
-                        Cutout at lightning speed, starting from
-                        <span class="font-bold text-rose-600">just $0.15!</span>
-                    </h2>
+            <div
+                class="bg-white rounded-lg shadow-sm border border-slate-100 overflow-hidden flex flex-col group hover:shadow-xl transition-all duration-300">
 
-                    <p class="text-slate-400 text-sm leading-relaxed mb-8 max-w-md">
-                        For rapid, high-quality bulk image background removal, this offer is your ideal solution. Our
-                        precision rivals the Pen tool, ensuring exacting image quality and accuracy. Optimal results are
-                        achieved with a distinct background colour (green preferred) contrasting the subject, while keeping
-                        photo details to a minimum.
-                    </p>
-
-                    <!-- Check List -->
-                    <ul class="space-y-4">
-
-                        <!-- Item 1 -->
-                        <li class="flex items-center gap-4">
-                            <div class="flex-shrink-0 w-6 h-6 rounded-full bg-rose-50 flex items-center justify-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="3" stroke="currentColor" class="w-3 h-3 text-rose-500">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                                </svg>
-                            </div>
-                            <span class="text-slate-600 text-sm font-medium">Quick Delivery During Rush-Hour</span>
-                        </li>
-
-                        <!-- Item 2 -->
-                        <li class="flex items-center gap-4">
-                            <div class="flex-shrink-0 w-6 h-6 rounded-full bg-rose-50 flex items-center justify-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="3" stroke="currentColor" class="w-3 h-3 text-rose-500">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                                </svg>
-                            </div>
-                            <span class="text-slate-600 text-sm font-medium"> Flexible Project-Based Engagement</span>
-                        </li>
-
-                        <!-- Item 3 -->
-                        <li class="flex items-center gap-4">
-                            <div class="flex-shrink-0 w-6 h-6 rounded-full bg-rose-50 flex items-center justify-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="3" stroke="currentColor" class="w-3 h-3 text-rose-500">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                                </svg>
-                            </div>
-                            <span class="text-slate-600 text-sm font-medium"> Unbeatable Market-Beating Prices</span>
-                        </li>
-
-                    </ul>
+                <div class="h-64 flex items-center justify-center p-6 relative">
+                    <!-- Image -->
+                    <img src="{{ asset('public/assets/images/images/shadow/original_shadow.png') }}" alt="Nike Shoe"
+                        class="w-full h-full object-contain drop-shadow-2xl mix-blend-multiply filter contrast-125 transform group-hover:scale-105 transition-transform duration-500">
                 </div>
 
-                <!-- Right Column: Image with Zoom Effect -->
-                <div class="order-1 md:order-2 relative flex justify-center items-center mt-12 md:mt-0">
+                <!-- Content Area -->
+                <div class="p-8 flex-grow">
+                    <h3 class="text-xl font-semibold text-slate-600 mb-4">Original Shadow</h3>
+                    <p class="text-slate-400 text-[15px] leading-relaxed">
+                        We create a natural shadow beneath the product to makes your images more attractive.
+                    </p>
+                </div>
 
-                    <!-- Main Product Image -->
-                    <div class="relative z-10 ">
-                        <img src="{{ asset('public/assets/images/images/background_remove/main_image_4.png') }}"
-                            alt=" Jar" class="w-full h-auto object-contain">
-                    </div>
+                <!-- Footer Area -->
+                <div class="bg-slate-50 px-8 py-5 border-t border-slate-100 mt-auto">
+                    <p class="text-slate-500 text-sm">
+                        Capacity: <span class="text-slate-700 font-medium">5000 / Day</span>
+                    </p>
                 </div>
             </div>
+
+            <!-- Card 2: Drop Shadow -->
+            <div
+                class="bg-white rounded-lg shadow-sm border border-slate-100 overflow-hidden flex flex-col group hover:shadow-xl transition-all duration-300">
+                <!-- Image Area (rose Background) -->
+                <div class="h-64  flex items-center justify-center p-6 relative">
+                    <!-- Image -->
+                    <img src="{{ asset('public/assets/images/images/shadow/drop_shadow.png') }}" alt="Velvet Sofa"
+                        class="w-full h-full object-contain drop-shadow-2xl mix-blend-multiply filter contrast-125 transform group-hover:scale-105 transition-transform duration-500">
+                </div>
+
+                <!-- Content Area -->
+                <div class="p-8 flex-grow">
+                    <h3 class="text-xl font-semibold text-slate-600 mb-4">Drop Shadow</h3>
+                    <p class="text-slate-400 text-[15px] leading-relaxed">
+                        Experience the transformative touch of our retouchers, adding depth and dimension to your photos
+                        based on the size and shape of the objects.
+                    </p>
+                </div>
+
+                <!-- Footer Area -->
+                <div class="bg-slate-50 px-8 py-5 border-t border-slate-100 mt-auto">
+                    <p class="text-slate-500 text-sm">
+                        Capacity: <span class="text-slate-700 font-medium">3500 / Day</span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card 3: Reflection Shadow -->
+            <div
+                class="bg-white rounded-lg shadow-sm border border-slate-100 overflow-hidden flex flex-col group hover:shadow-xl transition-all duration-300">
+                <!-- Image Area (Gray Background) -->
+                <div class="h-64 flex items-center p-6 relative">
+                    <!-- Image -->
+                    <img src="{{ asset('public/assets/images/images/shadow/reflection_shadow.png') }}" alt="Cosmetics"
+                        class="w-full h-full object-contain drop-shadow-2xl mix-blend-multiply filter contrast-125 transform group-hover:scale-105 transition-transform duration-500">
+                </div>
+
+                <!-- Content Area -->
+                <div class="p-8 flex-grow">
+                    <h3 class="text-xl font-semibold text-slate-600 mb-4">Reflection Shadow</h3>
+                    <p class="text-slate-400 text-[15px] text-justify leading-relaxed">
+                        Capture mesmerising reflective mirror images of objects in a pristine environment, bathed in
+                        impeccable lighting.
+                    </p>
+                </div>
+
+                <!-- Footer Area -->
+                <div class="bg-slate-50 px-8 py-5 border-t border-slate-100 mt-auto">
+                    <p class="text-rose-500 text-sm">
+                        Capacity: <span class="text-rose-600 font-medium">1500 / Day</span>
+                    </p>
+                </div>
+            </div>
+
         </div>
 
     </section>
@@ -439,8 +238,8 @@
 
                 <!-- Subtitle -->
                 <p class="text-slate-500 text-sm md:text-base leading-relaxed">
-                    Let our expert team swiftly remove photo backgrounds and enhance them to perfection, delivering stunning
-                    results in record time.
+                    Our expert team employs time-proven retouching techniques to craft images with a stunningly realistic
+                    look.
                 </p>
             </div>
 
@@ -460,20 +259,25 @@
                 <div class="flex flex-col text-slate-500 text-[15px] leading-7 space-y-6 text-justify md:text-left">
 
                     <p>
-                        Struggling to edit your photo background during rush hour? Let our expert team handle it for you! We
-                        can quickly remove or improve the background to your exact specifications, making post-processing a
-                        breeze. Using the latest version of Photoshop CC, our skilled editing team can seamlessly isolate
-                        your subject and replace the background of your choice. Even for complex-edged images, we guarantee
-                        a professionally retouched background that will leave your image looking stunning.
+                        Pix Clipping specialises in providing images with a stunningly natural look through our exceptional
+                        shadow-making service. Our highly skilled designers leverage cutting-edge technology to deliver
+                        realistic product images that captivate your audience.
 
                     </p>
 
                     <p>
-
-                        At PixClipping, we are committed to delivering impressive results through our image background
-                        removal service. Trust us to make your photos stand out with enhanced backgrounds. Say goodbye to
-                        worries and uncertainties, and let us provide you with the perfect image mask, freeing your subject
-                        from the background.
+                        With meticulous attention to detail, we maintain opacity levels, allowing you to control the
+                        transparency of objects for optimal viewing. By expertly editing angles, we determine the precise
+                        placement of light sources and shadow effects, ensuring they align opposite to the light source.
+                        Tailoring the shadow effect to match the apparent size of each product, we add just the right amount
+                        of noise to create an authentic, natural feel. The percentage of shadow spread is carefully
+                        adjusted, creating a gradual falloff that results in darker edges, adding depth and dimension to
+                        your images. Our designers possess the artistry and expertise to masterfully craft shadows that
+                        perfectly suit your desired aesthetic.
+                    </p>
+                    <p>
+                        By seamlessly removing backdrops and introducing new, meticulously crafted drop shadows, we
+                        guarantee that your product will always exude a remarkably natural look that captivates viewers.
                     </p>
 
 
@@ -601,14 +405,15 @@
         <div class="text-center max-w-3xl mx-auto mb-16">
             <span class="text-rose-600 font-semibold tracking-wide uppercase text-sm">Flexible Pricing</span>
             <h2 class="text-3xl md:text-3xl font-semibold text-slate-800 mt-3 mb-4">
-                Photo Background Removal - Highest quality with Lowest cost
+                Shadow Making Service Cost
             </h2>
             <p class="text-slate-500 text-md">
-                Choose a plan that scales with your business. No hidden fees.
+                Achieve effortless natural shadows in your images, no editing hassle. Enjoy quality at a budget-friendly
+                price, no additional fees!
             </p>
 
             <!-- Pricing Toggle (Visual Only) -->
-          
+
         </div>
 
         <!-- Pricing Cards -->
@@ -621,7 +426,7 @@
                 <p class="text-slate-400 text-sm mt-2">Perfect for simple product photos.</p>
 
                 <div class="my-6">
-                    <span class="text-4xl font-extrabold text-slate-800">$0.29 - $0.69</span>
+                    <span class="text-4xl font-extrabold text-slate-800">$0.20</span>
                     <span class="text-slate-400 text-base font-medium">/ image</span>
                 </div>
 
@@ -681,7 +486,7 @@
                 <p class="text-slate-400 text-sm mt-2">For complex shapes and retouching.</p>
 
                 <div class="my-6">
-                    <span class="text-4xl font-extrabold text-slate-800">$0.70 - $2.99</span>
+                    <span class="text-4xl font-extrabold text-slate-800">$0.30</span>
                     <span class="text-slate-400 text-base font-medium">/ image</span>
                 </div>
 
@@ -733,7 +538,7 @@
                 <p class="text-slate-400 text-sm mt-2">High volume & custom needs.</p>
 
                 <div class="my-6">
-                    <span class="text-4xl font-extrabold text-slate-800">Custom</span>
+                    <span class="text-4xl font-extrabold text-slate-800">$0.50</span>
                 </div>
 
                 <a href="#"
@@ -779,7 +584,7 @@
 
         </div>
 
-       
+
     </section>
 
 

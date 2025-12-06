@@ -17,7 +17,7 @@
     @vite('resources/css/app.css')
 </head>
 
-<body class="flex flex-col min-h-screen bg-rose-50">
+<body class="flex flex-col min-h-screen bg-amber-50">
 
     @include('layouts.includes.topnav')
     @include('layouts.includes.navbar')
