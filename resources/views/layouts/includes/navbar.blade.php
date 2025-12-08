@@ -121,17 +121,17 @@
                             <div
                                 class="absolute left-full top-0 ml-1 w-56 opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible transition-all duration-300 transform group-hover/sub:translate-x-0 -translate-x-2">
                                 <div class="bg-white rounded-lg shadow-xl border-t-4 border-rose-600 py-2 px-1">
-                                    <a href="#"
+                                    <a href="javascript:void(0)"
                                         class="block px-4 py-2 text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-600 rounded transition">Product
                                         Photography</a>
 
-                                    <a href="#"
+                                    <a href="javascript:void(0)"
                                         class="block px-4 py-2 text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-600 rounded transition">Apparel
                                         Photography</a>
-                                    <a href="#"
+                                    <a href="javascript:void(0)"
                                         class="block px-4 py-2 text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-600 rounded transition">Jewelry
                                         Photography</a>
-                                    <a href="#"
+                                    <a href="javascript:void(0)"
                                         class="block px-4 py-2 text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-600 rounded transition">School
                                         Photography
                                     </a>
@@ -154,7 +154,7 @@
                             <div
                                 class="absolute left-full top-0 ml-1 w-56 opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible transition-all duration-300 transform group-hover/sub:translate-x-0 -translate-x-2">
                                 <div class="bg-white rounded-lg shadow-xl border-t-4 border-rose-600 py-2 px-1">
-                                    <a href="#"
+                                    <a href="{{ route('services.slug','essential-editing') }}"
                                         class="block px-4 py-2 text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-600 rounded transition">Essential Editing</a>
 
                                     <a href="{{ route('services.slug','amazon') }}"
@@ -171,8 +171,8 @@
                 </div>
             </div>
 
-            <a href="/workflow" class="hover:text-rose-600 transition">Workflow</a>
-            <a href="/price" class="hover:text-rose-600 transition">Price</a>
+            <a href="{{ url('/workflow') }}" class="hover:text-rose-600 transition">Workflow</a>
+            <a href="{{ url('/price') }}" class="hover:text-rose-600 transition">Price</a>
 
             <!-- DROPDOWN: Resources -->
             <div class="relative group h-full flex items-center">
@@ -212,15 +212,15 @@
                 <div
                     class="absolute top-full right-0 pt-6 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2 w-48">
                     <div class="bg-white rounded-lg shadow-xl border-t-4 border-rose-600 py-2 px-1">
-                        <a href="/about"
+                        <a href="{{ url('/about') }}"
                             class="block px-4 py-2 text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-600 rounded transition">About
                             Company</a>
-                        <a href="#"
+                        {{-- <a href="#"
                             class="block px-4 py-2 text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-600 rounded transition">Career</a>
                         <a href="#"
                             class="block px-4 py-2 text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-600 rounded transition">Our
-                            Team</a>
-                        <a href="/contact"
+                            Team</a> --}}
+                        <a href="{{ url('/contact') }}"
                             class="block px-4 py-2 text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-600 rounded transition">Contact
                             Us</a>
                     </div>

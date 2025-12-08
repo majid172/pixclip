@@ -240,49 +240,73 @@
                                   <ul class="space-y-1">
                                       <!-- Simple Link Item (for nested items) -->
                                       <li>
-                                          <a href="https://demos.flyonui.com/templates/html/dashboard-ecommerce/ecommerce-order-list.html"
-                                              class="inline-flex w-full items-center px-2" target="_blank">
+                                          <a href="{{ route('order.list') }}"
+                                              class="inline-flex w-full items-center px-2">
                                               <span>Order List</span>
                                           </a>
                                       </li>
 
                                       <!-- Simple Link Item (for nested items) -->
                                       <li>
-                                          <a href="https://demos.flyonui.com/templates/html/dashboard-ecommerce/ecommerce-order-details.html"
-                                              class="inline-flex w-full items-center px-2" target="_blank">
+                                          <a href="{{ route('order.tracking') }}"
+                                              class="inline-flex w-full items-center px-2">
                                               <span>Tracking Order</span>
                                           </a>
                                       </li>
 
                                       <!-- Simple Link Item (for nested items) -->
                                       <li>
-                                          <a href="https://demos.flyonui.com/templates/html/dashboard-ecommerce/ecommerce-order-tracking.html"
-                                              class="inline-flex w-full items-center px-2" target="_blank">
+                                          <a href="{{ route('order.pending') }}"
+                                              class="inline-flex w-full items-center px-2" >
                                               <span>Pending Order </span>
                                           </a>
                                       </li>
                                        <li>
-                                          <a href="https://demos.flyonui.com/templates/html/dashboard-ecommerce/ecommerce-order-tracking.html"
-                                              class="inline-flex w-full items-center px-2" target="_blank">
-                                              <span>Recieve Order </span>
+                                          <a href="{{ route('order.received') }}"
+                                              class="inline-flex w-full items-center px-2" >
+                                              <span>Recieved Order </span>
                                           </a>
                                       </li>
                                        <li>
-                                          <a href="https://demos.flyonui.com/templates/html/dashboard-ecommerce/ecommerce-order-tracking.html"
-                                              class="inline-flex w-full items-center px-2" target="_blank">
+                                          <a href="{{ route('order.invoiced') }}"
+                                              class="inline-flex w-full items-center px-2" >
                                               <span>Invoiced Order </span>
                                           </a>
                                       </li>
                                        <li>
-                                          <a href="https://demos.flyonui.com/templates/html/dashboard-ecommerce/ecommerce-order-tracking.html"
-                                              class="inline-flex w-full items-center px-2" target="_blank">
+                                          <a href="{{ route('order.processing') }}"
+                                              class="inline-flex w-full items-center px-2">
                                               <span>Processing Order </span>
                                           </a>
                                       </li>
                                        <li>
-                                          <a href="https://demos.flyonui.com/templates/html/dashboard-ecommerce/ecommerce-order-tracking.html"
-                                              class="inline-flex w-full items-center px-2" target="_blank">
+                                          <a href="{{ route('order.finalized') }}"
+                                              class="inline-flex w-full items-center px-2">
                                               <span>Finalizing Order </span>
+                                          </a>
+                                      </li>
+                                       <li>
+                                          <a href="{{ route('order.completed') }}"
+                                              class="inline-flex w-full items-center px-2">
+                                              <span> Completed Order </span>
+                                          </a>
+                                      </li>
+                                       <li>
+                                          <a href="{{ route('order.downloaded') }}"
+                                              class="inline-flex w-full items-center px-2">
+                                              <span> Downloaded Order </span>
+                                          </a>
+                                      </li>
+                                       <li>
+                                          <a href="{{ route('order.canceled') }}"
+                                              class="inline-flex w-full items-center px-2">
+                                              <span>Canceled Order </span>
+                                          </a>
+                                      </li>
+                                       <li>
+                                          <a href="{{ route('order.paid') }}"
+                                              class="inline-flex w-full items-center px-2">
+                                              <span>Paid Order </span>
                                           </a>
                                       </li>
                                   </ul>

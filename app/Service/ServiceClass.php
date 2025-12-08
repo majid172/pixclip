@@ -30,7 +30,7 @@ class ServiceClass
             'newborn-baby-photo-editing'   => 'services.newborn-baby-photo-editing',
             'food-photo-retouching'        => 'services.food_retouching',
             'real-estate-photo-retouching' => 'services.realestate',
-            'essential-editing'            => 'services.essential-editing',
+            'essential-editing'            => 'services.ecommerce',
             'amazon'         => 'services.amazon',
             'ecommerce' => 'services.ecommerce',
             'image-optimization'           => 'services.image_optimization',

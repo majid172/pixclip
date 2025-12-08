@@ -5,6 +5,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\NoticeController;
+use App\Http\Controllers\Backend\OrderController;
 use App\Http\Controllers\Backend\UserListController;
 use App\Http\Controllers\FreeTrialController;
 use App\Http\Controllers\ServiceController;
@@ -48,5 +49,20 @@ Route::middleware(["auth"])->group(function () {
 
     // notice list
     Route::resource('notice', NoticeController::class);
+
+    // order list
+    Route::controller(OrderController::class)->prefix('order')->name('order.')->group(function(){
+        Route::get('all','list')->name('list');
+        Route::get('tracking','tracking')->name('tracking');
+        Route::get('pending','pending')->name('pending');
+        Route::get('received','received')->name('received');
+        Route::get('invoiced','invoiced')->name('invoiced');
+        Route::get('processing','processing')->name('processing');
+        Route::get('finalized','finalized')->name('finalized');
+        Route::get('completed','completed')->name('completed');
+        Route::get('downloaded','downloaded')->name('downloaded');
+        Route::get('canceled','canceled')->name('canceled');
+        Route::get('paid','paid')->name('paid');
+    });
 
 });

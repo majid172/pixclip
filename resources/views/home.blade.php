@@ -713,7 +713,7 @@
                                 </div>
                             </div>
                             <div>
-                                <h4 class="text-slate-800 font-bold text-lg mb-1">Product Photography</h4>
+                                <a href="javascript:void(0)" class="text-slate-800 hover:text-rose-600 font-bold text-lg mb-1">Product Photography</a>
                                 <p class="text-slate-500 text-sm">We capture high-fidelity product photos preserving
                                     natural colors and textures.</p>
                             </div>
@@ -732,9 +732,8 @@
                                 </div>
                             </div>
                             <div>
-                                <h4 class="text-slate-800 font-bold text-lg mb-1">Apparel Photography</h4>
-                                <p class="text-slate-500 text-sm">Elevate your fashion brand with our professional model
-                                    and ghost mannequin photography.</p>
+                                <a href="javascript:void(0)" class="text-slate-800 hover:text-rose-600 font-bold text-lg mb-1">Apparel Photography</a>
+                                <p class="text-slate-500 text-sm">Need your brand with our professional apparel photography.</p>
                             </div>
                         </div>
 
@@ -751,9 +750,25 @@
                                 </div>
                             </div>
                             <div>
-                                <h4 class="text-slate-800 font-bold text-lg mb-1">Jewelry Photography</h4>
+                                <a href="javascript:void(0)" class="text-slate-800 hover:text-rose-600 font-bold text-lg mb-1">Jewelry Photography</a>
                                 <p class="text-slate-500 text-sm">Macro photography that captures the luxurious sparkle of
                                     ornaments and gems.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-5">
+                            <div class="flex-shrink-0">
+                                <div
+                                    class="w-14 h-14 rounded-xl bg-rose-50 text-rose-600 flex items-center justify-center">
+                                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                        stroke-width="1.5">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <div>
+                                <a href="javascript:void(0)" class="text-slate-800 hover:text-rose-600 font-bold text-lg mb-1">School Photography</a>
+                                <p class="text-slate-500 text-sm">We shoot portraits or groups for entire school in your preferred style.</p>
                             </div>
                         </div>
                     </div>
@@ -820,6 +835,24 @@
                         </div>
 
                         <!-- Item -->
+                        <div
+                            class="flex gap-5 group items-start hover:bg-white hover:shadow-lg hover:shadow-rose-50/50 p-4 rounded-2xl transition-all duration-300">
+                            <div class="flex-shrink-0">
+                                <div
+                                    class="w-14 h-14 rounded-xl bg-rose-50 text-rose-600 flex items-center justify-center">
+                                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                        stroke-width="1.5">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <div>
+                                <a href="{{ route('services.slug','essential-editing') }}" class="text-slate-800 font-bold text-lg mb-1">Essential Editing</a>
+                                <p class="text-slate-500 text-sm">Web-ready compression that loads fast without sacrificing
+                                    visual quality.</p>
+                            </div>
+                        </div>
                         <div
                             class="flex gap-5 group items-start hover:bg-white hover:shadow-lg hover:shadow-rose-50/50 p-4 rounded-2xl transition-all duration-300">
                             <div class="flex-shrink-0">
