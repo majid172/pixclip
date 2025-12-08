@@ -6,6 +6,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\NoticeController;
 use App\Http\Controllers\Backend\UserListController;
+use App\Http\Controllers\FreeTrialController;
 use App\Http\Controllers\ServiceController;
 
 Route::get("/", function () {
@@ -20,6 +21,7 @@ Route::get("/price", function () {
 Route::get("/about", function () {
     return view("about");
 });
+Route::get('/free-trial',[FreeTrialController::class,'index'])->name('free.trial');
 Route::get("/contact", function () {
     return view("contact");
 });

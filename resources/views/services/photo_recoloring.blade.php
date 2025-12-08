@@ -5,23 +5,24 @@
             <!-- Left Side: Image -->
             <div class="flex justify-center md:justify-end pr-0 md:pr-8">
                 <!-- Using a similar bicycle image from Unsplash -->
-                <img src="{{ asset('public/assets/images/banner/clipping.webp') }}" alt="Grey Road Bike"
+                <img src="{{ asset('public/assets/images/images/photo_recolor/main.png') }}" alt="Grey Road Bike"
                     class="w-full max-w-md object-contain drop-shadow-2xl grayscale-[30%]">
             </div>
 
             <div class="flex flex-col text-left">
                 <h2 class="text-slate-500 text-xl md:text-2xl font-normal leading-snug mb-1">
-                    Clipping Path Services
+                    {{ $title }}
                 </h2>
 
                 <h1 class="text-slate-600 text-3xl md:text-4xl font-bold mb-6">
-                    Keep Accurate <span class="text-rose-600">Shape</span>
+                    Professional Image Recoloring Services : <span class="text-rose-600">Maximise Savings, Boost
+                        Productivity!</span>
                 </h1>
 
                 <!-- Description Paragraph -->
                 <p class="text-slate-400 text-sm md:text-base leading-relaxed max-w-lg mb-8">
-                    Unlock the ability to separate subjects from images as needed. Our skilled professionals accurately cut
-                    out single or group subjects, delivering exceptional results in record time!
+                    Enhance Your Photos with Ghost Mannequin Magic! Say goodbye to wrinkles and mannequins. Experience the
+                    realism of our 3D ghost effect service. Grab more viewers' attention today!
                 </p>
 
                 <!-- Buttons Container -->
@@ -70,9 +71,9 @@
                         </svg>
                     </div>
                     <!-- Text Content -->
-                    <h3 class="text-xl font-bold text-slate-600 mb-3">5000/Day</h3>
+                    <h3 class="text-xl font-bold text-slate-600 mb-3">1250/Day</h3>
                     <p class="text-slate-500 text-sm leading-relaxed max-w-xs mx-auto">
-                        Achieve top-notch image clipping paths for large volumes.
+                        High-volume, premium product image recoloring services available.
                     </p>
                 </div>
 
@@ -87,9 +88,9 @@
                         </svg>
                     </div>
                     <!-- Text Content -->
-                    <h3 class="text-xl font-bold text-slate-600 mb-3">12 Hours</h3>
+                    <h3 class="text-xl font-bold text-slate-600 mb-3">24 Hours</h3>
                     <p class="text-slate-500 text-sm leading-relaxed max-w-xs mx-auto">
-                        Effortless time-saving: Images delivered in just 12 hours!
+                        Save time with our quick image delivery - within 24 hours!
                     </p>
                 </div>
 
@@ -106,7 +107,7 @@
                     <!-- Text Content -->
                     <h3 class="text-xl font-bold text-slate-600 mb-3">Unlimited</h3>
                     <p class="text-slate-500 text-sm leading-relaxed max-w-xs mx-auto">
-                        Unlimited revisions, lightning-fast delivery, and dedicated support – all included!
+                        Unlimited revisions, speedy delivery, and dedicated support - all guaranteed!
                     </p>
                 </div>
 
@@ -127,7 +128,7 @@
 
                 <!-- Main Heading -->
                 <h2 class="text-3xl md:text-4xl font-bold text-slate-600 mb-6">
-                    Best clipping path provider
+                    Precise Photo Recoloring
                 </h2>
 
                 <!-- Description Paragraphs -->
@@ -163,9 +164,10 @@
                                 d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
                         </svg>
                     </div>
-                    <h3 class="text-lg font-semibold text-slate-600 mb-2">Inhouse Clipping Team</h3>
+                    <h3 class="text-lg font-semibold text-slate-600 mb-2">Save time</h3>
                     <p class="text-slate-500 text-sm leading-relaxed">
-                        We collaborate with in-house designers exclusively, ensuring no outsourcing for image clipping.
+                        Capture one product in various colours and unwind - no need to photograph each item individually.
+                        Simplify your process!
                     </p>
                 </div>
 
@@ -182,9 +184,10 @@
                             <circle cx="18" cy="6" r="1" fill="currentColor" class="text-rose-500" />
                         </svg>
                     </div>
-                    <h3 class="text-lg font-semibold text-slate-600 mb-2">Hand-drawn Clipping</h3>
+                    <h3 class="text-lg font-semibold text-slate-600 mb-2">Recolor as you need</h3>
                     <p class="text-slate-500 text-sm leading-relaxed">
-                        Our committed team manually tailors clipping services to your exact needs
+                        Our expert team ensures precise colour reproduction for your product photos, following your
+                        instructions to perfection.
                     </p>
                 </div>
 
@@ -200,10 +203,10 @@
                                 stroke-width="1.5" fill="white" />
                         </svg>
                     </div>
-                    <h3 class="text-lg font-semibold text-slate-600 mb-2">Accurate Shape & Feathering</h3>
+                    <h3 class="text-lg font-semibold text-slate-600 mb-2">Precision of colours</h3>
                     <p class="text-slate-500 text-sm leading-relaxed">
-                        Our skilled team carefully carves a precise path while preserving the delicate and authentic form on
-                        both sides.
+                        We ensure precise colour matching from the Pantone chart while maintaining 100% authenticity of the
+                        actual products.
                     </p>
                 </div>
 
@@ -217,9 +220,10 @@
                                 d="M6.633 10.5c.806 0 1.533-.446 2.031-1.08a9.041 9.041 0 012.861-2.4c.723-.384 1.35-.956 1.653-1.715a4.498 4.498 0 00.322-1.672V3a.75.75 0 01.75-.75A2.25 2.25 0 0116.5 4.5c0 1.152-.26 2.247-.723 3.218-.266.558.107 1.282.725 1.282h3.126c1.026 0 1.945.694 2.054 1.715.045.422.068.85.068 1.285a11.95 11.95 0 01-2.649 7.521c-.388.482-.987.729-1.605.729H13.48c-.483 0-.964-.078-1.423-.23l-3.114-1.04a4.501 4.501 0 00-1.423-.23H5.904M14.25 9h2.25M5.904 18.75c.083.205.173.405.27.602.197.4-.078.898-.523.898h-.908c-.889 0-1.713-.518-1.972-1.368a12 12 0 01-.521-3.507c0-1.553.295-3.036.831-4.396C3.387 10.203 4.167 9.75 5 9.75h1.053c.472 0 .745.556.5.96a8.958 8.958 0 00-1.302 4.665c0 1.194.232 2.333.654 3.375z" />
                         </svg>
                     </div>
-                    <h3 class="text-lg font-semibold text-slate-600 mb-2">Satisfaction Guaranteed</h3>
+                    <h3 class="text-lg font-semibold text-slate-600 mb-2">Quality work</h3>
                     <p class="text-slate-500 text-sm leading-relaxed">
-                        At PixClipping, quality is never compromised, and your happiness is our constant pursuit.
+                        Transform your images with our photo recoloring services, restoring them to their original
+                        brilliance.
                     </p>
                 </div>
 
@@ -228,189 +232,78 @@
         </div>
     </section>
 
-    <section class="bg-[#F6F8FC] py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <section class="bg-white px-4 sm:px-6 lg:px-8 py-20">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 max-w-3xl mx-auto">
+                <!-- Badge -->
+                <span
+                    class="inline-block bg-rose-50 text-rose-500 text-xs font-bold px-4 py-1.5 rounded-full mb-5 uppercase tracking-wide">
+                    Process
+                </span>
+
+                <!-- Main Title -->
+                <h2 class="text-3xl md:text-3xl font-semibold text-slate-700 mb-4">
+                    Recoloring: Discover how it works
+                </h2>
+
+                <!-- Subtitle -->
+                <p class="text-slate-500 text-sm md:text-base leading-relaxed">
+                    Experience vibrant photo transformations! We expertly enhance image colours while preserving the natural
+                    essence.
+
+                </p>
+            </div>
+
+            <!-- Content Grid -->
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
-                <div class="flex justify-center relative">
-                    <div class="absolute inset-0 bg-rose-200/20 rounded-full filter blur-3xl transform scale-75"></div>
+                <!-- Left Column: Illustration -->
+                <!-- Ideally, place your isometric vector image here -->
+                <div class="flex justify-center lg:justify-end">
+                    <img src="{{ asset('public/assets/images/images/photo_recolor/mockup.png') }}"
+                        alt="Designer Workspace Illustration"
+                        class="w-full max-w-lg object-contain drop-shadow-xl hover:scale-[1.02] transition-transform duration-500 rounded-lg">
 
-                    <img src="{{ asset('public/assets/images/images/clipping_path/multi_path/image.png') }}"
-                        alt="Multi Path Service Illustration"
-                        class="relative z-10 w-full max-w-lg object-contain drop-shadow-xl hover:scale-[1.02] transition-transform duration-500">
                 </div>
 
-                <!-- Right Column: Content -->
-                <div class="flex flex-col items-start text-left">
-                    <h2 class="text-3xl md:text-3xl lg:text-3xl font-extrabold text-slate-600 leading-tight mb-8">
-                        <span class="text-rose-600">Multi Path Service:</span> <br>
-                        Separate Color, Parts, Object in Photos
-                    </h2>
+                <!-- Right Column: Text Content -->
+                <div class="flex flex-col text-slate-500 text-[15px] leading-7 space-y-6 text-justify md:text-left">
 
-                    <!-- Description Paragraphs -->
-                    <div class="space-y-6 text-slate-500 text-base md:text-md leading-relaxed">
-                        <p>
-                            Precision Clipping Path Service for Flawless Results. Experience the best clipping path service
-                            with
-                            Pix Clipping Ltd. Our experts skillfully isolate subjects with both hard and soft edges,
-                            ensuring
-                            that only the subject remains, while the background disappears.
-                        </p>
-                        <p>
-                            When dealing with blurry images, we employ a zoom-in technique to enhance accuracy. Following
-                            your
-                            instructions, we meticulously cut with precision, whether it's 1px, 2px, inline, or maintaining
-                            the
-                            original Path name. We prioritise preserving image details and implementing active clipping
-                            paths.
-                        </p>
-                        <p>
-                            Save time, maintain your schedule, and enjoy peace of mind with our exceptional services.
-                        </p>
-                    </div>
+                    <p>
+                        Get perfect product images with striking colours to catch viewers' attention! Our skilled retouchers
+                        meticulously adjust colour, tones, and temperature to match the product's real-life appearance,
+                        pixel by pixel.
 
-                    <!-- Optional CTA Button to complete the look -->
-                    <div class="mt-8">
-                        <a href="#"
-                            class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-rose-600 hover:bg-rose-600 md:text-lg transition duration-300 shadow-lg shadow-rose-600/30">
-                            Get Started
-                        </a>
-                    </div>
+
+                    </p>
+
+                    <p>
+
+                        We tailor our photo recoloring process to your preferences, delivering lifelike representations of
+                        your products in exact and genuine colours.
+                    </p>
+                    <p>
+
+                        Save time and money with our image recoloring services, receiving multiple images with striking
+                        colours and perfect saturation, just as you desire.
+                    </p>
+
+
+
                 </div>
 
             </div>
         </div>
-    </section>
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-
         <!-- Header Section -->
-        <div class="text-center mb-16 md:mb-24">
-            <span class="inline-block bg-rose-50 text-rose-500 text-xs font-bold px-4 py-1.5 rounded-full mb-4">
-                Why Us?
-            </span>
-            <h2 class="text-3xl md:text-3xl lg:text-3xl font-bold text-slate-600 mb-6 leading-tight">
-                Why Should You Choose <br>
-                Pix Clipping Ltd for Clipping Path ?
-            </h2>
-            <p class="text-slate-400 text-base md:text-md max-w-2xl mx-auto leading-relaxed">
-                With our efficient clipping services, we ensure unwavering quality while respecting your time and goals.
-                Your convenience is our priority.
-            </p>
-        </div>
 
-        <!-- Main Grid Content -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            <div class="relative w-full max-w-md mx-auto aspect-[3/4] flex items-center justify-center">
-
-                <!-- SVG Connector Lines (Behind the images) -->
-                <svg class="absolute inset-0 w-full h-full pointer-events-none z-0" xmlns="http://www.w3.org/2000/svg">
-                    <!-- Line to Top Left -->
-                    <line x1="30%" y1="25%" x2="45%" y2="40%" stroke="#cbd5e1"
-                        stroke-width="1.5" />
-                    <line x1="30%" y1="25%" x2="20%" y2="25%" stroke="#cbd5e1"
-                        stroke-width="1.5" />
-                    <!-- Line to Top Right -->
-                    <line x1="70%" y1="25%" x2="55%" y2="40%" stroke="#cbd5e1"
-                        stroke-width="1.5" />
-                    <line x1="70%" y1="25%" x2="80%" y2="25%" stroke="#cbd5e1"
-                        stroke-width="1.5" />
-                    <!-- Line to Bottom Left -->
-                    <line x1="30%" y1="75%" x2="45%" y2="60%" stroke="#cbd5e1"
-                        stroke-width="1.5" />
-                    <line x1="30%" y1="75%" x2="20%" y2="75%" stroke="#cbd5e1"
-                        stroke-width="1.5" />
-                    <!-- Line to Bottom Right -->
-                    <line x1="70%" y1="75%" x2="55%" y2="60%" stroke="#cbd5e1"
-                        stroke-width="1.5" />
-                    <line x1="70%" y1="75%" x2="80%" y2="75%" stroke="#cbd5e1"
-                        stroke-width="1.5" />
-                </svg>
-
-                <!-- Central Bottle Image -->
-                <div class="z-10 w-28 md:w-36">
-                    <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=1887&auto=format&fit=crop"
-                        alt="Serum Bottle" class="w-full h-auto object-contain drop-shadow-lg rounded-xl">
-                </div>
-
-                <!-- Bubble 1: Top Left (Blur Cut Out) -->
-                <div class="absolute top-10 left-0 md:left-4 z-20 flex flex-col items-center">
-                    <div
-                        class="w-20 h-20 md:w-24 md:h-24 rounded-full border-2 border-slate-200 bg-white overflow-hidden shadow-sm relative group">
-                        <!-- Placeholder for specific zoomed asset -->
-                        <div
-                            class="w-full h-full bg-slate-600 flex items-center justify-center text-white text-xs text-center p-1">
-                            Zoomed<br>Edge
-                        </div>
-                    </div>
-                    <span class="text-xs font-bold text-slate-700 mt-2 border-b border-slate-700 pb-0.5">Blur Cut Out
-                        50%</span>
-                </div>
-
-                <!-- Bubble 2: Top Right (Accurate Shape) -->
-                <div class="absolute top-10 right-0 md:right-4 z-20 flex flex-col items-center">
-                    <div
-                        class="w-20 h-20 md:w-24 md:h-24 rounded-full border-2 border-rose-200 bg-white overflow-hidden shadow-sm">
-                        <!-- Placeholder: Simulating the wireframe look -->
-                        <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=1887&auto=format&fit=crop"
-                            class="w-full h-full object-cover scale-[3] origin-top-right opacity-50 grayscale"
-                            alt="">
-                    </div>
-                    <span class="text-xs font-bold text-slate-700 mt-2 border-b border-slate-700 pb-0.5">Accurate
-                        Shape</span>
-                </div>
-
-                <!-- Bubble 3: Bottom Left (Inline-Clipping) -->
-                <div class="absolute bottom-10 left-0 md:left-4 z-20 flex flex-col items-center">
-                    <div
-                        class="w-20 h-20 md:w-24 md:h-24 rounded-full border-2 border-rose-200 bg-white overflow-hidden shadow-sm">
-                        <!-- Placeholder -->
-                        <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=1887&auto=format&fit=crop"
-                            class="w-full h-full object-cover scale-[3] origin-bottom-left grayscale" alt="">
-                    </div>
-                    <span class="text-xs font-bold text-slate-700 mt-2 border-b border-slate-700 pb-0.5">Inline-Clipping
-                        Path</span>
-                </div>
-
-                <!-- Bubble 4: Bottom Right (Active-Clipping) -->
-                <div class="absolute bottom-10 right-0 md:right-4 z-20 flex flex-col items-center">
-                    <div
-                        class="w-20 h-20 md:w-24 md:h-24 rounded-full border-2 border-rose-200 bg-white overflow-hidden shadow-sm">
-                        <!-- Placeholder -->
-                        <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=1887&auto=format&fit=crop"
-                            class="w-full h-full object-cover scale-[2]" alt="">
-                    </div>
-                    <span class="text-xs font-bold text-slate-700 mt-2 border-b border-slate-700 pb-0.5">Active-Clipping
-                        Path</span>
-                </div>
-
-            </div>
-
-            <!-- Right Column: Text Content -->
-            <div class="flex flex-col space-y-8 text-slate-500 text-[15px] leading-relaxed">
-
-                <p>
-                    Our designers manually complete all of the work in order to offer the best clipping path service. To
-                    construct a path around the image, we use the Pen Tool in Adobe Photoshop. We don't use the magic wand
-                    tool or any other simple gimmicks that can damage the images. Every time we clip, we go edge-to-edge.
-                </p>
-
-                <p>
-                    Our in-house production designers can quickly trim photos to even the most intricate margins. Therefore,
-                    we can provide you with large-scale e-commerce (Amazon, eBay) clipping services. We are capable of
-                    clipping your photographs accurately under pressure, regardless of how large or complicated your
-                    projects are.
-                <p>
-                    Pix Clipping Ltd can assist you in meeting your deadline by providing photographs the same day as your
-                    order Additionally, we provide a specialised staff for frequent customers who request a minimum of 500
-                    pictures for cutout. Therefore, you can relax knowing that we will meet all of your needs when you use
-                    our clipping path services.
-                </p>
-
-            </div>
-
-        </div>
 
     </section>
+
+
+
+
+
 
     <section class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-20">
 
@@ -521,6 +414,151 @@
 
     </section>
 
+    <section class="py-20 px-4 md:px-8 bg-white">
+        <div class="max-w-7xl mx-auto">
 
-    @include('layouts.includes.portal')
+            <!-- Header -->
+            <div class="text-center mb-16">
+                <span class="inline-block bg-rose-50 text-rose-600 text-xs font-semibold px-4 py-1.5 rounded-full mb-4">
+                    Price
+                </span>
+
+                <h2 class="text-3xl md:text-3xl font-semibold text-gray-800 mb-4">
+                    Image Recoloring Service Price
+                </h2>
+
+                <p class="max-w-2xl mx-auto text-gray-500 text-sm md:text-base leading-relaxed">
+                    Experience premium image recoloring at an unbeatable price. High quality, fast delivery,
+                    and fully customizable packages — with no hidden costs.
+                </p>
+            </div>
+
+            <!-- Main Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+
+                <!-- Left Price Card -->
+                <div class="lg:col-span-5 relative">
+                    <div
+                        class="bg-gradient-to-br from-rose-600 to-rose-500 rounded-2xl p-10 text-white shadow-xl
+                            h-full flex flex-col justify-between relative overflow-hidden">
+
+                        <!-- Price Block -->
+                        <div class="relative z-10">
+                            <div class="flex items-end space-x-1 mb-4">
+                                <span class="text-2xl font-semibold">$</span>
+                                <span class="text-7xl font-bold leading-none">0</span>
+                                <span class="text-4xl font-semibold leading-none">.79</span>
+                            </div>
+
+                            <p class="text-rose-100 font-medium mb-8">as low as</p>
+
+                            <div class="w-full h-px bg-rose-200/40 mb-8"></div>
+
+                            <p class="text-lg font-medium mb-2 text-white">
+                                Transform your product photos with 100% satisfaction.
+                            </p>
+
+                            <p class="text-rose-200 text-sm mb-10">
+                                No extra charge — simple, transparent pricing.
+                            </p>
+
+                            <div class="flex flex-col items-start gap-3">
+                                <a href="javascript:void(0)"
+                                    class="bg-white text-rose-600 hover:bg-rose-100 px-8 py-3 rounded-full font-semibold
+                                      flex items-center gap-2 shadow-md transition-all">
+                                    Free Trial
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="2.5" stroke="currentColor" class="w-4 h-4">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                                    </svg>
+                                </a>
+                                <span class="text-xs text-rose-200 ml-2">No credit card required.</span>
+                            </div>
+                        </div>
+
+                        <!-- Decorative Waves -->
+                        <div class="absolute bottom-0 right-0 opacity-50 pointer-events-none">
+                            <svg width="200" height="200" viewBox="0 0 200 200" fill="none">
+                                <path d="M50 200C50 200 80 120 160 140C240 160 200 200 200 200H50Z"
+                                    class="fill-rose-500" />
+                                <path d="M100 200C100 200 120 150 180 170C240 190 200 200 200 200H100Z"
+                                    class="fill-rose-300" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Features -->
+                <div class="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-14 py-4">
+
+                    <!-- Feature Item -->
+                    <div class="flex flex-col items-start">
+                        <div class="mb-5">
+                            <svg class="w-12 h-12 text-rose-600" viewBox="0 0 24 24" fill="none">
+                                <path d="M12 8C12 8 15 8 15 11C15 14 11 14 11 17C11 17 14 17 14 17" stroke="currentColor"
+                                    stroke-width="2" />
+                                <path d="M13 5V6M13 19V20" stroke="currentColor" stroke-width="2" />
+                                <rect x="4" y="4" width="16" height="16" rx="2" stroke="currentColor"
+                                    stroke-width="2" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Affordable Pricing</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed">
+                            Get top-quality recoloring at a competitive price without hidden fees.
+                        </p>
+                    </div>
+
+                    <!-- Feature Item -->
+                    <div class="flex flex-col items-start">
+                        <div class="mb-5">
+                            <svg class="w-12 h-12 text-rose-600" viewBox="0 0 24 24" fill="none">
+                                <rect x="3" y="6" width="14" height="12" rx="2" stroke="currentColor"
+                                    stroke-width="2" />
+                                <circle cx="7" cy="12" r="1.5" fill="currentColor" />
+                                <path d="M21 6L17 2M17 2H21V6" stroke="currentColor" stroke-width="2" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Bulk Discounts</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed">
+                            Enjoy discount rates up to 30% when processing high-volume batches.
+                        </p>
+                    </div>
+
+                    <!-- Feature Item -->
+                    <div class="flex flex-col items-start">
+                        <div class="mb-5">
+                            <svg class="w-12 h-12 text-rose-600" viewBox="0 0 24 24" fill="none">
+                                <circle cx="12" cy="12" r="6" stroke="currentColor" stroke-width="2"
+                                    stroke-dasharray="4 4" />
+                                <path d="M12 8V12L15 15" stroke="currentColor" stroke-width="2" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Free Revisions</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed">
+                            Need corrections? We offer multiple revision rounds free of charge.
+                        </p>
+                    </div>
+
+                    <!-- Feature Item -->
+                    <div class="flex flex-col items-start">
+                        <div class="mb-5">
+                            <svg class="w-12 h-12 text-rose-600" viewBox="0 0 24 24" fill="none">
+                                <rect x="4" y="6" width="16" height="12" rx="2" stroke="currentColor"
+                                    stroke-width="2" />
+                                <circle cx="17" cy="16" r="4" stroke="currentColor" stroke-width="2" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Flexible Payment</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed">
+                            Pay upfront, post-pay, or pay-as-you-go — depending on your workflow.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+@include('layouts.includes.portal')
 @endsection

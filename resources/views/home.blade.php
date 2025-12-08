@@ -25,7 +25,7 @@
                                 dedicatedly working to give your workflow a speed boost.
                             </p>
                             <div class="flex flex-col sm:flex-row gap-4 pt-2">
-                                <a href="javascript:void(0)"
+                                <a href="{{ route('free.trial') }}"
                                     class="px-8 py-3.5 bg-rose-600 text-white font-bold rounded shadow-lg shadow-rose-200 hover:bg-rose-700 hover:-translate-y-1 transition-all text-center">
                                     Free Trial
                                 </a>
@@ -524,9 +524,9 @@
                                 </div>
                             </div>
                             <div>
-                                <h4
+                                <a href="{{route('services.slug','ghost-mannequin')}}"
                                     class="text-slate-800 font-bold text-lg mb-2 group-hover:text-rose-600 transition-colors">
-                                    Ghost Mannequin</h4>
+                                    Ghost Mannequin</a>
                                 <p class="text-slate-500 text-sm leading-relaxed">Enhance visual impact for apparel by
                                     replacing mannequins with tailored hollow fits.</p>
                             </div>
@@ -546,9 +546,9 @@
                                 </div>
                             </div>
                             <div>
-                                <h4
+                                <a href="{{ route('services.slug','photo-recoloring') }}"
                                     class="text-slate-800 font-bold text-lg mb-2 group-hover:text-rose-600 transition-colors">
-                                    Photo Recoloring</h4>
+                                    Photo Recoloring</a>
                                 <p class="text-slate-500 text-sm leading-relaxed">Capture a single photo and transform it
                                     with endless color possibilities.</p>
                             </div>
@@ -793,7 +793,7 @@
                                 </div>
                             </div>
                             <div>
-                                <h4 class="text-slate-800 font-bold text-lg mb-1">Amazon & Shopify Ready</h4>
+                                <a href="{{ route('services.slug','amazon') }}" class="text-slate-800 font-bold text-lg mb-1">Amazon & Shopify Ready</a>
                                 <p class="text-slate-500 text-sm">Optimized images that meet strict marketplace guidelines
                                     for white backgrounds and dimensions.</p>
                             </div>
@@ -813,7 +813,7 @@
                                 </div>
                             </div>
                             <div>
-                                <h4 class="text-slate-800 font-bold text-lg mb-1">360° Degree Editing</h4>
+                                <a href="{{  route('services.slug','ecommerce') }}" class="text-slate-800 font-bold text-lg mb-1">360° Degree Editing</a>
                                 <p class="text-slate-500 text-sm">Create symmetrical, rotatable product visuals by
                                     perfectly aligning and adjusting perspectives.</p>
                             </div>
@@ -833,7 +833,7 @@
                                 </div>
                             </div>
                             <div>
-                                <h4 class="text-slate-800 font-bold text-lg mb-1">Image Optimization</h4>
+                                <a href="{{ route('services.slug','image-optimization') }}" class="text-slate-800 font-bold text-lg mb-1">Image Optimization</a>
                                 <p class="text-slate-500 text-sm">Web-ready compression that loads fast without sacrificing
                                     visual quality.</p>
                             </div>
