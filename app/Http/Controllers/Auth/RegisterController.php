@@ -3,29 +3,45 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
+use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class RegisterController extends Controller
 {
+    /**
+     * Show registration form
+     */
     public function show()
     {
-        return view("auth.register");
+        return view('auth.register');
     }
 
+    /**
+     * Handle registration
+     */
     public function register(Request $request)
     {
         $request->validate([
-            "name" => "required",
-            "email" => "required|email|unique:users",
-            "password" => "required|min:6",
+            'name'     => 'required|string|max:255',
+            'email'    => 'required|string|email|max:255|unique:users,email',
+            'password' => 'required|string|min:6|confirmed',
         ]);
 
-        User::create([
-            "name" => $request->name,
-            "email" => $request->email,
-            "password" => Hash::make($request->password),
+        $user = User::create([
+            'name'     => $request->name,
+            'email'    => $request->email,
+            'password' => Hash::make($request->password),
+'status' => 1,
         ]);
 
-        return redirect("/login");
+        event(new Registered($user));
+
+
+        return redirect()->route('login')->with(
+            'success',
+            'Account created successfully! Please check your email to verify your account.'
+        );
     }
 }

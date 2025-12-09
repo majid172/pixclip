@@ -3,9 +3,8 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Models\UserDetails;
-use Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -17,18 +16,39 @@ class LoginController extends Controller
     public function login(Request $request)
     {
         $credentials = $request->validate([
-            'email' => 'required|email',
+            'email'    => 'required|email',
             'password' => 'required',
         ]);
 
         if (Auth::attempt(array_merge($credentials, ['status' => 1]))) {
-            $request->session()->regenerate();
-            $userDetail = UserDetails::where('user_id', auth()->user()->id)->first();
-            $userDetail->ip = $request->ip();
-            $userDetail->last_access_at = now();
-            $userDetail->save();
 
-            return redirect('/dashboard');
+            $user = auth()->user();
+
+
+            if (!$user->hasVerifiedEmail()) {
+dd('29');
+                Auth::logout();
+                return back()->withErrors([
+                    'email' => 'Please verify your email before logging in.',
+                ]);
+            }
+dd(35);
+            $request->session()->regenerate();
+
+            // Update last access
+            if ($user->userDetails) {
+                $user->userDetails->update([
+                    'ip' => $request->ip(),
+                    'last_access_at' => now(),
+                ]);
+            } else {
+                $user->userDetails()->create([
+                    'ip' => $request->ip(),
+                    'last_access_at' => now(),
+                ]);
+            }
+
+            return redirect()->route('dashboard');
         }
 
         return back()->withErrors([
@@ -40,6 +60,7 @@ class LoginController extends Controller
     {
         Auth::logout();
         $request->session()->invalidate();
+        $request->session()->regenerateToken();
 
         return redirect('/');
     }

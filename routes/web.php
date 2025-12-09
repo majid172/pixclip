@@ -8,50 +8,85 @@ use App\Http\Controllers\Backend\OrderController;
 use App\Http\Controllers\Backend\UserListController;
 use App\Http\Controllers\FreeTrialController;
 use App\Http\Controllers\ServiceController;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-Route::get("/", function () {
-    return view("home");
-});
-Route::get("/workflow", function () {
-    return view("workflow");
-});
-Route::get("/price", function () {
-    return view("price");
-});
-Route::get("/about", function () {
-    return view("about");
-});
+/*
+|--------------------------------------------------------------------------
+| Frontend Pages
+|--------------------------------------------------------------------------
+*/
+Route::view('/', 'home');
+Route::view('/workflow', 'workflow');
+Route::view('/price', 'price');
+Route::view('/about', 'about');
+Route::view('/contact', 'contact');
+
 Route::get('/free-trial', [FreeTrialController::class, 'index'])->name('free.trial');
-Route::get("/contact", function () {
-    return view("contact");
-});
 Route::get('service/{slug}', [ServiceController::class, 'show'])->name('services.slug');
 
-Route::get("/register", [RegisterController::class, "show"]);
-Route::post("/register", [RegisterController::class, "register"]);
+/*
+|--------------------------------------------------------------------------
+| Authentication Routes
+|--------------------------------------------------------------------------
+*/
+Route::get('/register', [RegisterController::class, 'show'])->name('register.show');
+Route::post('/register', [RegisterController::class, 'register'])->name('register.store');
 
-Route::get("/login", [LoginController::class, "show"])->name("login");
-Route::post("/login-store", [LoginController::class, "login"])->name(
-    "login.store",
-);
-Route::get("/logout", [LoginController::class, "logout"])->name("logout");
+Route::get('/login', [LoginController::class, 'show'])->name('login');
+Route::post('/login', [LoginController::class, 'login'])->name('login.store');
 
-Route::middleware(["auth"])->group(function () {
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+
+/*
+|--------------------------------------------------------------------------
+| Email Verification Routes
+|--------------------------------------------------------------------------
+*/
+Route::middleware('auth')->group(function () {
+
+    // Show verification notice
+    Route::get('/email/verify', function () {
+        return view('auth.verify-email');
+    })->name('verification.notice');
+
+    // Handle verification link
+    Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
+        $request->fulfill();
+        return redirect()->route('dashboard');
+    })->middleware(['signed'])->name('verification.verify');
+
+    // Resend verification email
+    Route::post('/email/verification-notification', function (Request $request) {
+        $request->user()->sendEmailVerificationNotification();
+        return back()->with('success', 'Verification link sent!');
+    })->middleware('throttle:6,1')->name('verification.send');
+});
+
+/*
+|--------------------------------------------------------------------------
+| Protected Backend Routes (auth + verified)
+|--------------------------------------------------------------------------
+*/
+Route::middleware(['auth', 'verified'])->group(function () {
+
+    // Dashboard
     Route::get('dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
 
-    Route::get("/users-list", [UserListController::class, "list"])->name(
-        "users.list",
-    );
-    Route::get("/user-edit/{user}", [UserListController::class, 'edit'])->name('user.edit');
-    Route::put("/user-update/{user}", [UserListController::class, 'update'])->name('user.update');
-    Route::delete('/user-remove/{user}', [UserListController::class, 'destroy'])->name('user.destroy');
+    // User Management
+    Route::prefix('users')->group(function () {
+        Route::get('/list', [UserListController::class, 'list'])->name('users.list');
+        Route::get('/edit/{user}', [UserListController::class, 'edit'])->name('user.edit');
+        Route::put('/update/{user}', [UserListController::class, 'update'])->name('user.update');
+        Route::delete('/remove/{user}', [UserListController::class, 'destroy'])->name('user.destroy');
+    });
 
-    // notice list
+    // Notice Module
     Route::resource('notice', NoticeController::class);
 
-    // order list
-    Route::controller(OrderController::class)->prefix('order')->name('order.')->group(function () {
+    // Orders
+    Route::prefix('order')->name('order.')->controller(OrderController::class)->group(function () {
         Route::get('all', 'list')->name('list');
         Route::get('tracking', 'tracking')->name('tracking');
         Route::get('pending', 'pending')->name('pending');
@@ -64,12 +99,11 @@ Route::middleware(["auth"])->group(function () {
         Route::get('canceled', 'canceled')->name('canceled');
         Route::get('paid', 'paid')->name('paid');
 
-        // order place
+        // Order Placement
         Route::get('place', 'orderPlace')->name('place');
         Route::post('store', 'orderStore')->name('store');
-        Route::get('details/{order}', 'details')
-            ->name('details');
 
+        // Order Details
+        Route::get('details/{order}', 'details')->name('details');
     });
-
 });
