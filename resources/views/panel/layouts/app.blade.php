@@ -75,13 +75,7 @@
       <!-- ---------- HEADER ---------- -->
       @include('panel.partials.header')
 
-      <!-- Activity Drawer Content  -->
-
-      <!-- ---------- END HEADER ---------- -->
-
-      <!-- Layout Menu -->
-
-      <!-- Menu -->
+      
       @include('panel.partials.aside')
       <!-- / Menu -->
 
@@ -101,7 +95,9 @@
       <!-- / Layout Container -->
     </div>
     <!-- / Layout Wrapper -->
-
+@stack('css')
+@stack('js')
+@stack('plugins')
     <!-- Vendors JS -->
     <script src="{{asset('public/assets/dist/libs/apexcharts/dist/apexcharts.min.js')}}"></script>
     <script src="{{asset('public/assets/dist/libs/flyonui/dist/helper-apexcharts.js')}}"></script>

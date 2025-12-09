@@ -17,7 +17,7 @@
       <div class="navbar-end items-end gap-6">
         <!-- GitHub Button -->
         <div class="max-md:hidden">
-          <a class="github-button" href="https://github.com/themeselection/flyonui" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star themeselection/flyonui on GitHub">Star</a>
+          <a class="btn btn-primary" href="{{ route('order.place') }}" >@lang('Order Place')</a>
         </div>
         <script async defer src="https://buttons.github.io/buttons.js"></script>
 
@@ -36,8 +36,8 @@
                 </div>
               </div>
               <div>
-                <h6 class="text-base-content mb-0.5 font-semibold">Mitchell Johnson</h6>
-                <p class="text-base-content/80 font-medium">Influencer</p>
+                <h6 class="text-base-content mb-0.5 font-semibold">{{ auth()->user()->name }}</h6>
+                <p class="text-base-content/80 font-medium">{{ auth()->user()->is_admin == 1 ? 'Admin' : 'User' }}</p>
               </div>
             </li>
             <li>

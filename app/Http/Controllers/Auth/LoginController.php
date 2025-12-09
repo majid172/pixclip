@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
@@ -16,17 +15,19 @@ class LoginController extends Controller
     public function login(Request $request)
     {
         $credentials = $request->validate([
-            "email" => "required|email",
-            "password" => "required",
+            'email'    => 'required|email',
+            'password' => 'required',
         ]);
 
-        if (Auth::attempt($credentials)) {
+        if (Auth::attempt(array_merge($credentials, ['status' => 1]))) {
             $request->session()->regenerate();
 
-            return redirect("/dashboard");
+            return redirect('/dashboard');
         }
 
-        return back()->withErrors(["email" => "Invalid credentials"]);
+        return back()->withErrors([
+            'email' => 'Invalid credentials or account is inactive.',
+        ]);
     }
 
     public function logout(Request $request)

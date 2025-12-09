@@ -43,23 +43,28 @@
                             <td>
 
                                 @if ($item->status == 'In Review')
-                                    <a href="javascript:void(0)" class=""><span class="badge badge-soft badge-success text-xs">In
+                                    <a href="javascript:void(0)" class=""><span
+                                            class="badge badge-soft badge-success text-xs">In
                                             Review</span></a>
                                 @elseif ($item->status == 'Pending')
                                     <a href="javascript:void(0)" class="badge badge-soft badge-primary text-xs">Pending</a>
                                 @elseif ($item->status == 'Processing')
-                                    <a href="javascript:void(0)" class="badge badge-soft badge-primary text-xs">Processing</a>
+                                    <a href="javascript:void(0)"
+                                        class="badge badge-soft badge-primary text-xs">Processing</a>
                                 @elseif ($item->status == 'Received')
                                     <a href="javascript:void(0)" class="badge badge-soft badge-success text-xs">Received</a>
                                 @elseif($item->status == 'Finalizing')
                                     <a href="javascript:void(0)"><span
                                             class="badge badge-soft badge-success text-xs">@lang('Finalized')</span></a>
                                 @elseif($item->status == 'Completed')
-                                    <a href="javascript:void(0)" class="badge badge-soft badge-success text-xs">@lang('Completed')</a>
+                                    <a href="javascript:void(0)"
+                                        class="badge badge-soft badge-success text-xs">@lang('Completed')</a>
                                 @elseif($item->status == 'Invoiced')
-                                    <a href="javascript:void(0)" class="badge badge-soft badge-info text-xs">@lang('Invoiced')</a>
+                                    <a href="javascript:void(0)"
+                                        class="badge badge-soft badge-info text-xs">@lang('Invoiced')</a>
                                 @elseif ($item->status == 'Downloaded')
-                                    <a href="javascript:void(0)" class="badge badge-soft badge-warning text-xs">Downloaded</a>
+                                    <a href="javascript:void(0)"
+                                        class="badge badge-soft badge-warning text-xs">Downloaded</a>
                                 @elseif ($item->status == 'Canceled')
                                     <a href="javascript:void(0)" class="badge badge-soft badge-error text-xs">Canceled</a>
                                 @endif
@@ -68,12 +73,18 @@
                             </td>
 
                             <td>
-                                <button class="btn btn-circle btn-text btn-sm" aria-label="Action button"><span
-                                        class="icon-[tabler--pencil] size-5"></span></button>
-                                <button class="btn btn-circle btn-text btn-sm" aria-label="Action button"><span
-                                        class="icon-[tabler--trash] size-5"></span></button>
-                                <button class="btn btn-circle btn-text btn-sm" aria-label="Action button"><span
-                                        class="icon-[tabler--dots-vertical] size-5"></span></button>
+                                @if (auth()->user()->is_admin == '1')
+                                    <button class="btn btn-circle btn-text btn-sm" aria-label="Action button"><span
+                                            class="icon-[tabler--pencil] size-5"></span></button>
+                                    <button class="btn btn-circle btn-text btn-sm" aria-label="Action button"><span
+                                            class="icon-[tabler--trash] size-5"></span></button>
+                                    <button class="btn btn-circle btn-text btn-sm" aria-label="Action button"><span
+                                            class="icon-[tabler--dots-vertical] size-5"></span></button>
+                                @else
+                                    <a class="btn btn-circle btn-text btn-sm" href="{{ route('order.details',$item->id) }}" aria-label="Action button"><span
+                                            class="icon-[tabler--eye] size-5"></span></a>
+                                @endif
+
                             </td>
                         </tr>
 
@@ -87,7 +98,7 @@
                             <td colspan="8">
                                 <p class="text-center text-warning">@lang('No orders found')</p>
                             </td>
-                            
+
                         </tr>
                     @endforelse
 

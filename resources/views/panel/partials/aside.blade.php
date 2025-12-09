@@ -17,9 +17,7 @@
                   </div>
                   <div class="h-full overflow-y-auto">
                       <ul class="accordion menu menu-sm gap-1 p-3">
-                          <!-- Accordion Menu Item (Level 0) -->
-
-                          <!-- Simple Link Item (for nested items) -->
+                          
                           <li>
                               <a href="{{ url('/dashboard') }}"
                                   class="menu-active inline-flex w-full items-center px-2">
@@ -119,7 +117,6 @@
                               </div>
                           </li>
 
-                    
                           <!-- Section Divider -->
                           <li
                               class="text-base-content/50 before:bg-base-content/20 mt-2 p-2 text-xs uppercase before:absolute before:-start-3 before:top-1/2 before:h-0.5 before:w-2.5">
