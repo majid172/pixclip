@@ -204,11 +204,11 @@
                                     <p class="text-base-content/50 text-sm">{{ $item->country?->name}}</p>
                                 </div>
 
-                               
+
                             </div>
                         </li>
                         @endforeach
-                        
+
 
                         {{-- <li>
                             <div class="flex items-center gap-3">

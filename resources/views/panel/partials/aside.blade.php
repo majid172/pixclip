@@ -17,7 +17,7 @@
                   </div>
                   <div class="h-full overflow-y-auto">
                       <ul class="accordion menu menu-sm gap-1 p-3">
-                          
+
                           <li>
                               <a href="{{ url('/dashboard') }}"
                                   class="menu-active inline-flex w-full items-center px-2">
@@ -54,7 +54,7 @@
                                       </li>
 
                                       <!-- Simple Link Item (for nested items) -->
-                                     
+
 
                                       <!-- Simple Link Item (for nested items) -->
                                       <li>
@@ -100,8 +100,8 @@
                                   <ul class="space-y-1">
                                       <!-- Simple Link Item (for nested items) -->
                                       <li>
-                                          <a href="{{ route('notice.index') }}" class="inline-flex w-full items-center px-2"
-                                              >
+                                          <a href="{{ route('notice.index') }}"
+                                              class="inline-flex w-full items-center px-2">
                                               <span>@lang('List')</span>
                                           </a>
                                       </li>
@@ -118,105 +118,110 @@
                           </li>
 
                           <!-- Section Divider -->
-                          <li
-                              class="text-base-content/50 before:bg-base-content/20 mt-2 p-2 text-xs uppercase before:absolute before:-start-3 before:top-1/2 before:h-0.5 before:w-2.5">
-                              Applications</li>
 
                           <!-- Accordion Menu Item (Level 0) -->
-                          <li class="accordion-item" id="app-user">
-                              <button
-                                  class="accordion-toggle accordion-item-active:bg-neutral/10 inline-flex w-full items-center p-2 text-start text-sm font-normal"
-                                  aria-controls="app-user-collapse-app-user" aria-expanded="true">
-                                  <span class="text-bg-neutral rounded-field flex size-6 items-center justify-center">
-                                      <span class="icon-[tabler--user] size-4.5"></span>
-                                  </span>
-                                  <span class="grow">User</span>
+                          @if (auth()->user()->is_admin)
+                              <li
+                                  class="text-base-content/50 before:bg-base-content/20 mt-2 p-2 text-xs uppercase before:absolute before:-start-3 before:top-1/2 before:h-0.5 before:w-2.5">
+                                  Applications</li>
 
-                                  <span
-                                      class="icon-[tabler--chevron-right] accordion-item-active:rotate-90 size-4.5 shrink-0 transition-transform duration-300 rtl:rotate-180"></span>
-                              </button>
-                              <div id="app-user-collapse-app-user"
-                                  class="accordion-content mt-1 hidden w-full overflow-hidden transition-[height] duration-300"
-                                  aria-labelledby="app-user" role="region">
-                                  <ul class="accordion space-y-1">
-                                      <!-- Simple Link Item (for nested items) -->
-                                      <li>
-                                          <a href="{{ route('users.list') }}"
-                                              class="inline-flex w-full items-center px-2">
-                                              <span>List</span>
-                                          </a>
-                                      </li>
+                              <li class="accordion-item" id="app-user">
+                                  <button
+                                      class="accordion-toggle accordion-item-active:bg-neutral/10 inline-flex w-full items-center p-2 text-start text-sm font-normal"
+                                      aria-controls="app-user-collapse-app-user" aria-expanded="true">
+                                      <span
+                                          class="text-bg-neutral rounded-field flex size-6 items-center justify-center">
+                                          <span class="icon-[tabler--user] size-4.5"></span>
+                                      </span>
+                                      <span class="grow">User</span>
 
-                                      <!-- Accordion Menu Item (Level 1) -->
-                                      <li class="accordion-item" id="app-user-view">
-                                          <button
-                                              class="accordion-toggle accordion-item-active:bg-neutral/10 inline-flex w-full items-center p-2 text-start text-sm font-normal"
-                                              aria-controls="view-collapse-app-user-view" aria-expanded="true">
-                                              <span class="grow">View</span>
-                                              <span
-                                                  class="icon-[tabler--chevron-right] accordion-item-active:rotate-90 size-4.5 shrink-0 transition-transform duration-300 rtl:rotate-180"></span>
-                                          </button>
-                                          <div id="view-collapse-app-user-view"
-                                              class="accordion-content mt-1 hidden w-full overflow-hidden transition-[height] duration-300"
-                                              aria-labelledby="app-user-view" role="region">
-                                              <ul class="space-y-1">
-                                                  <!-- Simple Link Item (for nested items) -->
-                                                  <li>
-                                                      <a href="https://demos.flyonui.com/templates/html/dashboard-default/app-user-view-account.html"
-                                                          class="inline-flex w-full items-center px-2"
-                                                          target="_blank">
-                                                          <span>Account</span>
-                                                      </a>
-                                                  </li>
+                                      <span
+                                          class="icon-[tabler--chevron-right] accordion-item-active:rotate-90 size-4.5 shrink-0 transition-transform duration-300 rtl:rotate-180"></span>
+                                  </button>
+                                  <div id="app-user-collapse-app-user"
+                                      class="accordion-content mt-1 hidden w-full overflow-hidden transition-[height] duration-300"
+                                      aria-labelledby="app-user" role="region">
+                                      <ul class="accordion space-y-1">
+                                          <!-- Simple Link Item (for nested items) -->
+                                          <li>
+                                              <a href="{{ route('users.list') }}"
+                                                  class="inline-flex w-full items-center px-2">
+                                                  <span>List</span>
+                                              </a>
+                                          </li>
 
-                                                  <!-- Simple Link Item (for nested items) -->
-                                                  <li>
-                                                      <a href="https://demos.flyonui.com/templates/html/dashboard-default/app-user-view-security.html"
-                                                          class="inline-flex w-full items-center px-2"
-                                                          target="_blank">
-                                                          <span>Security</span>
-                                                      </a>
-                                                  </li>
+                                          <!-- Accordion Menu Item (Level 1) -->
+                                          <li class="accordion-item" id="app-user-view">
+                                              <button
+                                                  class="accordion-toggle accordion-item-active:bg-neutral/10 inline-flex w-full items-center p-2 text-start text-sm font-normal"
+                                                  aria-controls="view-collapse-app-user-view" aria-expanded="true">
+                                                  <span class="grow">View</span>
+                                                  <span
+                                                      class="icon-[tabler--chevron-right] accordion-item-active:rotate-90 size-4.5 shrink-0 transition-transform duration-300 rtl:rotate-180"></span>
+                                              </button>
+                                              <div id="view-collapse-app-user-view"
+                                                  class="accordion-content mt-1 hidden w-full overflow-hidden transition-[height] duration-300"
+                                                  aria-labelledby="app-user-view" role="region">
+                                                  <ul class="space-y-1">
+                                                      <!-- Simple Link Item (for nested items) -->
+                                                      <li>
+                                                          <a href="https://demos.flyonui.com/templates/html/dashboard-default/app-user-view-account.html"
+                                                              class="inline-flex w-full items-center px-2"
+                                                              target="_blank">
+                                                              <span>Account</span>
+                                                          </a>
+                                                      </li>
 
-                                                  <!-- Simple Link Item (for nested items) -->
-                                                  <li>
-                                                      <a href="https://demos.flyonui.com/templates/html/dashboard-default/app-user-view-billing.html"
-                                                          class="inline-flex w-full items-center px-2"
-                                                          target="_blank">
-                                                          <span>Billing & Plans</span>
-                                                      </a>
-                                                  </li>
+                                                      <!-- Simple Link Item (for nested items) -->
+                                                      <li>
+                                                          <a href="https://demos.flyonui.com/templates/html/dashboard-default/app-user-view-security.html"
+                                                              class="inline-flex w-full items-center px-2"
+                                                              target="_blank">
+                                                              <span>Security</span>
+                                                          </a>
+                                                      </li>
 
-                                                  <!-- Simple Link Item (for nested items) -->
-                                                  <li>
-                                                      <a href="https://demos.flyonui.com/templates/html/dashboard-default/app-user-view-notifications.html"
-                                                          class="inline-flex w-full items-center px-2"
-                                                          target="_blank">
-                                                          <span>Notifications</span>
-                                                      </a>
-                                                  </li>
+                                                      <!-- Simple Link Item (for nested items) -->
+                                                      <li>
+                                                          <a href="https://demos.flyonui.com/templates/html/dashboard-default/app-user-view-billing.html"
+                                                              class="inline-flex w-full items-center px-2"
+                                                              target="_blank">
+                                                              <span>Billing & Plans</span>
+                                                          </a>
+                                                      </li>
 
-                                                  <!-- Simple Link Item (for nested items) -->
-                                                  <li>
-                                                      <a href="https://demos.flyonui.com/templates/html/dashboard-default/app-user-view-connections.html"
-                                                          class="inline-flex w-full items-center px-2"
-                                                          target="_blank">
-                                                          <span>Connections</span>
-                                                      </a>
-                                                  </li>
-                                              </ul>
-                                          </div>
-                                      </li>
-                                  </ul>
-                              </div>
-                          </li>
+                                                      <!-- Simple Link Item (for nested items) -->
+                                                      <li>
+                                                          <a href="https://demos.flyonui.com/templates/html/dashboard-default/app-user-view-notifications.html"
+                                                              class="inline-flex w-full items-center px-2"
+                                                              target="_blank">
+                                                              <span>Notifications</span>
+                                                          </a>
+                                                      </li>
 
-                        
+                                                      <!-- Simple Link Item (for nested items) -->
+                                                      <li>
+                                                          <a href="https://demos.flyonui.com/templates/html/dashboard-default/app-user-view-connections.html"
+                                                              class="inline-flex w-full items-center px-2"
+                                                              target="_blank">
+                                                              <span>Connections</span>
+                                                          </a>
+                                                      </li>
+                                                  </ul>
+                                              </div>
+                                          </li>
+                                      </ul>
+                                  </div>
+                              </li>
+                          @endif
+
+
+
 
                           <!-- Section Divider -->
                           <li
                               class="text-base-content/50 before:bg-base-content/20 mt-2 p-2 text-xs uppercase before:absolute before:-start-3 before:top-1/2 before:h-0.5 before:w-2.5">
-                              eCommerce</li>
+                              Order</li>
 
                           <!-- Accordion Menu Item (Level 0) -->
                           <li class="accordion-item" id="order">
@@ -227,7 +232,7 @@
                                       <span class="icon-[tabler--receipt] size-4.5"></span>
                                   </span>
                                   <span class="grow">Order</span>
-                                 
+
                                   <span
                                       class="icon-[tabler--chevron-right] accordion-item-active:rotate-90 size-4.5 shrink-0 transition-transform duration-300 rtl:rotate-180"></span>
                               </button>
@@ -254,53 +259,53 @@
                                       <!-- Simple Link Item (for nested items) -->
                                       <li>
                                           <a href="{{ route('order.pending') }}"
-                                              class="inline-flex w-full items-center px-2" >
+                                              class="inline-flex w-full items-center px-2">
                                               <span>Pending Order </span>
                                           </a>
                                       </li>
-                                       <li>
+                                      <li>
                                           <a href="{{ route('order.received') }}"
-                                              class="inline-flex w-full items-center px-2" >
+                                              class="inline-flex w-full items-center px-2">
                                               <span>Recieved Order </span>
                                           </a>
                                       </li>
-                                       <li>
+                                      <li>
                                           <a href="{{ route('order.invoiced') }}"
-                                              class="inline-flex w-full items-center px-2" >
+                                              class="inline-flex w-full items-center px-2">
                                               <span>Invoiced Order </span>
                                           </a>
                                       </li>
-                                       <li>
+                                      <li>
                                           <a href="{{ route('order.processing') }}"
                                               class="inline-flex w-full items-center px-2">
                                               <span>Processing Order </span>
                                           </a>
                                       </li>
-                                       <li>
+                                      <li>
                                           <a href="{{ route('order.finalized') }}"
                                               class="inline-flex w-full items-center px-2">
                                               <span>Finalizing Order </span>
                                           </a>
                                       </li>
-                                       <li>
+                                      <li>
                                           <a href="{{ route('order.completed') }}"
                                               class="inline-flex w-full items-center px-2">
                                               <span> Completed Order </span>
                                           </a>
                                       </li>
-                                       <li>
+                                      <li>
                                           <a href="{{ route('order.downloaded') }}"
                                               class="inline-flex w-full items-center px-2">
                                               <span> Downloaded Order </span>
                                           </a>
                                       </li>
-                                       <li>
+                                      <li>
                                           <a href="{{ route('order.canceled') }}"
                                               class="inline-flex w-full items-center px-2">
                                               <span>Canceled Order </span>
                                           </a>
                                       </li>
-                                       <li>
+                                      <li>
                                           <a href="{{ route('order.paid') }}"
                                               class="inline-flex w-full items-center px-2">
                                               <span>Paid Order </span>
@@ -313,7 +318,7 @@
 
                       </ul>
                   </div>
-                
+
               </div>
           </div>
       </aside>

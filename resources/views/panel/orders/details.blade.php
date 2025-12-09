@@ -2,7 +2,6 @@
 @section('content')
     <div class="max-w-7xl mx-auto space-y-8 text-slate-600 ">
 
-        <!-- ✅ HEADER CARD -->
         <div class="relative bg-white rounded-xl shadow p-6 space-y-6 mb-6">
 
             <div class="flex flex-col md:flex-row md:items-center justify-between">

@@ -38,19 +38,19 @@
 
                     <div>
                         <label class="label-text" for="number">Phone Number</label>
-                        <input type="text" id="number" name="number" class="input" placeholder="202 555 0111" />
+                        <input type="text" id="number" name="number" value="{{ $user->userDetail?->phone }}" class="input" placeholder="202 555 0111" />
                     </div>
                     <div>
                         <label class="label-text" for="address">Address</label>
-                        <input type="text" id="address" name="address" class="input" placeholder="Address" />
+                        <input type="text" id="address" name="address" value="{{ $user->userDetail?->address }}" class="input" placeholder="Address" />
                     </div>
                     <div>
                         <label class="label-text" for="state">State</label>
-                        <input type="state" id="state" name="state" class="input" placeholder="California" />
+                        <input type="state" id="state" name="state" value="{{ $user->userDetail?->state }}" class="input" placeholder="California" />
                     </div>
                     <div>
                         <label class="label-text" for="zipCode">Zip Code</label>
-                        <input type="text" id="zipCode" name="zipCode" class="input" placeholder="231465"
+                        <input type="text" id="zipCode" value="{{ $user->userDetail?->post_code }}" name="zipCode" class="input" placeholder="231465"
                             maxlength="6" />
                     </div>
                     <div>
@@ -69,30 +69,11 @@
     }'
                                 class="hidden">
                                 <option value="">Select</option>
-                                <option value="Australia">Australia</option>
-                                <option value="Bangladesh">Bangladesh</option>
-                                <option value="Belarus">Belarus</option>
-                                <option value="Brazil">Brazil</option>
-                                <option value="Canada">Canada</option>
-                                <option value="China">China</option>
-                                <option value="France">France</option>
-                                <option value="Germany">Germany</option>
-                                <option value="India">India</option>
-                                <option value="Indonesia">Indonesia</option>
-                                <option value="Israel">Israel</option>
-                                <option value="Italy">Italy</option>
-                                <option value="Japan">Japan</option>
-                                <option value="Korea">Korea, Republic of</option>
-                                <option value="Mexico">Mexico</option>
-                                <option value="Philippines">Philippines</option>
-                                <option value="Russia">Russian Federation</option>
-                                <option value="South Africa">South Africa</option>
-                                <option value="Thailand">Thailand</option>
-                                <option value="Turkey">Turkey</option>
-                                <option value="Ukraine">Ukraine</option>
-                                <option value="United Arab Emirates">United Arab Emirates</option>
-                                <option value="United Kingdom">United Kingdom</option>
-                                <option value="United States">United States</option>
+
+@foreach($countries as $key=>$country)
+                                <option value="{{ $country->id }}" {{ $country->id == $user->userDetail?->country_id ?'selected' : '' }}>{{$country->name}}</option>
+                                @endforeach
+                               
                             </select>
                         </div>
                     </div>

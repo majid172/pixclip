@@ -41,7 +41,7 @@
               </div>
             </li>
             <li>
-              <a class="dropdown-item px-3" href="#">
+              <a class="dropdown-item px-3" href="{{ route('user.edit',auth()->user()->id) }}">
                 <span class="icon-[tabler--user] size-5"></span>
                 My account
               </a>

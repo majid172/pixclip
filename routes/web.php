@@ -68,7 +68,7 @@ Route::middleware(["auth"])->group(function () {
         Route::get('place', 'orderPlace')->name('place');
         Route::post('store', 'orderStore')->name('store');
         Route::get('details/{order}', 'details')
-            ->name('order.details');
+            ->name('details');
 
     });
 
