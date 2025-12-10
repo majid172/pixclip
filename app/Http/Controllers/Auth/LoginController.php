@@ -36,17 +36,14 @@ class LoginController extends Controller
             ]);
         }
 
-        if ($user->userDetails) {
-            $user->userDetails->update([
+        $user->userDetail()->updateOrCreate(
+            ['user_id' => $user->id],
+            [
+                'uuid' => 'PIXU-'.date('ym').'-'.sprintf('%04d',$user->id),
                 'ip'             => $request->ip(),
                 'last_access_at' => now(),
-            ]);
-        } else {
-            $user->userDetails()->create([
-                'ip'             => $request->ip(),
-                'last_access_at' => now(),
-            ]);
-        }
+            ]
+        );
 
         return redirect()->route('dashboard');
     }

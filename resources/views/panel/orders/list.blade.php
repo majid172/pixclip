@@ -78,11 +78,13 @@
                                             class="icon-[tabler--pencil] size-5"></span></button>
                                     <button class="btn btn-circle btn-text btn-sm" aria-label="Action button"><span
                                             class="icon-[tabler--trash] size-5"></span></button>
-                                    <button class="btn btn-circle btn-text btn-sm" aria-label="Action button"><span
-                                            class="icon-[tabler--dots-vertical] size-5"></span></button>
+                                    <a class="btn btn-circle btn-text btn-sm" href="{{ route('order.details', $item->id) }}">
+                                        <span class="icon-[tabler--eye] size-5"></span></a>
+                                    {{-- <button class="btn btn-circle btn-text btn-sm" aria-label="Action button"><span
+                                            class="icon-[tabler--dots-vertical] size-5"></span></button> --}}
                                 @else
-                                    <a class="btn btn-circle btn-text btn-sm" href="{{ route('order.details',$item->id) }}">
-                                    <span class="icon-[tabler--eye] size-5"></span></a>
+                                    <a class="btn btn-circle btn-text btn-sm" href="{{ route('order.details', $item->id) }}">
+                                        <span class="icon-[tabler--eye] size-5"></span></a>
                                 @endif
 
                             </td>

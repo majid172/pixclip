@@ -12,7 +12,10 @@ class DashboardController extends Controller
 {
     public function dashboard()
     {
-        $orderQuery = Order::query();
+        $orderQuery = auth()->user()->is_admin == 1
+            ? Order::query()
+            : Order::where('user_id', auth()->user()->id);
+
 
         $data = [
             'orders'        => (clone $orderQuery)->where('status', '!=', 'Redo')->latest()->take(5)->get(),
@@ -30,17 +33,19 @@ class DashboardController extends Controller
 
         $data['statusLabels'] = $data['statusCount']->keys();
         $data['statusValues'] = array_map('intval', $data['statusCount']->values()->toArray());
-        $notices              = Notice::where('status', 1)->limit(3)->orderBy('publish_date','desc')->get();
+        $notices              = Notice::where('status', 1)->limit(3)->orderBy('publish_date', 'desc')->get();
 
-        $countries = UserDetails::select('country_id', DB::raw('COUNT(*) as total'))
+        $countryQuery = auth()->user()->is_admin == 1
+            ? UserDetails::query()
+            : UserDetails::where('user_id', auth()->user()->id);
+        $countries = $countryQuery->select('country_id', DB::raw('COUNT(*) as total'))
             ->whereHas('country', function ($q) {
                 $q->where('status', 'Active');
             })
             ->with(['country:id,name,short_name,image'])
             ->groupBy('country_id')
             ->get();
-  
-    
+
         // $payment              = Payment::select('gateway')
         //     ->selectRaw('count(*) as count')
         //     ->groupBy('gateway')
@@ -49,6 +54,6 @@ class DashboardController extends Controller
 
         // $paymentLabels = $payment->keys();
         // $paymentValues = array_map('intval', $payment->values()->toArray());
-        return view('panel.dashboard', $data, compact('notices','countries'));
+        return view('panel.dashboard', $data, compact('notices', 'countries'));
     }
 }

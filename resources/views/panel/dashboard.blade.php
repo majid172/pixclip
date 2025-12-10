@@ -77,7 +77,7 @@
                     <h5 class="text-lg font-medium">Sales</h5>
                 </div>
                 <div>
-                    <div class="text-base-content text-xl font-semibold">${{ $total_price }}</div>
+                    <div class="text-base-content text-xl font-semibold">${{ numberFormat($total_price) }}</div>
                     {{-- <div class="flex items-center gap-2 text-sm font-semibold">
                         <span class="text-success inline-flex items-center gap-1">
                             <span class="icon-[tabler--arrow-up] size-4"></span>
@@ -186,27 +186,28 @@
                     <ul class="flex h-full flex-col justify-between gap-6">
                         @foreach ($countries as $item)
                             <li>
-                            <div class="flex items-center gap-3">
-                                <div class="avatar">
-                                    <div class="size-11 rounded-full">
-                                        <img src="data:image/jpeg;base64,{{ base64_encode($item->country?->image) }}" alt="united states flag" />
+                                <div class="flex items-center gap-3">
+                                    <div class="avatar">
+                                        <div class="size-11 rounded-full">
+                                            <img src="data:image/jpeg;base64,{{ base64_encode($item->country?->image) }}"
+                                                alt="united states flag" />
+                                        </div>
                                     </div>
-                                </div>
 
-                                <div class="grow">
-                                    <div class="flex items-center gap-2.5">
-                                        <h6 class="text-base-content font-semibold">{{ $item->total }}</h6>
-                                        {{-- <div class="text-error flex items-center">
+                                    <div class="grow">
+                                        <div class="flex items-center gap-2.5">
+                                            <h6 class="text-base-content font-semibold">{{ $item->total }}</h6>
+                                            {{-- <div class="text-error flex items-center">
                                             <span class="icon-[tabler--chevron-down] size-4"></span>
                                             <p class="text-sm">7.0%</p>
                                         </div> --}}
+                                        </div>
+                                        <p class="text-base-content/50 text-sm">{{ $item->country?->name }}</p>
                                     </div>
-                                    <p class="text-base-content/50 text-sm">{{ $item->country?->name}}</p>
+
+
                                 </div>
-
-
-                            </div>
-                        </li>
+                            </li>
                         @endforeach
 
 
@@ -426,7 +427,8 @@
                         <tr class="text-center">
                             <td>{{ dateFormat($item->created_at) }}</td>
                             <td>
-                                <a href="/admin/order/{{ $item->id }}" class="text-primary">#{{ $item->order_id }}</a>
+                                <a href="/admin/order/{{ $item->id }}"
+                                    class="text-primary">#{{ $item->order_id }}</a>
                             </td>
 
                             <td>{{ Str::ucfirst($item->job_title) }}</td>
@@ -477,25 +479,12 @@
                             </td>
                         </tr>
 
-
-
-
-
-                        </tr>
                     @empty
                         <tr>
-                            <td>John Doe</td>
-                            <td>johndoe@example.com</td>
-                            <td><span class="badge badge-soft badge-success text-xs">Professional</span></td>
-                            <td>March 1, 2024</td>
-                            <td>
-                                <button class="btn btn-circle btn-text btn-sm" aria-label="Action button"><span
-                                        class="icon-[tabler--pencil] size-5"></span></button>
-                                <button class="btn btn-circle btn-text btn-sm" aria-label="Action button"><span
-                                        class="icon-[tabler--trash] size-5"></span></button>
-                                <button class="btn btn-circle btn-text btn-sm" aria-label="Action button"><span
-                                        class="icon-[tabler--dots-vertical] size-5"></span></button>
+                            <td colspan="8">
+                                <p class="text-center text-error text-md font-semibold">@lang('No orders found')</p>
                             </td>
+
                         </tr>
                     @endforelse
 

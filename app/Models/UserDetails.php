@@ -15,6 +15,8 @@ class UserDetails extends Model
         'state',
         'post_code',
         'country_id',
+        'ip','last_access_at'
+
     ];
     public function country()
     {

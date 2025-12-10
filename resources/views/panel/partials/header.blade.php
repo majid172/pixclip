@@ -47,7 +47,7 @@
               </a>
             </li>
             <li>
-              <a class="dropdown-item px-3" href="#">
+              <a class="dropdown-item px-3" href="{{ route('password') }}">
                 <span class="icon-[tabler--settings] size-5"></span>
                 Setting
               </a>

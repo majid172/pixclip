@@ -59,7 +59,7 @@ class UserListController extends Controller
                 'country_id' => $data['country_id'],
                 'country_id' => $data['country_id'],
                 
-                'uuid' => 'PIXU-'.date('ym').'-'.sprintf('%04d',$user->id)
+                // 'uuid' => 'PIXU-'.date('ym').'-'.sprintf('%04d',$user->id)
             ]
         );
 

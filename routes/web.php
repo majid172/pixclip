@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\Backend\ChangePasswordController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\NoticeController;
 use App\Http\Controllers\Backend\OrderController;
@@ -80,6 +81,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::put('/update/{user}', [UserListController::class, 'update'])->name('user.update');
         Route::delete('/remove/{user}', [UserListController::class, 'destroy'])->name('user.destroy');
     });
+
+    Route::get('change-password',[ChangePasswordController::class,'password'])->name('password');
+    Route::put('change-password',[ChangePasswordController::class,'changePassword'])->name('change.password');
 
     // Notice Module
     Route::resource('notice', NoticeController::class);
