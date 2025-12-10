@@ -88,10 +88,12 @@
                                 @if (auth()->user()->is_admin == '1')
                                     {{-- <button class="btn btn-circle btn-text btn-sm" aria-label="Action button"><span
                                             class="icon-[tabler--pencil] size-5"></span></button> --}}
-                                    <button type="button" class="btn btn-circle btn-text btn-sm" aria-haspopup="dialog"
-                                        aria-expanded="false" aria-controls="add-new-address"
-                                        data-overlay="#add-new-address"><span
-                                            class="icon-[tabler--pencil] size-5"></span></button>
+                                    <button type="button" class="btn btn-circle btn-text btn-sm js-edit-status-btn"
+                                        aria-haspopup="dialog" aria-expanded="false" aria-controls="update-status-modal"
+                                        data-overlay="#update-status-modal" data-id="{{ $item->id }}"
+                                        data-status="{{ $item->status }}">
+                                        <span class="icon-[tabler--pencil] size-5"></span>
+                                    </button>
                                     <button class="btn btn-circle btn-text btn-sm" aria-label="Action button"><span
                                             class="icon-[tabler--trash] size-5"></span></button>
                                     <a class="btn btn-circle btn-text btn-sm"
@@ -126,16 +128,62 @@
 
                 </tbody>
             </table>
-            <div id="add-new-address" class="overlay zph40 overlay-open:opacity-100 overlay-open:duration-300 vsva5 hidden"
-                role="dialog" style="">
-                <div class="aamme bijjq w-full">
-                    <div class="kvrm1">
-                        <div class="smg08 relative fxh9b">
-                            fdasfasf
-                        </div>
+            <div id="update-status-modal" class="overlay zph40 overlay-open:opacity-100 overlay-open:duration-300 hidden"
+                role="dialog">
+                <div class="overlay-body w-[90%] max-w-md rounded-box bg-base-100 p-6 shadow-xl">
+                    <div class="mb-4 flex items-center justify-between">
+                        <h3 class="text-lg font-bold">Update Order Status</h3>
+                        <button type="button" class="btn btn-circle btn-text btn-sm" aria-label="Close"
+                            data-overlay="#update-status-modal">
+                            <span class="icon-[tabler--x] size-5"></span>
+                        </button>
                     </div>
+
+                    <form action="{{ route('order.status.update') }}" method="POST">
+                        @csrf
+                        <input type="hidden" name="order_id" id="modal-order-id">
+
+                        <div class="mb-4">
+                            <label class="label label-text" for="modal-order-status">Select Status</label>
+                            <select class="select select-bordered w-full" name="status" id="modal-order-status">
+                                <option value="In Review">In Review</option>
+                                <option value="Pending">Pending</option>
+                                <option value="Processing">Processing</option>
+                                <option value="Received">Received</option>
+                                <option value="Finalizing">Finalizing</option>
+                                <option value="Completed">Completed</option>
+                                <option value="Invoiced">Invoiced</option>
+                                <option value="Downloaded">Downloaded</option>
+                                <option value="Canceled">Canceled</option>
+                            </select>
+                        </div>
+
+                        <div class="flex justify-end gap-2">
+                            <button type="button" class="btn btn-soft btn-secondary"
+                                data-overlay="#update-status-modal">Cancel</button>
+                            <button type="submit" class="btn btn-primary">Update Status</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const editButtons = document.querySelectorAll('.js-edit-status-btn');
+            const modalOrderId = document.getElementById('modal-order-id');
+            const modalOrderStatus = document.getElementById('modal-order-status');
+
+            editButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const orderId = this.dataset.id;
+                    const orderStatus = this.dataset.status;
+
+                    if (modalOrderId) modalOrderId.value = orderId;
+                    if (modalOrderStatus) modalOrderStatus.value = orderStatus;
+                });
+            });
+        });
+    </script>
 @endsection

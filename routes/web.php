@@ -108,5 +108,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
         // Order Details
         Route::get('details/{order}', 'details')->name('details');
+
+        // Order Status Update
+        Route::post('update-status', 'updateStatus')->name('status.update');
     });
 });

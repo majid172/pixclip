@@ -165,4 +165,21 @@ class OrderController extends Controller
         $total_unpaid = $order->where(['id' => $order->id, 'is_paid' => 0])->count();
         return view ('panel.orders.details',compact('order','services','total_orders','total_unpaid'));
     }
+
+    public function updateStatus(Request $request)
+    {
+        $request->validate([
+            'order_id' => 'required|exists:orders,id',
+            'status'   => 'required|in:In Review,Pending,Processing,Received,Finalizing,Completed,Invoiced,Downloaded,Canceled',
+        ]);
+
+        $order = Order::find($request->order_id);
+        $order->update([
+            'status' => $request->status,
+        ]);
+
+        // Send logic notification if needed (commented out for now as per similar existing methods)
+
+        return back()->with('success', 'Order status updated successfully');
+    }
 }
