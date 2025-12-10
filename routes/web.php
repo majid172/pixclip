@@ -37,7 +37,7 @@ Route::post('/register', [RegisterController::class, 'register'])->name('registe
 Route::get('/login', [LoginController::class, 'show'])->name('login');
 Route::post('/login', [LoginController::class, 'login'])->name('login.store');
 
-Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
 /*
 |--------------------------------------------------------------------------
@@ -46,9 +46,8 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 */
 Route::middleware('auth')->group(function () {
 
-    // Show verification notice
     Route::get('/email/verify', function () {
-        return view('auth.verify-email');
+        return view('auth.verify_email');
     })->name('verification.notice');
 
     // Handle verification link
