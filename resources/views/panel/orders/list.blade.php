@@ -10,9 +10,14 @@
             <table class="table">
                 <thead>
                     <tr class="text-center">
+                        <th>Job Title</th>
                         <th>Date</th>
                         <th>Order No.</th>
-                        <th>Job Title</th>
+                        @if (auth()->user()->is_admin)
+                            <th>User Id</th>
+                        @endif
+
+
                         <th>Amount</th>
                         <th>Quantity</th>
                         <th>Payment</th>
@@ -24,12 +29,19 @@
 
                     @forelse ($orders as $item)
                         <tr class="text-center">
+                            <td>{{ Str::ucfirst($item->job_title) }}</td>
                             <td>{{ dateFormat($item->created_at) }}</td>
                             <td>
                                 <a href="/admin/order/{{ $item->id }}" class="text-primary">#{{ $item->order_id }}</a>
                             </td>
+                            @if (auth()->user()->is_admin)
+                                <td>
+                                    <a href="javascript:void(0)" class="text-success">
+                                        #{{ $item->user->userDetail->uuid }}
+                                    </a>
+                                </td>
+                            @endif
 
-                            <td>{{ Str::ucfirst($item->job_title) }}</td>
                             <td>${{ $item->price }} </td>
                             <td>{{ $item->image_quantity }} </td>
                             <td>
@@ -74,16 +86,22 @@
 
                             <td>
                                 @if (auth()->user()->is_admin == '1')
-                                    <button class="btn btn-circle btn-text btn-sm" aria-label="Action button"><span
+                                    {{-- <button class="btn btn-circle btn-text btn-sm" aria-label="Action button"><span
+                                            class="icon-[tabler--pencil] size-5"></span></button> --}}
+                                    <button type="button" class="btn btn-circle btn-text btn-sm" aria-haspopup="dialog"
+                                        aria-expanded="false" aria-controls="add-new-address"
+                                        data-overlay="#add-new-address"><span
                                             class="icon-[tabler--pencil] size-5"></span></button>
                                     <button class="btn btn-circle btn-text btn-sm" aria-label="Action button"><span
                                             class="icon-[tabler--trash] size-5"></span></button>
-                                    <a class="btn btn-circle btn-text btn-sm" href="{{ route('order.details', $item->id) }}">
+                                    <a class="btn btn-circle btn-text btn-sm"
+                                        href="{{ route('order.details', $item->id) }}">
                                         <span class="icon-[tabler--eye] size-5"></span></a>
                                     {{-- <button class="btn btn-circle btn-text btn-sm" aria-label="Action button"><span
                                             class="icon-[tabler--dots-vertical] size-5"></span></button> --}}
                                 @else
-                                    <a class="btn btn-circle btn-text btn-sm" href="{{ route('order.details', $item->id) }}">
+                                    <a class="btn btn-circle btn-text btn-sm"
+                                        href="{{ route('order.details', $item->id) }}">
                                         <span class="icon-[tabler--eye] size-5"></span></a>
                                 @endif
 
@@ -108,6 +126,16 @@
 
                 </tbody>
             </table>
+            <div id="add-new-address" class="overlay zph40 overlay-open:opacity-100 overlay-open:duration-300 vsva5 hidden"
+                role="dialog" style="">
+                <div class="aamme bijjq w-full">
+                    <div class="kvrm1">
+                        <div class="smg08 relative fxh9b">
+                            fdasfasf
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 @endsection
