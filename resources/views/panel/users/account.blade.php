@@ -1,6 +1,24 @@
 @extends('panel.layouts.app')
 @section('content')
     <div class="card mb-6">
+        <div class="card-header">
+            @if (session('success'))
+                <div class="mb-6 rounded-lg border border-green-200 bg-green-50 p-4 text-green-700">
+                    {{ session('success') }}
+                </div>
+            @endif
+
+            @if ($errors->any())
+                <div class="mb-6 rounded-lg border border-success  p-4">
+                    <ul class="list-disc list-inside text-sm text-red-600">
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+        </div>
+
         <div class="card-body gap-6">
             <div class="border-base-content/20 flex items-end gap-6 border-b pb-4">
                 <div class="avatar">
@@ -38,23 +56,31 @@
 
                     <div>
                         <label class="label-text" for="number">Phone Number</label>
-                        <input type="text" id="number" name="number" value="{{ $user->userDetail?->phone }}" class="input" placeholder="202 555 0111" />
+                        <input type="text" id="number" name="phone" value="{{ $user->userDetail?->phone }}"
+                            class="input" placeholder="202 555 0111" />
                     </div>
                     <div>
                         <label class="label-text" for="address">Address</label>
-                        <input type="text" id="address" name="address" value="{{ $user->userDetail?->address }}" class="input" placeholder="Address" />
+                        <input type="text" id="address" name="address" value="{{ $user->userDetail?->address }}"
+                            class="input" placeholder="Address" />
+                    </div>
+                    <div>
+                        <label class="label-text" for="city">City</label>
+                        <input type="text" id="city" name="city" value="{{ $user->userDetail?->city }}"
+                            class="input" placeholder="City" />
                     </div>
                     <div>
                         <label class="label-text" for="state">State</label>
-                        <input type="state" id="state" name="state" value="{{ $user->userDetail?->state }}" class="input" placeholder="California" />
+                        <input type="state" id="state" name="state" value="{{ $user->userDetail?->state }}"
+                            class="input" placeholder="California" />
                     </div>
                     <div>
                         <label class="label-text" for="zipCode">Zip Code</label>
-                        <input type="text" id="zipCode" value="{{ $user->userDetail?->post_code }}" name="zipCode" class="input" placeholder="231465"
-                            maxlength="6" />
+                        <input type="text" id="zipCode" value="{{ $user->userDetail?->post_code }}" name="post_code"
+                            class="input" placeholder="231465" maxlength="6" />
                     </div>
                     <div>
-                        <label class="label-text" for="coutry">Country</label>
+                        <label class="label-text" for="country">Country</label>
                         <div class="max-w-full">
                             <select
                                 data-select='{
@@ -67,13 +93,15 @@
     "optionTemplate": "<div class=\"flex justify-between items-center w-full\"><span data-title></span><span class=\"icon-[tabler--check] shrink-0 size-4 text-primary hidden selected:block \"></span></div>",
     "extraMarkup": "<span class=\"icon-[tabler--chevron-down] shrink-0 size-4 text-base-content absolute top-1/2 end-3 -translate-y-1/2 \"></span>"
     }'
-                                class="hidden">
+                                class="hidden" name="country_id">
                                 <option value="">Select</option>
 
-@foreach($countries as $key=>$country)
-                                <option value="{{ $country->id }}" {{ $country->id == $user->userDetail?->country_id ?'selected' : '' }}>{{$country->name}}</option>
+                                @foreach ($countries as $key => $country)
+                                    <option value="{{ $country->id }}"
+                                        {{ $country->id == $user->userDetail?->country_id ? 'selected' : '' }}>
+                                        {{ $country->name }}</option>
                                 @endforeach
-                               
+
                             </select>
                         </div>
                     </div>
@@ -91,7 +119,7 @@
     "optionTemplate": "<div class=\"flex justify-between items-center w-full\"><span data-title></span><span class=\"icon-[tabler--check] shrink-0 size-4 text-primary hidden selected:block \"></span></div>",
     "extraMarkup": "<span class=\"icon-[tabler--chevron-down] shrink-0 size-4 text-base-content absolute top-1/2 end-3 -translate-y-1/2 \"></span>"
     }'
-                                class="hidden">
+                                class="hidden" name="status">
                                 <option value="">Select Status</option>
                                 <option value="1" {{ $user->status == 1 ? 'selected' : '' }}>Active</option>
                                 <option value="0" {{ $user->status == 0 ? 'selected' : '' }}>Inactive</option>
@@ -100,66 +128,7 @@
                             </select>
                         </div>
                     </div>
-                    <div>
-                        <label class="label-text" for="timeZones">Timezone</label>
-                        <div class="max-w-full">
-                            <select
-                                data-select='{
-    "placeholder": "Select Timezone",
-    "toggleTag": "<button type=\"button\" aria-expanded=\"false\"></button>",
-    "toggleClasses": "advance-select-toggle select-disabled:pointer-events-none select-disabled:opacity-40",
-    "hasSearch": true,
-    "dropdownClasses": "advance-select-menu max-h-52 pt-0 overflow-y-auto",
-    "optionClasses": "advance-select-option selected:select-active",
-    "optionTemplate": "<div class=\"flex justify-between items-center w-full\"><span data-title></span><span class=\"icon-[tabler--check] shrink-0 size-4 text-primary hidden selected:block \"></span></div>",
-    "extraMarkup": "<span class=\"icon-[tabler--chevron-down] shrink-0 size-4 text-base-content absolute top-1/2 end-3 -translate-y-1/2 \"></span>"
-    }'
-                                class="hidden">
-                                <option value="">Select Timezone</option>
-                                <option value="-12">(GMT-12:00) International Date Line West</option>
-                                <option value="-11">(GMT-11:00) Midway Island, Samoa</option>
-                                <option value="-10">(GMT-10:00) Hawaii</option>
-                                <option value="-9">(GMT-09:00) Alaska</option>
-                                <option value="-8">(GMT-08:00) Pacific Time (US & Canada)</option>
-                                <option value="-8">(GMT-08:00) Tijuana, Baja California</option>
-                                <option value="-7">(GMT-07:00) Arizona</option>
-                                <option value="-7">(GMT-07:00) Chihuahua, La Paz, Mazatlan</option>
-                                <option value="-7">(GMT-07:00) Mountain Time (US & Canada)</option>
-                                <option value="-6">(GMT-06:00) Central America</option>
-                                <option value="-6">(GMT-06:00) Central Time (US & Canada)</option>
-                                <option value="-6">(GMT-06:00) Guadalajara, Mexico City, Monterrey</option>
-                                <option value="-6">(GMT-06:00) Saskatchewan</option>
-                                <option value="-5">(GMT-05:00) Bogota, Lima, Quito, Rio Branco</option>
-                                <option value="-5">(GMT-05:00) Eastern Time (US & Canada)</option>
-                                <option value="-5">(GMT-05:00) Indiana (East)</option>
-                                <option value="-4">(GMT-04:00) Atlantic Time (Canada)</option>
-                                <option value="-4">(GMT-04:00) Caracas, La Paz</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div>
-                        <label class="label-text" for="currency">Currency</label>
-                        <div class="max-w-full">
-                            <select
-                                data-select='{
-    "placeholder": "Select Timezone",
-    "toggleTag": "<button type=\"button\" aria-expanded=\"false\"></button>",
-    "toggleClasses": "advance-select-toggle select-disabled:pointer-events-none select-disabled:opacity-40",
-    "hasSearch": true,
-    "dropdownClasses": "advance-select-menu max-h-52 pt-0 overflow-y-auto",
-    "optionClasses": "advance-select-option selected:select-active",
-    "optionTemplate": "<div class=\"flex justify-between items-center w-full\"><span data-title></span><span class=\"icon-[tabler--check] shrink-0 size-4 text-primary hidden selected:block \"></span></div>",
-    "extraMarkup": "<span class=\"icon-[tabler--chevron-down] shrink-0 size-4 text-base-content absolute top-1/2 end-3 -translate-y-1/2 \"></span>"
-    }'
-                                class="hidden">
-                                <option value="">Select Currency</option>
-                                <option value="usd">USD</option>
-                                <option value="euro">Euro</option>
-                                <option value="pound">Pound</option>
-                                <option value="bitcoin">Bitcoin</option>
-                            </select>
-                        </div>
-                    </div>
+
                 </div>
                 <!-- Submit Button -->
                 <div class="flex gap-3">
@@ -170,7 +139,7 @@
         </div>
     </div>
 
-    <div class="card">
+    {{-- <div class="card">
         <div class="card-header">
             <h5 class="text-base-content text-lg font-medium">Delete Account</h5>
         </div>
@@ -187,5 +156,5 @@
                 <button class="btn btn-error">Deactivate Account</button>
             </div>
         </div>
-    </div>
+    </div> --}}
 @endsection

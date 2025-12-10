@@ -6,6 +6,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class UserDetails extends Model
 {
+    protected $fillable = [
+        'user_id',
+        'uuid',
+        'phone',
+        'address',
+        'city',
+        'state',
+        'post_code',
+        'country_id',
+    ];
     public function country()
     {
         return $this->belongsTo(Country::class,'country_id','id');
