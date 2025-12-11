@@ -2,11 +2,11 @@
             <div class="flex items-center justify-between gap-3 max-lg:flex-col">
                 <p class="text-base-content text-center">
                     &copy;{{ date('Y') }}
-                    <a href="lmajidkhan172@gmail.com" class="text-primary" title="support@binaryit.com">
-                        BinaryIT
+                    <a href="{{route('dashboard')}}" class="text-primary" >
+                        PixClipping 
                     </a>
 
-                    , Made With ❤️ for a better web.
+                    , Design & Developed by <a href="javascript:void(0);" class="text-primary" title="lmajidkhan172@gmail.com">BinaryIT</a>
                 </p>
                 <div class="justify-enter flex items-center gap-4 max-sm:flex-col">
 

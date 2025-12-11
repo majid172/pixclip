@@ -16,9 +16,11 @@
 
       <div class="navbar-end items-end gap-6">
         <!-- GitHub Button -->
+        @if(!auth()->user()->is_admin)
         <div class="max-md:hidden">
           <a class="btn btn-primary" href="{{ route('order.place') }}" >@lang('Order Place')</a>
         </div>
+        @endif
         <script async defer src="https://buttons.github.io/buttons.js"></script>
 
         <!-- Profile Dropdown -->

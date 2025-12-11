@@ -107,12 +107,14 @@
                                       </li>
 
                                       <!-- Simple Link Item (for nested items) -->
+                                      @if (auth()->user()->is_admin == 1)
                                       <li>
                                           <a href="{{ route('notice.create') }}"
                                               class="inline-flex w-full items-center px-2">
                                               <span>@lang('Create')</span>
                                           </a>
                                       </li>
+                                      @endif
                                   </ul>
                               </div>
                           </li>

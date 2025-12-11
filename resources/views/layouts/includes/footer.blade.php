@@ -6,7 +6,7 @@
 
             <div class="lg:col-span-4 space-y-6">
                 <!-- Logo -->
-                <a href="#" class="inline-flex items-center gap-3 group">
+                <a href="javascript:void(0);" class="inline-flex items-center gap-3 group">
                     <div class="w-12 h-12 relative transition-transform duration-500 group-hover:rotate-180">
                         <div class="absolute inset-0 bg-gradient-to-br from-pink-500 to-yellow-500 rounded-lg transform rotate-45 shadow-lg shadow-rose-500/20"></div>
                         <div class="absolute inset-0 flex items-center justify-center text-white font-bold text-3xl drop-shadow-md">P</div>
@@ -103,7 +103,7 @@
             <div class="flex flex-col md:flex-row justify-between items-center text-xs text-slate-500 gap-4">
                 <div class="flex items-center gap-2 text-center md:text-left">
                     <svg class="w-4 h-4 text-rose-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                    <span>Enjoy low prices. We track all piracy intentions.</span>
+                    <span>Design & Developed by <a href="javascript:void(0);" class="text-rose-500 font-bold hover:text-rose-400 cursor-pointer transition">BinaryIT</a></span>
                 </div>
                 <div class="text-center md:text-right">
                     &copy; {{ date('Y') }} Powered by <span class="text-rose-500 font-bold hover:text-rose-400 cursor-pointer transition">PIX CLIPPING LTD</span>.

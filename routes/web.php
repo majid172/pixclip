@@ -77,6 +77,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     // User Management
     Route::prefix('users')->group(function () {
         Route::get('/list', [UserListController::class, 'list'])->name('users.list');
+        Route::get('/show/{user}', [UserListController::class, 'show'])->name('user.show');
         Route::get('/edit/{user}', [UserListController::class, 'edit'])->name('user.edit');
         Route::put('/update/{user}', [UserListController::class, 'update'])->name('user.update');
         Route::delete('/remove/{user}', [UserListController::class, 'destroy'])->name('user.destroy');

@@ -10,7 +10,7 @@
             <table class="table">
                 <thead>
                     <tr class="text-center">
-                        <th>Job Title</th>
+                        <th> Title</th>
                         <th>Date</th>
                         <th>Order No.</th>
                         @if (auth()->user()->is_admin)
@@ -32,12 +32,12 @@
                             <td>{{ Str::ucfirst($item->job_title) }}</td>
                             <td>{{ dateFormat($item->created_at) }}</td>
                             <td>
-                                <a href="/admin/order/{{ $item->id }}" class="text-primary">#{{ $item->order_id }}</a>
+                                <a href="/admin/order/{{ $item->id }}" class="text-primary">{{ $item->order_id }}</a>
                             </td>
                             @if (auth()->user()->is_admin)
                                 <td>
-                                    <a href="javascript:void(0)" class="text-success">
-                                        #{{ $item->user->userDetail->uuid }}
+                                    <a href="{{ route('user.show', $item->user_id) }}" class="text-success">
+                                        {{ $item->user?->userDetail?->uuid ?? "-"}}
                                     </a>
                                 </td>
                             @endif
@@ -52,48 +52,55 @@
                                 @endif
 
                             </td>
+                            
+                            @if(auth()->user()->is_admin)
                             <td>
-
-                                @if ($item->status == 'In Review')
-                                    <a href="javascript:void(0)" class=""><span
-                                            class="badge badge-soft badge-success text-xs">In
-                                            Review</span></a>
-                                @elseif ($item->status == 'Pending')
-                                    <a href="javascript:void(0)" class="badge badge-soft badge-primary text-xs">Pending</a>
-                                @elseif ($item->status == 'Processing')
-                                    <a href="javascript:void(0)"
-                                        class="badge badge-soft badge-primary text-xs">Processing</a>
-                                @elseif ($item->status == 'Received')
-                                    <a href="javascript:void(0)" class="badge badge-soft badge-success text-xs">Received</a>
-                                @elseif($item->status == 'Finalizing')
-                                    <a href="javascript:void(0)"><span
-                                            class="badge badge-soft badge-success text-xs">@lang('Finalized')</span></a>
-                                @elseif($item->status == 'Completed')
-                                    <a href="javascript:void(0)"
-                                        class="badge badge-soft badge-success text-xs">@lang('Completed')</a>
-                                @elseif($item->status == 'Invoiced')
-                                    <a href="javascript:void(0)"
-                                        class="badge badge-soft badge-info text-xs">@lang('Invoiced')</a>
-                                @elseif ($item->status == 'Downloaded')
-                                    <a href="javascript:void(0)"
-                                        class="badge badge-soft badge-warning text-xs">Downloaded</a>
-                                @elseif ($item->status == 'Canceled')
-                                    <a href="javascript:void(0)" class="badge badge-soft badge-error text-xs">Canceled</a>
-                                @endif
-
-
+                                <select class="select select-bordered select-sm w-full max-w-xs js-status-action text-primary border-primary focus:border-primary focus:ring-primary font-semibold"
+                                    data-id="{{ $item->id }}">
+                                    @foreach (['In Review', 'Pending', 'Processing', 'Received', 'Finalizing', 'Completed', 'Invoiced', 'Downloaded', 'Canceled'] as $status)
+                                        <option value="{{ $status }}"
+                                            {{ $item->status == $status ? 'selected' : '' }}>
+                                            {{ $status }}
+                                        </option>
+                                    @endforeach
+                                </select>
                             </td>
-
+                            @else
                             <td>
+                                <!-- Display badge for non-admins -->
+                                @if ($item->status == 'In Review')
+                                    <span class="badge badge-soft badge-success text-xs">In Review</span>
+                                @elseif ($item->status == 'Pending')
+                                    <span class="badge badge-soft badge-primary text-xs">Pending</span>
+                                @elseif ($item->status == 'Processing')
+                                    <span class="badge badge-soft badge-primary text-xs">Processing</span>
+                                @elseif ($item->status == 'Received')
+                                    <span class="badge badge-soft badge-success text-xs">Received</span>
+                                @elseif($item->status == 'Finalizing')
+                                    <span class="badge badge-soft badge-success text-xs">@lang('Finalized')</span>
+                                @elseif($item->status == 'Completed')
+                                    <span class="badge badge-soft badge-success text-xs">@lang('Completed')</span>
+                                @elseif($item->status == 'Invoiced')
+                                    <span class="badge badge-soft badge-info text-xs">@lang('Invoiced')</span>
+                                @elseif ($item->status == 'Downloaded')
+                                    <span class="badge badge-soft badge-warning text-xs">Downloaded</span>
+                                @elseif ($item->status == 'Canceled')
+                                    <span class="badge badge-soft badge-error text-xs">Canceled</span>
+                                @endif
+                            </td>
+                            @endif
+
+                           
+                            <td>
+                               
                                 @if (auth()->user()->is_admin == '1')
-                                    {{-- <button class="btn btn-circle btn-text btn-sm" aria-label="Action button"><span
-                                            class="icon-[tabler--pencil] size-5"></span></button> --}}
-                                    <button type="button" class="btn btn-circle btn-text btn-sm js-edit-status-btn"
+                                   
+                                    <!-- <button type="button" class="btn btn-circle btn-text btn-sm js-edit-status-btn"
                                         aria-haspopup="dialog" aria-expanded="false" aria-controls="update-status-modal"
                                         data-overlay="#update-status-modal" data-id="{{ $item->id }}"
                                         data-status="{{ $item->status }}">
                                         <span class="icon-[tabler--pencil] size-5"></span>
-                                    </button>
+                                    </button> -->
                                     <button class="btn btn-circle btn-text btn-sm" aria-label="Action button"><span
                                             class="icon-[tabler--trash] size-5"></span></button>
                                     <a class="btn btn-circle btn-text btn-sm"
@@ -110,11 +117,6 @@
                             </td>
                         </tr>
 
-
-
-
-
-                        </tr>
                     @empty
                         <tr>
                             <td colspan="8">
@@ -128,62 +130,57 @@
 
                 </tbody>
             </table>
-            <div id="update-status-modal" class="overlay zph40 overlay-open:opacity-100 overlay-open:duration-300 hidden"
-                role="dialog">
-                <div class="overlay-body w-[90%] max-w-md rounded-box bg-base-100 p-6 shadow-xl">
-                    <div class="mb-4 flex items-center justify-between">
-                        <h3 class="text-lg font-bold">Update Order Status</h3>
-                        <button type="button" class="btn btn-circle btn-text btn-sm" aria-label="Close"
-                            data-overlay="#update-status-modal">
-                            <span class="icon-[tabler--x] size-5"></span>
-                        </button>
-                    </div>
-
-                    <form action="{{ route('order.status.update') }}" method="POST">
-                        @csrf
-                        <input type="hidden" name="order_id" id="modal-order-id">
-
-                        <div class="mb-4">
-                            <label class="label label-text" for="modal-order-status">Select Status</label>
-                            <select class="select select-bordered w-full" name="status" id="modal-order-status">
-                                <option value="In Review">In Review</option>
-                                <option value="Pending">Pending</option>
-                                <option value="Processing">Processing</option>
-                                <option value="Received">Received</option>
-                                <option value="Finalizing">Finalizing</option>
-                                <option value="Completed">Completed</option>
-                                <option value="Invoiced">Invoiced</option>
-                                <option value="Downloaded">Downloaded</option>
-                                <option value="Canceled">Canceled</option>
-                            </select>
-                        </div>
-
-                        <div class="flex justify-end gap-2">
-                            <button type="button" class="btn btn-soft btn-secondary"
-                                data-overlay="#update-status-modal">Cancel</button>
-                            <button type="submit" class="btn btn-primary">Update Status</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
+           
         </div>
     </div>
 
+    
+@endsection
+
+@push('js')
+    <!-- jQuery Local -->
+    <script src="{{ asset('public/assets/js/jquery.min.js') }}"></script>
+
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const editButtons = document.querySelectorAll('.js-edit-status-btn');
-            const modalOrderId = document.getElementById('modal-order-id');
-            const modalOrderStatus = document.getElementById('modal-order-status');
+        $(document).ready(function() {
+            $('.js-status-action').on('change', function() {
+                const $this = $(this);
+                const orderId = $this.data('id');
+                const status = $this.val();
+                const originalColor = $this.css('color');
 
-            editButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    const orderId = this.dataset.id;
-                    const orderStatus = this.dataset.status;
+                // Visual feedback
+                $this.prop('disabled', true);
+                $this.css('color', '#9ca3af');
 
-                    if (modalOrderId) modalOrderId.value = orderId;
-                    if (modalOrderStatus) modalOrderStatus.value = orderStatus;
+                $.ajax({
+                    url: "{{ route('order.status.update') }}",
+                    type: "POST",
+                    data: {
+                        order_id: orderId,
+                        status: status,
+                        _token: "{{ csrf_token() }}"
+                    },
+                    dataType: 'json',
+                    success: function(response) {
+                        $this.prop('disabled', false);
+                        $this.css('color', originalColor);
+
+                        if (response.success) {
+                            alert(response.message);
+                            location.reload();
+                        } else {
+                            alert('Something went wrong');
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        console.error('Error:', error);
+                        $this.prop('disabled', false);
+                        $this.css('color', originalColor);
+                        alert('Error updating status');
+                    }
                 });
             });
         });
     </script>
-@endsection
+@endpush

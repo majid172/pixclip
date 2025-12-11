@@ -3,6 +3,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Country;
+use App\Models\Order;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -13,6 +14,30 @@ class UserListController extends Controller
     {
         $users = User::get();
         return view("panel.users.list", compact("users"));
+    }
+    public function show(User $user)
+    {
+        
+        $orderCounts = Order::where('user_id', $user->id)
+            ->selectRaw('status, count(*) as count')
+            ->groupBy('status')
+            ->pluck('count', 'status');
+
+        $totalOrders = $orderCounts->sum();
+        
+        // Ensure all statuses have a default of 0
+        $statuses = ['In Review', 'Pending', 'Received', 'Processing', 'Finalizing', 'Completed', 'Invoiced', 'Downloaded', 'Canceled'];
+        $stats = [];
+        foreach ($statuses as $status) {
+            $stats[$status] = $orderCounts[$status] ?? 0;
+        }
+
+        // Payment Stats
+        $paidOrdersCount = Order::where('user_id', $user->id)->where('is_paid', 1)->count();
+        $unpaidOrdersCount = Order::where('user_id', $user->id)->where('is_paid', 0)->count();
+        $totalSpent = Order::where('user_id', $user->id)->where('is_paid', 1)->sum('price');
+
+        return view('panel.users.show', compact('user', 'totalOrders', 'stats', 'paidOrdersCount', 'unpaidOrdersCount', 'totalSpent'));
     }
     public function edit(User $user)
     {

@@ -2,28 +2,28 @@
 @section('content')
     <div class="card mb-6">
         <div class="card-body gap-6">
-            <form class="space-y-6" action="{{ route('notice.store') }}" method="post">
+            <form class="space-y-6" action="{{ route('notice.update', $notice->id) }}" method="post">
 
                 @csrf
-                @method('POST')
+                @method('PUT')
 
                 <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
                     <div>
                         <label class="label-text" for="name">Name</label>
-                        <input type="text" id="name" name="title" class="input" placeholder="John"
-                            value="" />
+                        <input type="text" id="name" name="title" class="input" placeholder="Notice Title"
+                            value="{{ $notice->title }}" />
                     </div>
 
                     <div>
                         <label class="label-text" for="date">Publish Date</label>
-                       <input type="date" id="date" name="publish_date" class="input" placeholder="John"
-                            value="" />
+                       <input type="date" id="date" name="publish_date" class="input" 
+                            value="{{ $notice->publish_date }}" />
                     </div>
                     <div>
                         <label class="label-text" for="status">Status</label>
-                        <select type="status" id="status" name="status" class="input" placeholder="California">
-                            <option value="1">Active</option>
-                            <option value="2">Inactive</option>
+                        <select type="status" id="status" name="status" class="input">
+                            <option value="1" {{ $notice->status == 1 ? 'selected' : '' }}>Active</option>
+                            <option value="2" {{ $notice->status == 2 ? 'selected' : '' }}>Inactive</option>
                         </select>
                     </div>
                 </div>
@@ -37,12 +37,13 @@
 
                 <!-- Submit Button -->
                 <div class="flex gap-3">
-                    <button class="btn btn-primary" type="submit">Save</button>
+                    <button class="btn btn-primary" type="submit">Update</button>
                     <a href="{{ route('notice.index') }}" class="btn btn-secondary">Cancel</a>
                 </div>
             </form>
         </div>
     </div>
+
     @push('plugins')
     <link href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.snow.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.js"></script>
@@ -68,6 +69,9 @@
                 toolbar: toolbarOptions
             }
         });
+
+        // Load existing content
+        quill.root.innerHTML = `{!! $notice->description !!}`;
 
         // Sync content to hidden textarea on submit
         const form = document.querySelector('form');

@@ -25,6 +25,9 @@ class NoticeController extends Controller
      */
     public function create()
     {
+        if (auth()->user()->is_admin != 1) {
+            abort(403, 'Unauthorized action.');
+        }
         return view('panel.notice.create');
     }
 
@@ -33,6 +36,9 @@ class NoticeController extends Controller
      */
     public function store(Request $request)
     {
+        if (auth()->user()->is_admin != 1) {
+            abort(403, 'Unauthorized action.');
+        }
     
         $data = $request->validate([
             'title'       => 'required|string|max:255',
@@ -55,27 +61,41 @@ class NoticeController extends Controller
         //
     }
 
-/**
- * Show the form for editing the specified resource.
- */
+    /**
+     * Show the form for editing the specified resource.
+     */
     public function edit(string $id)
     {
-        //
+        $notice = Notice::findOrFail($id);
+        return view('panel.notice.edit', compact('notice'));
     }
 
-/**
- * Update the specified resource in storage.
- */
+    /**
+     * Update the specified resource in storage.
+     */
     public function update(Request $request, string $id)
     {
-        //
+        $notice = Notice::findOrFail($id);
+        
+        $data = $request->validate([
+            'title'       => 'required|string|max:255',
+            'description' => 'required|string',
+            'status'      => 'nullable|integer',
+            'publish_date'=> 'required'
+        ]);
+
+        $notice->update($data);
+
+        return back()->with('success', 'Notice updated successfully!');
     }
 
-/**
- * Remove the specified resource from storage.
- */
+    /**
+     * Remove the specified resource from storage.
+     */
     public function destroy(string $id)
     {
-        //
+        $notice = Notice::findOrFail($id);
+        $notice->delete();
+        return back()->with('success', 'Notice deleted successfully!');
     }
 }

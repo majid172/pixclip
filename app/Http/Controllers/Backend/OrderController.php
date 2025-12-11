@@ -180,6 +180,10 @@ class OrderController extends Controller
 
         // Send logic notification if needed (commented out for now as per similar existing methods)
 
+        if ($request->expectsJson()) {
+            return response()->json(['success' => true, 'message' => 'Order status updated successfully']);
+        }
+
         return back()->with('success', 'Order status updated successfully');
     }
 }
