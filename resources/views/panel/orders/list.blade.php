@@ -32,7 +32,7 @@
                             <td>{{ Str::ucfirst($item->job_title) }}</td>
                             <td>{{ dateFormat($item->created_at) }}</td>
                             <td>
-                                <a href="/admin/order/{{ $item->id }}" class="text-primary">{{ $item->order_id }}</a>
+                                <a href="{{ route('order.details', $item->id) }}" class="text-primary">{{ $item->order_id }}</a>
                             </td>
                             @if (auth()->user()->is_admin)
                                 <td>

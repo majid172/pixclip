@@ -89,6 +89,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
     // Notice Module
     Route::resource('notice', NoticeController::class);
 
+    // Chat
+    Route::get('/chat', [\App\Http\Controllers\Backend\ChatController::class, 'index'])->name('chat.index');
+
     // Orders
     Route::prefix('order')->name('order.')->controller(OrderController::class)->group(function () {
         Route::get('all', 'list')->name('list');

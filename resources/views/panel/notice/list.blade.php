@@ -29,6 +29,10 @@
                             </td>
                             <td>{{ dateFormat($item->publish_date) }}</td>
                             <td>
+                                <a class="btn btn-circle btn-text btn-sm" href="{{ route('notice.show', $item->id) }}"
+                                    aria-label="View Details" title="View Details">
+                                    <span class="icon-[tabler--eye] size-5"></span>
+                                </a>
                                 @if (auth()->user()->is_admin == 1)
                                     <a class="btn btn-circle btn-text btn-sm" href="{{ route('notice.edit', $item->id) }}"
                                         aria-label="Action button"><span class="icon-[tabler--pencil] size-5"></span></a>
@@ -41,10 +45,11 @@
                                             <span class="icon-[tabler--trash] size-5"></span>
                                         </button>
                                     </form>
+                                    </form>
                                 @endif
 
-                                <button class="btn btn-circle btn-text btn-sm" aria-label="Action button"><span
-                                        class="icon-[tabler--dots-vertical] size-5"></span></button>
+                                {{-- View Details --}}
+                                
                             </td>
                         </tr>
                     @endforeach

@@ -58,7 +58,8 @@ class NoticeController extends Controller
  */
     public function show(string $id)
     {
-        //
+        $notice = Notice::findOrFail($id);
+        return view('panel.notice.show', compact('notice'));
     }
 
     /**
