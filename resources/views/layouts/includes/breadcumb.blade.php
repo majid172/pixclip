@@ -8,7 +8,7 @@
     <div class="relative z-10 container mx-auto px-4 text-center">
         
         <!-- Small Tag -->
-        <span class="inline-block py-1 px-3 rounded bg-rose-600 text-white text-xs font-bold tracking-wider mb-4 uppercase">
+        <span class="inline-block py-1 px-3 rounded bg-blue-900 text-white text-xs font-bold tracking-wider mb-4 uppercase">
             Start Your Journey
         </span>
 

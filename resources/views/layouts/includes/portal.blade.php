@@ -12,7 +12,7 @@
 
                     <!-- Headline -->
                     <h2 class="text-3xl md:text-3xl font-semibold text-slate-700 mb-6">
-                        Effortlessly navigate <span class="text-rose-600">user-friendly portal!</span>
+                        Effortlessly navigate <span class="text-blue-900">user-friendly portal!</span>
                     </h2>
 
                     <!-- Description -->
@@ -29,7 +29,7 @@
 
                             <!-- List Item 1 -->
                             <div class="flex items-center gap-2.5">
-                                <svg class="w-5 h-5 text-rose-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <svg class="w-5 h-5 text-blue-900 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd"
                                         d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
                                         clip-rule="evenodd"></path>
@@ -39,7 +39,7 @@
 
                             <!-- List Item 2 -->
                             <div class="flex items-center gap-2.5">
-                                <svg class="w-5 h-5 text-rose-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <svg class="w-5 h-5 text-blue-900 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd"
                                         d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
                                         clip-rule="evenodd"></path>
@@ -49,7 +49,7 @@
 
                             <!-- List Item 3 -->
                             <div class="flex items-center gap-2.5">
-                                <svg class="w-5 h-5 text-rose-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <svg class="w-5 h-5 text-blue-900 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd"
                                         d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
                                         clip-rule="evenodd"></path>
@@ -59,7 +59,7 @@
 
                             <!-- List Item 4 -->
                             <div class="flex items-center gap-2.5">
-                                <svg class="w-5 h-5 text-rose-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <svg class="w-5 h-5 text-blue-900 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd"
                                         d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
                                         clip-rule="evenodd"></path>
@@ -69,7 +69,7 @@
 
                             <!-- List Item 5 -->
                             <div class="flex items-center gap-2.5">
-                                <svg class="w-5 h-5 text-rose-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <svg class="w-5 h-5 text-blue-900 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd"
                                         d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
                                         clip-rule="evenodd"></path>
@@ -79,7 +79,7 @@
 
                             <!-- List Item 6 -->
                             <div class="flex items-center gap-2.5">
-                                <svg class="w-5 h-5 text-rose-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <svg class="w-5 h-5 text-blue-900 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd"
                                         d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
                                         clip-rule="evenodd"></path>
@@ -89,7 +89,7 @@
 
                             <!-- List Item 7 -->
                             <div class="flex items-center gap-2.5">
-                                <svg class="w-5 h-5 text-rose-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <svg class="w-5 h-5 text-blue-900 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd"
                                         d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
                                         clip-rule="evenodd"></path>
@@ -99,7 +99,7 @@
 
                             <!-- List Item 8 -->
                             <div class="flex items-center gap-2.5">
-                                <svg class="w-5 h-5 text-rose-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <svg class="w-5 h-5 text-blue-900 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd"
                                         d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
                                         clip-rule="evenodd"></path>
@@ -113,11 +113,11 @@
                     <!-- Buttons -->
                     <div class="flex flex-wrap gap-4">
                         <a href="{{ route('login') }}"
-                            class="px-8 py-3 bg-rose-600 text-white font-medium rounded hover:bg-rose-700 transition shadow-md shadow-rose-200">
+                            class="px-8 py-3 bg-blue-900 text-white font-medium rounded hover:bg-blue-800 transition shadow-md shadow-blue-200">
                             Login Now
                         </a>
                         <a href="#"
-                            class="px-8 py-3 bg-white border border-rose-600 text-rose-600 font-medium rounded hover:bg-rose-50 transition">
+                            class="px-8 py-3 bg-white border border-blue-900 text-blue-900 font-medium rounded hover:bg-blue-50 transition">
                             Get Started
                         </a>
                     </div>

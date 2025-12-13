@@ -17,7 +17,7 @@
     @vite('resources/css/app.css')
 </head>
 
-<body class="flex flex-col min-h-screen bg-amber-50">
+<body class="flex flex-col min-h-screen bg-blue-50">
 
     @include('layouts.includes.topnav')
     @include('layouts.includes.navbar')
@@ -35,9 +35,11 @@
         const btn = document.getElementById('mobile-menu-btn');
         const menu = document.getElementById('mobile-menu');
 
-        btn.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
-        });
+        if (btn && menu) {
+            btn.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+            });
+        }
     </script>
     <script src="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.js"></script>
 {{-- <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> --}}

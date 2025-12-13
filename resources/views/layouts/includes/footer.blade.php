@@ -8,11 +8,11 @@
                 <!-- Logo -->
                 <a href="javascript:void(0);" class="inline-flex items-center gap-3 group">
                     <div class="w-12 h-12 relative transition-transform duration-500 group-hover:rotate-180">
-                        <div class="absolute inset-0 bg-gradient-to-br from-pink-500 to-yellow-500 rounded-lg transform rotate-45 shadow-lg shadow-rose-500/20"></div>
+                        <div class="absolute inset-0 bg-gradient-to-br from-amber-500 to-orange-500 rounded-lg transform rotate-45 shadow-lg shadow-rose-500/20"></div>
                         <div class="absolute inset-0 flex items-center justify-center text-white font-bold text-3xl drop-shadow-md">P</div>
                     </div>
                     <div class="flex flex-col leading-none">
-                        <span class="text-white font-bold text-xl tracking-tight group-hover:text-rose-400 transition-colors">Pix Clipping</span>
+                        <span class="text-white font-bold text-xl tracking-tight group-hover:text-orange-400 transition-colors">Pix Clipping</span>
                         <span class="text-[0.6rem] text-slate-500 uppercase tracking-[0.2em] font-medium mt-1">Exceeding Expectation</span>
                     </div>
                 </a>
@@ -43,29 +43,29 @@
             <div class="lg:col-span-2">
                 <h3 class="text-white text-base font-bold mb-6 relative inline-block">
                     Company
-                    <span class="absolute -bottom-2 left-0 w-8 h-1 bg-rose-500 rounded-full"></span>
+                    <span class="absolute -bottom-2 left-0 w-8 h-1 bg-orange-400 rounded-full"></span>
                 </h3>
                 <ul class="space-y-4 text-slate-400 text-sm">
-                    <li><a href="#" class="hover:text-rose-400 transition-all duration-300 hover:pl-2 flex items-center gap-2"><span>&rsaquo;</span> Home</a></li>
-                    <li><a href="#" class="hover:text-rose-400 transition-all duration-300 hover:pl-2 flex items-center gap-2"><span>&rsaquo;</span> About Us</a></li>
-                    <li><a href="#" class="hover:text-rose-400 transition-all duration-300 hover:pl-2 flex items-center gap-2"><span>&rsaquo;</span> Terms & Conditions</a></li>
-                    <li><a href="#" class="hover:text-rose-400 transition-all duration-300 hover:pl-2 flex items-center gap-2"><span>&rsaquo;</span> Latest Blogs</a></li>
-                    <li><a href="#" class="hover:text-rose-400 transition-all duration-300 hover:pl-2 flex items-center gap-2"><span>&rsaquo;</span> Help & FAQ</a></li>
+                    <li><a href="#" class="hover:text-orange-400 transition-all duration-300 hover:pl-2 flex items-center gap-2"><span>&rsaquo;</span> Home</a></li>
+                    <li><a href="#" class="hover:text-orange-400 transition-all duration-300 hover:pl-2 flex items-center gap-2"><span>&rsaquo;</span> About Us</a></li>
+                    <li><a href="#" class="hover:text-orange-400 transition-all duration-300 hover:pl-2 flex items-center gap-2"><span>&rsaquo;</span> Terms & Conditions</a></li>
+                    <li><a href="#" class="hover:text-orange-400 transition-all duration-300 hover:pl-2 flex items-center gap-2"><span>&rsaquo;</span> Latest Blogs</a></li>
+                    <li><a href="#" class="hover:text-orange-400 transition-all duration-300 hover:pl-2 flex items-center gap-2"><span>&rsaquo;</span> Help & FAQ</a></li>
                 </ul>
             </div>
 
-            <!-- Column 3: Our Services (Span 3 cols) -->
+            <!-- Column 3: Our Services (Span 3 cols)-->
             <div class="lg:col-span-3">
                 <h3 class="text-white text-base font-bold mb-6 relative inline-block">
                     Services
-                    <span class="absolute -bottom-2 left-0 w-8 h-1 bg-rose-500 rounded-full"></span>
+                    <span class="absolute -bottom-2 left-0 w-8 h-1 bg-orange-400 rounded-full"></span>
                 </h3>
                 <ul class="space-y-4 text-slate-400 text-sm">
-                    <li><a href="#" class="hover:text-rose-400 transition-all duration-300 hover:pl-2 flex items-center gap-2"><svg class="w-3 h-3 text-rose-500/50" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg> Clipping Path</a></li>
-                    <li><a href="#" class="hover:text-rose-400 transition-all duration-300 hover:pl-2 flex items-center gap-2"><svg class="w-3 h-3 text-rose-500/50" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg> Background Remove</a></li>
-                    <li><a href="#" class="hover:text-rose-400 transition-all duration-300 hover:pl-2 flex items-center gap-2"><svg class="w-3 h-3 text-rose-500/50" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg> Image Masking</a></li>
-                    <li><a href="#" class="hover:text-rose-400 transition-all duration-300 hover:pl-2 flex items-center gap-2"><svg class="w-3 h-3 text-rose-500/50" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg> Ghost Mannequin</a></li>
-                    <li><a href="#" class="hover:text-rose-400 transition-all duration-300 hover:pl-2 flex items-center gap-2"><svg class="w-3 h-3 text-rose-500/50" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg> Photo Retouching</a></li>
+                    <li><a href="#" class="hover:text-orange-400 transition-all duration-300 hover:pl-2 flex items-center gap-2"><svg class="w-3 h-3 text-rose-500/50" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg> Clipping Path</a></li>
+                    <li><a href="#" class="hover:text-orange-400 transition-all duration-300 hover:pl-2 flex items-center gap-2"><svg class="w-3 h-3 text-rose-500/50" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg> Background Remove</a></li>
+                    <li><a href="#" class="hover:text-orange-400 transition-all duration-300 hover:pl-2 flex items-center gap-2"><svg class="w-3 h-3 text-rose-500/50" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg> Image Masking</a></li>
+                    <li><a href="#" class="hover:text-orange-400 transition-all duration-300 hover:pl-2 flex items-center gap-2"><svg class="w-3 h-3 text-rose-500/50" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg> Ghost Mannequin</a></li>
+                    <li><a href="#" class="hover:text-orange-400 transition-all duration-300 hover:pl-2 flex items-center gap-2"><svg class="w-3 h-3 text-rose-500/50" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg> Photo Retouching</a></li>
                 </ul>
             </div>
 
@@ -75,7 +75,7 @@
                 <!-- CTA Button (Moved up for better visibility) -->
                 <div class="mb-8">
                     <h3 class="text-white text-base font-bold mb-4">Have a Project?</h3>
-                    <a href="#" class="group relative inline-flex items-center gap-3 bg-gradient-to-r from-rose-600 to-pink-600 text-white px-6 py-3.5 text-xs font-bold tracking-widest uppercase rounded shadow-lg shadow-rose-900/40 hover:shadow-rose-500/40 transition-all duration-300 transform hover:-translate-y-1">
+                    <a href="#" class="group relative inline-flex items-center gap-3 bg-gradient-to-r from-orange-400 to-amber-600 text-white px-6 py-3.5 text-xs font-bold tracking-widest uppercase rounded shadow-lg shadow-orange-900/40 hover:shadow-orange-500/40 transition-all duration-300 transform hover:-translate-y-1">
                         <span class="relative z-10">Send a Message</span>
                         <svg class="w-4 h-4 relative z-10 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                         <!-- Button Glow Effect -->
@@ -85,12 +85,12 @@
 
                 <h3 class="text-white text-sm font-bold mb-4 uppercase text-opacity-80">Popular Tags</h3>
                 <div class="flex flex-wrap gap-2">
-                    <a href="#" class="border border-slate-700 bg-slate-800/50 text-slate-400 px-3 py-1.5 text-xs rounded-full hover:border-rose-500 hover:text-white hover:bg-rose-500 transition-all duration-300">Project Proposal</a>
-                    <a href="#" class="border border-slate-700 bg-slate-800/50 text-slate-400 px-3 py-1.5 text-xs rounded-full hover:border-rose-500 hover:text-white hover:bg-rose-500 transition-all duration-300">Free Trial</a>
-                    <a href="#" class="border border-slate-700 bg-slate-800/50 text-slate-400 px-3 py-1.5 text-xs rounded-full hover:border-rose-500 hover:text-white hover:bg-rose-500 transition-all duration-300">Workflow</a>
-                    <a href="#" class="border border-slate-700 bg-slate-800/50 text-slate-400 px-3 py-1.5 text-xs rounded-full hover:border-rose-500 hover:text-black hover:bg-rose-500 transition-all duration-300">Price</a>
-                    <a href="#" class="border border-slate-700 bg-slate-800/50 text-slate-400 px-3 py-1.5 text-xs rounded-full hover:border-rose-500 hover:text-white hover:bg-rose-500 transition-all duration-300">Order Now</a>
-                    <a href="#" class="border border-slate-700 bg-slate-800/50 text-slate-400 px-3 py-1.5 text-xs rounded-full hover:border-rose-500 hover:text-white hover:bg-rose-500 transition-all duration-300">Portfolio</a>
+                    <a href="#" class="border border-slate-700 bg-slate-800/50 text-slate-400 px-3 py-1.5 text-xs rounded-full hover:border-orange-400 hover:text-white hover:bg-orange-400 transition-all duration-300">Project Proposal</a>
+                    <a href="{{route('free.trial')}}" class="border border-slate-700 bg-slate-800/50 text-slate-400 px-3 py-1.5 text-xs rounded-full hover:border-orange-400 hover:text-white hover:bg-orange-400 transition-all duration-300">Free Trial</a>
+                    <a href="{{url('workflow')}}" class="border border-slate-700 bg-slate-800/50 text-slate-400 px-3 py-1.5 text-xs rounded-full hover:border-orange-400 hover:text-white hover:bg-orange-400 transition-all duration-300">Workflow</a>
+                    <a href="{{url('price')}}" class="border border-slate-700 bg-slate-800/50 text-slate-400 px-3 py-1.5 text-xs rounded-full hover:border-orange-400 hover:text-black hover:bg-orange-400 transition-all duration-300">Price</a>
+                    <a href="#" class="border border-slate-700 bg-slate-800/50 text-slate-400 px-3 py-1.5 text-xs rounded-full hover:border-orange-400 hover:text-white hover:bg-orange-400 transition-all duration-300">Order Now</a>
+                    <a href="#" class="border border-slate-700 bg-slate-800/50 text-slate-400 px-3 py-1.5 text-xs rounded-full hover:border-orange-400 hover:text-white hover:bg-orange-400 transition-all duration-300">Portfolio</a>
                 </div>
             </div>
 
@@ -102,11 +102,11 @@
         <div class="container mx-auto px-6 md:px-12 py-6">
             <div class="flex flex-col md:flex-row justify-between items-center text-xs text-slate-500 gap-4">
                 <div class="flex items-center gap-2 text-center md:text-left">
-                    <svg class="w-4 h-4 text-rose-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                    <span>Design & Developed by <a href="javascript:void(0);" class="text-rose-500 font-bold hover:text-rose-400 cursor-pointer transition">BinaryIT</a></span>
+                    <svg class="w-4 h-4 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <span>Design & Developed by <a href="javascript:void(0);" class="text-orange-400 font-bold hover:text-orange-500 cursor-pointer transition">BinaryIT</a></span>
                 </div>
                 <div class="text-center md:text-right">
-                    &copy; {{ date('Y') }} Powered by <span class="text-rose-500 font-bold hover:text-rose-400 cursor-pointer transition">PIX CLIPPING LTD</span>.
+                    &copy; {{ date('Y') }} Powered by <span class="text-orange-400 font-bold hover:text-orange-500 cursor-pointer transition">PIX CLIPPING LTD</span>.
                 </div>
             </div>
         </div>

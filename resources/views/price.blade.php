@@ -76,7 +76,7 @@
                 <div
                     class="bg-white rounded-xl border border-gray-200 p-6 flex flex-col items-center hover:shadow-lg transition-shadow duration-300">
                     <!-- Icon -->
-                    <div class="text-rose-600 mb-4">
+                    <div class="text-blue-900 mb-4">
                         <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24"
                             fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"
                             stroke-linejoin="round">
@@ -92,7 +92,7 @@
 
                     <!-- Price Pill -->
                     <div class="border-2 border-slate-200 rounded-full px-8 py-2 mb-4">
-                        <span class="text-2xl font-bold text-rose-600">$0.00</span>
+                        <span class="text-2xl font-bold text-blue-900">$0.00</span>
                     </div>
 
                     <p class="text-xs text-slate-500 text-center mb-8 leading-relaxed">
@@ -104,35 +104,35 @@
                     <ul class="w-full text-sm text-slate-600 mb-8 space-y-0">
                         <li class="flex justify-between items-center py-2 border-b border-gray-100">
                             <span>Les design and simple edge</span>
-                            <svg class="w-4 h-4 text-rose-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg class="w-4 h-4 text-blue-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
                                 </path>
                             </svg>
                         </li>
                         <li class="flex justify-between items-center py-2 border-b border-gray-100">
                             <span>Single diamond</span>
-                            <svg class="w-4 h-4 text-rose-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg class="w-4 h-4 text-blue-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
                                 </path>
                             </svg>
                         </li>
                         <li class="flex justify-between items-center py-2 border-b border-gray-100">
                             <span>Single gemstone</span>
-                            <svg class="w-4 h-4 text-rose-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg class="w-4 h-4 text-blue-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
                                 </path>
                             </svg>
                         </li>
                         <li class="flex justify-between items-center py-2 border-b border-gray-100">
                             <span>Cluster ring</span>
-                            <svg class="w-4 h-4 text-rose-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg class="w-4 h-4 text-blue-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
                                 </path>
                             </svg>
                         </li>
                         <li class="flex justify-between items-center py-2 border-b border-gray-100">
                             <span>Long chain</span>
-                            <svg class="w-4 h-4 text-rose-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg class="w-4 h-4 text-blue-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
                                 </path>
                             </svg>
@@ -140,7 +140,7 @@
                     </ul>
 
                     <button
-                        class="bg-rose-600 text-white text-sm font-medium py-2.5 px-6 rounded hover:bg-rose-600 transition-colors mt-auto">
+                        class="bg-blue-900 text-white text-sm font-medium py-2.5 px-6 rounded hover:bg-blue-800 transition-colors mt-auto">
                         See Sample <span class="ml-1 text-xs">▶</span>
                     </button>
                 </div>
@@ -149,7 +149,7 @@
                 <div
                     class="bg-white rounded-xl border border-gray-200 p-6 flex flex-col items-center hover:shadow-lg transition-shadow duration-300">
                     <!-- Icon -->
-                    <div class="text-rose-600 mb-4 relative">
+                    <div class="text-blue-900 mb-4 relative">
                         <!-- Composite icon to look like multiple boxes -->
                         <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24"
                             fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"
@@ -169,7 +169,7 @@
 
                     <!-- Price Pill -->
                     <div class="border-2 border-slate-200 rounded-full px-6 py-2 mb-4">
-                        <span class="text-2xl font-bold text-rose-600">$5.00 - $8.99</span>
+                        <span class="text-2xl font-bold text-blue-900">$5.00 - $8.99</span>
                     </div>
 
                     <p class="text-xs text-slate-500 text-center mb-8 leading-relaxed">
@@ -181,35 +181,35 @@
                     <ul class="w-full text-sm text-slate-600 mb-8 space-y-0">
                         <li class="flex justify-between items-center py-2 border-b border-gray-100">
                             <span>Curvy design</span>
-                            <svg class="w-4 h-4 text-rose-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg class="w-4 h-4 text-blue-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
                                 </path>
                             </svg>
                         </li>
                         <li class="flex justify-between items-center py-2 border-b border-gray-100">
                             <span>Multiple edges</span>
-                            <svg class="w-4 h-4 text-rose-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg class="w-4 h-4 text-blue-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
                                 </path>
                             </svg>
                         </li>
                         <li class="flex justify-between items-center py-2 border-b border-gray-100">
                             <span>Two colors</span>
-                            <svg class="w-4 h-4 text-rose-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg class="w-4 h-4 text-blue-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
                                 </path>
                             </svg>
                         </li>
                         <li class="flex justify-between items-center py-2 border-b border-gray-100">
                             <span>Double diamond</span>
-                            <svg class="w-4 h-4 text-rose-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg class="w-4 h-4 text-blue-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
                                 </path>
                             </svg>
                         </li>
                         <li class="flex justify-between items-center py-2 border-b border-gray-100">
                             <span>Double gemstone</span>
-                            <svg class="w-4 h-4 text-rose-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg class="w-4 h-4 text-blue-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
                                 </path>
                             </svg>
@@ -217,7 +217,7 @@
                     </ul>
 
                     <button
-                        class="bg-rose-600 text-white text-sm font-medium py-2.5 px-6 rounded hover:bg-rose-600 transition-colors mt-auto">
+                        class="bg-blue-900 text-white text-sm font-medium py-2.5 px-6 rounded hover:bg-blue-800 transition-colors mt-auto">
                         See Sample <span class="ml-1 text-xs">▶</span>
                     </button>
                 </div>
@@ -226,7 +226,7 @@
                 <div
                     class="bg-white rounded-xl border border-gray-200 p-6 flex flex-col items-center hover:shadow-lg transition-shadow duration-300">
                     <!-- Icon -->
-                    <div class="text-rose-600 mb-4">
+                    <div class="text-blue-900 mb-4">
                         <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24"
                             fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"
                             stroke-linejoin="round">
@@ -246,7 +246,7 @@
 
                     <!-- Price Pill -->
                     <div class="border-2 border-slate-200 rounded-full px-8 py-2 mb-4">
-                        <span class="text-2xl font-bold text-rose-600">Talk to us</span>
+                        <span class="text-2xl font-bold text-blue-900">Talk to us</span>
                     </div>
 
                     <p class="text-xs text-slate-500 text-center mb-8 leading-relaxed">
@@ -257,35 +257,35 @@
                     <ul class="w-full text-sm text-slate-600 mb-8 space-y-0">
                         <li class="flex justify-between items-center py-2 border-b border-gray-100">
                             <span>Complex design</span>
-                            <svg class="w-4 h-4 text-rose-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg class="w-4 h-4 text-blue-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
                                 </path>
                             </svg>
                         </li>
                         <li class="flex justify-between items-center py-2 border-b border-gray-100">
                             <span>Group of Jewelry</span>
-                            <svg class="w-4 h-4 text-rose-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg class="w-4 h-4 text-blue-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
                                 </path>
                             </svg>
                         </li>
                         <li class="flex justify-between items-center py-2 border-b border-gray-100">
                             <span>Numerous edge</span>
-                            <svg class="w-4 h-4 text-rose-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg class="w-4 h-4 text-blue-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
                                 </path>
                             </svg>
                         </li>
                         <li class="flex justify-between items-center py-2 border-b border-gray-100">
                             <span>Multiple diamonds</span>
-                            <svg class="w-4 h-4 text-rose-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg class="w-4 h-4 text-blue-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
                                 </path>
                             </svg>
                         </li>
                         <li class="flex justify-between items-center py-2 border-b border-gray-100">
                             <span>Multiple gemstones</span>
-                            <svg class="w-4 h-4 text-rose-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg class="w-4 h-4 text-blue-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
                                 </path>
                             </svg>
@@ -293,7 +293,7 @@
                     </ul>
 
                     <button
-                        class="bg-rose-600 text-white text-sm font-medium py-2.5 px-6 rounded hover:bg-rose-600 transition-colors mt-auto">
+                        class="bg-blue-900 text-white text-sm font-medium py-2.5 px-6 rounded hover:bg-blue-800 transition-colors mt-auto">
                         See Sample <span class="ml-1 text-xs">▶</span>
                     </button>
                 </div>
@@ -308,7 +308,7 @@
             <!-- Section Header -->
             <div class="text-center mb-16 md:mb-20">
                 <h2 class="text-2xl md:text-3xl font-semibold text-slate-500 leading-snug">
-                    <span class="text-rose-600">PixClipping</span> - Where Affordability Meets<br />
+                    <span class="text-blue-900">PixClipping</span> - Where Affordability Meets<br />
                     Performance in Post-Processing
                 </h2>
             </div>

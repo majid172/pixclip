@@ -1,26 +1,26 @@
-<nav class="bg-amber-50 shadow-sm sticky top-0 z-50 font-sans">
+<nav class="bg-blue-50 shadow-sm sticky top-0 z-50 font-sans">
     <div class="container mx-auto px-4 md:px-8 py-4 flex justify-between items-center">
 
         <!-- Logo -->
         <a href="{{ url('/') }}" class="flex items-center gap-2">
             <div class="w-8 h-8 relative">
-                <div class="absolute inset-0 bg-rose-600 transform rotate-45 opacity-20 rounded"></div>
-                <div class="absolute inset-0 flex items-center justify-center text-rose-600 font-bold text-xl">P</div>
+                <div class="absolute inset-0 bg-indigo-900 transform rotate-45 opacity-20 rounded"></div>
+                <div class="absolute inset-0 flex items-center justify-center text-indigo-900 font-bold text-xl">P</div>
             </div>
             <div class="flex flex-col leading-none">
-                <span class="text-rose-600 font-bold text-lg tracking-tight">Pix Clipping</span>
+                <span class="text-indigo-900 font-bold text-lg tracking-tight">Pix Clipping</span>
                 <span class="text-[0.6rem] text-gray-400 uppercase tracking-widest">Exceeding Expectation</span>
             </div>
         </a>
 
         <!-- Desktop Menu Links -->
-        <div class="hidden lg:flex items-center space-x-8 text-[15px] font-medium text-blue-900">
+        <div class="hidden lg:flex items-center space-x-8 text-[15px] font-medium text-indigo-900">
 
-            <a href="{{ url('/') }}" class="hover:text-rose-600 transition">Home</a>
+            <a href="{{ url('/') }}" class="hover:text-orange-600 transition">Home</a>
 
             <!-- DROPDOWN: Services -->
             <div class="relative group h-full flex items-center">
-                <button class="flex items-center gap-1 hover:text-rose-600 transition focus:outline-none">
+                <button class="flex items-center gap-1 hover:text-orange-600 transition focus:outline-none">
                     Services
                     <svg class="w-3 h-3 transform group-hover:rotate-180 transition-transform duration-300"
                         fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -31,44 +31,42 @@
                 <!-- Main Dropdown -->
                 <div
                     class="absolute top-full left-0 pt-6 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2 w-64">
-                    <div class="bg-white rounded-lg shadow-xl border-t-4 border-rose-600 py-2 px-1">
+                    <div class="bg-white rounded-lg shadow-xl border-t-4 border-orange-600 py-2 px-1">
 
-                        <!-- ITEM 1: Clipping Path (HAS SUBMENU) -->
-                        <!-- We use 'group/sub' to name this specific hover group so it doesn't conflict with parent -->
                         <div class="relative group/sub">
                             <a href="javascript:void(0)"
-                                class="flex justify-between items-center px-4 py-2 text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-600 rounded transition">
+                                class="flex justify-between items-center px-4 py-2 text-sm text-gray-600 hover:bg-orange-50 hover:text-orange-600 rounded transition">
                                 <span>@lang('Editing')</span>
-                                <!-- Right Arrow to indicate submenu -->
-                                <svg class="w-3 h-3 text-gray-400 group-hover/sub:text-rose-600" fill="none"
+                              
+                                <svg class="w-3 h-3 text-gray-400 group-hover/sub:text-orange-600" fill="none"
                                     stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M9 5l7 7-7 7"></path>
                                 </svg>
                             </a>
 
-                            <!-- THE SUBMENU (Flyout Right) -->
+                          
                             <div
                                 class="absolute left-full top-0 ml-1 w-56 opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible transition-all duration-300 transform group-hover/sub:translate-x-0 -translate-x-2">
-                                <div class="bg-white rounded-lg shadow-xl border-t-4 border-rose-600 py-2 px-1">
+                                <div class="bg-white rounded-lg shadow-xl border-t-4 border-orange-600 py-2 px-1">
                                     <a href="{{ route('services.slug', 'clipping-path') }}"
-                                        class="block px-4 py-2 text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-600 rounded transition">
+                                        class="block px-4 py-2 text-sm text-gray-600 hover:bg-orange-50 hover:text-orange-600 rounded transition">
                                         Clipping Path</a>
                                     <a href="{{ route('services.slug', 'background-remove') }}"
-                                        class="block px-4 py-2 text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-600 rounded transition">Background
+                                        class="block px-4 py-2 text-sm text-gray-600 hover:bg-orange-50 hover:text-orange-600 rounded transition">Background
                                         Remove</a>
                                     <a href="{{ route('services.slug', 'shadow-making') }}"
-                                        class="block px-4 py-2 text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-600 rounded transition">@lang('Shadow Making')</a>
+                                        class="block px-4 py-2 text-sm text-gray-600 hover:bg-orange-50 hover:text-orange-600 rounded transition">@lang('Shadow Making')</a>
                                     <a href="{{ route('services.slug', 'ghost-mannequin') }}"
-                                        class="block px-4 py-2 text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-600 rounded transition">Ghost
+                                        class="block px-4 py-2 text-sm text-gray-600 hover:bg-orange-50 hover:text-orange-600 rounded transition">Ghost
                                         Mannequin</a>
 
                                     <a href="{{ route('services.slug', 'photo-recoloring') }}"
-                                        class="block px-4 py-2 text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-600 rounded transition">Photo
+                                        class="block px-4 py-2 text-sm text-gray-600 hover:bg-orange-50 hover:text-orange-600 rounded transition">Photo
                                         Recoloring</a>
 
                                     <a href="{{ route('services.slug', 'ghost-mannequin') }}"
-                                        class="block px-4 py-2 text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-600 rounded transition">Real
+                                        class="block px-4 py-2 text-sm text-gray-600 hover:bg-orange-50 hover:text-orange-600 rounded transition">Real
                                         Estate Editing</a>
                                 </div>
                             </div>
@@ -78,9 +76,9 @@
                         <!-- ITEM 2: Image Masking (HAS SUBMENU) -->
                         <div class="relative group/sub">
                             <a href="javascript:void(0)"
-                                class="flex justify-between items-center px-4 py-2 text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-600 rounded transition">
+                                class="flex justify-between items-center px-4 py-2 text-sm text-gray-600 hover:bg-orange-50 hover:text-orange-600 rounded transition">
                                 <span>Retouching</span>
-                                <svg class="w-3 h-3 text-gray-400 group-hover/sub:text-rose-600" fill="none"
+                                <svg class="w-3 h-3 text-gray-400 group-hover/sub:text-orange-600" fill="none"
                                     stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M9 5l7 7-7 7"></path>
@@ -89,19 +87,19 @@
                             <!-- SUBMENU -->
                             <div
                                 class="absolute left-full top-0 ml-1 w-56 opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible transition-all duration-300 transform group-hover/sub:translate-x-0 -translate-x-2">
-                                <div class="bg-white rounded-lg shadow-xl border-t-4 border-rose-600 py-2 px-1">
+                                <div class="bg-white rounded-lg shadow-xl border-t-4 border-orange-600 py-2 px-1">
                                     <a href="#"
-                                        class="block px-4 py-2 text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-600 rounded transition">High-End
+                                        class="block px-4 py-2 text-sm text-gray-600 hover:bg-orange-50 hover:text-orange-600 rounded transition">High-End
                                         Retouching</a>
 
                                     <a href="#"
-                                        class="block px-4 py-2 text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-600 rounded transition">Jewelry
+                                        class="block px-4 py-2 text-sm text-gray-600 hover:bg-orange-50 hover:text-orange-600 rounded transition">Jewelry
                                         Enhancement</a>
                                     <a href="#"
-                                        class="block px-4 py-2 text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-600 rounded transition">Headshot
+                                        class="block px-4 py-2 text-sm text-gray-600 hover:bg-orange-50 hover:text-orange-600 rounded transition">Headshot
                                         Editing</a>
                                     <a href="#"
-                                        class="block px-4 py-2 text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-600 rounded transition">Food
+                                        class="block px-4 py-2 text-sm text-gray-600 hover:bg-orange-50 hover:text-orange-600 rounded transition">Food
                                         Retouching</a>
                                 </div>
                             </div>
@@ -109,9 +107,9 @@
 
                         <div class="relative group/sub">
                             <a href="javascript:void(0)"
-                                class="flex justify-between items-center px-4 py-2 text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-600 rounded transition">
+                                class="flex justify-between items-center px-4 py-2 text-sm text-gray-600 hover:bg-orange-50 hover:text-orange-600 rounded transition">
                                 <span>Photography</span>
-                                <svg class="w-3 h-3 text-gray-400 group-hover/sub:text-rose-600" fill="none"
+                                <svg class="w-3 h-3 text-gray-400 group-hover/sub:text-orange-600" fill="none"
                                     stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M9 5l7 7-7 7"></path>
@@ -120,19 +118,19 @@
                             <!-- SUBMENU -->
                             <div
                                 class="absolute left-full top-0 ml-1 w-56 opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible transition-all duration-300 transform group-hover/sub:translate-x-0 -translate-x-2">
-                                <div class="bg-white rounded-lg shadow-xl border-t-4 border-rose-600 py-2 px-1">
+                                <div class="bg-white rounded-lg shadow-xl border-t-4 border-orange-600 py-2 px-1">
                                     <a href="javascript:void(0)"
-                                        class="block px-4 py-2 text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-600 rounded transition">Product
+                                        class="block px-4 py-2 text-sm text-gray-600 hover:bg-orange-50 hover:text-orange-600 rounded transition">Product
                                         Photography</a>
 
                                     <a href="javascript:void(0)"
-                                        class="block px-4 py-2 text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-600 rounded transition">Apparel
+                                        class="block px-4 py-2 text-sm text-gray-600 hover:bg-orange-50 hover:text-orange-600 rounded transition">Apparel
                                         Photography</a>
                                     <a href="javascript:void(0)"
-                                        class="block px-4 py-2 text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-600 rounded transition">Jewelry
+                                        class="block px-4 py-2 text-sm text-gray-600 hover:bg-orange-50 hover:text-orange-600 rounded transition">Jewelry
                                         Photography</a>
                                     <a href="javascript:void(0)"
-                                        class="block px-4 py-2 text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-600 rounded transition">School
+                                        class="block px-4 py-2 text-sm text-gray-600 hover:bg-orange-50 hover:text-orange-600 rounded transition">School
                                         Photography
                                     </a>
                                 </div>
@@ -142,9 +140,9 @@
 
                         <div class="relative group/sub">
                             <a href="javascript:void(0)"
-                                class="flex justify-between items-center px-4 py-2 text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-600 rounded transition">
+                                class="flex justify-between items-center px-4 py-2 text-sm text-gray-600 hover:bg-orange-50 hover:text-orange-600 rounded transition">
                                 <span>@lang('E-Commerce')</span>
-                                <svg class="w-3 h-3 text-gray-400 group-hover/sub:text-rose-600" fill="none"
+                                <svg class="w-3 h-3 text-gray-400 group-hover/sub:text-orange-600" fill="none"
                                     stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M9 5l7 7-7 7"></path>
@@ -153,16 +151,16 @@
                             <!-- SUBMENU -->
                             <div
                                 class="absolute left-full top-0 ml-1 w-56 opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible transition-all duration-300 transform group-hover/sub:translate-x-0 -translate-x-2">
-                                <div class="bg-white rounded-lg shadow-xl border-t-4 border-rose-600 py-2 px-1">
+                                <div class="bg-white rounded-lg shadow-xl border-t-4 border-orange-600 py-2 px-1">
                                     <a href="{{ route('services.slug','essential-editing') }}"
-                                        class="block px-4 py-2 text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-600 rounded transition">Essential Editing</a>
+                                        class="block px-4 py-2 text-sm text-gray-600 hover:bg-orange-50 hover:text-orange-600 rounded transition">Essential Editing</a>
 
                                     <a href="{{ route('services.slug','amazon') }}"
-                                        class="block px-4 py-2 text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-600 rounded transition">Amazon, e-Bay, Shopify Ready</a>
+                                        class="block px-4 py-2 text-sm text-gray-600 hover:bg-orange-50 hover:text-orange-600 rounded transition">Amazon, e-Bay, Shopify Ready</a>
                                     <a href="{{  route('services.slug','ecommerce') }}"
-                                        class="block px-4 py-2 text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-600 rounded transition">E-commerce 360 degree editing</a>
+                                        class="block px-4 py-2 text-sm text-gray-600 hover:bg-orange-50 hover:text-orange-600 rounded transition">E-commerce 360 degree editing</a>
                                     <a href="{{ route('services.slug','image-optimization') }}"
-                                        class="block px-4 py-2 text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-600 rounded transition">Image Optimization
+                                        class="block px-4 py-2 text-sm text-gray-600 hover:bg-orange-50 hover:text-orange-600 rounded transition">Image Optimization
                                     </a>
                                 </div>
                             </div>
@@ -171,12 +169,12 @@
                 </div>
             </div>
 
-            <a href="{{ url('/workflow') }}" class="hover:text-rose-600 transition">Workflow</a>
-            <a href="{{ url('/price') }}" class="hover:text-rose-600 transition">Price</a>
+            <a href="{{ url('/workflow') }}" class="hover:text-orange-600 transition">Workflow</a>
+            <a href="{{ url('/price') }}" class="hover:text-orange-600 transition">Price</a>
 
             <!-- DROPDOWN: Resources -->
             <div class="relative group h-full flex items-center">
-                <button class="flex items-center gap-1 hover:text-rose-600 transition focus:outline-none">
+                <button class="flex items-center gap-1 hover:text-orange-600 transition focus:outline-none">
                     Resources
                     <svg class="w-3 h-3 transform group-hover:rotate-180 transition-transform duration-300"
                         fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -186,14 +184,14 @@
                 </button>
                 <div
                     class="absolute top-full -left-4 pt-6 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2 w-48">
-                    <div class="bg-white rounded-lg shadow-xl border-t-4 border-rose-600 py-2 px-1">
+                    <div class="bg-white rounded-lg shadow-xl border-t-4 border-orange-600 py-2 px-1">
                         <a href="#"
-                            class="block px-4 py-2 text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-600 rounded transition">Blog</a>
+                            class="block px-4 py-2 text-sm text-gray-600 hover:bg-orange-50 hover:text-orange-600 rounded transition">Blog</a>
                         <a href="#"
-                            class="block px-4 py-2 text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-600 rounded transition">Case
+                            class="block px-4 py-2 text-sm text-gray-600 hover:bg-orange-50 hover:text-orange-600 rounded transition">Case
                             Studies</a>
                         <a href="#"
-                            class="block px-4 py-2 text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-600 rounded transition">Help
+                            class="block px-4 py-2 text-sm text-gray-600 hover:bg-orange-50 hover:text-orange-600 rounded transition">Help
                             Center</a>
                     </div>
                 </div>
@@ -201,7 +199,7 @@
 
             <!-- DROPDOWN: Company -->
             <div class="relative group h-full flex items-center">
-                <button class="flex items-center gap-1 hover:text-rose-600 transition focus:outline-none">
+                <button class="flex items-center gap-1 hover:text-orange-600 transition focus:outline-none">
                     Company
                     <svg class="w-3 h-3 transform group-hover:rotate-180 transition-transform duration-300"
                         fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -211,17 +209,17 @@
                 </button>
                 <div
                     class="absolute top-full right-0 pt-6 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2 w-48">
-                    <div class="bg-white rounded-lg shadow-xl border-t-4 border-rose-600 py-2 px-1">
+                    <div class="bg-white rounded-lg shadow-xl border-t-4 border-orange-600 py-2 px-1">
                         <a href="{{ url('/about') }}"
-                            class="block px-4 py-2 text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-600 rounded transition">About
+                            class="block px-4 py-2 text-sm text-gray-600 hover:bg-orange-50 hover:text-orange-600 rounded transition">About
                             Company</a>
                         {{-- <a href="#"
-                            class="block px-4 py-2 text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-600 rounded transition">Career</a>
+                            class="block px-4 py-2 text-sm text-gray-600 hover:bg-orange-50 hover:text-orange-600 rounded transition">Career</a>
                         <a href="#"
-                            class="block px-4 py-2 text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-600 rounded transition">Our
+                            class="block px-4 py-2 text-sm text-gray-600 hover:bg-orange-50 hover:text-orange-600 rounded transition">Our
                             Team</a> --}}
                         <a href="{{ url('/contact') }}"
-                            class="block px-4 py-2 text-sm text-gray-600 hover:bg-rose-50 hover:text-rose-600 rounded transition">Contact
+                            class="block px-4 py-2 text-sm text-gray-600 hover:bg-orange-50 hover:text-orange-600 rounded transition">Contact
                             Us</a>
                     </div>
                 </div>
@@ -247,7 +245,7 @@
                     </svg></a>
             </div>
             <a href="#"
-                class="bg-gradient-to-r from-rose-700 to-pink-600 hover:from-rose-800 hover:to-pink-700 text-white px-6 py-2.5 rounded shadow-lg shadow-rose-200 font-bold text-sm flex items-center gap-2 transition transform hover:-translate-y-0.5">
+                class="bg-indigo-900 text-white px-6 py-2.5 rounded shadow-lg shadow-indigo-200 font-bold text-sm flex items-center gap-2 transition transform hover:-translate-y-0.5">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
@@ -258,7 +256,7 @@
 
         <!-- Mobile Menu Toggle -->
         <div class="lg:hidden">
-            <button id="mobile-menu-btn" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')"
+            <button id="mobile-menu-btn"
                 class="text-rose-900 hover:text-rose-600 p-2 focus:outline-none">
                 <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7">
@@ -275,7 +273,7 @@
 
             <!-- Mobile Services with Submenu structure -->
             <div class="border-l-2 border-gray-100 pl-4 space-y-3">
-                <span class="block font-bold text-rose-500 text-sm uppercase tracking-wider mb-2">Services</span>
+                <span class="block font-bold text-blue-900 text-sm uppercase tracking-wider mb-2">Services</span>
 
                 <!-- Clipping Path Mobile Submenu -->
                 <div class="space-y-1">

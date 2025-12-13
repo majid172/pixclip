@@ -12,7 +12,7 @@
                 <div class="flex items-center gap-4">
                     <!-- Filled Button -->
                     <a href="{{ route('free.trial') }}"
-                        class="bg-rose-600 hover:bg-rose-700 text-white text-sm font-medium px-6 py-2.5 rounded shadow-sm transition-colors duration-200">
+                        class="bg-orange-400 hover:bg-orange-500 text-white text-sm font-medium px-6 py-2.5 rounded shadow-sm transition-colors duration-200">
                         Free Trial
                     </a>
 

@@ -15,7 +15,7 @@
                 </h2>
 
                 <h1 class="text-slate-600 text-3xl md:text-4xl font-bold mb-6">
-                    Keep Accurate <span class="text-rose-600">Shape</span>
+                    Keep Accurate <span class="text-blue-900">Shape</span>
                 </h1>
 
                 <!-- Description Paragraph -->
@@ -28,8 +28,8 @@
                 <div class="flex flex-wrap gap-4">
 
                     <!-- Free Trial Button -->
-                    <a href="#"
-                        class="group flex items-center gap-2 bg-rose-600 hover:bg-rose-700 text-white text-sm font-medium py-3 px-6 rounded transition-colors duration-200">
+                    <a href="{{route('free.trial')}}"
+                        class="group flex items-center gap-2 bg-blue-900 hover:bg-blue-800 text-white text-sm font-medium py-3 px-6 rounded transition-colors duration-200">
                         Free Trial
                         <!-- Chevron Right Icon -->
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
@@ -39,8 +39,8 @@
                     </a>
 
                     <!-- Get Started Button -->
-                    <a href="#"
-                        class="group flex items-center gap-2 bg-white border border-rose-200 hover:bg-rose-50 text-rose-500 text-sm font-medium py-3 px-6 rounded transition-colors duration-200">
+                    <a href="javascript:void(0)"
+                        class="group flex items-center gap-2 bg-white border border-orange-200 hover:bg-orange-50 text-orange-500 text-sm font-medium py-3 px-6 rounded transition-colors duration-200">
                         Get Started
 
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
@@ -64,7 +64,7 @@
                     <!-- Icon: Stack / Layers (Representing Volume) -->
                     <div class="mb-5">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" class="w-12 h-12 text-rose-600">
+                            stroke="currentColor" class="w-12 h-12 text-blue-900">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M6.429 9.75L2.25 12l4.179 2.25m0-4.5l5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0l-5.571 3-5.571-3" />
                         </svg>
@@ -81,7 +81,7 @@
                     <!-- Icon: Clock (Representing Time) -->
                     <div class="mb-5">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" class="w-12 h-12 text-rose-600">
+                            stroke="currentColor" class="w-12 h-12 text-blue-900">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
@@ -98,7 +98,7 @@
                     <!-- Icon: Infinity (Representing Unlimited) -->
                     <div class="mb-5">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" class="w-12 h-12 text-rose-600">
+                            stroke="currentColor" class="w-12 h-12 text-blue-900">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M8.25 12a3.75 3.75 0 11-5.303 5.303 3.75 3.75 0 015.303-5.303zm0 0c2.25-2.25 5.25 2.25 7.5 0m0 0a3.75 3.75 0 115.303-5.304A3.75 3.75 0 0115.75 12" />
                         </svg>
@@ -121,7 +121,7 @@
             <!-- Left Column: Main Text -->
             <div class="flex flex-col items-start">
                 <!-- Badge -->
-                <span class="inline-block bg-rose-100 text-rose-600 text-xs font-semibold px-4 py-1.5 rounded-full mb-6">
+                <span class="inline-block bg-orange-100 text-blue-900 text-xs font-semibold px-4 py-1.5 rounded-full mb-6">
                     What we do?
                 </span>
 
@@ -158,7 +158,7 @@
                     <!-- Icon: Team/People -->
                     <div class="mb-4">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" class="w-10 h-10 text-rose-500">
+                            stroke="currentColor" class="w-10 h-10 text-blue-900">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
                         </svg>
@@ -174,12 +174,12 @@
                     <!-- Icon: Pen Tool / Bezier -->
                     <div class="mb-4">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" class="w-10 h-10 text-rose-500">
+                            stroke="currentColor" class="w-10 h-10 text-blue-900">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125" />
                             <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 7.5L12 12" />
-                            <circle cx="6" cy="18" r="2" fill="currentColor" class="text-rose-200" />
-                            <circle cx="18" cy="6" r="1" fill="currentColor" class="text-rose-500" />
+                            <circle cx="6" cy="18" r="2" fill="currentColor" class="text-blue-200" />
+                            <circle cx="18" cy="6" r="1" fill="currentColor" class="text-blue-500" />
                         </svg>
                     </div>
                     <h3 class="text-lg font-semibold text-slate-600 mb-2">Hand-drawn Clipping</h3>
@@ -193,10 +193,10 @@
                     <!-- Icon: Shapes -->
                     <div class="mb-4">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" class="w-10 h-10 text-rose-500">
+                            stroke="currentColor" class="w-10 h-10 text-blue-900">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M5.25 7.5A2.25 2.25 0 017.5 5.25h9a2.25 2.25 0 012.25 2.25v9a2.25 2.25 0 01-2.25 2.25h-9a2.25 2.25 0 01-2.25-2.25v-9z" />
-                            <circle cx="16" cy="16" r="4" class="text-rose-300" stroke="currentColor"
+                            <circle cx="16" cy="16" r="4" class="text-blue-300" stroke="currentColor"
                                 stroke-width="1.5" fill="white" />
                         </svg>
                     </div>
@@ -212,7 +212,7 @@
                     <!-- Icon: Thumbs Up -->
                     <div class="mb-4">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" class="w-10 h-10 text-rose-500">
+                            stroke="currentColor" class="w-10 h-10 text-blue-900">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M6.633 10.5c.806 0 1.533-.446 2.031-1.08a9.041 9.041 0 012.861-2.4c.723-.384 1.35-.956 1.653-1.715a4.498 4.498 0 00.322-1.672V3a.75.75 0 01.75-.75A2.25 2.25 0 0116.5 4.5c0 1.152-.26 2.247-.723 3.218-.266.558.107 1.282.725 1.282h3.126c1.026 0 1.945.694 2.054 1.715.045.422.068.85.068 1.285a11.95 11.95 0 01-2.649 7.521c-.388.482-.987.729-1.605.729H13.48c-.483 0-.964-.078-1.423-.23l-3.114-1.04a4.501 4.501 0 00-1.423-.23H5.904M14.25 9h2.25M5.904 18.75c.083.205.173.405.27.602.197.4-.078.898-.523.898h-.908c-.889 0-1.713-.518-1.972-1.368a12 12 0 01-.521-3.507c0-1.553.295-3.036.831-4.396C3.387 10.203 4.167 9.75 5 9.75h1.053c.472 0 .745.556.5.96a8.958 8.958 0 00-1.302 4.665c0 1.194.232 2.333.654 3.375z" />
                         </svg>
@@ -233,7 +233,7 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
                 <div class="flex justify-center relative">
-                    <div class="absolute inset-0 bg-rose-200/20 rounded-full filter blur-3xl transform scale-75"></div>
+                    <div class="absolute inset-0 bg-blue-200/20 rounded-full filter blur-3xl transform scale-75"></div>
 
                     <img src="{{ asset('public/assets/images/images/clipping_path/multi_path/image.png') }}"
                         alt="Multi Path Service Illustration"
@@ -243,7 +243,7 @@
                 <!-- Right Column: Content -->
                 <div class="flex flex-col items-start text-left">
                     <h2 class="text-3xl md:text-3xl lg:text-3xl font-extrabold text-slate-600 leading-tight mb-8">
-                        <span class="text-rose-600">Multi Path Service:</span> <br>
+                        <span class="text-blue-900">Multi Path Service:</span> <br>
                         Separate Color, Parts, Object in Photos
                     </h2>
 
@@ -272,7 +272,7 @@
                     <!-- Optional CTA Button to complete the look -->
                     <div class="mt-8">
                         <a href="#"
-                            class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-rose-600 hover:bg-rose-600 md:text-lg transition duration-300 shadow-lg shadow-rose-600/30">
+                            class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-900 hover:bg-blue-900 md:text-lg transition duration-300 shadow-lg shadow-blue-900/30">
                             Get Started
                         </a>
                     </div>
@@ -285,7 +285,7 @@
 
         <!-- Header Section -->
         <div class="text-center mb-16 md:mb-24">
-            <span class="inline-block bg-rose-50 text-rose-500 text-xs font-bold px-4 py-1.5 rounded-full mb-4">
+            <span class="inline-block bg-orange-50 text-blue-900 text-xs font-bold px-4 py-1.5 rounded-full mb-4">
                 Why Us?
             </span>
             <h2 class="text-3xl md:text-3xl lg:text-3xl font-bold text-slate-600 mb-6 leading-tight">
@@ -365,7 +365,7 @@
                         class="w-20 h-20 md:w-24 md:h-24 rounded-full border-2 border-rose-200 bg-white overflow-hidden shadow-sm">
                         <!-- Placeholder -->
                         <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=1887&auto=format&fit=crop"
-                            class="w-full h-full object-cover scale-[3] origin-bottom-left grayscale" alt="">
+                            class="w-full h-full object-cover scale-[3] origin-bottom-left grayscale" alt="jkj">
                     </div>
                     <span class="text-xs font-bold text-slate-700 mt-2 border-b border-slate-700 pb-0.5">Inline-Clipping
                         Path</span>
@@ -377,7 +377,7 @@
                         class="w-20 h-20 md:w-24 md:h-24 rounded-full border-2 border-rose-200 bg-white overflow-hidden shadow-sm">
                         <!-- Placeholder -->
                         <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=1887&auto=format&fit=crop"
-                            class="w-full h-full object-cover scale-[2]" alt="">
+                            class="w-full h-full object-cover scale-[2]" alt="2132">
                     </div>
                     <span class="text-xs font-bold text-slate-700 mt-2 border-b border-slate-700 pb-0.5">Active-Clipping
                         Path</span>
@@ -387,7 +387,6 @@
 
             <!-- Right Column: Text Content -->
             <div class="flex flex-col space-y-8 text-slate-500 text-[15px] leading-relaxed">
-
                 <p>
                     Our designers manually complete all of the work in order to offer the best clipping path service. To
                     construct a path around the image, we use the Pen Tool in Adobe Photoshop. We don't use the magic wand
@@ -417,7 +416,7 @@
         <!-- Header Section -->
         <div class="text-center mb-16">
             <span
-                class="inline-block bg-rose-100 text-rose-600 text-[11px] font-bold px-4 py-1.5 rounded-full mb-4 uppercase tracking-wide">
+                class="inline-block bg-orange-100 text-blue-900 text-[11px] font-bold px-4 py-1.5 rounded-full mb-4 uppercase tracking-wide">
                 Portfolio
             </span>
             <h2 class="text-3xl md:text-4xl font-bold text-slate-600 mb-4">
@@ -429,19 +428,14 @@
             </p>
         </div>
 
-        <!-- Portfolio Masonry Grid -->
-        <!-- Using 5 columns to match the specific layout of the screenshot -->
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 items-start">
 
-            <!-- Column 1: Chair + Button -->
             <div class="flex flex-col gap-6">
-                <!-- Chair -->
                 <div
                     class="bg-white p-6 rounded-lg shadow-sm hover:shadow-lg transition-shadow duration-300 flex items-center justify-center aspect-square">
                     <img src="https://images.unsplash.com/photo-1580480055273-228ff5388ef8?q=80&w=1000&auto=format&fit=crop"
                         alt="Office Chair" class="w-full h-full object-contain">
                 </div>
-                <!-- Button -->
                 <a href="#"
                     class="w-full bg-amber-400 hover:bg-amber-500 text-slate-900 font-semibold py-4 rounded-lg flex items-center justify-center gap-2 transition-colors duration-300 shadow-sm">
                     More Sample
@@ -451,7 +445,6 @@
                     </svg>
                 </a>
             </div>
-
             <!-- Column 2: Plant + Sunglasses -->
             <div class="flex flex-col gap-6">
                 <!-- Plant -->

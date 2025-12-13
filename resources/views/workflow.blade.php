@@ -10,7 +10,7 @@
                     <h1 class="text-3xl md:text-4xl lg:text-4xl font-bold text-slate-800 leading-tight">
                         Enhance Images With
 
-                        <span class="text-rose-600 block mt-1 md:inline md:mt-0 ">
+                        <span class="text-blue-900 block mt-1 md:inline md:mt-0 ">
                             Simplified Post-Processing
                         </span>
                     </h1>
@@ -43,7 +43,7 @@
             <!-- Top Text Section -->
             <div class="text-center mb-16">
                 <h2 class="text-2xl md:text-3xl font-bold text-slate-600 mb-5">
-                    Why <span class="text-rose-600">PixClipping?</span> 
+                    Why <span class="text-blue-900">PixClipping?</span> 
                 </h2>
                 <p class="text-slate-500 text-sm md:text-base leading-relaxed max-w-2xl mx-auto">
                     Our customers are satisfied with the work we do.<br class="hidden md:block" />
@@ -136,7 +136,7 @@
 
             <!-- Header -->
             <div class="text-center max-w-3xl mx-auto mb-20">
-                <h2 class="mt-6 text-4xl font-semibold text-slate-800 mb-4">Effortless <span class="text-rose-600">Photo
+                <h2 class="mt-6 text-4xl font-semibold text-slate-800 mb-4">Effortless <span class="text-blue-900">Photo
                         editing, simplified</span> </h2>
 
                 <p class="text-slate-500 text-base md:text-md leading-relaxed">
@@ -162,7 +162,7 @@
                     <div
                         class="bg-white rounded-2xl p-6 shadow-md border border-slate-100 flex items-start gap-6 hover:-translate-y-1 transition-transform duration-300">
                         <div class="flex-shrink-0">
-                            <div class="w-12 h-12 flex items-center justify-center rounded-lg bg-rose-50 text-rose-600">
+                            <div class="w-12 h-12 flex items-center justify-center rounded-lg bg-orange-50 text-blue-900">
                                 <!-- List/Form Icon -->
                                 <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none"
                                     viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
@@ -184,7 +184,7 @@
                         class="bg-white rounded-2xl p-6 shadow-md border border-slate-100 flex items-start gap-6 hover:-translate-y-1 transition-transform duration-300">
                         <div class="flex-shrink-0">
                             <!-- Icon Container -->
-                            <div class="w-12 h-12 flex items-center justify-center rounded-lg bg-rose-50 text-rose-600">
+                            <div class="w-12 h-12 flex items-center justify-center rounded-lg bg-orange-50 text-blue-900">
                                 <!-- Credit Card Icon -->
                                 <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none"
                                     viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
@@ -206,7 +206,7 @@
                         class="bg-white rounded-2xl p-6 shadow-md border border-slate-100 flex items-start gap-6 hover:-translate-y-1 transition-transform duration-300">
                         <div class="flex-shrink-0">
                             <!-- Icon Container -->
-                            <div class="w-12 h-12 flex items-center justify-center rounded-lg bg-rose-50 text-rose-600">
+                            <div class="w-12 h-12 flex items-center justify-center rounded-lg bg-orange-50 text-blue-900">
                                 <!-- Download Cloud Icon -->
                                 <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none"
                                     viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">

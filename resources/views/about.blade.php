@@ -8,15 +8,15 @@
                 <!-- Image Side -->
                 <div class="w-full lg:w-1/2 relative">
                     <!-- Decorative back square -->
-                    <div class="absolute -top-4 -left-4 w-2/3 h-2/3 bg-rose-50 rounded-2xl -z-10"></div>
-                    <div class="absolute -bottom-4 -right-4 w-2/3 h-2/3 bg-rose-100 rounded-2xl -z-10"></div>
+                    <div class="absolute -top-4 -left-4 w-2/3 h-2/3 bg-orange-50 rounded-2xl -z-10"></div>
+                    <div class="absolute -bottom-4 -right-4 w-2/3 h-2/3 bg-orange-100 rounded-2xl -z-10"></div>
                     
                     <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80&w=1000" 
                          alt="Our Team Working" 
                          class="rounded-xl shadow-2xl w-full object-cover h-[400px] md:h-[500px]">
                          
                     <!-- Experience Badge -->
-                    <div class="absolute bottom-10 left-[-20px] md:left-[-30px] bg-rose-600 text-white p-6 rounded-lg shadow-xl hidden md:block">
+                    <div class="absolute bottom-10 left-[-20px] md:left-[-30px] bg-blue-900 text-white p-6 rounded-lg shadow-xl hidden md:block">
                         <p class="text-4xl font-bold">12+</p>
                         <p class="text-sm opacity-90 uppercase tracking-wide">Years Experience</p>
                     </div>
@@ -24,9 +24,9 @@
 
                 <!-- Text Side -->
                 <div class="w-full lg:w-1/2">
-                    <h3 class="text-rose-600 font-bold uppercase tracking-wider text-sm mb-2">Who We Are</h3>
+                    <h3 class="text-blue-900 font-bold uppercase tracking-wider text-sm mb-2">Who We Are</h3>
                     <h2 class="text-3xl md:text-3xl font-bold text-slate-800 mb-6 leading-tight">
-                        We Provide High Quality <br> <span class="text-rose-600">Image Editing</span> Services.
+                        We Provide High Quality <br> <span class="text-blue-900">Image Editing</span> Services.
                     </h2>
                     <p class="text-slate-500 text-md mb-6 leading-relaxed">
                         PixClipping began with a simple mission: to help e-commerce businesses and photographers shine through perfect imagery. We combine human creativity with cutting-edge technology to deliver results that exceed expectations.
@@ -38,20 +38,20 @@
                     <!-- Feature List -->
                     <ul class="space-y-4 mb-8">
                         <li class="flex items-center">
-                            <svg class="w-5 h-5 text-rose-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            <svg class="w-5 h-5 text-blue-900 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
                             <span class="font-medium text-slate-700">100% Satisfaction Guarantee</span>
                         </li>
                         <li class="flex items-center">
-                            <svg class="w-5 h-5 text-rose-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            <svg class="w-5 h-5 text-blue-900 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
                             <span class="font-medium text-slate-700">24/7 Dedicated Support</span>
                         </li>
                         <li class="flex items-center">
-                            <svg class="w-5 h-5 text-rose-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            <svg class="w-5 h-5 text-blue-900 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
                             <span class="font-medium text-slate-700">Secure & Confidential</span>
                         </li>
                     </ul>
 
-                    <a href="#" class="inline-block bg-rose-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-rose-700 transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
+                    <a href="#" class="inline-block bg-blue-900 text-white font-bold py-3 px-8 rounded-lg hover:bg-blue-800 transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
                         Discover More
                     </a>
                 </div>
@@ -68,7 +68,7 @@
 
                 <!-- Item 1: Easy Dashboard -->
                 <div class="flex flex-col items-center">
-                    <div class="mb-3 text-rose-500"> <!-- Adjusted color to match specific blue -->
+                    <div class="mb-3 text-blue-900"> <!-- Adjusted color to match specific blue -->
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                             <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
@@ -87,7 +87,7 @@
 
                 <!-- Item 2: Powerful Features -->
                 <div class="flex flex-col items-center">
-                    <div class="mb-3 text-rose-500">
+                    <div class="mb-3 text-blue-900">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                             <path
@@ -105,7 +105,7 @@
 
                 <!-- Item 3: Excellent Design -->
                 <div class="flex flex-col items-center">
-                    <div class="mb-3 text-rose-500">
+                    <div class="mb-3 text-blue-900">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                             <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
@@ -131,7 +131,7 @@
             
             <!-- Section Header -->
             <div class="text-center mb-16">
-                <h3 class="text-rose-500 font-bold uppercase tracking-wider text-sm mb-2">Expert Team</h3>
+                <h3 class="text-blue-900 font-bold uppercase tracking-wider text-sm mb-2">Expert Team</h3>
                 <h2 class="text-3xl md:text-3xl font-bold text-slate-800">Meet The Creatives</h2>
             </div>
 

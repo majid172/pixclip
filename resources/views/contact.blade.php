@@ -23,7 +23,7 @@
                     <!-- Address -->
                     <div class="flex items-start group">
                         <div
-                            class="flex-shrink-0 flex items-center justify-center w-12 h-12 rounded-lg bg-rose-50 text-rose-600 group-hover:bg-rose-600 group-hover:text-white transition-colors duration-300">
+                            class="flex-shrink-0 flex items-center justify-center w-12 h-12 rounded-lg bg-orange-50 text-blue-900 group-hover:bg-blue-900 group-hover:text-white transition-colors duration-300">
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
                                 stroke="currentColor" stroke-width="2">
                                 <path stroke-linecap="round" stroke-linejoin="round"
@@ -43,7 +43,7 @@
                     <!-- Email -->
                     <div class="flex items-start group">
                         <div
-                            class="flex-shrink-0 flex items-center justify-center w-12 h-12 rounded-lg bg-rose-50 text-rose-600 group-hover:bg-rose-600 group-hover:text-white transition-colors duration-300">
+                            class="flex-shrink-0 flex items-center justify-center w-12 h-12 rounded-lg bg-orange-50 text-blue-900 group-hover:bg-blue-900 group-hover:text-white transition-colors duration-300">
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
                                 stroke="currentColor" stroke-width="2">
                                 <path stroke-linecap="round" stroke-linejoin="round"
@@ -62,7 +62,7 @@
                     <!-- Phone -->
                     <div class="flex items-start group">
                         <div
-                            class="flex-shrink-0 flex items-center justify-center w-12 h-12 rounded-lg bg-rose-50 text-rose-600 group-hover:bg-rose-600 group-hover:text-white transition-colors duration-300">
+                            class="flex-shrink-0 flex items-center justify-center w-12 h-12 rounded-lg bg-orange-50 text-blue-900 group-hover:bg-blue-900 group-hover:text-white transition-colors duration-300">
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
                                 stroke="currentColor" stroke-width="2">
                                 <path stroke-linecap="round" stroke-linejoin="round"
@@ -84,7 +84,7 @@
                 <div class="relative bg-white rounded-md overflow-hidden border border-gray-100">
 
                     <!-- Decorative Top Bar -->
-                    <div class="absolute top-0 left-0 w-full h-2 bg-rose-600"></div>
+                    <div class="absolute top-0 left-0 w-full h-2 bg-blue-900"></div>
 
                     <div class="p-8 md:p-10">
                         <h3 class="text-xl font-normal text-slate-800 mb-6">Send a Message</h3>
@@ -107,7 +107,7 @@
                                             </svg>
                                         </div>
                                         <input type="text" id="name"
-                                            class="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-200 bg-gray-50 focus:bg-white focus:border-rose-600 focus:ring-4 focus:ring-rose-100 outline-none transition-all duration-300"
+                                            class="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-200 bg-gray-50 focus:bg-white focus:border-blue-900 focus:ring-4 focus:ring-blue-100 outline-none transition-all duration-300"
                                             placeholder="John Doe">
                                     </div>
                                 </div>
@@ -126,7 +126,7 @@
                                             </svg>
                                         </div>
                                         <input type="email" id="email"
-                                            class="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-200 bg-gray-50 focus:bg-white focus:border-rose-600 focus:ring-4 focus:ring-rose-100 outline-none transition-all duration-300"
+                                            class="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-200 bg-gray-50 focus:bg-white focus:border-blue-900 focus:ring-4 focus:ring-blue-100 outline-none transition-all duration-300"
                                             placeholder="john@example.com">
                                     </div>
                                 </div>
@@ -146,7 +146,7 @@
                                         </svg>
                                     </div>
                                     <input type="text" id="subject"
-                                        class="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-200 bg-gray-50 focus:bg-white focus:border-rose-600 focus:ring-4 focus:ring-rose-100 outline-none transition-all duration-300"
+                                        class="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-200 bg-gray-50 focus:bg-white focus:border-blue-900 focus:ring-4 focus:ring-blue-100 outline-none transition-all duration-300"
                                         placeholder="Project Inquiry">
                                 </div>
                             </div>
@@ -165,14 +165,14 @@
                                         </svg>
                                     </div>
                                     <textarea id="message" rows="4"
-                                        class="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-200 bg-gray-50 focus:bg-white focus:border-rose-600 focus:ring-4 focus:ring-rose-100 outline-none transition-all duration-300 resize-none"
+                                        class="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-200 bg-gray-50 focus:bg-white focus:border-blue-900 focus:ring-4 focus:ring-blue-100 outline-none transition-all duration-300 resize-none"
                                         placeholder="Tell us about your project..."></textarea>
                                 </div>
                             </div>
 
                             <!-- Attractive Button -->
                             <button type="button"
-                                class="group w-full bg-rose-600 text-white font-bold py-4 rounded-lg hover:bg-[#1a365d] hover:-translate-y-1 hover:shadow-lg transition-all duration-300 flex justify-center items-center">
+                                class="group w-full bg-blue-900 text-white font-bold py-4 rounded-lg hover:bg-[#1a365d] hover:-translate-y-1 hover:shadow-lg transition-all duration-300 flex justify-center items-center">
                                 <span>Send Message</span>
                                 <svg xmlns="http://www.w3.org/2000/svg"
                                     class="h-5 w-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300"
@@ -190,9 +190,9 @@
         </div>
     </section>
 
-    <section class="w-full bg-amber-50 py-12">
+    <section class="w-full bg-blue-50 py-12">
         <div class="max-w-7xl mx-auto px-4">
-            <h2 class="text-2xl md:text-3xl font-semibold text-slate-700 mb-5 text-center">Our <span class="text-rose-600">Location</span> </h2>
+            <h2 class="text-2xl md:text-3xl font-semibold text-slate-700 mb-5 text-center">Our <span class="text-blue-900">Location</span> </h2>
             <p class="text-center text-base text-slate-600 mb-8">
                 Find us easily with the interactive map below.
             </p>
