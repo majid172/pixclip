@@ -1,16 +1,15 @@
-
 <!doctype html>
 
-<html lang="en" data-theme="light" data-assets-path="../assets/" data-layout-path="dashboard-free/" dir="ltr" class="scroll-smooth">
+<html lang="en" data-theme="light" data-assets-path="" data-layout-path="dashboard-free/" dir="ltr" class="scroll-smooth">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
     <meta name="robots" content="noindex, nofollow" />
-    <title>Register - Pages | FlyonUI - Powered by FlyonUI</title>
+    <title>Forgot Password - Pages | FlyonUI - Powered by FlyonUI</title>
 
     <meta name="description" content=" FlyonUIPro is the best FlyonUI dashboard for responsive web apps. Streamline your app development process with ease." />
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="../assets/img/favicon/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href=" {{ asset('public/assets/img/favicon/favicon.ico') }}" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -23,7 +22,7 @@
     <!-- Vendor CSS -->
 
     <!-- build:css -->
-    <link rel="stylesheet" href="{{asset('public/assets/dist/css/output.css')}}" />
+    <link rel="stylesheet" href="{{ asset('public/assets/dist/css/output.css') }}" />
 
     <!-- Page CSS -->
 
@@ -88,7 +87,7 @@
             </defs>
           </svg>
         </div>
-        <div class="bg-base-100 shadow-base-300/20 z-1 sm:min-w-md w-full space-y-6 rounded-xl p-6 shadow-md lg:p-8">
+        <div class="bg-base-100 shadow-base-300/20 z-1 w-full space-y-6 rounded-xl p-6 shadow-md sm:max-w-md lg:p-8">
           <div class="flex items-center gap-3">
             <a href="index.html" class="flex items-center gap-3">
               <span class="text-primary">
@@ -129,58 +128,19 @@
             </a>
           </div>
           <div>
-            <h3 class="text-base-content mb-1.5 text-2xl font-semibold">Sign Up</h3>
-            <p class="text-base-content/80">Ship Faster and Focus on Growth.</p>
+            <h3 class="text-base-content mb-1.5 text-2xl font-semibold">Forgot Password?</h3>
+            <p class="text-base-content/80">Enter your email and we'll send you instructions to reset your password</p>
           </div>
-          <div class="space-y-4">
-            <form class="mb-4 space-y-4" action="{{route('register.store')}}" method="POST">
-                @csrf
-              <div>
-                <label class="label-text" for="userName">User Name*</label>
-                <input type="text" placeholder="Enter your user name" name="name" class="input" id="userName" required />
-              </div>
-              <div>
-                <label class="label-text" for="userEmail">Email address*</label>
-                <input type="email" placeholder="Enter your email address" name="email" class="input" id="userEmail" required />
-              </div>
-              <div>
-                <label class="label-text" for="userPassword">Password*</label>
-                <div class="input">
-                  <input id="userPassword" type="password" placeholder="Enter your password" name="password" required />
-                  <button type="button" data-toggle-password='{ "target": "#userPassword" }' class="block cursor-pointer" aria-label="userPassword">
-                    <span class="icon-[tabler--eye] password-active:block hidden size-5 shrink-0"></span>
-                    <span class="icon-[tabler--eye-off] password-active:hidden block size-5 shrink-0"></span>
-                  </button>
-                </div>
-              </div>
-              <div>
-                <label class="label-text" for="userConfrimPassword">Confirm Password*</label>
-                <div class="input">
-                  <input id="userConfrimPassword" type="password" placeholder="Enter your confirm password" name="password_confirmation" required />
-                  <button type="button" data-toggle-password='{ "target": "#userConfrimPassword" }' class="block cursor-pointer" aria-label="userConfrimPassword">
-                    <span class="icon-[tabler--eye] password-active:block hidden size-5 shrink-0"></span>
-                    <span class="icon-[tabler--eye-off] password-active:hidden block size-5 shrink-0"></span>
-                  </button>
-                </div>
-              </div>
-              <div class="flex items-center gap-2">
-                <input type="checkbox" class="checkbox checkbox-primary checkbox-sm" id="policyagreement" />
-                <label class="label-text text-base-content/80 p-0 text-base" for="policyagreement">
-                  I agree to
-                  <a href="#" class="link link-animated link-primary font-normal">privacy policy & terms?</a>
-                </label>
-              </div>
-              <button class="btn btn-lg btn-primary btn-gradient btn-block" type="submit">Sign Up</button>
-            </form>
-            <p class="text-base-content/80 mb-4 text-center">
-              Already have an account?
-              <a href="{{route('login')}}" class="link link-animated link-primary font-normal">Sign in instead</a>
-            </p>
-            <div class="divider">or</div>
-            <button class="btn btn-text btn-block">
-              <img src="{{asset('public/assets/img/icons/brands/google.png')}}" alt="google icon" class="size-5 object-cover" />
-              Sign in with google
-            </button>
+          <form class="mb-4 space-y-4" action="index.html" method="GET">
+            <div>
+              <label class="label-text" for="userEmail">Email address*</label>
+              <input type="email" placeholder="Enter your email address" class="input" id="userEmail" required />
+            </div>
+            <a href="auth-reset-password-1.html" class="btn btn-lg btn-primary btn-gradient btn-block">Send Reset Link</a>
+          </form>
+          <div class="group flex items-center justify-center gap-2">
+            <span class="icon-[tabler--chevron-left] text-primary size-5 shrink-0 transition-transform group-hover:-translate-x-1 rtl:rotate-180"></span>
+            <a href="{{route('login')}}" class="link link-animated link-primary font-normal">Back to login</a>
           </div>
         </div>
       </div>
@@ -190,13 +150,13 @@
     <!-- Vendors JS -->
 
     <!-- FlyonUI JS -->
-    <script src="{{asset('public/assets/dist/libs/flyonui/flyonui.js')}}"></script>
+    <script src="{{ asset('public/assets/dist/libs/flyonui/flyonui.js') }}"></script>
 
     <!-- Theme Utils JS -->
-    <script src="{{asset('public/assets/dist/js/theme-utils.js')}}"></script>
+    <script src="{{ asset('public/assets/dist/js/theme-utils.js') }}"></script>
 
     <!-- Main JS -->
-    <script src="{{asset('public/assets/dist/js/main.js')}}"></script>
+    <script src="{{ asset('public/assets/dist/js/main.js') }}"></script>
 
     <!-- Page JS -->
 

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Backend\ChangePasswordController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\NoticeController;
@@ -37,6 +38,9 @@ Route::post('/register', [RegisterController::class, 'register'])->name('registe
 
 Route::get('/login', [LoginController::class, 'show'])->name('login');
 Route::post('/login', [LoginController::class, 'login'])->name('login.store');
+
+Route::get('/forgot-password', [ForgotPasswordController::class, 'show'])->name('forgot-password.show');
+Route::post('/forgot-password', [ForgotPasswordController::class, 'store'])->name('forgot-password.store');
 
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
