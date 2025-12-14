@@ -17,7 +17,7 @@
                     </a>
 
                     <!-- Outline Button -->
-                    <a href="#"
+                    <a href="{{ route('login') }}"
                         class="bg-transparent border border-white hover:bg-white/10 text-white text-sm font-medium px-6 py-2.5 rounded transition-colors duration-200">
                         Get Started
                     </a>

@@ -27,13 +27,13 @@
                     <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-slate-800 text-slate-400 hover:bg-rose-500 hover:text-white transition-all duration-300 shadow-sm hover:shadow-rose-500/50">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke-width="2"></rect><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" stroke-width="2"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke-width="2"></line></svg>
                     </a>
-                    <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-slate-800 text-slate-400 hover:bg-blue-600 hover:text-white transition-all duration-300 shadow-sm hover:shadow-blue-600/50">
+                    <a href="javascript:void(0)" class="w-10 h-10 flex items-center justify-center rounded-full bg-slate-800 text-slate-400 hover:bg-blue-600 hover:text-white transition-all duration-300 shadow-sm hover:shadow-blue-600/50">
                         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path></svg>
                     </a>
-                    <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-slate-800 text-slate-400 hover:bg-blue-700 hover:text-white transition-all duration-300 shadow-sm hover:shadow-blue-700/50">
+                    <a href="javascript:void(0)" class="w-10 h-10 flex items-center justify-center rounded-full bg-slate-800 text-slate-400 hover:bg-blue-700 hover:text-white transition-all duration-300 shadow-sm hover:shadow-blue-700/50">
                         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path><circle cx="4" cy="4" r="2"></circle></svg>
                     </a>
-                    <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-slate-800 text-slate-400 hover:bg-sky-500 hover:text-white transition-all duration-300 shadow-sm hover:shadow-sky-500/50">
+                    <a href="javascript:void(0)" class="w-10 h-10 flex items-center justify-center rounded-full bg-slate-800 text-slate-400 hover:bg-sky-500 hover:text-white transition-all duration-300 shadow-sm hover:shadow-sky-500/50">
                         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path></svg>
                     </a>
                 </div>
@@ -46,11 +46,11 @@
                     <span class="absolute -bottom-2 left-0 w-8 h-1 bg-orange-400 rounded-full"></span>
                 </h3>
                 <ul class="space-y-4 text-slate-400 text-sm">
-                    <li><a href="#" class="hover:text-orange-400 transition-all duration-300 hover:pl-2 flex items-center gap-2"><span>&rsaquo;</span> Home</a></li>
-                    <li><a href="#" class="hover:text-orange-400 transition-all duration-300 hover:pl-2 flex items-center gap-2"><span>&rsaquo;</span> About Us</a></li>
+                    <li><a href="{{ url('/') }}" class="hover:text-orange-400 transition-all duration-300 hover:pl-2 flex items-center gap-2"><span>&rsaquo;</span> Home</a></li>
+                    <li><a href="{{ url('/about') }}" class="hover:text-orange-400 transition-all duration-300 hover:pl-2 flex items-center gap-2"><span>&rsaquo;</span> About Us</a></li>
+                    <li><a href="{{ url('/contact') }}" class="hover:text-orange-400 transition-all duration-300 hover:pl-2 flex items-center gap-2"><span>&rsaquo;</span>Contact Us</a></li>
                     <li><a href="#" class="hover:text-orange-400 transition-all duration-300 hover:pl-2 flex items-center gap-2"><span>&rsaquo;</span> Terms & Conditions</a></li>
-                    <li><a href="#" class="hover:text-orange-400 transition-all duration-300 hover:pl-2 flex items-center gap-2"><span>&rsaquo;</span> Latest Blogs</a></li>
-                    <li><a href="#" class="hover:text-orange-400 transition-all duration-300 hover:pl-2 flex items-center gap-2"><span>&rsaquo;</span> Help & FAQ</a></li>
+
                 </ul>
             </div>
 
