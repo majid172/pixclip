@@ -531,7 +531,7 @@
                     const servicesData = @json($services);
 
                     const newRow = document.createElement('tr');
-                    newRow.className = 'invoice-row border-b border-base-content/5 last:border-0';
+                    newRow.className = 'invoice-row  border-base-content/5 last:border-0';
                     newRow.innerHTML = `
                         <td class="py-4 font-semibold text-base-content/60">${newRowNumber}</td>
                         <td class="py-4">

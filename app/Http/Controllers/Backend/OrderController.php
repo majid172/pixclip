@@ -164,7 +164,7 @@ class OrderController extends Controller
     {
         $selected_services = PathService::whereIn('id', json_decode($order->service_id))->get();
         $services = PathService::where('status', '1')->get();
-         $total_orders = $order->where('id', $order->id)->count();
+        $total_orders = $order->where('id', $order->id)->count();
         $total_unpaid = $order->where(['id' => $order->id, 'is_paid' => 0])->count();
         // $order_details = $order;
         $invoice = Invoice::where('order_id', $order->id)->first();

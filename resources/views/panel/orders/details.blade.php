@@ -40,7 +40,7 @@
                             <div class="flex items-center gap-3 bg-red-100 border border-red-300 px-4 py-2 rounded-md">
                                 <i class="fa-solid fa-credit-card text-red-600"></i>
                                 <div>
-                                    <p class="font-semibold text-warning">{{ '$0.00' }}</p>
+                                    <p class="font-semibold text-warning">${{ numberFormat($order->price) }}</p>
                                     <p class="text-sm font-semibold text-warning">Total Due</p>
                                 </div>
                             </div>
