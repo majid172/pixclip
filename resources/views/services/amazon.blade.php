@@ -11,7 +11,7 @@
                 </h2>
 
                 <h1 class="text-slate-600 text-3xl md:text-4xl font-bold mb-6">
-                    Professional Photo <span class="text-rose-600">Services</span>
+                    Professional Photo <span class="text-blue-900">Services</span>
                 </h1>
 
                 <!-- Description Paragraph -->
@@ -26,7 +26,7 @@
 
                     <!-- Free Trial Button -->
                     <a href="{{ route('free.trial') }}"
-                        class="group flex items-center gap-2 bg-rose-600 hover:bg-rose-700 text-white text-sm font-medium py-3 px-6 rounded transition-colors duration-200">
+                        class="group flex items-center gap-2 bg-blue-900 hover:bg-blue-800 text-white text-sm font-medium py-3 px-6 rounded transition-colors duration-200">
                         Free Trial
                         <!-- Chevron Right Icon -->
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
@@ -36,8 +36,8 @@
                     </a>
 
                     <!-- Get Started Button -->
-                    <a href="#"
-                        class="group flex items-center gap-2 bg-white border border-rose-200 hover:bg-rose-50 text-rose-500 text-sm font-medium py-3 px-6 rounded transition-colors duration-200">
+                    <a href="{{route('login')}}"
+                        class="group flex items-center gap-2 bg-white border border-orange-200 hover:bg-orange-50 text-orange-500 text-sm font-medium py-3 px-6 rounded transition-colors duration-200">
                         Get Started
 
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
@@ -66,7 +66,7 @@
                     <!-- Icon: Stack / Layers (Representing Volume) -->
                     <div class="mb-5">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" class="w-12 h-12 text-rose-600">
+                            stroke="currentColor" class="w-12 h-12 text-blue-900">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M6.429 9.75L2.25 12l4.179 2.25m0-4.5l5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0l-5.571 3-5.571-3" />
                         </svg>
@@ -83,7 +83,7 @@
                     <!-- Icon: Clock (Representing Time) -->
                     <div class="mb-5">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" class="w-12 h-12 text-rose-600">
+                            stroke="currentColor" class="w-12 h-12 text-blue-900">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
@@ -100,7 +100,7 @@
                     <!-- Icon: Infinity (Representing Unlimited) -->
                     <div class="mb-5">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" class="w-12 h-12 text-rose-600">
+                            stroke="currentColor" class="w-12 h-12 text-blue-900">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M8.25 12a3.75 3.75 0 11-5.303 5.303 3.75 3.75 0 015.303-5.303zm0 0c2.25-2.25 5.25 2.25 7.5 0m0 0a3.75 3.75 0 115.303-5.304A3.75 3.75 0 0115.75 12" />
                         </svg>
@@ -123,7 +123,7 @@
             <!-- Left Column: Main Text -->
             <div class="flex flex-col items-start">
                 <!-- Badge -->
-                <span class="inline-block bg-rose-100 text-rose-600 text-xs font-semibold px-4 py-1.5 rounded-full mb-6">
+                <span class="inline-block bg-orange-100 text-blue-900 text-xs font-semibold px-4 py-1.5 rounded-full mb-6">
                     Why pixclipping?
                 </span>
 
@@ -158,7 +158,7 @@
                     <!-- Icon: Team/People -->
                     <div class="mb-4">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" class="w-10 h-10 text-rose-500">
+                            stroke="currentColor" class="w-10 h-10 text-blue-900">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
                         </svg>
@@ -176,12 +176,12 @@
                     <!-- Icon: Pen Tool / Bezier -->
                     <div class="mb-4">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" class="w-10 h-10 text-rose-500">
+                            stroke="currentColor" class="w-10 h-10 text-blue-900">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125" />
                             <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 7.5L12 12" />
-                            <circle cx="6" cy="18" r="2" fill="currentColor" class="text-rose-200" />
-                            <circle cx="18" cy="6" r="1" fill="currentColor" class="text-rose-500" />
+                            <circle cx="6" cy="18" r="2" fill="currentColor" class="text-blue-200" />
+                            <circle cx="18" cy="6" r="1" fill="currentColor" class="text-blue-500" />
                         </svg>
                     </div>
                     <h3 class="text-lg font-semibold text-slate-600 mb-2">Legal Agreement</h3>
@@ -196,10 +196,10 @@
                     <!-- Icon: Shapes -->
                     <div class="mb-4">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" class="w-10 h-10 text-rose-500">
+                            stroke="currentColor" class="w-10 h-10 text-blue-900">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M5.25 7.5A2.25 2.25 0 017.5 5.25h9a2.25 2.25 0 012.25 2.25v9a2.25 2.25 0 01-2.25 2.25h-9a2.25 2.25 0 01-2.25-2.25v-9z" />
-                            <circle cx="16" cy="16" r="4" class="text-rose-300" stroke="currentColor"
+                            <circle cx="16" cy="16" r="4" class="text-blue-300" stroke="currentColor"
                                 stroke-width="1.5" fill="white" />
                         </svg>
                     </div>
@@ -215,7 +215,7 @@
                     <!-- Icon: Thumbs Up -->
                     <div class="mb-4">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" class="w-10 h-10 text-rose-500">
+                            stroke="currentColor" class="w-10 h-10 text-blue-900">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M6.633 10.5c.806 0 1.533-.446 2.031-1.08a9.041 9.041 0 012.861-2.4c.723-.384 1.35-.956 1.653-1.715a4.498 4.498 0 00.322-1.672V3a.75.75 0 01.75-.75A2.25 2.25 0 0116.5 4.5c0 1.152-.26 2.247-.723 3.218-.266.558.107 1.282.725 1.282h3.126c1.026 0 1.945.694 2.054 1.715.045.422.068.85.068 1.285a11.95 11.95 0 01-2.649 7.521c-.388.482-.987.729-1.605.729H13.48c-.483 0-.964-.078-1.423-.23l-3.114-1.04a4.501 4.501 0 00-1.423-.23H5.904M14.25 9h2.25M5.904 18.75c.083.205.173.405.27.602.197.4-.078.898-.523.898h-.908c-.889 0-1.713-.518-1.972-1.368a12 12 0 01-.521-3.507c0-1.553.295-3.036.831-4.396C3.387 10.203 4.167 9.75 5 9.75h1.053c.472 0 .745.556.5.96a8.958 8.958 0 00-1.302 4.665c0 1.194.232 2.333.654 3.375z" />
                         </svg>
@@ -234,12 +234,12 @@
     <section class="bg-white py-20 px-4 md:px-8 ">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-20">
-                <span class="inline-block bg-rose-100 text-rose-600 text-xs font-bold px-4 py-1.5 rounded-full mb-6">
+                <span class="inline-block bg-orange-100 text-blue-900 text-xs font-bold px-4 py-1.5 rounded-full mb-6">
                     Basics
                 </span>
                 <h1 class="text-3xl md:text-3xl font-semibold text-slate-700 leading-tight mb-6">
                     E-commerce Photo Editing<br>
-                    Services: <span class="text-rose-600">Basic Editing</span>
+                    Services: <span class="text-blue-900">Basic Editing</span>
                 </h1>
                 <p class="max-w-2xl mx-auto text-gray-500 text-base md:text-lg leading-relaxed">
                     We focus on displaying the product features, logos, & names, maintaining specific e-commerce
@@ -476,7 +476,7 @@
                 <div class="order-1 lg:order-2">
                     <div class="mb-8">
                         <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-3">
-                            360° Product <span class="text-rose-600">Image Editing</span>
+                            360° Product <span class="text-orange-600">Image Editing</span>
                         </h2>
                         <p class="text-lg text-gray-700 font-medium">
                             Capture attention with precise 360° product images, showcasing every detail from every angle.
@@ -487,7 +487,7 @@
                         <p class="text-gray-600 leading-relaxed">
                             Unlock the power of 360° product presentation with our expert image editing services.
                             Just send us a minimum of <span
-                                class="font-bold text-rose-600 bg-rose-50 px-2 py-0.5 rounded">24 product images</span>
+                                class="font-bold text-orange-600 bg-orange-50 px-2 py-0.5 rounded">24 product images</span>
                             from various angles, and we'll work our magic.
                         </p>
                     </div>
@@ -497,7 +497,7 @@
 
                         <!-- List Items with Custom Checks -->
                         <div class="flex items-center gap-3">
-                            <svg class="w-5 h-5 text-rose-600 flex-shrink-0" fill="none" stroke="currentColor"
+                            <svg class="w-5 h-5 text-blue-900 flex-shrink-0" fill="none" stroke="currentColor"
                                 viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
                                 </path>
@@ -506,7 +506,7 @@
                         </div>
 
                         <div class="flex items-center gap-3">
-                            <svg class="w-5 h-5 text-rose-600 flex-shrink-0" fill="none" stroke="currentColor"
+                            <svg class="w-5 h-5 text-blue-900 flex-shrink-0" fill="none" stroke="currentColor"
                                 viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
                                 </path>
@@ -515,7 +515,7 @@
                         </div>
 
                         <div class="flex items-center gap-3">
-                            <svg class="w-5 h-5 text-rose-600 flex-shrink-0" fill="none" stroke="currentColor"
+                            <svg class="w-5 h-5 text-blue-900 flex-shrink-0" fill="none" stroke="currentColor"
                                 viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
                                 </path>
@@ -524,7 +524,7 @@
                         </div>
 
                         <div class="flex items-center gap-3">
-                            <svg class="w-5 h-5 text-rose-600 flex-shrink-0" fill="none" stroke="currentColor"
+                            <svg class="w-5 h-5 text-blue-900 flex-shrink-0" fill="none" stroke="currentColor"
                                 viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
                                 </path>
@@ -533,7 +533,7 @@
                         </div>
 
                         <div class="flex items-center gap-3">
-                            <svg class="w-5 h-5 text-rose-600 flex-shrink-0" fill="none" stroke="currentColor"
+                            <svg class="w-5 h-5 text-blue-900 flex-shrink-0" fill="none" stroke="currentColor"
                                 viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
                                 </path>
@@ -542,7 +542,7 @@
                         </div>
 
                         <div class="flex items-center gap-3">
-                            <svg class="w-5 h-5 text-rose-600 flex-shrink-0" fill="none" stroke="currentColor"
+                            <svg class="w-5 h-5 text-blue-900 flex-shrink-0" fill="none" stroke="currentColor"
                                 viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
                                 </path>
@@ -551,7 +551,7 @@
                         </div>
 
                         <div class="flex items-center gap-3">
-                            <svg class="w-5 h-5 text-rose-600 flex-shrink-0" fill="none" stroke="currentColor"
+                            <svg class="w-5 h-5 text-blue-900 flex-shrink-0" fill="none" stroke="currentColor"
                                 viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
                                 </path>
@@ -561,13 +561,13 @@
                     </div>
 
                     <!-- Conclusion / CTA Box -->
-                    <div class="flex items-start gap-4 p-4 bg-rose-50 border-l-4 border-rose-600 rounded-r-lg">
-                        <svg class="w-6 h-6 text-rose-600 flex-shrink-0 mt-1" fill="none" stroke="currentColor"
+                    <div class="flex items-start gap-4 p-4 bg-blue-50 border-l-4 border-orange-600 rounded-r-lg">
+                        <svg class="w-6 h-6 text-blue-900 flex-shrink-0 mt-1" fill="none" stroke="currentColor"
                             viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                         </svg>
-                        <p class="text-rose-900 font-medium text-sm leading-relaxed">
+                        <p class="text-blue-900 font-medium text-sm leading-relaxed">
                             Trust our seasoned designers to ensure your images flow seamlessly in a captivating 360° product
                             rotation.
                         </p>
@@ -584,7 +584,7 @@
             <!-- Section Header -->
             <div class="text-center max-w-3xl mx-auto mb-16">
                 <h2 class="text-3xl md:text-4xl font-semibold text-gray-900 mb-4">
-                    Amazon, eBay & Shopify <span class="text-rose-600">Ready Images</span>
+                    Amazon, eBay & Shopify <span class="text-blue-900">Ready Images</span>
                 </h2>
                 <p class="text-lg text-gray-600">
                     Get instant e-commerce-ready images, optimized for global platforms. We handle the technical guidelines
@@ -689,7 +689,7 @@
                     </div>
 
                     <div class="pt-4">
-                        <p class="text-rose-600 font-bold tracking-wide uppercase text-sm">
+                        <p class="text-orange-600 font-bold tracking-wide uppercase text-sm">
                             Get platform-perfect product images effortlessly!
                         </p>
                     </div>
@@ -741,7 +741,7 @@
             <div class="text-center mb-16 max-w-3xl mx-auto">
                 <!-- Badge -->
                 <span
-                    class="inline-block bg-rose-50 text-rose-500 text-xs font-bold px-4 py-1.5 rounded-full mb-5 uppercase tracking-wide">
+                    class="inline-block bg-orange-50 text-blue-900 text-xs font-bold px-4 py-1.5 rounded-full mb-5 uppercase tracking-wide">
                     Process
                 </span>
 
@@ -760,16 +760,12 @@
             <!-- Content Grid -->
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
-                <!-- Left Column: Illustration -->
-                <!-- Ideally, place your isometric vector image here -->
                 <div class="flex justify-center lg:justify-end">
                     <img src="{{ asset('public/assets/images/images/background_remove/mocup.png') }}"
                         alt="Designer Workspace Illustration"
                         class="w-full max-w-lg object-contain drop-shadow-xl hover:scale-[1.02] transition-transform duration-500 rounded-lg">
-
                 </div>
 
-                <!-- Right Column: Text Content -->
                 <div class="flex flex-col text-slate-500 text-[15px] leading-7 space-y-6 text-justify md:text-left">
 
                     <p>
@@ -793,23 +789,18 @@
                         By seamlessly removing backdrops and introducing new, meticulously crafted drop shadows, we
                         guarantee that your product will always exude a remarkably natural look that captivates viewers.
                     </p>
-
-
-
                 </div>
 
             </div>
         </div>
-        <!-- Header Section -->
-
-
+       
     </section>
 
     <section class="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-24">
 
         <!-- Header -->
         <div class="text-center max-w-3xl mx-auto mb-16">
-            <span class="text-rose-600 font-semibold tracking-wide uppercase text-sm">Flexible Pricing</span>
+            <span class="text-orange-600 font-semibold tracking-wide uppercase text-sm">Flexible Pricing</span>
             <h2 class="text-3xl md:text-3xl font-semibold text-slate-800 mt-3 mb-4">
                 Photo Background Removal - Highest quality with Lowest cost
             </h2>
@@ -842,7 +833,7 @@
 
                 <ul class="mt-8 space-y-4 text-sm text-slate-600">
                     <li class="flex items-center gap-3">
-                        <svg class="w-5 h-5 text-rose-500 flex-shrink-0" fill="none" stroke="currentColor"
+                        <svg class="w-5 h-5 text-blue-900 flex-shrink-0" fill="none" stroke="currentColor"
                             viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
                             </path>
@@ -850,7 +841,7 @@
                         Simple Clipping Path
                     </li>
                     <li class="flex items-center gap-3">
-                        <svg class="w-5 h-5 text-rose-500 flex-shrink-0" fill="none" stroke="currentColor"
+                        <svg class="w-5 h-5 text-blue-900 flex-shrink-0" fill="none" stroke="currentColor"
                             viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
                             </path>
@@ -858,7 +849,7 @@
                         White Background
                     </li>
                     <li class="flex items-center gap-3">
-                        <svg class="w-5 h-5 text-rose-500 flex-shrink-0" fill="none" stroke="currentColor"
+                        <svg class="w-5 h-5 text-blue-900 flex-shrink-0" fill="none" stroke="currentColor"
                             viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
                             </path>
@@ -878,11 +869,11 @@
 
             <!-- Card 2: Pro (Highlighted) -->
             <div
-                class="bg-white rounded-2xl p-8 border-2 border-rose-500 shadow-xl relative transform md:-translate-y-4 z-10">
+                class="bg-white rounded-2xl p-8 border-2 border-blue-900 shadow-xl relative transform md:-translate-y-4 z-10">
                 <!-- Most Popular Badge -->
                 <div class="absolute top-0 right-0 -mt-3 -mr-3">
                     <span
-                        class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-rose-600 text-white shadow-md">
+                        class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-blue-900 text-white shadow-md">
                         MOST POPULAR
                     </span>
                 </div>
@@ -896,7 +887,7 @@
                 </div>
 
                 <a href="#"
-                    class="block w-full py-3 px-4 bg-rose-600 hover:bg-rose-700 text-white font-bold text-center rounded-lg shadow-lg shadow-rose-500/30 transition-all hover:-translate-y-0.5">
+                    class="block w-full py-3 px-4 bg-blue-900 hover:bg-blue-700 text-white font-bold text-center rounded-lg shadow-lg shadow-blue-500/30 transition-all hover:-translate-y-0.5">
                     Get Started
                 </a>
 
@@ -910,7 +901,7 @@
                         Complex Clipping Path
                     </li>
                     <li class="flex items-center gap-3">
-                        <svg class="w-5 h-5 text-rose-500 flex-shrink-0" fill="none" stroke="currentColor"
+                        <svg class="w-5 h-5 text-blue-900 flex-shrink-0" fill="none" stroke="currentColor"
                             viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
                             </path>
@@ -918,7 +909,7 @@
                         Basic Retouching
                     </li>
                     <li class="flex items-center gap-3">
-                        <svg class="w-5 h-5 text-rose-500 flex-shrink-0" fill="none" stroke="currentColor"
+                        <svg class="w-5 h-5 text-blue-900 flex-shrink-0" fill="none" stroke="currentColor"
                             viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
                             </path>
@@ -926,7 +917,7 @@
                         Natural Shadow
                     </li>
                     <li class="flex items-center gap-3">
-                        <svg class="w-5 h-5 text-rose-500 flex-shrink-0" fill="none" stroke="currentColor"
+                        <svg class="w-5 h-5 text-blue-900 flex-shrink-0" fill="none" stroke="currentColor"
                             viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
                             </path>
@@ -953,7 +944,7 @@
 
                 <ul class="mt-8 space-y-4 text-sm text-slate-600">
                     <li class="flex items-center gap-3">
-                        <svg class="w-5 h-5 text-rose-500 flex-shrink-0" fill="none" stroke="currentColor"
+                        <svg class="w-5 h-5 text-blue-900 flex-shrink-0" fill="none" stroke="currentColor"
                             viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
                             </path>
@@ -961,7 +952,7 @@
                         <span class="font-bold">Unlimited</span> Revisions
                     </li>
                     <li class="flex items-center gap-3">
-                        <svg class="w-5 h-5 text-rose-500 flex-shrink-0" fill="none" stroke="currentColor"
+                        <svg class="w-5 h-5 text-blue-900 flex-shrink-0" fill="none" stroke="currentColor"
                             viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
                             </path>
@@ -969,7 +960,7 @@
                         Dedicated Project Manager
                     </li>
                     <li class="flex items-center gap-3">
-                        <svg class="w-5 h-5 text-rose-500 flex-shrink-0" fill="none" stroke="currentColor"
+                        <svg class="w-5 h-5 text-blue-900 flex-shrink-0" fill="none" stroke="currentColor"
                             viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
                             </path>
@@ -977,7 +968,7 @@
                         API Integration
                     </li>
                     <li class="flex items-center gap-3">
-                        <svg class="w-5 h-5 text-rose-500 flex-shrink-0" fill="none" stroke="currentColor"
+                        <svg class="w-5 h-5 text-blue-900 flex-shrink-0" fill="none" stroke="currentColor"
                             viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
                             </path>

@@ -11,7 +11,7 @@
                 </h2>
 
                 <h1 class="text-slate-600 text-3xl md:text-4xl font-bold mb-6">
-                    Professional Photo <span class="text-rose-600">Services</span>
+                    Professional Photo <span class="text-blue-900">Services</span>
                 </h1>
 
                 <!-- Description Paragraph -->

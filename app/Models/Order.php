@@ -43,4 +43,11 @@ class Order extends Model
     {
         return $this->belongsTo(User::class,'user_id','id');
     }
+    public function scopeCheckUser($q)
+    {
+        if(auth()->user()->is_admin == 1){
+            return $q;
+        }
+        return $q->where('user_id',auth()->user()->id);
+    }
 }

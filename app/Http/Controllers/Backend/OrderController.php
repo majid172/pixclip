@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use App\Models\Media;
 use App\Models\Order;
+use App\Models\Invoice;
+use App\Models\BillingAddress;
 use App\Models\PathService;
 use Illuminate\Http\Request;
 
@@ -12,21 +14,21 @@ class OrderController extends Controller
     public function list()
     {
         $title  = "Orders List";
-        $orders = Order::get();
+        $orders = Order::checkUser()->get();
         return view('panel.orders.list', compact('orders', 'title'));
     }
 
     public function tracking()
     {
-        $title  = "Tracking Orders";
-        $orders = Order::status('In Review')->get();
+        $title  = "In Review Orders";
+        $orders = Order::status('In Review')->checkUser()->get();
         return view('panel.orders.list', compact('orders', 'title'));
     }
 
     public function pending()
     {
         $title  = "Pending Orders";
-        $orders = Order::status('Pending')->get();
+        $orders = Order::status('Pending')->checkUser()->get();
         return view('panel.orders.list', compact('orders', 'title'));
     }
     public function received()
@@ -38,44 +40,44 @@ class OrderController extends Controller
     public function invoiced()
     {
         $title  = "Invoiced Orders";
-        $orders = Order::status('Invoiced')->get();
+        $orders = Order::status('Invoiced')->checkUser()->get();
         return view('panel.orders.list', compact('orders', 'title'));
     }
     public function processing()
     {
         $title  = "Processing Orders";
-        $orders = Order::status('Processing')->get();
+        $orders = Order::status('Processing')->checkUser()->get();
         return view('panel.orders.list', compact('orders', 'title'));
     }
     public function finalized()
     {
         $title  = "Finalized Orders";
-        $orders = Order::status('Finalizing')->get();
+        $orders = Order::status('Finalizing')->checkUser()->get();
         return view('panel.orders.list', compact('orders', 'title'));
     }
     public function completed()
     {
         $title  = "Completed Orders";
-        $orders = Order::status('Completed')->get();
+        $orders = Order::status('Completed')->checkUser()->get();
         return view('panel.orders.list', compact('orders', 'title'));
     }
     public function downloaded()
     {
         $title  = "Downloaded Orders";
-        $orders = Order::status('Downloaded')->get();
+        $orders = Order::status('Downloaded')->checkUser()->get();
         return view('panel.orders.list', compact('orders', 'title'));
     }
     public function canceled()
     {
         $title  = "Canceled Orders";
-        $orders = Order::status('Canceled')->get();
+        $orders = Order::status('Canceled')->checkUser()->get();
         return view('panel.orders.list', compact('orders', 'title'));
     }
 
     public function paid()
     {
         $title  = "Paid Orders";
-        $orders = Order::where('is_paid', 1)->get();
+        $orders = Order::where('is_paid', 1)->checkUser()->get();
         return view('panel.orders.list', compact('orders', 'title'));
     }
 
@@ -160,10 +162,27 @@ class OrderController extends Controller
 
     public function details(Order $order)
     {
-        $services = PathService::whereIn('id', json_decode($order->service_id))->get();
+        $selected_services = PathService::whereIn('id', json_decode($order->service_id))->get();
+        $services = PathService::where('status', '1')->get();
          $total_orders = $order->where('id', $order->id)->count();
         $total_unpaid = $order->where(['id' => $order->id, 'is_paid' => 0])->count();
-        return view ('panel.orders.details',compact('order','services','total_orders','total_unpaid'));
+        // $order_details = $order;
+        $invoice = Invoice::where('order_id', $order->id)->first();
+        $images = null;
+        if ($order->media_id) {
+            $images = Media::whereIn('id', json_decode($order->media_id))->get();
+        }
+        $billing_address = BillingAddress::where('user_id', $order->user_id)->first();
+        return view('panel.orders.details', compact(
+        'order',
+        'total_orders',
+        'total_unpaid',
+        'selected_services',
+        'services',
+        'invoice',
+        'images',
+        'billing_address'
+    ));
     }
 
     public function updateStatus(Request $request)
