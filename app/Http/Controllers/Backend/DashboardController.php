@@ -2,6 +2,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Invoice; // Added
 use App\Models\Notice;
 use App\Models\Order;
 use App\Models\User;
@@ -24,11 +25,17 @@ class DashboardController extends Controller
             'progress'      => (clone $orderQuery)->where('status', 'Processing')->get(),
             'unpaid_amount' => (clone $orderQuery)->where('is_paid', 0)->sum('price'),
             'today_orders'  => (clone $orderQuery)->whereDate('created_at', today())->get(),
-            'statusCount'   => Order::groupBy('status')
+            'statusCount'   => (clone $orderQuery)->groupBy('status')
                 ->select('status')
                 ->selectRaw('COUNT(*) as count')
                 ->pluck('count', 'status'),
             'total_price'   => (clone $orderQuery)->sum('price'),
+            
+            // New Card Data
+            'sales_trend'   => (clone $orderQuery)->sum('price'),
+            'total_profit'  => (clone $orderQuery)->where('is_paid', 1)->sum('price'),
+            'refunds'       => (clone $orderQuery)->where('status', 'Canceled')->sum('price'),
+            // 'discounts'     => Invoice::whereIn('order_id', (clone $orderQuery)->pluck('id'))->sum('discount'),
         ];
 
         $data['statusLabels'] = $data['statusCount']->keys();

@@ -251,59 +251,7 @@
                         <h2 class="card-title text-xl">Order Chart</h2>
 
                         <!-- Company Info -->
-                        <div class="flex items-center gap-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="49" viewBox="0 0 48 49"
-                                fill="none">
-                                <g clip-path="url(#clip0_17222_216976)">
-                                    <mask id="mask0_17222_216976" style="mask-type:luminance" maskUnits="userSpaceOnUse"
-                                        x="0" y="0" width="48" height="49">
-                                        <path
-                                            d="M36 0.5H12C5.37258 0.5 0 5.87258 0 12.5V36.5C0 43.1274 5.37258 48.5 12 48.5H36C42.6274 48.5 48 43.1274 48 36.5V12.5C48 5.87258 42.6274 0.5 36 0.5Z"
-                                            fill="white" />
-                                    </mask>
-                                    <g mask="url(#mask0_17222_216976)">
-                                        <path
-                                            d="M36 0.5H12C5.37258 0.5 0 5.87258 0 12.5V36.5C0 43.1274 5.37258 48.5 12 48.5H36C42.6274 48.5 48 43.1274 48 36.5V12.5C48 5.87258 42.6274 0.5 36 0.5Z"
-                                            fill="url(#paint0_linear_17222_216976)" />
-                                        <path
-                                            d="M23.0687 28.5625C23.4559 28.072 24.1937 28.0526 24.6058 28.5224L29.6155 34.2334C30.1819 34.8796 29.723 35.8924 28.8636 35.8925H19.346C18.5105 35.8925 18.0431 34.9282 18.5609 34.2724L23.0687 28.5625ZM23.0941 12.039C23.4922 11.5421 24.2474 11.5386 24.6497 12.0322L39.3939 30.124C39.9262 30.7773 39.4612 31.7558 38.6185 31.7558H34.3128C34.0114 31.7558 33.7263 31.6198 33.5364 31.3857L24.6644 20.4511C24.2577 19.9499 23.49 19.9595 23.096 20.4707L15.0247 30.9482C14.8355 31.1939 14.5428 31.3377 14.2327 31.3379H9.71319C8.87436 31.3378 8.40841 30.3675 8.93292 29.7129L23.0941 12.039Z"
-                                            fill="url(#paint1_linear_17222_216976)" />
-                                    </g>
-                                    <path
-                                        d="M36.0002 1.49945H12.0002C5.92511 1.49945 1.00024 6.42432 1.00024 12.4995V36.4995C1.00024 42.5746 5.92511 47.4995 12.0002 47.4995H36.0002C42.0754 47.4995 47.0002 42.5746 47.0002 36.4995V12.4995C47.0002 6.42432 42.0754 1.49945 36.0002 1.49945Z"
-                                        stroke="url(#paint2_linear_17222_216976)" stroke-width="2" />
-                                </g>
-                                <defs>
-                                    <linearGradient id="paint0_linear_17222_216976" x1="42.75" y1="4.25"
-                                        x2="6" y2="46.25" gradientUnits="userSpaceOnUse">
-                                        <stop stop-color="var(--color-primary)" />
-                                        <stop offset="1"
-                                            stop-color="color-mix(in oklab, var(--color-primary) 80%, #000)" />
-                                    </linearGradient>
-                                    <linearGradient id="paint1_linear_17222_216976" x1="24.1659" y1="11.6641"
-                                        x2="24.1659" y2="35.8925" gradientUnits="userSpaceOnUse">
-                                        <stop stop-color="white" />
-                                        <stop offset="1" stop-color="white" stop-opacity="0.6" />
-                                    </linearGradient>
-                                    <linearGradient id="paint2_linear_17222_216976" x1="24.0002" y1="0.49945"
-                                        x2="24.0002" y2="48.4995" gradientUnits="userSpaceOnUse">
-                                        <stop stop-color="white" stop-opacity="0.28" />
-                                        <stop offset="1" stop-color="white" stop-opacity="0.04" />
-                                    </linearGradient>
-                                    <clipPath id="clip0_17222_216976">
-                                        <rect width="48" height="48" fill="white"
-                                            transform="translate(0 0.5)" />
-                                    </clipPath>
-                                </defs>
-                            </svg>
-                            <div>
-                                <h3 class="text-base-content text-xl font-medium">PixClipping Company</h3>
-                                <p class="text-base-content/80">info@company.com</p>
-                            </div>
-                        </div>
-
-                        <!-- Company Info -->
-                        <div class="grid gap-4 sm:grid-cols-2">
+                        <div class="grid gap-4 sm:grid-cols-1">
                             <div class="border-base-content/20 rounded-box flex gap-4 border px-4 py-3">
                                 <div class="avatar avatar-placeholder">
                                     <div class="bg-warning/20 text-warning rounded-field size-11.5">
@@ -311,8 +259,8 @@
                                     </div>
                                 </div>
                                 <div class="flex flex-col">
-                                    <span class="text-base-content/50 text-sm font-medium">Sales trend</span>
-                                    <span class="text-base-content text-lg font-semibold">$ 11,548</span>
+                                    <span class="text-base-content/50 text-sm font-medium">Total Sales</span>
+                                    <span class="text-base-content text-lg font-semibold">${{ numberFormat($sales_trend) }}</span>
                                 </div>
                             </div>
                             <div class="border-base-content/20 rounded-box flex gap-4 border px-4 py-3">
@@ -323,10 +271,10 @@
                                 </div>
                                 <div class="flex flex-col">
                                     <span class="text-base-content/50 text-sm font-medium">Total Profit</span>
-                                    <span class="text-base-content text-lg font-semibold">$1735</span>
+                                    <span class="text-base-content text-lg font-semibold">${{ numberFormat($total_profit) }}</span>
                                 </div>
                             </div>
-                            <div class="border-base-content/20 rounded-box flex gap-4 border px-4 py-3">
+                            <!-- <div class="border-base-content/20 rounded-box flex gap-4 border px-4 py-3">
                                 <div class="avatar avatar-placeholder">
                                     <div class="text-primary bg-primary/20 rounded-field size-11.5">
                                         <span class="icon-[tabler--discount-2] size-6.5"></span>
@@ -334,9 +282,9 @@
                                 </div>
                                 <div class="flex flex-col">
                                     <span class="text-base-content/50 text-sm font-medium">Discounts</span>
-                                    <span class="text-base-content text-lg font-semibold">$ 14,987</span>
+                                    <span class="text-base-content text-lg font-semibold">${{ numberFormat(00) }}</span>
                                 </div>
-                            </div>
+                            </div> -->
                             <div class="border-base-content/20 rounded-box flex gap-4 border px-4 py-3">
                                 <div class="avatar avatar-placeholder">
                                     <div class="text-accent bg-accent/20 rounded-field size-11.5">
@@ -345,7 +293,7 @@
                                 </div>
                                 <div class="flex flex-col">
                                     <span class="text-base-content/50 text-sm font-medium">Refunds</span>
-                                    <span class="text-base-content text-lg font-semibold">$3248</span>
+                                    <span class="text-base-content text-lg font-semibold">${{ numberFormat($refunds) }}</span>
                                 </div>
                             </div>
                         </div>
@@ -354,13 +302,9 @@
                     <!-- Revenue Goal Section -->
                     <div class="bg-base-200 item-center rounded-box flex justify-center max-md:w-full">
                         <div class="bg-base-200 rounded-box space-y-4 p-4">
-                            <h3 class="text-base-content text-xl font-medium">Order Chart</h3>
+                            <h3 class="text-base-content text-xl font-medium">Order Statuses</h3>
                             <!-- Radial Progress -->
-                            <div id="revenue-chart" class="w-full"></div>
-                            <div class="flex items-center justify-between gap-6">
-                                <span class="text-base-content/80 text-lg">Plan Completed</span>
-                                <span class="text-base-content text-2xl font-medium">56%</span>
-                            </div>
+                            <div id="order-status-chart" class="w-full"></div>
                         </div>
                     </div>
                 </div>
@@ -495,3 +439,88 @@
         </div>
     </div>
 @endsection
+
+@push('js')
+<script>
+    window.addEventListener('load', () => {
+        (function() {
+            const statusLabels = @json($statusLabels);
+            const statusValues = @json($statusValues);
+            const totalOrders = statusValues.reduce((a, b) => a + b, 0);
+
+            // Order Status Chart
+            buildChart('#order-status-chart', () => ({
+                chart: {
+                    height: 250,
+                    width: '100%',
+                    type: 'donut',
+                    offsetX: 0,
+                    parentHeightOffset: 0
+                },
+                labels: statusLabels,
+                series: statusValues,
+                colors: ['var(--color-primary)', 'var(--color-success)', 'var(--color-warning)', 'var(--color-error)', 'var(--color-info)'],
+                stroke: {
+                    width: 4,
+                    colors: ['var(--color-base-200)']
+                },
+                dataLabels: {
+                    enabled: false
+                },
+                legend: {
+                    show: true,
+                    position: 'bottom',
+                    horizontalAlign: 'center', 
+                },
+                grid: {
+                    show: false
+                },
+                states: {
+                    hover: {
+                        filter: { type: 'none' }
+                    },
+                    active: {
+                        filter: { type: 'none' }
+                    }
+                },
+                plotOptions: {
+                    pie: {
+                        expandOnClick: false,
+                        donut: {
+                            size: '75%',
+                            background: 'transparent',
+                            labels: {
+                                show: true,
+                                value: {
+                                    fontSize: '1.5rem',
+                                    fontFamily: 'Inter, ui-sans-serif',
+                                    fontWeight: 700,
+                                    color: 'var(--color-base-content)',
+                                    offsetY: -5,
+                                    formatter: function(val) {
+                                        return parseInt(val);
+                                    }
+                                },
+                                name: {
+                                    offsetY: 20,
+                                    fontFamily: 'Inter, ui-sans-serif'
+                                },
+                                total: {
+                                    show: true,
+                                    fontSize: '14px',
+                                    color: 'var(--color-base-content)',
+                                    fontWeight: 500,
+                                    label: 'Total Orders',
+                                    formatter: function(w) {
+                                        return totalOrders;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }));
+        })();
+    });
+</script>
+@endpush
