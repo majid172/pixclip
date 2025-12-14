@@ -25,7 +25,7 @@
                     </div>
                     <div class="w-full flex justify-between items-center py-2 border-b border-base-content/10">
                         <span class="text-base-content/70">User ID</span>
-                        <span class="badge badge-soft badge-error">{{ $user->userDetail?->uuid }}</span>
+                        <span class="badge badge-soft badge-error font-bold">{{ $user->userDetail?->uuid }}</span>
 
                     </div>
                     <div class="w-full flex justify-between items-center py-2 border-b border-base-content/10">

@@ -66,7 +66,7 @@
                             </a>
                         </li>
                         <li>
-                            <a class="dropdown-item px-3" href="#">
+                            <a class="dropdown-item px-3" href="{{ route('billing.index') }}">
                                 <span class="icon-[tabler--credit-card] size-5"></span>
                                 Billing
                             </a>

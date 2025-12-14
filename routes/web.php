@@ -91,6 +91,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('change-password',[ChangePasswordController::class,'password'])->name('password');
     Route::put('change-password',[ChangePasswordController::class,'changePassword'])->name('change.password');
 
+    // Billing Address
+    Route::get('billing', [\App\Http\Controllers\Backend\BillingController::class, 'index'])->name('billing.index');
+    Route::put('billing', [\App\Http\Controllers\Backend\BillingController::class, 'update'])->name('billing.update');
+
     // Notice Module
     Route::resource('notice', NoticeController::class);
 
