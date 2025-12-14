@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
@@ -24,23 +25,26 @@ class RegisterController extends Controller
     public function register(Request $request)
     {
         $request->validate([
-            'name'     => 'required|string|max:255',
-            'email'    => 'required|string|email|max:255|unique:users,email',
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users,email',
             'password' => 'required|string|min:6|confirmed',
         ]);
 
         $user = User::create([
-            'name'     => $request->name,
-            'email'    => $request->email,
+            'name' => $request->name,
+            'email' => $request->email,
             'password' => Hash::make($request->password),
-            'status'   => 1,
+            'status' => 1,
+        ]);
+
+        $user->userDetail()->create([
+            'uuid' => 'PIXU-'.date('ym').'-'.sprintf('%04d', $user->id),
         ]);
 
         event(new Registered($user));
 
-        Auth::login($user); 
+        Auth::login($user);
 
         return redirect()->route('verification.notice');
     }
-
 }

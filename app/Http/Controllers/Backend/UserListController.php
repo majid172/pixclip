@@ -17,14 +17,14 @@ class UserListController extends Controller
     }
     public function show(User $user)
     {
-        
+
         $orderCounts = Order::where('user_id', $user->id)
             ->selectRaw('status, count(*) as count')
             ->groupBy('status')
             ->pluck('count', 'status');
 
         $totalOrders = $orderCounts->sum();
-        
+
         // Ensure all statuses have a default of 0
         $statuses = ['In Review', 'Pending', 'Received', 'Processing', 'Finalizing', 'Completed', 'Invoiced', 'Downloaded', 'Canceled'];
         $stats = [];
@@ -59,7 +59,7 @@ class UserListController extends Controller
             'status'     => 'required|in:0,1,2',
         ]);
 
-       
+
         if ($validator->fails()) {
             return back()
                 ->withErrors($validator)
@@ -83,8 +83,7 @@ class UserListController extends Controller
                 'post_code'  => $data['post_code'] ?? null,
                 'country_id' => $data['country_id'],
                 'country_id' => $data['country_id'],
-                
-                // 'uuid' => 'PIXU-'.date('ym').'-'.sprintf('%04d',$user->id)
+
             ]
         );
 

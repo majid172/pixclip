@@ -39,7 +39,7 @@ class LoginController extends Controller
         $user->userDetail()->updateOrCreate(
             ['user_id' => $user->id],
             [
-                'uuid' => 'PIXU-'.date('ym').'-'.sprintf('%04d',$user->id),
+
                 'ip'             => $request->ip(),
                 'last_access_at' => now(),
             ]
