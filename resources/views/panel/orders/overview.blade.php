@@ -55,11 +55,14 @@
     <div class="bg-white p-6 rounded-xl shadow-sm">
         <h3 class="text-sm font-medium text-slate-500 mb-4">Selected Services</h3>
         <div class="flex flex-wrap gap-2">
-            @foreach ($services as $service)
-                <span class="px-3 py-1 text-xs bg-pink-50 text-pink-600 border border-pink-200 rounded-full">
-                    {{ $service->service_name }}
-                </span>
-            @endforeach
+            @if (isset($selected_services))
+                @foreach ($selected_services as $service)
+                    <span class="px-3 py-1 text-xs bg-pink-50 text-pink-600 border border-pink-200 rounded-full">
+                        {{ $service->service_name }}
+                    </span>
+                @endforeach
+            @endif
+           
         </div>
     </div>
 

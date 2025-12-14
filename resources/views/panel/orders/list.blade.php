@@ -57,7 +57,7 @@
                             <td>
                                 <select class="select select-bordered select-sm w-full max-w-xs js-status-action text-primary border-primary focus:border-primary focus:ring-primary font-semibold"
                                     data-id="{{ $item->id }}">
-                                    @foreach (['In Review', 'Pending', 'Processing', 'Received', 'Finalizing', 'Completed', 'Invoiced', 'Downloaded', 'Canceled'] as $status)
+                                    @foreach (['In Review', 'Pending','Received','Invoiced', 'Processing',  'Finalizing', 'Completed',  'Downloaded', 'Canceled'] as $status)
                                         <option value="{{ $status }}"
                                             {{ $item->status == $status ? 'selected' : '' }}>
                                             {{ $status }}
@@ -72,6 +72,8 @@
                                     <span class="badge badge-soft badge-success text-xs">In Review</span>
                                 @elseif ($item->status == 'Pending')
                                     <span class="badge badge-soft badge-primary text-xs">Pending</span>
+                                @elseif($item->status == 'Invoiced')
+                                    <span class="badge badge-soft badge-info text-xs">@lang('Invoiced')</span>
                                 @elseif ($item->status == 'Processing')
                                     <span class="badge badge-soft badge-primary text-xs">Processing</span>
                                 @elseif ($item->status == 'Received')
@@ -80,8 +82,7 @@
                                     <span class="badge badge-soft badge-success text-xs">@lang('Finalized')</span>
                                 @elseif($item->status == 'Completed')
                                     <span class="badge badge-soft badge-success text-xs">@lang('Completed')</span>
-                                @elseif($item->status == 'Invoiced')
-                                    <span class="badge badge-soft badge-info text-xs">@lang('Invoiced')</span>
+                                
                                 @elseif ($item->status == 'Downloaded')
                                     <span class="badge badge-soft badge-warning text-xs">Downloaded</span>
                                 @elseif ($item->status == 'Canceled')

@@ -12,7 +12,7 @@
                         {{-- ORDER TITLE --}}
                         <div>
                             <h1 class="text-2xl font-bold text-primary">{{ $order->order_id }}</h1>
-                            <p class="text-sm text-slate-500">{{ __($order->service_id) }}</p>
+                            <p class="text-sm text-slate-500">{{$selected_services[0]->service_name}}</p>
                         </div>
 
                         {{-- STATS ROW --}}
