@@ -12,7 +12,9 @@ class UserListController extends Controller
 {
     public function list()
     {
-        $users = User::get();
+        $users = User::where('is_admin', 0)->paginate(30);
+
+        // dd($users);
         return view("panel.users.list", compact("users"));
     }
     public function show(User $user)

@@ -11,10 +11,8 @@ class BillingController extends Controller
 {
     public function index()
     {
-        $billing = BillingAddress::firstOrCreate(
-            ['user_id' => auth()->id()],
-            ['user_id' => auth()->id()] // Ensure user_id is set on creation
-        );
+        $billing = BillingAddress::where('user_id', auth()->id())->first();
+       
         $countries = Country::where('status', 'Active')->get();
         return view('panel.settings.billing', compact('billing', 'countries'));
     }

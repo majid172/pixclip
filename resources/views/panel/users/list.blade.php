@@ -6,6 +6,7 @@
             <table class="table">
                 <thead>
                     <tr>
+                        <th>SL.</th>
                         <th>Name</th>
                         <th>Email</th>
                         <th>Status</th>
@@ -16,6 +17,7 @@
                 <tbody>
                     @foreach ($users as $item)
                         <tr>
+                            <td>{{ $loop->iteration }}</td>
                             <td>{{ Str::ucfirst($item->name) }}</td>
                             <td>{{ __($item->email) }}</td>
                             <td><span
@@ -50,5 +52,36 @@
                 </tbody>
             </table>
         </div>
+        
+        {{-- Pagination Links --}}
+        @if ($users->hasPages())
+            <div class="flex justify-center items-center gap-2 p-4">
+                <div class="join">
+                    {{-- Previous Button --}}
+                    @if ($users->onFirstPage())
+                        <button class="join-item btn btn-disabled" disabled>«</button>
+                    @else
+                        <a href="{{ $users->previousPageUrl() }}" class="join-item btn">«</a>
+                    @endif
+
+                    {{-- Page Numbers --}}
+                    @foreach ($users->getUrlRange(1, $users->lastPage()) as $page => $url)
+                        @if ($page == $users->currentPage())
+                            <button class="join-item btn btn-active">{{ $page }}</button>
+                        @else
+                            <a href="{{ $url }}" class="join-item btn">{{ $page }}</a>
+                        @endif
+                    @endforeach
+
+                    {{-- Next Button --}}
+                    @if ($users->hasMorePages())
+                        <a href="{{ $users->nextPageUrl() }}" class="join-item btn">»</a>
+                    @else
+                        <button class="join-item btn btn-disabled" disabled>»</button>
+                    @endif
+                </div>
+            </div>
+        @endif
+
     </div>
 @endsection

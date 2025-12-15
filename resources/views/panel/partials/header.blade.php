@@ -65,12 +65,15 @@
                                 Change Password
                             </a>
                         </li>
-                        <li>
-                            <a class="dropdown-item px-3" href="{{ route('billing.index') }}">
-                                <span class="icon-[tabler--credit-card] size-5"></span>
-                                Billing
-                            </a>
-                        </li>
+                        @if (!auth()->user()->is_admin)
+                            <li>
+                                <a class="dropdown-item px-3" href="{{ route('billing.index') }}">
+                                    <span class="icon-[tabler--credit-card] size-5"></span>
+                                    Billing
+                                </a>
+                            </li>
+                        @endif
+
                         <li>
                             <hr class="border-base-content/20 -mx-2 my-1" />
                         </li>

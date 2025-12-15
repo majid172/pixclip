@@ -10,6 +10,7 @@ use App\Http\Controllers\Backend\OrderController;
 use App\Http\Controllers\Backend\UserListController;
 use App\Http\Controllers\FreeTrialController;
 use App\Http\Controllers\Backend\InvoiceController;
+use App\Http\Controllers\Backend\TransactionController;
 use App\Http\Controllers\ServiceController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\Request;
@@ -126,4 +127,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::post('update-status', 'updateStatus')->name('status.update');
     });
     Route::resource('invoice', InvoiceController::class);
+
+    Route::resource('transactions', TransactionController::class);
 });
