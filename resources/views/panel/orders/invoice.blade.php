@@ -39,6 +39,11 @@
                             @endif
                         </div>
 
+                        {{-- Payment Button --}}
+                        @if (!$order->is_paid && $is_admin == 0 && $order->is_invoiced)
+                            <a href="{{ route('payment.create', $order->id) }}" class="btn btn-primary">Pay Now</a>
+                        @endif
+
                         <div class="text-right">
                             <p class="text-4xl font-black font-bold uppercase text-primary">Invoice No. :
                                 #{{ $order->order_id }}</p>

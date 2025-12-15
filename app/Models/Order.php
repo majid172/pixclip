@@ -50,4 +50,13 @@ class Order extends Model
         }
         return $q->where('user_id',auth()->user()->id);
     }
+
+    public function transactions()
+    {
+        return $this->hasMany(Transaction::class, 'order_id');
+    }
+    public function invoice()
+    {
+        return $this->hasOne(Invoice::class, 'order_id');
+    }
 }

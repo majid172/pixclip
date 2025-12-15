@@ -232,6 +232,27 @@
                               </div>
                           </li>
 
+                          <!-- Payment History Menu Item -->
+                          <li>
+                            @if(auth()->user()->is_admin == 1)
+                              <a href="{{ route('transactions.index') }}"
+                                  class="inline-flex w-full items-center px-2">
+                                  <span class="text-bg-neutral rounded-field flex size-6 items-center justify-center">
+                                      <span class="icon-[tabler--credit-card] size-4.5"></span>
+                                  </span>
+                                  <span>Transaction History</span>
+                              </a>
+                              @else
+                              <a href="{{ route('payment.history') }}"
+                                  class="inline-flex w-full items-center px-2">
+                                  <span class="text-bg-neutral rounded-field flex size-6 items-center justify-center">
+                                      <span class="icon-[tabler--credit-card] size-4.5"></span>
+                                  </span>
+                                  <span>Payment History</span>
+                              </a>
+                            @endif
+                          </li>
+
 
                       </ul>
                   </div>

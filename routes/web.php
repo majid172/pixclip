@@ -128,5 +128,15 @@ Route::middleware(['auth', 'verified'])->group(function () {
     });
     Route::resource('invoice', InvoiceController::class);
 
+    // Payment Routes
+    Route::prefix('payment')->name('payment.')->controller(\App\Http\Controllers\Backend\PaymentController::class)->group(function () {
+        Route::get('create/{order}', 'create')->name('create');
+        Route::post('store', 'store')->name('store');
+        Route::get('history', 'history')->name('history');
+        Route::get('transaction/{transactionId}', 'show')->name('transaction.show');
+        Route::post('refund/{transactionId}', 'refund')->name('refund');
+    });
+
     Route::resource('transactions', TransactionController::class);
+    Route::post('transactions/update-status', [TransactionController::class, 'updateStatus'])->name('transactions.update.status');
 });
