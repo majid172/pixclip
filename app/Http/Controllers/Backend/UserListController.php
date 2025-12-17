@@ -49,6 +49,27 @@ class UserListController extends Controller
 
     public function update(Request $request, User $user)
     {
+        // Check if the current user is an admin trying to update another user
+        if (auth()->user()->is_admin == 1 && auth()->id() != $user->id) {
+            $validator = Validator::make($request->all(), [
+                'status'     => 'required|in:0,1,2',
+            ]);
+
+            if ($validator->fails()) {
+                return back()
+                    ->withErrors($validator)
+                    ->withInput();
+            }
+
+            $user->update([
+                'status' => $request->status,
+            ]);
+
+            return redirect()
+                ->back()
+                ->with('success', 'User status updated successfully');
+        }
+
         $validator = Validator::make($request->all(), [
             'name'       => 'required|string|max:255',
             'email'      => 'required|email|max:255|unique:users,email,' . $user->id,
@@ -84,8 +105,6 @@ class UserListController extends Controller
                 'state'      => $data['state'] ?? null,
                 'post_code'  => $data['post_code'] ?? null,
                 'country_id' => $data['country_id'],
-                'country_id' => $data['country_id'],
-
             ]
         );
 

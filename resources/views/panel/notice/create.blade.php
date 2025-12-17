@@ -23,7 +23,7 @@
                         <label class="label-text" for="status">Status</label>
                         <select type="status" id="status" name="status" class="input" placeholder="California">
                             <option value="1">Active</option>
-                            <option value="2">Inactive</option>
+                            <option value="0">Inactive</option>
                         </select>
                     </div>
                 </div>

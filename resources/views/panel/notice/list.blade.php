@@ -25,7 +25,7 @@
                             <td>{{ $loop->iteration }}</td>
                             <td>{{ Str::ucfirst($item->title) }}</td>
                             <td><span
-                                    class="badge badge-soft badge-success text-xs">{{ $item->status == 1 ? 'Active' : 'Inactive' }}</span>
+                                    class="badge badge-soft badge-{{ $item->status == 1 ? 'success' : 'error' }} text-xs">{{ $item->status == 1 ? 'Active' : 'Inactive' }}</span>
                             </td>
                             <td>{{ dateFormat($item->publish_date) }}</td>
                             <td>
