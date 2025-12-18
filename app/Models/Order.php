@@ -46,9 +46,9 @@ class Order extends Model
     public function scopeCheckUser($q)
     {
         if(auth()->user()->is_admin == 1){
-            return $q;
+            return $q->orderBy('created_at','desc');
         }
-        return $q->where('user_id',auth()->user()->id);
+        return $q->where('user_id',auth()->user()->id)->orderBy('created_at','desc');
     }
 
     public function transactions()
