@@ -33,7 +33,7 @@ class PaymentService
         return $order->is_paid == 1;
     }
 
- 
+
     public function validatePaymentAmount(float $amount, Order $order): bool
     {
         return $amount == $order->price;
@@ -44,7 +44,7 @@ class PaymentService
         $prefix = strtoupper(substr($paymentMethod, 0, 2));
         $timestamp = time();
         $random = mt_rand(1000, 9999);
-        
+
         return "TXN-{$prefix}-" . substr($timestamp . $random, -6);
     }
 
@@ -101,7 +101,7 @@ class PaymentService
             return $transaction;
         } catch (Exception $e) {
             DB::rollBack();
-            
+
             // Log payment failure
             Log::error('Payment processing failed', [
                 'error' => $e->getMessage(),
@@ -235,7 +235,7 @@ class PaymentService
             return true;
         } catch (Exception $e) {
             DB::rollBack();
-            
+
             Log::error('Refund processing failed', [
                 'error' => $e->getMessage(),
                 'transaction_id' => $transactionId,

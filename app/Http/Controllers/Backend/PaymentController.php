@@ -63,7 +63,7 @@ class PaymentController extends Controller
 
             // Process payment through service
             $transaction = $this->paymentService->processPayment($paymentData);
-
+dd($transaction);
             $order = Order::find($validated['order_id']);
 
             return redirect()->route('order.details', $order->id)

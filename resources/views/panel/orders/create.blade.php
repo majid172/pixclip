@@ -126,7 +126,7 @@
                             </div>
                         </label>
                     @endforeach
-                    
+
 
                 </div>
 
@@ -186,7 +186,7 @@
 @push('plugins')
     <link href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.snow.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.js"></script>
-    {{-- 
+    {{--
     <script src="{{ asset('public/assets/plugins/js/tinymce.min.js') }}"></script>
     <script>
         tinymce.init({
