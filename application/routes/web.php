@@ -28,6 +28,7 @@ Route::view('/about', 'about');
 Route::view('/contact', 'contact');
 
 Route::get('/free-trial', [FreeTrialController::class, 'index'])->name('free.trial');
+Route::post('/free-trial', [FreeTrialController::class, 'store'])->name('free.trial.store');
 Route::get('service/{slug}', [ServiceController::class, 'show'])->name('services.slug');
 
 /*
@@ -141,4 +142,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
     Route::resource('transactions', TransactionController::class);
     Route::post('transactions/update-status', [TransactionController::class, 'updateStatus'])->name('transactions.update.status');
+
+    // Free Trial Admin
+    Route::resource('free-trial-list', \App\Http\Controllers\Backend\FreeTrialController::class);
 });

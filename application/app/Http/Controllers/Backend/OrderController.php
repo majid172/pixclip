@@ -194,6 +194,19 @@ class OrderController extends Controller
         if ($order->media_id) {
             $images = Media::whereIn('id', json_decode($order->media_id))->get();
         }
+
+        // Fetch Output Images
+        $output_images = null;
+        if ($order->output_media_id && $order->output_media_id != 'null' && $order->output_media_id != '[]') {
+            $output_images = Media::whereIn('id', json_decode($order->output_media_id))->get();
+        }
+
+        // Fetch Redo Output Images
+        $output_redo_images = null;
+        if ($order->output_redo_media_id && $order->output_redo_media_id != 'null' && $order->output_redo_media_id != '[]') {
+            $output_redo_images = Media::whereIn('id', json_decode($order->output_redo_media_id))->get();
+        }
+
         $billing_address = BillingAddress::where('user_id', $order->user_id)->first();
 
         return view('panel.orders.details', compact(
@@ -204,6 +217,8 @@ class OrderController extends Controller
             'services',
             'invoice',
             'images',
+            'output_images',
+            'output_redo_images',
             'billing_address'
         ));
     }

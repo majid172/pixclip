@@ -48,6 +48,12 @@
                             </div>
                         </li>
                         <li>
+                            <a class="dropdown-item px-3" href="{{ url('/') }}">
+                                <span class="icon-[tabler--house] size-5"></span>
+                                Home
+                            </a>
+                        </li>
+                        <li>
                             <a class="dropdown-item px-3" href="{{ route('user.show', auth()->user()->id) }}">
                                 <span class="icon-[tabler--user] size-5"></span>
                                 Profile
@@ -77,12 +83,7 @@
                         <li>
                             <hr class="border-base-content/20 -mx-2 my-1" />
                         </li>
-                        <li>
-                            <a class="dropdown-item px-3" href="{{ url('/') }}">
-                                <span class="icon-[tabler--users] size-5"></span>
-                                Back to Home
-                            </a>
-                        </li>
+                       
 
                         <li class="dropdown-footer p-2 pt-1">
                             <a class="btn btn-text btn-error btn-block h-11 justify-start px-3 font-normal"
