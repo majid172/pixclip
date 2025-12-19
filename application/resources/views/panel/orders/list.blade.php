@@ -148,6 +148,13 @@
                 const $this = $(this);
                 const orderId = $this.data('id');
                 const status = $this.val();
+                
+                // Intercept Finalizing status
+                if (status === 'Finalizing') {
+                    window.location.href = "{{ url('order/finalize') }}/" + orderId;
+                    return;
+                }
+
                 const originalColor = $this.css('color');
 
                 // Visual feedback

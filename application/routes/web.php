@@ -111,6 +111,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::get('invoiced', 'invoiced')->name('invoiced');
         Route::get('processing', 'processing')->name('processing');
         Route::get('finalized', 'finalized')->name('finalized');
+        Route::get('finalize/{order}', 'finalizeView')->name('finalize'); // New Route
+        Route::post('finalize/{order}', 'finalizeStore')->name('finalize.store'); // New Route
         Route::get('completed', 'completed')->name('completed');
         Route::get('downloaded', 'downloaded')->name('downloaded');
         Route::get('canceled', 'canceled')->name('canceled');

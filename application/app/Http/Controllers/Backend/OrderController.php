@@ -208,6 +208,76 @@ class OrderController extends Controller
         ));
     }
 
+    public function finalizeView(Order $order)
+    {
+        return view('panel.orders.finalize', compact('order'));
+    }
+
+public function finalizeStore(Request $request, Order $order)
+{
+    $request->validate([
+        'output_files.*' => 'nullable|file|max:10240', // max 10MB per file
+        'output_link' => 'nullable|string',
+    ]);
+
+    $media_ids = [];
+
+    // Handle File Uploads
+    if ($request->hasFile('output_files')) {
+        $files = $request->file('output_files');
+        $destinationPath = base_path('../assets/order/'.$order->order_id.'/finalize');
+
+        if (!file_exists($destinationPath)) {
+            mkdir($destinationPath, 0755, true); // safer permissions
+        }
+
+        foreach ($files as $file) {
+            if (!$file->isValid()) {
+                continue; // skip invalid uploads
+            }
+            $fileName =  time().'_'. $file->getClientOriginalName();
+            $file->move($destinationPath, $fileName);
+            $media_create = Media::create([
+                'user_id' => $order->user_id,
+                'file_name' => $file->getClientOriginalName(),
+                'file' => 'assets/order/' . $fileName,
+                'extension' => $file->getClientOriginalExtension(),
+                // 'type' => $file->getMimeType(),
+                // 'file_size' => $file->getSize(),
+            ]);
+
+            if ($media_create) {
+                $media_ids[] = $media_create->id;
+            }
+        }
+    }
+
+    // Determine if this is a correction/redo finalization
+    // If order is marked as redo OR if we already have a main output, treat as redo output
+    $is_redo_delivery = $order->is_redo == 1 || (!empty($order->output_media_id) && $order->output_media_id != 'null' && $order->output_media_id != '[]');
+
+    $target_media_col = $is_redo_delivery ? 'output_redo_media_id' : 'output_media_id';
+    $target_link_col = $is_redo_delivery ? 'output_redo_link' : 'output_link';
+
+    // Update Order status
+    $order->status = 'Finalizing';
+
+    // Merge new media IDs with existing ones
+    $existing_media = !empty($order->{$target_media_col}) ? json_decode($order->{$target_media_col}, true) : [];
+    if (!empty($media_ids)) {
+        $order->{$target_media_col} = json_encode(array_merge($existing_media, $media_ids));
+    }
+
+    // Update output link if provided
+    if ($request->filled('output_link')) {
+        $order->{$target_link_col} = $request->output_link;
+    }
+
+    $order->save();
+
+    return redirect()->route('order.list')->with('success', 'Order finalized successfully');
+}
+
     public function updateStatus(Request $request)
     {
         $request->validate([

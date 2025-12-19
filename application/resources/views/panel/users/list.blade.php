@@ -8,9 +8,11 @@
                     <tr>
                         <th>SL.</th>
                         <th>Name</th>
-                        <th>Email</th>
+                        <th>IP</th>
                         <th>Status</th>
-                        <th>Date</th>
+                        <th>Create Acc.</th>
+                        <th>Last Login</th>
+
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -18,12 +20,15 @@
                     @foreach ($users as $item)
                         <tr>
                             <td>{{ $loop->iteration }}</td>
-                            <td>{{ Str::ucfirst($item->name) }}</td>
-                            <td>{{ __($item->email) }}</td>
+                            <td>{{ Str::ucfirst($item->name) }} <br>
+                            <span class="text-xs">{{ __($item->email) }}</span>
+                            </td>
+                            <td>{{ $item->userDetail?->ip}}</td>
                             <td><span
                                     class="badge badge-soft badge-{{ $item->status == 1 ? 'success' : 'error' }}  text-xs">{{ $item->status == 1 ? 'Active' : 'Inactive' }}</span>
                             </td>
                             <td>{{ $item->created_at }}</td>
+                            <td>{{ $item->userDetail?->last_access_at }}</td>
                             <td>
                                 {{-- Show Profile --}}
                                 <a class="btn btn-circle btn-text btn-sm" href="{{ route('user.show', $item->id) }}"
@@ -52,7 +57,7 @@
                 </tbody>
             </table>
         </div>
-        
+
         {{-- Pagination Links --}}
         @if ($users->hasPages())
             <div class="flex justify-center items-center gap-2 p-4">
