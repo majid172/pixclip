@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PixClipping Clone Structure</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Flowbite CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.css" rel="stylesheet" />
+
+    <!-- Laravel Vite CSS -->
+    @vite('resources/css/app.css')
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="flex flex-col min-h-screen bg-blue-50">
+
+    <!-- Top Navigation -->
+    @include('layouts.includes.topnav')
+
+    <!-- Main Navbar -->
+    @include('layouts.includes.navbar')
+
+    <!-- BODY CONTENT -->
+    <main class="flex-grow">
+        @yield('content')
+    </main>
+
+    <!-- CTA Section -->
+    @include('layouts.includes.cta')
+
+    <!-- Footer -->
+    @include('layouts.includes.footer')
+
+    <!-- Back to Top Button -->
+<button
+    id="backToTop"
+    class="hidden fixed bottom-5 right-5 md:bottom-6 md:right-6 z-50 w-12 h-12 rounded-full bg-orange-400 text-xl text-white shadow-xl hover:shadow-2xl active:bg-orange-600 focus:outline-none flex items-center justify-center"
+    aria-label="Back to top"
+>
+    ↑
+</button>
+
+
+    <!-- Mobile Menu Script -->
+    <script>
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        if (btn && menu) {
+            btn.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+            });
+        }
+    </script>
+
+    <!-- Back to Top Script -->
+    <script>
+        const backToTopBtn = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.remove('hidden');
+            } else {
+                backToTopBtn.classList.add('hidden');
+            }
+        });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+
+    <!-- Flowbite JS -->
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.js"></script>
+</body>
+
+</html>
