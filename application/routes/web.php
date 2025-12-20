@@ -1,20 +1,21 @@
 <?php
 
-use App\Http\Controllers\Auth\LoginController;
-use App\Http\Controllers\Auth\RegisterController;
-use App\Http\Controllers\Auth\ForgotPasswordController;
-use App\Http\Controllers\Backend\ChangePasswordController;
-use App\Http\Controllers\Backend\DashboardController;
-use App\Http\Controllers\Backend\NoticeController;
-use App\Http\Controllers\Backend\OrderController;
-use App\Http\Controllers\Backend\UserListController;
-use App\Http\Controllers\FreeTrialController;
-use App\Http\Controllers\Backend\InvoiceController;
-use App\Http\Controllers\Backend\TransactionController;
-use App\Http\Controllers\ServiceController;
-use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\FreeTrialController;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\Backend\OrderController;
+use App\Http\Controllers\Backend\NoticeController;
+use App\Http\Controllers\Backend\InvoiceController;
+use App\Http\Controllers\Backend\UserListController;
+use App\Http\Controllers\Backend\DashboardController;
+use App\Http\Controllers\Auth\ForgotPasswordController;
+use App\Http\Controllers\Backend\TransactionController;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
+use App\Http\Controllers\Backend\ChangePasswordController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,7 +26,8 @@ Route::view('/', 'home');
 Route::view('/workflow', 'workflow');
 Route::view('/price', 'price');
 Route::view('/about', 'about');
-Route::view('/contact', 'contact');
+Route::get('/contact', [ContactController::class, 'contact'])->name('contact');
+Route::get('/contact-message', [ContactController::class, 'sendMessage'])->name('contact.message');
 
 Route::get('/free-trial', [FreeTrialController::class, 'index'])->name('free.trial');
 Route::post('/free-trial', [FreeTrialController::class, 'store'])->name('free.trial.store');

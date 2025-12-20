@@ -48,11 +48,9 @@ class PaymentController extends Controller
      */
     public function store(PaymentRequest $request)
     {
-        // Validation and authorization are handled by PaymentRequest
         $validated = $request->validated();
 
         try {
-            // Prepare payment data
             $paymentData = [
                 'user_id'        => auth()->id(),
                 'admin_id'       => 1,
@@ -61,9 +59,7 @@ class PaymentController extends Controller
                 'payment_method' => $validated['payment_method'],
             ];
 
-            // Process payment through service
             $transaction = $this->paymentService->processPayment($paymentData);
-dd($transaction);
             $order = Order::find($validated['order_id']);
 
             return redirect()->route('order.details', $order->id)
@@ -75,9 +71,6 @@ dd($transaction);
         }
     }
 
-    /**
-     * Display payment history for the authenticated user
-     */
     public function history()
     {
         $transactions = $this->paymentService->getUserPaymentHistory(auth()->id(), 15);
@@ -85,9 +78,6 @@ dd($transaction);
         return view('panel.payments.history', compact('transactions'));
     }
 
-    /**
-     * Show transaction details
-     */
     public function show($transactionId)
     {
         $transaction = $this->paymentService->getTransactionById($transactionId);
@@ -104,17 +94,12 @@ dd($transaction);
         return view('panel.payments.transaction', compact('transaction'));
     }
 
-    /**
-     * Process refund (Admin only)
-     */
     public function refund(RefundRequest $request, $transactionId)
     {
-        // Validation and authorization are handled by RefundRequest
         $validated = $request->validated();
 
         try {
             $this->paymentService->refundPayment($transactionId, $validated['reason'] ?? '');
-
             return back()->with('success', 'Payment refunded successfully.');
         } catch (Exception $e) {
             return back()->with('error', $e->getMessage());

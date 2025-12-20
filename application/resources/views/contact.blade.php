@@ -1,3 +1,4 @@
+
 @extends('layouts.app')
 @section('content')
     @include('layouts.includes.breadcumb')
@@ -89,7 +90,7 @@
                     <div class="p-8 md:p-10">
                         <h3 class="text-xl font-normal text-slate-800 mb-6">Send a Message</h3>
 
-                        <form action="#" method="POST" class="space-y-6">
+                        <form action="{{ route('contact.message') }}" method="get" class="space-y-6">
 
                             <!-- Name & Email Grid -->
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -106,7 +107,7 @@
                                                     clip-rule="evenodd" />
                                             </svg>
                                         </div>
-                                        <input type="text" id="name"
+                                        <input type="text" id="name"  name="name"
                                             class="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-200 bg-gray-50 focus:bg-white focus:border-blue-900 focus:ring-4 focus:ring-blue-100 outline-none transition-all duration-300"
                                             placeholder="John Doe">
                                     </div>
@@ -125,7 +126,7 @@
                                                 <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
                                             </svg>
                                         </div>
-                                        <input type="email" id="email"
+                                        <input type="email" id="email" name="email"
                                             class="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-200 bg-gray-50 focus:bg-white focus:border-blue-900 focus:ring-4 focus:ring-blue-100 outline-none transition-all duration-300"
                                             placeholder="john@example.com">
                                     </div>
@@ -145,7 +146,7 @@
                                                 clip-rule="evenodd" />
                                         </svg>
                                     </div>
-                                    <input type="text" id="subject"
+                                    <input type="text" id="subject" name="subject"
                                         class="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-200 bg-gray-50 focus:bg-white focus:border-blue-900 focus:ring-4 focus:ring-blue-100 outline-none transition-all duration-300"
                                         placeholder="Project Inquiry">
                                 </div>
@@ -164,14 +165,14 @@
                                                 clip-rule="evenodd" />
                                         </svg>
                                     </div>
-                                    <textarea id="message" rows="4"
+                                    <textarea id="message" rows="4" name="message"
                                         class="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-200 bg-gray-50 focus:bg-white focus:border-blue-900 focus:ring-4 focus:ring-blue-100 outline-none transition-all duration-300 resize-none"
                                         placeholder="Tell us about your project..."></textarea>
                                 </div>
                             </div>
 
                             <!-- Attractive Button -->
-                            <button type="button"
+                            <button type="submit"
                                 class="group w-full bg-blue-900 text-white font-bold py-4 rounded-lg hover:bg-[#1a365d] hover:-translate-y-1 hover:shadow-lg transition-all duration-300 flex justify-center items-center">
                                 <span>Send Message</span>
                                 <svg xmlns="http://www.w3.org/2000/svg"

@@ -1,3 +1,6 @@
+@php
+    $title = "Workflow";
+@endphp
 @extends('layouts.app')
 @section('content')
     <section class="relative w-full overflow-hidden m-0">

@@ -1,4 +1,7 @@
 @extends('layouts.app')
+@php
+    $title = "Price";
+@endphp
 @section('content')
     @include('layouts.includes.breadcumb')
     <section class="py-16 md:py-24">

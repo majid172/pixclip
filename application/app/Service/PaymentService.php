@@ -20,6 +20,7 @@ class PaymentService
      */
     public function canAccessOrder(Order $order, int $userId, bool $isAdmin): bool
     {
+        
         if ($isAdmin) {
             return true;
         }

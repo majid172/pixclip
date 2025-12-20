@@ -24,7 +24,7 @@ class PaymentRequest extends FormRequest
             return true;
         }
 
-        return $order->user_id === auth()->id();
+        return $order->user_id == auth()->id();
     }
 
     /**

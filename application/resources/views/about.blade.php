@@ -1,3 +1,4 @@
+@php $title = "About"; @endphp
 @extends('layouts.app')
 @section('content')
     @include('layouts.includes.breadcumb')

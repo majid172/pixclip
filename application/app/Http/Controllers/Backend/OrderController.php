@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
@@ -14,7 +13,7 @@ class OrderController extends Controller
 {
     public function list()
     {
-        $title = 'Orders List';
+        $title  = 'Orders List';
         $orders = Order::checkUser()->get();
 
         return view('panel.orders.list', compact('orders', 'title'));
@@ -22,7 +21,7 @@ class OrderController extends Controller
 
     public function tracking()
     {
-        $title = 'In Review Orders';
+        $title  = 'In Review Orders';
         $orders = Order::status('In Review')->checkUser()->get();
 
         return view('panel.orders.list', compact('orders', 'title'));
@@ -30,7 +29,7 @@ class OrderController extends Controller
 
     public function pending()
     {
-        $title = 'Pending Orders';
+        $title  = 'Pending Orders';
         $orders = Order::status('Pending')->checkUser()->get();
 
         return view('panel.orders.list', compact('orders', 'title'));
@@ -38,7 +37,7 @@ class OrderController extends Controller
 
     public function received()
     {
-        $title = 'Received Orders';
+        $title  = 'Received Orders';
         $orders = Order::status('Received')->get();
 
         return view('panel.orders.list', compact('orders', 'title'));
@@ -46,7 +45,7 @@ class OrderController extends Controller
 
     public function invoiced()
     {
-        $title = 'Invoiced Orders';
+        $title  = 'Invoiced Orders';
         $orders = Order::status('Invoiced')->checkUser()->get();
 
         return view('panel.orders.list', compact('orders', 'title'));
@@ -54,7 +53,7 @@ class OrderController extends Controller
 
     public function processing()
     {
-        $title = 'Processing Orders';
+        $title  = 'Processing Orders';
         $orders = Order::status('Processing')->checkUser()->get();
 
         return view('panel.orders.list', compact('orders', 'title'));
@@ -62,7 +61,7 @@ class OrderController extends Controller
 
     public function finalized()
     {
-        $title = 'Finalized Orders';
+        $title  = 'Finalized Orders';
         $orders = Order::status('Finalizing')->checkUser()->get();
 
         return view('panel.orders.list', compact('orders', 'title'));
@@ -70,7 +69,7 @@ class OrderController extends Controller
 
     public function completed()
     {
-        $title = 'Completed Orders';
+        $title  = 'Completed Orders';
         $orders = Order::status('Completed')->checkUser()->get();
 
         return view('panel.orders.list', compact('orders', 'title'));
@@ -78,7 +77,7 @@ class OrderController extends Controller
 
     public function downloaded()
     {
-        $title = 'Downloaded Orders';
+        $title  = 'Downloaded Orders';
         $orders = Order::status('Downloaded')->checkUser()->get();
 
         return view('panel.orders.list', compact('orders', 'title'));
@@ -86,7 +85,7 @@ class OrderController extends Controller
 
     public function canceled()
     {
-        $title = 'Canceled Orders';
+        $title  = 'Canceled Orders';
         $orders = Order::status('Canceled')->checkUser()->get();
 
         return view('panel.orders.list', compact('orders', 'title'));
@@ -94,7 +93,7 @@ class OrderController extends Controller
 
     public function paid()
     {
-        $title = 'Paid Orders';
+        $title  = 'Paid Orders';
         $orders = Order::where('is_paid', 1)->checkUser()->get();
 
         return view('panel.orders.list', compact('orders', 'title'));
@@ -112,32 +111,46 @@ class OrderController extends Controller
         $data = $request->except('_token');
 
         $create = Order::create([
-            'job_title' => $data['title'],
-            'user_id' => auth()->user()->id,
-            'service_id' => json_encode($data['service_id']),
-            'image_quantity' => $data['image_quantity'],
-            'instruction' => $data['instruction'],
-            'image_complexity' => $data['complexity'],
+            'job_title'             => $data['title'],
+            'user_id'               => auth()->user()->id,
+            'service_id'            => json_encode($data['service_id']),
+            'image_quantity'        => $data['image_quantity'],
+            'instruction'           => $data['instruction'],
+            'image_complexity'      => $data['complexity'],
             'return_file_extension' => json_encode($data['return_file_extension']),
-            'turnaround' => $data['turnaround'],
+            'turnaround'            => $data['turnaround'],
             // 'image_link'            => json_encode($data["image_link"])??"",
         ]);
 
+        if ($create) {
+            $create->order_id = 'PIXC-' . date('ym') . '-' . sprintf('%04d', $create->id);
+            $create->save();
+        }
+
         $media_ids = [];
 
+        // Handle File Uploads - Save to filesystem
         if ($request->hasFile('upload_files')) {
+            $files           = $request->file('upload_files');
+            $destinationPath = base_path('../assets/order/' . $create->order_id . '/uploads/');
 
-            $files = $request->file('upload_files');
+            if (! file_exists($destinationPath)) {
+                mkdir($destinationPath, 0755, true);
+            }
 
             foreach ($files as $file) {
+                if (! $file->isValid()) {
+                    continue; // skip invalid uploads
+                }
+
+                $fileName = time() . '_' . $file->getClientOriginalName();
+                $file->move($destinationPath, $fileName);
 
                 $media_create = Media::create([
-                    'user_id' => auth()->id(),
+                    'user_id'   => auth()->id(),
                     'file_name' => $file->getClientOriginalName(),
-                    'file' => file_get_contents($file->getRealPath()),
+                    'file'      => 'assets/order/' . $create->order_id . '/uploads/' . $fileName,
                     'extension' => $file->getClientOriginalExtension(),
-                    'type' => $file->getMimeType(),
-                    'file_size' => $file->getSize(),
                 ]);
 
                 if ($media_create) {
@@ -146,21 +159,18 @@ class OrderController extends Controller
             }
         }
 
-        if ($create) {
-            $create->order_id = 'PIXC-'.date('ym').'-'.sprintf('%04d', $create->id);
-            if ($media_ids) {
-                $create->media_id = json_encode($media_ids);
-            }
+        if ($create && $media_ids) {
+            $create->media_id = json_encode($media_ids);
             $create->save();
 
             // send mail to user
-            $body = 'Greeting From PIX Clipping Ltd. Your order #PIXC-'.date('ym').'-'.sprintf('%04d', $create->id).' has submitted successfully. Your order status in now Received. Please wait while our team will review your order soon.';
-            $details['subject'] = 'Order Submitted';
-            $details['greeting'] = 'Hello '.auth()->user()->name;
-            $details['body'] = $body;
+            $body                  = 'Greeting From PIX Clipping Ltd. Your order #PIXC-' . date('ym') . '-' . sprintf('%04d', $create->id) . ' has submitted successfully. Your order status in now Received. Please wait while our team will review your order soon.';
+            $details['subject']    = 'Order Submitted';
+            $details['greeting']   = 'Hello ' . auth()->user()->name;
+            $details['body']       = $body;
             $details['actionText'] = 'View Order';
-            $details['actionUrl'] = url('/order/'.$create->id.'/');
-            $details['endText'] = '';
+            $details['actionUrl']  = url('/order/' . $create->id . '/');
+            $details['endText']    = '';
             // Notification::send(auth()->user(), new SendEmailNotification($details));
 
             // //send mail to admin
@@ -185,12 +195,12 @@ class OrderController extends Controller
     public function details(Order $order)
     {
         $selected_services = PathService::whereIn('id', json_decode($order->service_id))->get();
-        $services = PathService::where('status', '1')->get();
-        $total_orders = $order->where('id', $order->id)->count();
-        $total_unpaid = $order->where(['id' => $order->id, 'is_paid' => 0])->count();
+        $services          = PathService::where('status', '1')->get();
+        $total_orders      = $order->where('id', $order->id)->count();
+        $total_unpaid      = $order->where(['id' => $order->id, 'is_paid' => 0])->count();
         // $order_details = $order;
         $invoice = Invoice::where('order_id', $order->id)->first();
-        $images = null;
+        $images  = null;
         if ($order->media_id) {
             $images = Media::whereIn('id', json_decode($order->media_id))->get();
         }
@@ -228,76 +238,76 @@ class OrderController extends Controller
         return view('panel.orders.finalize', compact('order'));
     }
 
-public function finalizeStore(Request $request, Order $order)
-{
-    $request->validate([
-        'output_files.*' => 'nullable|file|max:10240', // max 10MB per file
-        'output_link' => 'nullable|string',
-    ]);
+    public function finalizeStore(Request $request, Order $order)
+    {
+        $request->validate([
+            'output_files.*' => 'nullable|file|max:10240',
+            'output_link'    => 'nullable|string',
+        ]);
 
-    $media_ids = [];
+        $media_ids = [];
 
-    // Handle File Uploads
-    if ($request->hasFile('output_files')) {
-        $files = $request->file('output_files');
-        $destinationPath = base_path('../assets/order/'.$order->order_id.'/finalize');
+        // Handle File Uploads
+        if ($request->hasFile('output_files')) {
+            $files           = $request->file('output_files');
+            $destinationPath = base_path('../assets/order/' . $order->order_id . '/finalize');
 
-        if (!file_exists($destinationPath)) {
-            mkdir($destinationPath, 0755, true); // safer permissions
+            if (! file_exists($destinationPath)) {
+                mkdir($destinationPath, 0755, true); // safer permissions
+            }
+
+            foreach ($files as $file) {
+                if (! $file->isValid()) {
+                    continue; // skip invalid uploads
+                }
+                $fileName = time() . '_' . $file->getClientOriginalName();
+                $file->move($destinationPath, $fileName);
+                $media_create = Media::create([
+                    'user_id'   => $order->user_id,
+                    'file_name' => $file->getClientOriginalName(),
+                    'file'      => 'assets/order/' . $fileName,
+                    'extension' => $file->getClientOriginalExtension(),
+                    // 'type' => $file->getMimeType(),
+                    // 'file_size' => $file->getSize(),
+                ]);
+
+                if ($media_create) {
+                    $media_ids[] = $media_create->id;
+                }
+            }
         }
 
-        foreach ($files as $file) {
-            if (!$file->isValid()) {
-                continue; // skip invalid uploads
-            }
-            $fileName =  time().'_'. $file->getClientOriginalName();
-            $file->move($destinationPath, $fileName);
-            $media_create = Media::create([
-                'user_id' => $order->user_id,
-                'file_name' => $file->getClientOriginalName(),
-                'file' => 'assets/order/' . $fileName,
-                'extension' => $file->getClientOriginalExtension(),
-                // 'type' => $file->getMimeType(),
-                // 'file_size' => $file->getSize(),
-            ]);
+        // Determine if this is a correction/redo finalization
+        // If order is marked as redo OR if we already have a main output, treat as redo output
+        $is_redo_delivery = $order->is_redo == 1 || (! empty($order->output_media_id) && $order->output_media_id != 'null' && $order->output_media_id != '[]');
 
-            if ($media_create) {
-                $media_ids[] = $media_create->id;
-            }
+        $target_media_col = $is_redo_delivery ? 'output_redo_media_id' : 'output_media_id';
+        $target_link_col  = $is_redo_delivery ? 'output_redo_link' : 'output_link';
+
+        // Update Order status
+        $order->status = 'Finalizing';
+
+        // Merge new media IDs with existing ones
+        $existing_media = ! empty($order->{$target_media_col}) ? json_decode($order->{$target_media_col}, true) : [];
+        if (! empty($media_ids)) {
+            $order->{$target_media_col} = json_encode(array_merge($existing_media, $media_ids));
         }
+
+        // Update output link if provided
+        if ($request->filled('output_link')) {
+            $order->{$target_link_col} = $request->output_link;
+        }
+
+        $order->save();
+
+        return redirect()->route('order.list')->with('success', 'Order finalized successfully');
     }
-
-    // Determine if this is a correction/redo finalization
-    // If order is marked as redo OR if we already have a main output, treat as redo output
-    $is_redo_delivery = $order->is_redo == 1 || (!empty($order->output_media_id) && $order->output_media_id != 'null' && $order->output_media_id != '[]');
-
-    $target_media_col = $is_redo_delivery ? 'output_redo_media_id' : 'output_media_id';
-    $target_link_col = $is_redo_delivery ? 'output_redo_link' : 'output_link';
-
-    // Update Order status
-    $order->status = 'Finalizing';
-
-    // Merge new media IDs with existing ones
-    $existing_media = !empty($order->{$target_media_col}) ? json_decode($order->{$target_media_col}, true) : [];
-    if (!empty($media_ids)) {
-        $order->{$target_media_col} = json_encode(array_merge($existing_media, $media_ids));
-    }
-
-    // Update output link if provided
-    if ($request->filled('output_link')) {
-        $order->{$target_link_col} = $request->output_link;
-    }
-
-    $order->save();
-
-    return redirect()->route('order.list')->with('success', 'Order finalized successfully');
-}
 
     public function updateStatus(Request $request)
     {
         $request->validate([
             'order_id' => 'required|exists:orders,id',
-            'status' => 'required|in:In Review,Pending,Processing,Received,Finalizing,Completed,Invoiced,Downloaded,Canceled',
+            'status'   => 'required|in:In Review,Pending,Processing,Received,Finalizing,Completed,Invoiced,Downloaded,Canceled',
         ]);
 
         $order = Order::find($request->order_id);
