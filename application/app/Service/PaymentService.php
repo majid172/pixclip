@@ -87,15 +87,7 @@ class PaymentService
                 'status'         => 1, // 1 = Success
             ]);
 
-            // Update order payment status
             $order->update(['is_paid' => 1]);
-
-            // Log successful payment
-            Log::info('Payment processed successfully', [
-                'transaction_id' => $transactionId,
-                'order_id' => $order->id,
-                'amount' => $paymentData['amount'],
-            ]);
 
             DB::commit();
 

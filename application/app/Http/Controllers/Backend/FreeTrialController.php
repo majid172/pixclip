@@ -13,6 +13,7 @@ class FreeTrialController extends Controller
     {
         $title = 'Free Trial Requests';
         $trials = FreeTrial::latest()->get();
+
         return view('panel.free_trial.list', compact('trials', 'title'));
     }
 
