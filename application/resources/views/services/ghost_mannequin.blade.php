@@ -15,7 +15,7 @@
                 </h2>
 
                 <h1 class="text-slate-600 text-3xl md:text-4xl font-bold mb-6">
-                    Capturing Images with Natural Depth :  <span class="text-rose-600">Ghost Mannequin Service</span>
+                    Capturing Images with Natural Depth :  <span class="text-blue-900">Ghost Mannequin Service</span>
                 </h1>
 
                 <!-- Description Paragraph -->
@@ -63,7 +63,7 @@
                     <!-- Icon: Stack / Layers (Representing Volume) -->
                     <div class="mb-5">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" class="w-12 h-12 text-rose-600">
+                            stroke="currentColor" class="w-12 h-12 text-blue-900">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M6.429 9.75L2.25 12l4.179 2.25m0-4.5l5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0l-5.571 3-5.571-3" />
                         </svg>
@@ -80,7 +80,7 @@
                     <!-- Icon: Clock (Representing Time) -->
                     <div class="mb-5">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" class="w-12 h-12 text-rose-600">
+                            stroke="currentColor" class="w-12 h-12 text-blue-900">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
@@ -97,7 +97,7 @@
                     <!-- Icon: Infinity (Representing Unlimited) -->
                     <div class="mb-5">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" class="w-12 h-12 text-rose-600">
+                            stroke="currentColor" class="w-12 h-12 text-blue-900">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M8.25 12a3.75 3.75 0 11-5.303 5.303 3.75 3.75 0 015.303-5.303zm0 0c2.25-2.25 5.25 2.25 7.5 0m0 0a3.75 3.75 0 115.303-5.304A3.75 3.75 0 0115.75 12" />
                         </svg>
@@ -120,7 +120,7 @@
             <!-- Left Column: Main Text -->
             <div class="flex flex-col items-start">
                 <!-- Badge -->
-                <span class="inline-block bg-rose-100 text-rose-600 text-xs font-semibold px-4 py-1.5 rounded-full mb-6">
+                <span class="inline-block bg-blue-100 text-blue-900 text-xs font-semibold px-4 py-1.5 rounded-full mb-6">
                     What pixclipping?
                 </span>
 
@@ -151,7 +151,7 @@
                     <!-- Icon: Team/People -->
                     <div class="mb-4">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" class="w-10 h-10 text-rose-500">
+                            stroke="currentColor" class="w-10 h-10 text-blue-900">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
                         </svg>
@@ -167,12 +167,12 @@
                     <!-- Icon: Pen Tool / Bezier -->
                     <div class="mb-4">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" class="w-10 h-10 text-rose-500">
+                            stroke="currentColor" class="w-10 h-10 text-blue-900">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125" />
                             <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 7.5L12 12" />
-                            <circle cx="6" cy="18" r="2" fill="currentColor" class="text-rose-200" />
-                            <circle cx="18" cy="6" r="1" fill="currentColor" class="text-rose-500" />
+                            <circle cx="6" cy="18" r="2" fill="currentColor" class="text-blue-200" />
+                            <circle cx="18" cy="6" r="1" fill="currentColor" class="text-blue-900" />
                         </svg>
                     </div>
                     <h3 class="text-lg font-semibold text-slate-600 mb-2">SEO-Powered Web Photos</h3>
@@ -186,10 +186,10 @@
                     <!-- Icon: Shapes -->
                     <div class="mb-4">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" class="w-10 h-10 text-rose-500">
+                            stroke="currentColor" class="w-10 h-10 text-blue-900">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M5.25 7.5A2.25 2.25 0 017.5 5.25h9a2.25 2.25 0 012.25 2.25v9a2.25 2.25 0 01-2.25 2.25h-9a2.25 2.25 0 01-2.25-2.25v-9z" />
-                            <circle cx="16" cy="16" r="4" class="text-rose-300" stroke="currentColor"
+                            <circle cx="16" cy="16" r="4" class="text-blue-300" stroke="currentColor"
                                 stroke-width="1.5" fill="white" />
                         </svg>
                     </div>
@@ -204,7 +204,7 @@
                     <!-- Icon: Thumbs Up -->
                     <div class="mb-4">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" class="w-10 h-10 text-rose-500">
+                            stroke="currentColor" class="w-10 h-10 text-blue-900">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M6.633 10.5c.806 0 1.533-.446 2.031-1.08a9.041 9.041 0 012.861-2.4c.723-.384 1.35-.956 1.653-1.715a4.498 4.498 0 00.322-1.672V3a.75.75 0 01.75-.75A2.25 2.25 0 0116.5 4.5c0 1.152-.26 2.247-.723 3.218-.266.558.107 1.282.725 1.282h3.126c1.026 0 1.945.694 2.054 1.715.045.422.068.85.068 1.285a11.95 11.95 0 01-2.649 7.521c-.388.482-.987.729-1.605.729H13.48c-.483 0-.964-.078-1.423-.23l-3.114-1.04a4.501 4.501 0 00-1.423-.23H5.904M14.25 9h2.25M5.904 18.75c.083.205.173.405.27.602.197.4-.078.898-.523.898h-.908c-.889 0-1.713-.518-1.972-1.368a12 12 0 01-.521-3.507c0-1.553.295-3.036.831-4.396C3.387 10.203 4.167 9.75 5 9.75h1.053c.472 0 .745.556.5.96a8.958 8.958 0 00-1.302 4.665c0 1.194.232 2.333.654 3.375z" />
                         </svg>
@@ -225,7 +225,7 @@
             <div class="text-center mb-16 max-w-3xl mx-auto">
                 <!-- Badge -->
                 <span
-                    class="inline-block bg-rose-50 text-rose-500 text-xs font-bold px-4 py-1.5 rounded-full mb-5 uppercase tracking-wide">
+                    class="inline-block bg-blue-50 text-blue-900 text-xs font-bold px-4 py-1.5 rounded-full mb-5 uppercase tracking-wide">
                     Process
                 </span>
 
@@ -283,7 +283,7 @@
         <!-- Header Section -->
         <div class="text-center mb-16">
             <span
-                class="inline-block bg-rose-100 text-rose-600 text-[11px] font-bold px-4 py-1.5 rounded-full mb-4 uppercase tracking-wide">
+                class="inline-block bg-blue-100 text-blue-900 text-[11px] font-bold px-4 py-1.5 rounded-full mb-4 uppercase tracking-wide">
                 Portfolio
             </span>
             <h2 class="text-3xl md:text-4xl font-bold text-slate-600 mb-4">
@@ -391,7 +391,7 @@
 
         <!-- Header -->
         <div class="text-center max-w-3xl mx-auto mb-16">
-            <span class="text-rose-600 font-semibold tracking-wide uppercase text-sm">Flexible Pricing</span>
+            <span class="text-blue-900 font-semibold tracking-wide uppercase text-sm">Flexible Pricing</span>
             <h2 class="text-3xl md:text-3xl font-semibold text-slate-800 mt-3 mb-4">
                 Ghost Mannequin: Affordable Solutions for Your Needs!
             </h2>
@@ -417,14 +417,14 @@
                     <span class="text-slate-400 text-base font-medium">/ image</span>
                 </div>
 
-                <a href="#"
-                    class="block w-full py-3 px-4 bg-slate-50 hover:bg-rose-100 text-slate-700 font-bold text-center rounded-lg border border-slate-200 transition-colors">
+                <a href="{{ route('free.trial') }}"
+                    class="block w-full py-3 px-4 bg-slate-50 hover:bg-blue-100 text-slate-700 font-bold text-center rounded-lg border border-slate-200 transition-colors">
                     Start Free Trial
                 </a>
 
                 <ul class="mt-8 space-y-4 text-sm text-slate-600">
                     <li class="flex items-center gap-3">
-                        <svg class="w-5 h-5 text-rose-500 flex-shrink-0" fill="none" stroke="currentColor"
+                        <svg class="w-5 h-5 text-blue-900 flex-shrink-0" fill="none" stroke="currentColor"
                             viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
                             </path>
@@ -432,7 +432,7 @@
                         Remove dummy / mannequin
                     </li>
                     <li class="flex items-center gap-3">
-                        <svg class="w-5 h-5 text-rose-500 flex-shrink-0" fill="none" stroke="currentColor"
+                        <svg class="w-5 h-5 text-blue-900 flex-shrink-0" fill="none" stroke="currentColor"
                             viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
                             </path>
@@ -448,7 +448,7 @@
                        Natural 3D effect
                     </li>
                     <li class="flex items-center gap-3">
-                        <svg class="w-5 h-5 text-rose-500 flex-shrink-0" fill="none" stroke="currentColor"
+                        <svg class="w-5 h-5 text-blue-900 flex-shrink-0" fill="none" stroke="currentColor"
                             viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
                             </path>
@@ -456,7 +456,7 @@
                        Create symmetrical
                     </li>
                     <li class="flex items-center gap-3">
-                        <svg class="w-5 h-5 text-rose-500 flex-shrink-0" fill="none" stroke="currentColor"
+                        <svg class="w-5 h-5 text-blue-900 flex-shrink-0" fill="none" stroke="currentColor"
                             viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
                             </path>
@@ -464,7 +464,7 @@
                        Adjust Color Cast
                     </li>
                     <li class="flex items-center gap-3">
-                        <svg class="w-5 h-5 text-rose-500 flex-shrink-0" fill="none" stroke="currentColor"
+                        <svg class="w-5 h-5 text-blue-900 flex-shrink-0" fill="none" stroke="currentColor"
                             viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
                             </path>
@@ -484,11 +484,11 @@
 
             <!-- Card 2: Pro (Highlighted) -->
             <div
-                class="bg-white rounded-2xl p-8 border-2 border-rose-500 shadow-xl relative transform md:-translate-y-4 z-10">
+                class="bg-white rounded-2xl p-8 border-2 border-blue-900 shadow-xl relative transform md:-translate-y-4 z-10">
                 <!-- Most Popular Badge -->
                 <div class="absolute top-0 right-0 -mt-3 -mr-3">
                     <span
-                        class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-rose-600 text-white shadow-md">
+                        class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-blue-900 text-white shadow-md">
                         MOST POPULAR
                     </span>
                 </div>
@@ -501,14 +501,14 @@
                     <span class="text-slate-400 text-base font-medium">/ image</span>
                 </div>
 
-                <a href="#"
-                    class="block w-full py-3 px-4 bg-rose-600 hover:bg-rose-700 text-white font-bold text-center rounded-lg shadow-lg shadow-rose-500/30 transition-all hover:-translate-y-0.5">
+                <a href="{{ route('free.trial') }}"
+                    class="block w-full py-3 px-4 bg-blue-900 hover:bg-blue-800 text-white font-bold text-center rounded-lg shadow-lg shadow-blue-500/30 transition-all hover:-translate-y-0.5">
                     Get Started
                 </a>
 
                 <ul class="mt-8 space-y-4 text-sm text-slate-600">
                     <li class="flex items-center gap-3">
-                        <svg class="w-5 h-5 text-rose-500 flex-shrink-0" fill="none" stroke="currentColor"
+                        <svg class="w-5 h-5 text-blue-900 flex-shrink-0" fill="none" stroke="currentColor"
                             viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
                             </path>
@@ -516,7 +516,7 @@
                         Complex Clipping Path
                     </li>
                     <li class="flex items-center gap-3">
-                        <svg class="w-5 h-5 text-rose-500 flex-shrink-0" fill="none" stroke="currentColor"
+                        <svg class="w-5 h-5 text-blue-900 flex-shrink-0" fill="none" stroke="currentColor"
                             viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
                             </path>
@@ -524,7 +524,7 @@
                         Basic Retouching
                     </li>
                     <li class="flex items-center gap-3">
-                        <svg class="w-5 h-5 text-rose-500 flex-shrink-0" fill="none" stroke="currentColor"
+                        <svg class="w-5 h-5 text-blue-900 flex-shrink-0" fill="none" stroke="currentColor"
                             viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
                             </path>
@@ -532,7 +532,7 @@
                         Natural Shadow
                     </li>
                     <li class="flex items-center gap-3">
-                        <svg class="w-5 h-5 text-rose-500 flex-shrink-0" fill="none" stroke="currentColor"
+                        <svg class="w-5 h-5 text-blue-900 flex-shrink-0" fill="none" stroke="currentColor"
                             viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
                             </path>
@@ -540,7 +540,7 @@
                         12 Hour Delivery
                     </li>
                     <li class="flex items-center gap-3">
-                        <svg class="w-5 h-5 text-rose-500 flex-shrink-0" fill="none" stroke="currentColor"
+                        <svg class="w-5 h-5 text-blue-900 flex-shrink-0" fill="none" stroke="currentColor"
                             viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
                             </path>
@@ -548,7 +548,7 @@
                        Create symmetrical
                     </li>
                     <li class="flex items-center gap-3">
-                        <svg class="w-5 h-5 text-rose-500 flex-shrink-0" fill="none" stroke="currentColor"
+                        <svg class="w-5 h-5 text-blue-900 flex-shrink-0" fill="none" stroke="currentColor"
                             viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
                             </path>
@@ -556,7 +556,7 @@
                        Adjust Color Cast
                     </li>
                     <li class="flex items-center gap-3">
-                        <svg class="w-5 h-5 text-rose-500 flex-shrink-0" fill="none" stroke="currentColor"
+                        <svg class="w-5 h-5 text-blue-900 flex-shrink-0" fill="none" stroke="currentColor"
                             viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
                             </path>
@@ -576,14 +576,14 @@
                     <span class="text-4xl font-extrabold text-slate-800">@lang('Talk to us')</span>
                 </div>
 
-                <a href="#"
-                    class="block w-full py-3 px-4 bg-slate-50 hover:bg-rose-50 text-slate-700 font-bold text-center rounded-lg border border-slate-200 transition-colors">
+                <a href="{{ route('free.trial') }}"
+                    class="block w-full py-3 px-4 bg-blue-900 hover:bg-blue-800 text-white font-bold text-center rounded-lg border border-slate-200 transition-colors">
                     Contact Sales
                 </a>
 
                 <ul class="mt-8 space-y-4 text-sm text-slate-600">
                     <li class="flex items-center gap-3">
-                        <svg class="w-5 h-5 text-rose-500 flex-shrink-0" fill="none" stroke="currentColor"
+                        <svg class="w-5 h-5 text-blue-900 flex-shrink-0" fill="none" stroke="currentColor"
                             viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
                             </path>
@@ -591,7 +591,7 @@
                         <span class="font-bold">Unlimited</span> Revisions
                     </li>
                     <li class="flex items-center gap-3">
-                        <svg class="w-5 h-5 text-rose-500 flex-shrink-0" fill="none" stroke="currentColor"
+                        <svg class="w-5 h-5 text-blue-900 flex-shrink-0" fill="none" stroke="currentColor"
                             viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
                             </path>
@@ -599,7 +599,7 @@
                         Dedicated Project Manager
                     </li>
                     <li class="flex items-center gap-3">
-                        <svg class="w-5 h-5 text-rose-500 flex-shrink-0" fill="none" stroke="currentColor"
+                        <svg class="w-5 h-5 text-blue-900 flex-shrink-0" fill="none" stroke="currentColor"
                             viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
                             </path>
@@ -607,7 +607,7 @@
                         API Integration
                     </li>
                     <li class="flex items-center gap-3">
-                        <svg class="w-5 h-5 text-rose-500 flex-shrink-0" fill="none" stroke="currentColor"
+                        <svg class="w-5 h-5 text-blue-900 flex-shrink-0" fill="none" stroke="currentColor"
                             viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
                             </path>
@@ -615,7 +615,7 @@
                         Priority Support
                     </li>
                     <li class="flex items-center gap-3">
-                        <svg class="w-5 h-5 text-rose-500 flex-shrink-0" fill="none" stroke="currentColor"
+                        <svg class="w-5 h-5 text-blue-900 flex-shrink-0" fill="none" stroke="currentColor"
                             viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
                             </path>
@@ -623,7 +623,7 @@
                        Create symmetrical
                     </li>
                     <li class="flex items-center gap-3">
-                        <svg class="w-5 h-5 text-rose-500 flex-shrink-0" fill="none" stroke="currentColor"
+                        <svg class="w-5 h-5 text-blue-900 flex-shrink-0" fill="none" stroke="currentColor"
                             viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
                             </path>
@@ -631,7 +631,7 @@
                        Adjust Color Cast
                     </li>
                     <li class="flex items-center gap-3">
-                        <svg class="w-5 h-5 text-rose-500 flex-shrink-0" fill="none" stroke="currentColor"
+                        <svg class="w-5 h-5 text-blue-900 flex-shrink-0" fill="none" stroke="currentColor"
                             viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
                             </path>

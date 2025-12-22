@@ -5,7 +5,7 @@
             <!-- Left Side: Image -->
             <div class="flex justify-center md:justify-end pr-0 md:pr-8">
                 <!-- Using a similar bicycle image from Unsplash -->
-                <img src="{{ asset('/assets/images/images/shadow/drop-shadow.png') }}" alt="Grey Road Bike"
+                <img src="{{ asset('/assets/images/images/shadow/drop-shadow.webp') }}" alt="Grey Road Bike"
                     class="w-full max-w-md object-contain drop-shadow-2xl grayscale-[30%]">
             </div>
 
@@ -15,7 +15,7 @@
                 </h2>
 
                 <h1 class="text-slate-600 text-3xl md:text-4xl font-bold mb-6">
-                    Professional Photo <span class="text-rose-600">Services</span>
+                    Professional Photo <span class="text-blue-900">Services</span>
                 </h1>
 
                 <!-- Description Paragraph -->
@@ -144,7 +144,7 @@
 
                 <div class="h-64 flex items-center justify-center p-6 relative">
                     <!-- Image -->
-                    <img src="{{ asset('/assets/images/images/shadow/original_shadow.png') }}" alt="Nike Shoe"
+                    <img src="{{ asset('/assets/images/images/shadow/original_shadow.webp') }}" alt="Nike Shoe"
                         class="w-full h-full object-contain drop-shadow-2xl mix-blend-multiply filter contrast-125 transform group-hover:scale-105 transition-transform duration-500">
                 </div>
 
@@ -170,7 +170,7 @@
                 <!-- Image Area (rose Background) -->
                 <div class="h-64  flex items-center justify-center p-6 relative">
                     <!-- Image -->
-                    <img src="{{ asset('/assets/images/images/shadow/drop_shadow.png') }}" alt="Velvet Sofa"
+                    <img src="{{ asset('/assets/images/images/shadow/drop_shadow.webp') }}" alt="Velvet Sofa"
                         class="w-full h-full object-contain drop-shadow-2xl mix-blend-multiply filter contrast-125 transform group-hover:scale-105 transition-transform duration-500">
                 </div>
 
@@ -197,7 +197,7 @@
                 <!-- Image Area (Gray Background) -->
                 <div class="h-64 flex items-center p-6 relative">
                     <!-- Image -->
-                    <img src="{{ asset('/assets/images/images/shadow/reflection_shadow.png') }}" alt="Cosmetics"
+                    <img src="{{ asset('/assets/images/images/shadow/reflection_shadow.webp') }}" alt="Cosmetics"
                         class="w-full h-full object-contain drop-shadow-2xl mix-blend-multiply filter contrast-125 transform group-hover:scale-105 transition-transform duration-500">
                 </div>
 
@@ -249,7 +249,7 @@
                 <!-- Left Column: Illustration -->
                 <!-- Ideally, place your isometric vector image here -->
                 <div class="flex justify-center lg:justify-end">
-                    <img src="{{ asset('/assets/images/images/background_remove/mocup.png') }}"
+                    <img src="{{ asset('/assets/images/images/background_remove/mocup.webp') }}"
                         alt="Designer Workspace Illustration"
                         class="w-full max-w-lg object-contain drop-shadow-xl hover:scale-[1.02] transition-transform duration-500 rounded-lg">
 

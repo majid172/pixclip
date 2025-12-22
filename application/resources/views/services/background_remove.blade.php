@@ -5,7 +5,7 @@
             <!-- Left Side: Image -->
             <div class="flex justify-center md:justify-end pr-0 md:pr-8">
                 <!-- Using a similar bicycle image from Unsplash -->
-                <img src="{{ asset('/assets/images/images/background_remove/main_image.png') }}" alt="Grey Road Bike"
+                <img src="{{ asset('/assets/images/images/background_remove/main_image.webp') }}" alt="Grey Road Bike"
                     class="w-full max-w-md object-contain drop-shadow-2xl grayscale-[30%]">
             </div>
 
@@ -299,7 +299,7 @@
                 <!-- Left Column: Image (NOW LEFT) -->
                 <div class="order-1 md:order-1 relative flex justify-center items-center mt-12 md:mt-0">
                     <div class="relative z-10 ">
-                        <img src="{{ asset('/assets/images/images/background_remove/main_image_3.png') }}"
+                        <img src="{{ asset('/assets/images/images/background_remove/main_image_3.webp') }}"
                             alt="Jar" class="w-full h-auto object-contain">
                     </div>
                 </div>
@@ -414,7 +414,7 @@
 
                     <!-- Main Product Image -->
                     <div class="relative z-10 ">
-                        <img src="{{ asset('/assets/images/images/background_remove/main_image_4.png') }}"
+                        <img src="{{ asset('/assets/images/images/background_remove/main_image_4.webp') }}"
                             alt=" Jar" class="w-full h-auto object-contain">
                     </div>
                 </div>
