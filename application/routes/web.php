@@ -47,6 +47,9 @@ Route::post('/login', [LoginController::class, 'login'])->name('login.store');
 Route::get('/forgot-password', [ForgotPasswordController::class, 'show'])->name('forgot-password.show');
 Route::post('/forgot-password', [ForgotPasswordController::class, 'store'])->name('forgot-password.store');
 
+Route::get('/reset-password/{token}', [\App\Http\Controllers\Auth\ResetPasswordController::class, 'show'])->name('password.reset');
+Route::post('/reset-password', [\App\Http\Controllers\Auth\ResetPasswordController::class, 'store'])->name('password.update');
+
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
 /*

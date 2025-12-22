@@ -2,16 +2,10 @@
     <div class="container mx-auto px-4 md:px-8 py-4 flex justify-between items-center">
 
         <!-- Logo -->
-        <a href="{{ url('/') }}" class="flex items-center gap-2">
-            <div class="w-8 h-8 relative">
-                <div class="absolute inset-0 bg-indigo-900 transform rotate-45 opacity-20 rounded"></div>
-                <div class="absolute inset-0 flex items-center justify-center text-indigo-900 font-bold text-xl">P</div>
-            </div>
-            <div class="flex flex-col leading-none">
-                <span class="text-indigo-900 font-bold text-lg tracking-tight">Pix Clipping</span>
-                <span class="text-[0.6rem] text-gray-400 uppercase tracking-widest">Exceeding Expectation</span>
-            </div>
+        <a href="{{ url('/') }}" class="flex items-center gap-3">
+            <img src="{{ asset('assets/images/logo.png') }}" alt="Pix Clipping Logo" class="h-10 w-auto object-contain" />
         </a>
+
 
         <!-- Desktop Menu Links -->
         <div class="hidden lg:flex items-center space-x-8 text-[15px] font-medium text-indigo-900">
@@ -37,7 +31,7 @@
                             <a href="javascript:void(0)"
                                 class="flex justify-between items-center px-4 py-2 text-sm text-gray-600 hover:bg-orange-50 hover:text-orange-600 rounded transition">
                                 <span>@lang('Editing')</span>
-                              
+
                                 <svg class="w-3 h-3 text-gray-400 group-hover/sub:text-orange-600" fill="none"
                                     stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -45,7 +39,7 @@
                                 </svg>
                             </a>
 
-                          
+
                             <div
                                 class="absolute left-full top-0 ml-1 w-56 opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible transition-all duration-300 transform group-hover/sub:translate-x-0 -translate-x-2">
                                 <div class="bg-white rounded-lg shadow-xl border-t-4 border-orange-600 py-2 px-1">
@@ -152,15 +146,19 @@
                             <div
                                 class="absolute left-full top-0 ml-1 w-56 opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible transition-all duration-300 transform group-hover/sub:translate-x-0 -translate-x-2">
                                 <div class="bg-white rounded-lg shadow-xl border-t-4 border-orange-600 py-2 px-1">
-                                    <a href="{{ route('services.slug','essential-editing') }}"
-                                        class="block px-4 py-2 text-sm text-gray-600 hover:bg-orange-50 hover:text-orange-600 rounded transition">Essential Editing</a>
+                                    <a href="{{ route('services.slug', 'essential-editing') }}"
+                                        class="block px-4 py-2 text-sm text-gray-600 hover:bg-orange-50 hover:text-orange-600 rounded transition">Essential
+                                        Editing</a>
 
-                                    <a href="{{ route('services.slug','amazon') }}"
-                                        class="block px-4 py-2 text-sm text-gray-600 hover:bg-orange-50 hover:text-orange-600 rounded transition">Amazon, e-Bay, Shopify Ready</a>
-                                    <a href="{{  route('services.slug','ecommerce') }}"
-                                        class="block px-4 py-2 text-sm text-gray-600 hover:bg-orange-50 hover:text-orange-600 rounded transition">E-commerce 360 degree editing</a>
-                                    <a href="{{ route('services.slug','image-optimization') }}"
-                                        class="block px-4 py-2 text-sm text-gray-600 hover:bg-orange-50 hover:text-orange-600 rounded transition">Image Optimization
+                                    <a href="{{ route('services.slug', 'amazon') }}"
+                                        class="block px-4 py-2 text-sm text-gray-600 hover:bg-orange-50 hover:text-orange-600 rounded transition">Amazon,
+                                        e-Bay, Shopify Ready</a>
+                                    <a href="{{ route('services.slug', 'ecommerce') }}"
+                                        class="block px-4 py-2 text-sm text-gray-600 hover:bg-orange-50 hover:text-orange-600 rounded transition">E-commerce
+                                        360 degree editing</a>
+                                    <a href="{{ route('services.slug', 'image-optimization') }}"
+                                        class="block px-4 py-2 text-sm text-gray-600 hover:bg-orange-50 hover:text-orange-600 rounded transition">Image
+                                        Optimization
                                     </a>
                                 </div>
                             </div>
@@ -256,8 +254,7 @@
 
         <!-- Mobile Menu Toggle -->
         <div class="lg:hidden">
-            <button id="mobile-menu-btn"
-                class="text-rose-900 hover:text-rose-600 p-2 focus:outline-none">
+            <button id="mobile-menu-btn" class="text-rose-900 hover:text-rose-600 p-2 focus:outline-none">
                 <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7">
                     </path>
