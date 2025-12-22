@@ -27,8 +27,8 @@
                 <div class="flex flex-wrap gap-4">
 
                     <!-- Free Trial Button -->
-                    <a href="{{ route('free.trial') }}"
-                        class="group flex items-center gap-2 bg-rose-600 hover:bg-rose-700 text-white text-sm font-medium py-3 px-6 rounded transition-colors duration-200">
+                    <a href="{{route('free.trial')}}"
+                        class="group flex items-center gap-2 bg-blue-900 hover:bg-blue-800 text-white text-sm font-medium py-3 px-6 rounded transition-colors duration-200">
                         Free Trial
                         <!-- Chevron Right Icon -->
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
@@ -38,8 +38,8 @@
                     </a>
 
                     <!-- Get Started Button -->
-                    <a href="#"
-                        class="group flex items-center gap-2 bg-white border border-rose-200 hover:bg-rose-50 text-rose-500 text-sm font-medium py-3 px-6 rounded transition-colors duration-200">
+                    <a href="{{ route('register.show') }}"
+                        class="group flex items-center gap-2 bg-white border border-orange-200 hover:bg-orange-50 text-orange-500 text-sm font-medium py-3 px-6 rounded transition-colors duration-200">
                         Get Started
 
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"

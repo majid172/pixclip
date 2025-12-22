@@ -28,8 +28,8 @@
                 <div class="flex flex-wrap gap-4">
 
                     <!-- Free Trial Button -->
-                    <a href="#"
-                        class="group flex items-center gap-2 bg-rose-600 hover:bg-rose-700 text-white text-sm font-medium py-3 px-6 rounded transition-colors duration-200">
+                    <a href="{{route('free.trial')}}"
+                        class="group flex items-center gap-2 bg-blue-900 hover:bg-blue-800 text-white text-sm font-medium py-3 px-6 rounded transition-colors duration-200">
                         Free Trial
                         <!-- Chevron Right Icon -->
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
@@ -39,8 +39,8 @@
                     </a>
 
                     <!-- Get Started Button -->
-                    <a href="#"
-                        class="group flex items-center gap-2 bg-white border border-rose-200 hover:bg-rose-50 text-rose-500 text-sm font-medium py-3 px-6 rounded transition-colors duration-200">
+                    <a href="{{ route('register.show') }}"
+                        class="group flex items-center gap-2 bg-white border border-orange-200 hover:bg-orange-50 text-orange-500 text-sm font-medium py-3 px-6 rounded transition-colors duration-200">
                         Get Started
 
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
@@ -64,7 +64,7 @@
                     <!-- Icon: Stack / Layers (Representing Volume) -->
                     <div class="mb-5">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" class="w-12 h-12 text-rose-600">
+                            stroke="currentColor" class="w-12 h-12 text-blue-900">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M6.429 9.75L2.25 12l4.179 2.25m0-4.5l5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0l-5.571 3-5.571-3" />
                         </svg>
@@ -81,7 +81,7 @@
                     <!-- Icon: Clock (Representing Time) -->
                     <div class="mb-5">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" class="w-12 h-12 text-rose-600">
+                            stroke="currentColor" class="w-12 h-12 text-blue-900">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
@@ -98,7 +98,7 @@
                     <!-- Icon: Infinity (Representing Unlimited) -->
                     <div class="mb-5">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" class="w-12 h-12 text-rose-600">
+                            stroke="currentColor" class="w-12 h-12 text-blue-900">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M8.25 12a3.75 3.75 0 11-5.303 5.303 3.75 3.75 0 015.303-5.303zm0 0c2.25-2.25 5.25 2.25 7.5 0m0 0a3.75 3.75 0 115.303-5.304A3.75 3.75 0 0115.75 12" />
                         </svg>
@@ -120,7 +120,7 @@
         <div class="text-center mb-16 max-w-3xl mx-auto">
             <!-- Badge -->
             <span
-                class="inline-block bg-rose-50 text-rose-500 text-[11px] font-bold px-4 py-1.5 rounded-full mb-6 uppercase tracking-wide">
+                class="inline-block bg-blue-50 text-blue-900 text-[11px] font-bold px-4 py-1.5 rounded-full mb-6 uppercase tracking-wide">
                 Variety
             </span>
 
@@ -212,8 +212,8 @@
 
                 <!-- Footer Area -->
                 <div class="bg-slate-50 px-8 py-5 border-t border-slate-100 mt-auto">
-                    <p class="text-rose-500 text-sm">
-                        Capacity: <span class="text-rose-600 font-medium">1500 / Day</span>
+                    <p class="text-blue-500 text-sm">
+                        Capacity: <span class="text-blue-900 font-medium">1500 / Day</span>
                     </p>
                 </div>
             </div>
@@ -227,7 +227,7 @@
             <div class="text-center mb-16 max-w-3xl mx-auto">
                 <!-- Badge -->
                 <span
-                    class="inline-block bg-rose-50 text-rose-500 text-xs font-bold px-4 py-1.5 rounded-full mb-5 uppercase tracking-wide">
+                    class="inline-block bg-blue-50 text-blue-900 text-xs font-bold px-4 py-1.5 rounded-full mb-5 uppercase tracking-wide">
                     Process
                 </span>
 
@@ -295,7 +295,7 @@
         <!-- Header Section -->
         <div class="text-center mb-16">
             <span
-                class="inline-block bg-rose-100 text-rose-600 text-[11px] font-bold px-4 py-1.5 rounded-full mb-4 uppercase tracking-wide">
+                class="inline-block bg-blue-100 text-blue-900 text-[11px] font-bold px-4 py-1.5 rounded-full mb-4 uppercase tracking-wide">
                 Portfolio
             </span>
             <h2 class="text-3xl md:text-4xl font-bold text-slate-600 mb-4">
@@ -403,7 +403,7 @@
 
         <!-- Header -->
         <div class="text-center max-w-3xl mx-auto mb-16">
-            <span class="text-rose-600 font-semibold tracking-wide uppercase text-sm">Flexible Pricing</span>
+            <span class="text-blue-900 font-semibold tracking-wide uppercase text-sm">Flexible Pricing</span>
             <h2 class="text-3xl md:text-3xl font-semibold text-slate-800 mt-3 mb-4">
                 Shadow Making Service Cost
             </h2>
@@ -430,14 +430,14 @@
                     <span class="text-slate-400 text-base font-medium">/ image</span>
                 </div>
 
-                <a href="#"
-                    class="block w-full py-3 px-4 bg-slate-50 hover:bg-rose-100 text-slate-700 font-bold text-center rounded-lg border border-slate-200 transition-colors">
+                <a href="{{ route('free.trial') }}"
+                    class="block w-full py-3 px-4 bg-slate-50 hover:bg-blue-100 text-slate-700 font-bold text-center rounded-lg border border-slate-200 transition-colors">
                     Start Free Trial
                 </a>
 
                 <ul class="mt-8 space-y-4 text-sm text-slate-600">
                     <li class="flex items-center gap-3">
-                        <svg class="w-5 h-5 text-rose-500 flex-shrink-0" fill="none" stroke="currentColor"
+                        <svg class="w-5 h-5 text-blue-800 flex-shrink-0" fill="none" stroke="currentColor"
                             viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
                             </path>
@@ -445,7 +445,7 @@
                         Simple Clipping Path
                     </li>
                     <li class="flex items-center gap-3">
-                        <svg class="w-5 h-5 text-rose-500 flex-shrink-0" fill="none" stroke="currentColor"
+                        <svg class="w-5 h-5 text-blue-800 flex-shrink-0" fill="none" stroke="currentColor"
                             viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
                             </path>
@@ -453,7 +453,7 @@
                         White Background
                     </li>
                     <li class="flex items-center gap-3">
-                        <svg class="w-5 h-5 text-rose-500 flex-shrink-0" fill="none" stroke="currentColor"
+                        <svg class="w-5 h-5 text-blue-800 flex-shrink-0" fill="none" stroke="currentColor"
                             viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
                             </path>
@@ -473,11 +473,11 @@
 
             <!-- Card 2: Pro (Highlighted) -->
             <div
-                class="bg-white rounded-2xl p-8 border-2 border-rose-500 shadow-xl relative transform md:-translate-y-4 z-10">
+                class="bg-white rounded-2xl p-8 border-2 border-blue-800 shadow-xl relative transform md:-translate-y-4 z-10">
                 <!-- Most Popular Badge -->
                 <div class="absolute top-0 right-0 -mt-3 -mr-3">
                     <span
-                        class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-rose-600 text-white shadow-md">
+                        class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-blue-800 text-white shadow-md">
                         MOST POPULAR
                     </span>
                 </div>
@@ -490,14 +490,14 @@
                     <span class="text-slate-400 text-base font-medium">/ image</span>
                 </div>
 
-                <a href="#"
-                    class="block w-full py-3 px-4 bg-rose-600 hover:bg-rose-700 text-white font-bold text-center rounded-lg shadow-lg shadow-rose-500/30 transition-all hover:-translate-y-0.5">
+                <a href="{{ route('register.show') }}"
+                    class="block w-full py-3 px-4 bg-blue-800 hover:bg-blue-700 text-white font-bold text-center rounded-lg shadow-lg shadow-blue-500/30 transition-all hover:-translate-y-0.5">
                     Get Started
                 </a>
 
                 <ul class="mt-8 space-y-4 text-sm text-slate-600">
                     <li class="flex items-center gap-3">
-                        <svg class="w-5 h-5 text-rose-500 flex-shrink-0" fill="none" stroke="currentColor"
+                        <svg class="w-5 h-5 text-blue-800 flex-shrink-0" fill="none" stroke="currentColor"
                             viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
                             </path>
@@ -505,7 +505,7 @@
                         Complex Clipping Path
                     </li>
                     <li class="flex items-center gap-3">
-                        <svg class="w-5 h-5 text-rose-500 flex-shrink-0" fill="none" stroke="currentColor"
+                        <svg class="w-5 h-5 text-blue-800 flex-shrink-0" fill="none" stroke="currentColor"
                             viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
                             </path>
@@ -513,7 +513,7 @@
                         Basic Retouching
                     </li>
                     <li class="flex items-center gap-3">
-                        <svg class="w-5 h-5 text-rose-500 flex-shrink-0" fill="none" stroke="currentColor"
+                        <svg class="w-5 h-5 text-blue-800 flex-shrink-0" fill="none" stroke="currentColor"
                             viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
                             </path>
@@ -521,7 +521,7 @@
                         Natural Shadow
                     </li>
                     <li class="flex items-center gap-3">
-                        <svg class="w-5 h-5 text-rose-500 flex-shrink-0" fill="none" stroke="currentColor"
+                        <svg class="w-5 h-5 text-blue-800 flex-shrink-0" fill="none" stroke="currentColor"
                             viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
                             </path>
@@ -542,13 +542,13 @@
                 </div>
 
                 <a href="#"
-                    class="block w-full py-3 px-4 bg-slate-50 hover:bg-rose-50 text-slate-700 font-bold text-center rounded-lg border border-slate-200 transition-colors">
+                    class="block w-full py-3 px-4 bg-slate-50 hover:bg-blue-50 text-slate-700 font-bold text-center rounded-lg border border-slate-200 transition-colors">
                     Contact Sales
                 </a>
 
                 <ul class="mt-8 space-y-4 text-sm text-slate-600">
                     <li class="flex items-center gap-3">
-                        <svg class="w-5 h-5 text-rose-500 flex-shrink-0" fill="none" stroke="currentColor"
+                        <svg class="w-5 h-5 text-blue-800 flex-shrink-0" fill="none" stroke="currentColor"
                             viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
                             </path>
@@ -556,7 +556,7 @@
                         <span class="font-bold">Unlimited</span> Revisions
                     </li>
                     <li class="flex items-center gap-3">
-                        <svg class="w-5 h-5 text-rose-500 flex-shrink-0" fill="none" stroke="currentColor"
+                        <svg class="w-5 h-5 text-blue-800 flex-shrink-0" fill="none" stroke="currentColor"
                             viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
                             </path>
@@ -564,7 +564,7 @@
                         Dedicated Project Manager
                     </li>
                     <li class="flex items-center gap-3">
-                        <svg class="w-5 h-5 text-rose-500 flex-shrink-0" fill="none" stroke="currentColor"
+                        <svg class="w-5 h-5 text-blue-800 flex-shrink-0" fill="none" stroke="currentColor"
                             viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
                             </path>
@@ -572,7 +572,7 @@
                         API Integration
                     </li>
                     <li class="flex items-center gap-3">
-                        <svg class="w-5 h-5 text-rose-500 flex-shrink-0" fill="none" stroke="currentColor"
+                        <svg class="w-5 h-5 text-blue-800 flex-shrink-0" fill="none" stroke="currentColor"
                             viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
                             </path>
@@ -587,141 +587,5 @@
 
     </section>
 
-
-    <section class="py-10 lg:py-10 overflow-hidden bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-                <div class="order-2 lg:order-1">
-
-                    <!-- Label with Dash -->
-                    <div class="flex items-center gap-3 mb-4">
-                        <span class="w-6 h-0.5 bg-rose-600 rounded-full"></span>
-                        <span class="text-xs font-bold text-slate-500 uppercase tracking-widest">Portal</span>
-                    </div>
-
-                    <!-- Headline -->
-                    <h2 class="text-3xl md:text-3xl font-semibold text-slate-700 mb-6">
-                        Effortlessly navigate <span class="text-rose-600">user-friendly portal!</span>
-                    </h2>
-
-                    <!-- Description -->
-                    <p class="text-slate-500 text-base md:text-md leading-relaxed mb-8">
-                        Unlock the ability to separate subjects from images as needed. Our skilled professionals accurately
-                        cut out single or group subjects, delivering exceptional results in record time.
-                    </p>
-
-                    <!-- Features List -->
-                    <div class="mb-10">
-                        <h3 class="text-md font-medium text-slate-600 mb-4">Features:</h3>
-
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-6">
-
-                            <!-- List Item 1 -->
-                            <div class="flex items-center gap-2.5">
-                                <svg class="w-5 h-5 text-rose-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd"
-                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                        clip-rule="evenodd"></path>
-                                </svg>
-                                <span class="text-slate-500 text-sm md:text-base">Simple User Interface</span>
-                            </div>
-
-                            <!-- List Item 2 -->
-                            <div class="flex items-center gap-2.5">
-                                <svg class="w-5 h-5 text-rose-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd"
-                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                        clip-rule="evenodd"></path>
-                                </svg>
-                                <span class="text-slate-500 text-sm md:text-base">Big Size Image Upload</span>
-                            </div>
-
-                            <!-- List Item 3 -->
-                            <div class="flex items-center gap-2.5">
-                                <svg class="w-5 h-5 text-rose-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd"
-                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                        clip-rule="evenodd"></path>
-                                </svg>
-                                <span class="text-slate-500 text-sm md:text-base">On Fly Navigation</span>
-                            </div>
-
-                            <!-- List Item 4 -->
-                            <div class="flex items-center gap-2.5">
-                                <svg class="w-5 h-5 text-rose-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd"
-                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                        clip-rule="evenodd"></path>
-                                </svg>
-                                <span class="text-slate-500 text-sm md:text-base">Live Order Status</span>
-                            </div>
-
-                            <!-- List Item 5 -->
-                            <div class="flex items-center gap-2.5">
-                                <svg class="w-5 h-5 text-rose-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd"
-                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                        clip-rule="evenodd"></path>
-                                </svg>
-                                <span class="text-slate-500 text-sm md:text-base">Resumable Upload</span>
-                            </div>
-
-                            <!-- List Item 6 -->
-                            <div class="flex items-center gap-2.5">
-                                <svg class="w-5 h-5 text-rose-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd"
-                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                        clip-rule="evenodd"></path>
-                                </svg>
-                                <span class="text-slate-500 text-sm md:text-base">Easy Sorting, Quick Search</span>
-                            </div>
-
-                            <!-- List Item 7 -->
-                            <div class="flex items-center gap-2.5">
-                                <svg class="w-5 h-5 text-rose-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd"
-                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                        clip-rule="evenodd"></path>
-                                </svg>
-                                <span class="text-slate-500 text-sm md:text-base">Quick Access Dashboard</span>
-                            </div>
-
-                            <!-- List Item 8 -->
-                            <div class="flex items-center gap-2.5">
-                                <svg class="w-5 h-5 text-rose-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd"
-                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                        clip-rule="evenodd"></path>
-                                </svg>
-                                <span class="text-slate-500 text-sm md:text-base">Separate Billing Profile</span>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <!-- Buttons -->
-                    <div class="flex flex-wrap gap-4">
-                        <a href="#"
-                            class="px-8 py-3 bg-rose-600 text-white font-medium rounded hover:bg-rose-700 transition shadow-md shadow-rose-200">
-                            Login Now
-                        </a>
-                        <a href="#"
-                            class="px-8 py-3 bg-white border border-rose-600 text-rose-600 font-medium rounded hover:bg-rose-50 transition">
-                            Get Started
-                        </a>
-                    </div>
-
-                </div>
-
-                <!-- Right Column: Illustration -->
-                <div class="order-1 lg:order-2 flex justify-center">
-
-                    <img src="{{ asset('/assets/images/banner/home2.png') }}" alt="Portal Illustration"
-                        class="w-full max-w-lg lg:max-w-xl h-auto object-contain drop-shadow-xl">
-                </div>
-
-            </div>
-        </div>
-    </section>
+    @include('layouts.includes.portal')
 @endsection

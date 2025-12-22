@@ -30,7 +30,7 @@
                     <button id="profile-dropdown" type="button" class="dropdown-toggle avatar" aria-haspopup="menu"
                         aria-expanded="false" aria-label="Dropdown">
                         <span class="rounded-field size-9.5">
-                            <img src="{{ asset('/assets/img/avatars/2.png') }}" alt="User Avatar" />
+                            <img src="{{ asset('/assets/images/man.png') }}" alt="User Avatar" />
                         </span>
                     </button>
                     <ul class="dropdown-menu dropdown-open:opacity-100 max-w-75 hidden w-full space-y-0.5"
@@ -38,7 +38,7 @@
                         <li class="dropdown-header pt-4.5 mb-1 gap-4 px-5 pb-3.5">
                             <div class="avatar avatar-online-top">
                                 <div class="w-10 rounded-full">
-                                    <img src="{{ asset('/assets/img/avatars/2.png') }}" alt="avatar" />
+                                    <img src="{{ asset('/assets/images/man.png') }}" alt="User Avatar" />
                                 </div>
                             </div>
                             <div>
@@ -49,7 +49,7 @@
                         </li>
                         <li>
                             <a class="dropdown-item px-3" href="{{ url('/') }}">
-                                <span class="icon-[tabler--house] size-5"></span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-home"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l-2 0l9 -9l9 9l-2 0" /><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" /><path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" /></svg>
                                 Home
                             </a>
                         </li>
