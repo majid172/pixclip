@@ -31,8 +31,6 @@
     <!-- build:css -->
     <link rel="stylesheet" href="{{ asset('/assets/dist/css/output.css') }}" />
 
-    <!-- Page CSS -->
-
     <!-- Theme JS -->
     <script type="text/javascript">
         (function() {
@@ -86,16 +84,9 @@
 <body>
     <!-- Layout wrapper -->
     <div class="bg-base-200 flex min-h-screen flex-col">
-        <!-- Layout Navbar -->
-
-        <!-- ---------- HEADER ---------- -->
         @include('panel.partials.header')
-
-
         @include('panel.partials.aside')
-        <!-- / Menu -->
 
-        <!-- Layout Container -->
         <div class="lg:ps-75 flex grow flex-col">
             <!-- Content -->
             <main class="mx-auto w-full max-w-[1280px] flex-1 grow space-y-6 p-6">
@@ -108,7 +99,7 @@
             @include('panel.partials.footer')
             <!-- Footer: End -->
         </div>
-        <!-- / Layout Container -->
+
     </div>
     <!-- / Layout Wrapper -->
     @stack('css')
@@ -132,7 +123,8 @@
 
     <button id="scrollToTopBtn"
         class="btn btn-circle btn-soft btn-secondary/20 bottom-15 end-15 motion-preset-slide-right motion-duration-800 motion-delay-100 fixed absolute z-[3] hidden"
-        aria-label="Circle Soft Icon Button"><span class="icon-[tabler--chevron-up] size-5 shrink-0"></span></button>
+        aria-label="Circle Soft Icon Button"><span class="icon-[tabler--chevron-up] size-5 shrink-0"></span>
+    </button>
 </body>
 
 </html>

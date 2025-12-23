@@ -1,183 +1,116 @@
 @extends('layouts.app')
 @section('content')
     <!-- HERO CAROUSEL SECTION -->
-    <section class="container mx-auto px-4 pt-10 md:px-8">
-        <div id="hero-carousel" class="relative w-full shadow-xl rounded-xl overflow-hidden bg-white border border-gray-100"
-            data-carousel="slide" data-carousel-interval="3000">
+    <section class="relative w-full overflow-hidden bg-white">
+        
 
-            <!-- Carousel wrapper -->
-            <div class="relative h-[650px] md:h-[500px] overflow-hidden">
+        <!-- Background Decoration -->
+        <div class="bg-text-giant select-none uppercase">Premium</div>
 
-                <!-- ITEM 1: WATCHES -->
-                <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                    <div class="grid grid-cols-1 md:grid-cols-2 h-full w-full">
-                        <!-- Text Content -->
-                        <div
-                            class="flex flex-col justify-center px-8 md:px-16 space-y-6 bg-gradient-to-r from-white to-gray-50">
-                            <h1 class="text-4xl md:text-4xl font-extrabold text-slate-700 leading-tight">
-                                Clipping Path Services
-                                <br>
-                                Extract Subject <br>
-                                <span class="text-indigo-900">Keep Accurate Details</span>
+        <div class="container mx-auto px-4 md:px-8 relative z-10">
+            <!-- Navigation Row (Visual Only) -->
+           
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 min-h-[600px] items-center">
+
+                <!-- LEFT: CONTENT -->
+                <div class="lg:col-span-5 py-12 lg:pr-12">
+                    <div class="relative h-[400px]">
+
+                        <!-- Content 1 -->
+                        <div class="auto-content slide-1">
+                            <h1
+                                class="text-6xl md:text-6xl font-black text-slate-900 tracking-tighter leading-[1] uppercase">
+                                Jewelry   <br> <span class="text-indigo-900">Retouching.</span>
                             </h1>
-                            <p class="text-slate-500 text-md leading-relaxed max-w-md">
-                                Speed up your business giving yourself a break from photo editing services. Our team is
-                                dedicatedly working to give your workflow a speed boost.
+                            <p class="mt-6 text-slate-500 text-lg leading-relaxed max-w-sm">
+                                Hand-drawn clipping path services for complex shapes. We define the boundary of your
+                                products with surgical precision.
                             </p>
-                            <div class="flex flex-col sm:flex-row gap-4 pt-2">
+                            <div class="mt-10">
                                 <a href="{{ route('free.trial') }}"
-                                    class="px-8 py-3.5 bg-indigo-900 text-white font-bold rounded shadow-lg hover:bg-orange-500 hover:-translate-y-1 transition-all text-center">
-                                    Free Trial
-                                </a>
-                                <a href="javascript:void(0)"
-                                    class="px-8 py-3.5 bg-white text-indigo-900 font-bold border border-indigo-200 rounded hover:border-indigo-600 hover:bg-indigo-50 transition-all text-center">
-                                    Get Started
+                                    class="inline-block px-10 py-4 bg-indigo-900 text-white font-bold uppercase tracking-widest text-xs hover:bg-orange-600 transition-all">
+                                    Get Free Trial
                                 </a>
                             </div>
-                            <p class="text-xs text-slate-400 font-medium">* No credit card required.</p>
                         </div>
-                        <!-- Image -->
-                        <div class="relative h-full bg-gray-50 flex items-center justify-center p-8">
-                            <div class="absolute w-[300px] h-[300px] bg-rose-100 rounded-full blur-3xl opacity-50"></div>
-                            <img src="{{ asset('assets/images/banner/clipping.webp') }}"
-                                class="relative z-10 max-h-[350px] w-auto drop-shadow-2xl hover:scale-105 transition duration-500"
-                                alt="Watches">
-                        </div>
-                    </div>
-                </div>
-                <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                    <div class="grid grid-cols-1 md:grid-cols-2 h-full w-full">
-                        <!-- Text Content -->
-                        <div
-                            class="flex flex-col justify-center px-8 md:px-16 space-y-6 bg-gradient-to-r from-white to-gray-50">
-                            <h1 class="text-4xl md:text-4xl font-extrabold text-slate-900 leading-tight">
-                                Make Your Photo <br>
-                                Post-Processing <br>
-                                <span class="text-indigo-900">Cost Effective</span>
+
+                        <!-- Content 2 -->
+                        <div class="auto-content slide-2">
+                            <h1
+                                class="text-7xl md:text-6xl font-black text-slate-900 tracking-tighter leading-[0.9] uppercase">
+                                Cost  <br> <span class="text-indigo-900">Effective.</span>
                             </h1>
-                            <p class="text-slate-500 text-md leading-relaxed max-w-md">
-                                Speed up your business giving yourself a break from photo editing services. Our team is
-                                dedicatedly working to give your workflow a speed boost.
+                            <p class="mt-6 text-slate-500 text-lg leading-relaxed max-w-sm">
+                                Professional invisible mannequin effects that showcase the volume and fit of your apparel
+                                without human distraction.
                             </p>
-                            <div class="flex flex-col sm:flex-row gap-4 pt-2">
-                                <a href="javascript:void(0)"
-                                    class="px-8 py-3.5 bg-indigo-900 text-white font-bold rounded shadow-lg hover:bg-rose-700 hover:-translate-y-1 transition-all text-center">
-                                    Free Trial
-                                </a>
-                                <a href="javascript:void(0)"
-                                    class="px-8 py-3.5 bg-white text-blue-900 font-bold border border-blue-200 rounded hover:border-blue-600 hover:bg-blue-50 transition-all text-center">
-                                    Get Started
+                            <div class="mt-10">
+                                <a href="javascript:void(0);"
+                                    class="inline-block px-10 py-4 bg-indigo-900 text-white font-bold uppercase tracking-widest text-xs hover:bg-orange-600 transition-all">
+                                    View Portfolio
                                 </a>
                             </div>
-                            <p class="text-xs text-slate-400 font-medium">* No credit card required.</p>
                         </div>
-                        <!-- Image -->
-                        <div class="relative h-full bg-gray-50 flex items-center justify-center p-8">
-                            <div class="absolute w-[300px] h-[300px] bg-rose-100 rounded-full blur-3xl opacity-50"></div>
-                            <img src="{{ asset('/assets/images/banner/photo-editing-services.webp') }}"
-                                class="relative z-10 max-h-[350px] w-auto drop-shadow-2xl hover:scale-105 transition duration-500"
-                                alt="Watches">
+
+                        <!-- Content 3 -->
+                        <div class="auto-content slide-3">
+                            <h1
+                                class="text-7xl md:text-6xl font-black text-slate-900 tracking-tighter leading-[0.9] uppercase">
+                                Clipping <br> <span class="text-indigo-900">Path.</span>
+                            </h1>
+                            <p class="mt-6 text-slate-500 text-lg leading-relaxed max-w-sm">
+                                High-end jewelry retouching for luxury brands. We enhance reflections and remove
+                                imperfections from every gemstone.
+                            </p>
+                            <div class="mt-10">
+                                <a href="javascript:void(0);"
+                                    class="inline-block px-10 py-4 bg-indigo-900 text-white font-bold uppercase tracking-widest text-xs hover:bg-orange-600 transition-all">
+                                    Check Pricing
+                                </a>
+                            </div>
                         </div>
+
                     </div>
                 </div>
 
-                <!-- ITEM 2: SHOES -->
-                <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                    <div class="grid grid-cols-1 md:grid-cols-2 h-full w-full">
-                        <div
-                            class="flex flex-col justify-center px-8 md:px-16 space-y-6 bg-gradient-to-r from-white to-gray-50">
-                            <h1 class="text-4xl md:text-4xl font-extrabold text-slate-900 leading-tight">
-                                Professional <br>
-                                <span class="text-indigo-900">Ghost Mannequin</span> <br>
-                                Services
-                            </h1>
-                            <p class="text-slate-500 text-md leading-relaxed max-w-md">
-                                Enhance your clothing line with our invisible mannequin effects. Perfect for eCommerce
-                                stores
-                                looking to showcase fit.
-                            </p>
-                            <div class="flex flex-col sm:flex-row gap-4 pt-2">
-                                <a href="#"
-                                    class="px-8 py-3.5 bg-indigo-900 text-white font-bold rounded shadow-lg shadow-indigo-200 hover:bg-indigo-700 transition-all text-center">
-                                    See Portfolio
-                                </a>
-                            </div>
-                        </div>
-                        <div class="relative h-full bg-gray-50 flex items-center justify-center p-8">
-                            <div class="absolute w-[300px] h-[300px] bg-indigo-100 rounded-full blur-3xl opacity-50"></div>
-                            <img src="{{ asset('/assets/images/banner/main.png') }}"
-                                class="relative z-10 max-h-[350px] w-auto drop-shadow-2xl hover:scale-105 transition duration-500"
-                                alt="Shoes">
-                        </div>
+                <!-- RIGHT: IMAGES -->
+                <div class="lg:col-span-7 relative h-[450px] lg:h-[600px] flex items-center justify-center">
+                    <div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-[0.03]">
+                        <span class="text-[25rem] font-black">{{ date('Y') }}</span>
                     </div>
-                </div>
 
-                <!-- ITEM 3: JEWELRY -->
-                <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                    <div class="grid grid-cols-1 md:grid-cols-2 h-full w-full">
-                        <div
-                            class="flex flex-col justify-center px-8 md:px-16 space-y-6 bg-gradient-to-r from-white to-gray-50">
-                            <h1 class="text-4xl md:text-4xl font-extrabold text-slate-900 leading-tight">
-                                Jewelry Retouching Services
-                                <br>
-                                <span class="text-indigo-900">Bring natural Shine</span>
-                            </h1>
-                            <p class="text-slate-500 text-md leading-relaxed max-w-md">
-                                We make your diamonds sparkle. Expert color correction and dust removal to make your
-                                products
-                                shine.
-                            </p>
-                            <div class="flex flex-col sm:flex-row gap-4 pt-2">
-                                <a href="javascript:void(0)"
-                                    class="px-8 py-3.5 bg-indigo-900 text-white font-bold rounded shadow-lg shadow-indigo-200 hover:bg-indigo-700 hover:-translate-y-1 transition-all text-center">
-                                    Free Trial
-                                </a>
-                                <a href="javascript:void(0)"
-                                    class="px-8 py-3.5 bg-white text-indigo-900 font-bold border border-indigo-200 rounded hover:border-indigo-600 hover:bg-indigo-50 transition-all text-center">
-                                    Get Started
-                                </a>
-                            </div>
-                        </div>
-                        <div class="relative h-full bg-gray-50 flex items-center justify-center p-8">
-                            <div class="absolute w-[300px] h-[300px] bg-yellow-100 rounded-full blur-3xl opacity-50"></div>
-                            <img src="{{ asset('/assets/images/banner/jewelary.webp') }}"
-                                class="relative z-10 max-h-[300px] w-auto drop-shadow-2xl" alt="Jewelry">
-                        </div>
-                    </div>
+                    <img src="{{ asset('assets/images/banner/banner1.webp') }}"
+                        class="auto-image-item slide-1 w-full max-h-[500px]">
+                    <img src="{{ asset('/assets/images/banner/banner3.webp') }}"
+                        class="auto-image-item slide-2 w-full max-h-[500px]">
+                    <img src="{{ asset('/assets/images/banner/clipping.png') }}"
+                        class="auto-image-item slide-3 w-full max-h-[500px]">
                 </div>
             </div>
 
-            <!-- CUSTOM BOTTOM RIGHT CONTROLS -->
-            <div class="absolute bottom-8 right-8 md:bottom-12 md:right-16 z-30 flex gap-3">
-                <button type="button"
-                    class="group flex items-center justify-center w-12 h-12 rounded-full bg-white border border-gray-200 shadow-lg text-gray-500 hover:bg-indigo-900 hover:text-white hover:border-indigo-900 transition-all duration-300 focus:outline-none"
-                    data-carousel-prev>
-                    <svg class="w-5 h-5 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                        viewBox="0 0 6 10">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M5 1 1 5l4 4" />
-                    </svg>
-                    <span class="sr-only">Previous</span>
-                </button>
-
-                <!-- Next Button -->
-                <button type="button"
-                    class="group flex items-center justify-center w-12 h-12 rounded-full bg-white border border-gray-200 shadow-lg text-gray-500 hover:bg-indigo-900 hover:text-white hover:border-indigo-900 transition-all duration-300 focus:outline-none"
-                    data-carousel-next>
-                    <svg class="w-5 h-5 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                        viewBox="0 0 6 10">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="m1 9 4-4-4-4" />
-                    </svg>
-                    <span class="sr-only">Next</span>
-                </button>
-
+            <!-- STATS SECTION -->
+            <div class="grid grid-cols-2 md:grid-cols-4 border-t border-gray-100 py-12">
+                <div class="space-y-1">
+                    <span class="block text-[10px] font-black uppercase text-indigo-900 tracking-widest">Quality</span>
+                    <span class="text-sm font-bold text-slate-500">100% Hand-Drawn</span>
+                </div>
+                <div class="space-y-1 border-l border-gray-100 pl-8">
+                    <span class="block text-[10px] font-black uppercase text-indigo-900 tracking-widest">Speed</span>
+                    <span class="text-sm font-bold text-slate-500">12h Turnaround</span>
+                </div>
+                <div class="space-y-1 border-l border-gray-100 pl-8 hidden md:block">
+                    <span class="block text-[10px] font-black uppercase text-indigo-900 tracking-widest">Support</span>
+                    <span class="text-sm font-bold text-slate-500">24/7 Direct Chat</span>
+                </div>
+                <div class="space-y-1 border-l border-gray-100 pl-8 hidden md:block">
+                    <span class="block text-[10px] font-black uppercase text-indigo-900 tracking-widest">Pricing</span>
+                    <span class="text-sm font-bold text-slate-500">From $0.25/Image</span>
+                </div>
             </div>
-
         </div>
     </section>
-
-    <section class="bg-white py-24 mt-10">
+    {{-- <section class="bg-white py-24 mt-10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
 
@@ -230,6 +163,141 @@
                     <p class="text-slate-500 text-sm leading-relaxed max-w-xs mx-auto">
                         Connect with Our Rapid-Response Support Representative in Just 10 Seconds
                     </p>
+                </div>
+
+            </div>
+        </div>
+    </section> --}}
+
+    <section class="relative bg-gradient-to-b from-white via-indigo-50/30 to-white py-24 overflow-hidden">
+        <!-- Decorative Background -->
+        <div
+            class="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-indigo-200/20 to-purple-200/20 rounded-full blur-3xl">
+        </div>
+        <div
+            class="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-br from-pink-200/20 to-orange-200/20 rounded-full blur-3xl">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+
+                <!-- Feature 1: Customized Editing -->
+                <div class="group relative">
+                    <!-- Card -->
+                    <div
+                        class="relative h-full bg-white rounded-3xl p-10 shadow-lg hover:shadow-2xl transition-all duration-500 border border-indigo-100/50 hover:border-indigo-300/50 hover:-translate-y-2">
+                        <!-- Gradient Overlay on Hover -->
+                        <div
+                            class="absolute inset-0 bg-gradient-to-br from-indigo-500/5 to-purple-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        </div>
+
+                        <div class="relative z-10 flex flex-col items-center text-center">
+                            <!-- Icon Container with Gradient -->
+                            <div class="mb-6 relative">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-r from-indigo-400 to-purple-400 rounded-2xl blur-xl opacity-40 group-hover:opacity-60 transition-opacity">
+                                </div>
+                                <div
+                                    class="relative w-20 h-20 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl flex items-center justify-center transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-xl">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="2" stroke="currentColor" class="w-10 h-10 text-white">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+                                    </svg>
+                                </div>
+                            </div>
+
+                            <!-- Content -->
+                            <h3
+                                class="text-xl font-bold bg-gradient-to-r from-slate-800 to-indigo-900 bg-clip-text text-transparent mb-4 group-hover:from-indigo-600 group-hover:to-purple-600 transition-all duration-300">
+                                Customized Editing
+                            </h3>
+                            <p class="text-slate-600 text-base leading-relaxed">
+                                Get precise, customised photo editing services that meet your exact specifications
+                            </p>
+
+                            <!-- Decorative Element -->
+                            <div
+                                class="mt-6 w-16 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 2: Easy Dashboard -->
+                <div class="group relative">
+                    <div
+                        class="relative h-full bg-white rounded-3xl p-10 shadow-lg hover:shadow-2xl transition-all duration-500 border border-purple-100/50 hover:border-purple-300/50 hover:-translate-y-2">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-pink-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        </div>
+
+                        <div class="relative z-10 flex flex-col items-center text-center">
+                            <div class="mb-6 relative">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-r from-purple-400 to-pink-400 rounded-2xl blur-xl opacity-40 group-hover:opacity-60 transition-opacity">
+                                </div>
+                                <div
+                                    class="relative w-20 h-20 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-xl">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="2" stroke="currentColor" class="w-10 h-10 text-white">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" />
+                                    </svg>
+                                </div>
+                            </div>
+
+                            <h3
+                                class="text-xl font-bold bg-gradient-to-r from-slate-800 to-purple-900 bg-clip-text text-transparent mb-4 group-hover:from-purple-600 group-hover:to-pink-600 transition-all duration-300">
+                                Easy Dashboard
+                            </h3>
+                            <p class="text-slate-600 text-base leading-relaxed">
+                                Effortlessly Manage Your Orders in One Convenient Location
+                            </p>
+
+                            <div
+                                class="mt-6 w-16 h-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 3: Instant Support -->
+                <div class="group relative">
+                    <div
+                        class="relative h-full bg-white rounded-3xl p-10 shadow-lg hover:shadow-2xl transition-all duration-500 border border-pink-100/50 hover:border-pink-300/50 hover:-translate-y-2">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-br from-pink-500/5 to-orange-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        </div>
+
+                        <div class="relative z-10 flex flex-col items-center text-center">
+                            <div class="mb-6 relative">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-r from-pink-400 to-orange-400 rounded-2xl blur-xl opacity-40 group-hover:opacity-60 transition-opacity">
+                                </div>
+                                <div
+                                    class="relative w-20 h-20 bg-gradient-to-br from-pink-500 to-orange-600 rounded-2xl flex items-center justify-center transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-xl">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="2" stroke="currentColor" class="w-10 h-10 text-white">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+                                    </svg>
+                                </div>
+                            </div>
+
+                            <h3
+                                class="text-xl font-bold bg-gradient-to-r from-slate-800 to-pink-900 bg-clip-text text-transparent mb-4 group-hover:from-pink-600 group-hover:to-orange-600 transition-all duration-300">
+                                Instant Support
+                            </h3>
+                            <p class="text-slate-600 text-base leading-relaxed">
+                                Connect with Our Rapid-Response Support Representative in Just 10 Seconds
+                            </p>
+
+                            <div
+                                class="mt-6 w-16 h-1 bg-gradient-to-r from-pink-500 to-orange-500 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500">
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
             </div>
@@ -441,7 +509,7 @@
                                 </div>
                             </div>
                             <div>
-                                <a href="{{route('services.slug','clipping-path')}}"
+                                <a href="{{ route('services.slug', 'clipping-path') }}"
                                     class="text-slate-800 font-bold text-lg mb-2 group-hover:text-indigo-900 transition-colors">
                                     Clipping Path</a>
                                 <p class="text-slate-500 text-sm leading-relaxed">Hand-drawn photo clipping service
@@ -463,7 +531,7 @@
                                 </div>
                             </div>
                             <div>
-                                <a href="{{route('services.slug','background-remove')}}"
+                                <a href="{{ route('services.slug', 'background-remove') }}"
                                     class="text-slate-800 font-bold text-lg mb-2 group-hover:text-indigo-900 transition-colors">
                                     Background Remove</a>
                                 <p class="text-slate-500 text-sm leading-relaxed">Refine your images by eliminating
@@ -485,7 +553,7 @@
                                 </div>
                             </div>
                             <div>
-                                <a href="{{route('services.slug','shadow-making')}}"
+                                <a href="{{ route('services.slug', 'shadow-making') }}"
                                     class="text-slate-800 font-bold text-lg mb-2 group-hover:text-indigo-900 transition-colors">
                                     Shadow Making</a>
                                 <p class="text-slate-500 text-sm leading-relaxed">Enhance realism by adding natural-looking
@@ -520,7 +588,7 @@
                                 </div>
                             </div>
                             <div>
-                                <a href="{{route('services.slug','ghost-mannequin')}}"
+                                <a href="{{ route('services.slug', 'ghost-mannequin') }}"
                                     class="text-slate-800 font-bold text-lg mb-2 group-hover:text-indigo-900 transition-colors">
                                     Ghost Mannequin</a>
                                 <p class="text-slate-500 text-sm leading-relaxed">Enhance visual impact for apparel by
@@ -542,7 +610,7 @@
                                 </div>
                             </div>
                             <div>
-                                <a href="{{ route('services.slug','photo-recoloring') }}"
+                                <a href="{{ route('services.slug', 'photo-recoloring') }}"
                                     class="text-slate-800 font-bold text-lg mb-2 group-hover:text-indigo-900 transition-colors">
                                     Photo Recoloring</a>
                                 <p class="text-slate-500 text-sm leading-relaxed">Capture a single photo and transform it
@@ -709,7 +777,9 @@
                                 </div>
                             </div>
                             <div>
-                                <a href="javascript:void(0)" class="text-slate-800 hover:text-rose-600 font-bold text-lg mb-1">Product Photography</a>
+                                <a href="javascript:void(0)"
+                                    class="text-slate-800 hover:text-rose-600 font-bold text-lg mb-1">Product
+                                    Photography</a>
                                 <p class="text-slate-500 text-sm">We capture high-fidelity product photos preserving
                                     natural colors and textures.</p>
                             </div>
@@ -728,8 +798,11 @@
                                 </div>
                             </div>
                             <div>
-                                <a href="javascript:void(0)" class="text-slate-800 hover:text-rose-600 font-bold text-lg mb-1">Apparel Photography</a>
-                                <p class="text-slate-500 text-sm">Need your brand with our professional apparel photography.</p>
+                                <a href="javascript:void(0)"
+                                    class="text-slate-800 hover:text-rose-600 font-bold text-lg mb-1">Apparel
+                                    Photography</a>
+                                <p class="text-slate-500 text-sm">Need your brand with our professional apparel
+                                    photography.</p>
                             </div>
                         </div>
 
@@ -746,7 +819,9 @@
                                 </div>
                             </div>
                             <div>
-                                <a href="javascript:void(0)" class="text-slate-800 hover:text-rose-600 font-bold text-lg mb-1">Jewelry Photography</a>
+                                <a href="javascript:void(0)"
+                                    class="text-slate-800 hover:text-rose-600 font-bold text-lg mb-1">Jewelry
+                                    Photography</a>
                                 <p class="text-slate-500 text-sm">Macro photography that captures the luxurious sparkle of
                                     ornaments and gems.</p>
                             </div>
@@ -763,8 +838,11 @@
                                 </div>
                             </div>
                             <div>
-                                <a href="javascript:void(0)" class="text-slate-800 hover:text-rose-600 font-bold text-lg mb-1">School Photography</a>
-                                <p class="text-slate-500 text-sm">We shoot portraits or groups for entire school in your preferred style.</p>
+                                <a href="javascript:void(0)"
+                                    class="text-slate-800 hover:text-rose-600 font-bold text-lg mb-1">School
+                                    Photography</a>
+                                <p class="text-slate-500 text-sm">We shoot portraits or groups for entire school in your
+                                    preferred style.</p>
                             </div>
                         </div>
                     </div>
@@ -782,8 +860,7 @@
                             class="absolute w-80 h-80 bg-indigo-50 rounded-full -z-10 blur-xl top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
                         </div>
                         <!-- Replace with asset -->
-                        <img src="{{ asset('/assets/images/home/ecommerce-service.png') }}"
-                            alt="Photography Service"
+                        <img src="{{ asset('/assets/images/home/ecommerce-service.png') }}" alt="Photography Service"
                             class="relative rounded-2xl w-full object-cover transform transition duration-500 hover:scale-[1.01]">
                     </div>
 
@@ -804,7 +881,8 @@
                                 </div>
                             </div>
                             <div>
-                                <a href="{{ route('services.slug','amazon') }}" class="text-slate-800 font-bold text-lg mb-1">Amazon & Shopify Ready</a>
+                                <a href="{{ route('services.slug', 'amazon') }}"
+                                    class="text-slate-800 font-bold text-lg mb-1">Amazon & Shopify Ready</a>
                                 <p class="text-slate-500 text-sm">Optimized images that meet strict marketplace guidelines
                                     for white backgrounds and dimensions.</p>
                             </div>
@@ -824,7 +902,8 @@
                                 </div>
                             </div>
                             <div>
-                                <a href="{{  route('services.slug','ecommerce') }}" class="text-slate-800 font-bold text-lg mb-1">360° Degree Editing</a>
+                                <a href="{{ route('services.slug', 'ecommerce') }}"
+                                    class="text-slate-800 font-bold text-lg mb-1">360° Degree Editing</a>
                                 <p class="text-slate-500 text-sm">Create symmetrical, rotatable product visuals by
                                     perfectly aligning and adjusting perspectives.</p>
                             </div>
@@ -844,7 +923,8 @@
                                 </div>
                             </div>
                             <div>
-                                <a href="{{ route('services.slug','essential-editing') }}" class="text-slate-800 font-bold text-lg mb-1">Essential Editing</a>
+                                <a href="{{ route('services.slug', 'essential-editing') }}"
+                                    class="text-slate-800 font-bold text-lg mb-1">Essential Editing</a>
                                 <p class="text-slate-500 text-sm">Web-ready compression that loads fast without sacrificing
                                     visual quality.</p>
                             </div>
@@ -862,7 +942,8 @@
                                 </div>
                             </div>
                             <div>
-                                <a href="{{ route('services.slug','image-optimization') }}" class="text-slate-800 font-bold text-lg mb-1">Image Optimization</a>
+                                <a href="{{ route('services.slug', 'image-optimization') }}"
+                                    class="text-slate-800 font-bold text-lg mb-1">Image Optimization</a>
                                 <p class="text-slate-500 text-sm">Web-ready compression that loads fast without sacrificing
                                     visual quality.</p>
                             </div>
@@ -1028,13 +1109,13 @@
                                 <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                                     d="M5 13l4 4L19 7" />
                             </svg></li>
-                        <li class="flex justify-between border-b pb-4">Unlimited revisions <svg class="w-5 text-indigo-900"
-                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <li class="flex justify-between border-b pb-4">Unlimited revisions <svg
+                                class="w-5 text-indigo-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                                     d="M5 13l4 4L19 7" />
                             </svg></li>
-                        <li class="flex justify-between border-b pb-4">Flexible pay period <svg class="w-5 text-indigo-900"
-                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <li class="flex justify-between border-b pb-4">Flexible pay period <svg
+                                class="w-5 text-indigo-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                                     d="M5 13l4 4L19 7" />
                             </svg></li>
@@ -1157,6 +1238,116 @@
         </div>
     </section>
 
-@include('layouts.includes.portal')
-
+    @include('layouts.includes.portal')
 @endsection
+
+@push('css')
+    <style>
+            /* 15s Total Loop (3 Slides x 5s) */
+            @keyframes autoCycle {
+
+                0%,
+                28% {
+                    opacity: 1;
+                    transform: translateX(0);
+                    visibility: visible;
+                }
+
+                33.33%,
+                100% {
+                    opacity: 0;
+                    transform: translateX(-40px);
+                    visibility: hidden;
+                }
+            }
+
+            @keyframes autoImage {
+
+                0%,
+                28% {
+                    opacity: 1;
+                    transform: scale(1);
+                    visibility: visible;
+                }
+
+                33.33%,
+                100% {
+                    opacity: 0;
+                    transform: scale(1.1);
+                    visibility: hidden;
+                }
+            }
+
+            /* Progress Bar for Navigation */
+            @keyframes navProgress {
+                0% {
+                    width: 0%;
+                }
+
+                28%,
+                33.33% {
+                    width: 100%;
+                }
+
+                33.34%,
+                100% {
+                    width: 0%;
+                }
+            }
+
+            .auto-content {
+                position: absolute;
+                inset: 0;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                opacity: 0;
+                visibility: hidden;
+                animation: autoCycle 15s infinite;
+            }
+
+            .auto-image-item {
+                position: absolute;
+                inset: 0;
+                opacity: 0;
+                visibility: hidden;
+                object-fit: contain;
+                animation: autoImage 15s infinite;
+            }
+
+            /* Delays for Slide 2 */
+            .slide-2 {
+                animation-delay: 5s;
+            }
+
+            /* Delays for Slide 3 */
+            .slide-3 {
+                animation-delay: 10s;
+            }
+
+            /* Navigation Underline Animation */
+            .nav-indicator {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                height: 2px;
+                background: #1e1b4b;
+                width: 0;
+                animation: navProgress 15s infinite;
+            }
+
+            /* Large Background Text Styling */
+            .bg-text-giant {
+                position: absolute;
+                font-size: 20vw;
+                font-weight: 900;
+                color: #f8fafc;
+                line-height: 1;
+                pointer-events: none;
+                z-index: 0;
+                white-space: nowrap;
+                bottom: -2vw;
+                right: -5vw;
+            }
+        </style>
+@endpush

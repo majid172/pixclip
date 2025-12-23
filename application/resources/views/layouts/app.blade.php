@@ -20,6 +20,7 @@
             font-family: 'Inter', sans-serif;
         }
     </style>
+    @stack('css')
 </head>
 
 <body class="flex flex-col min-h-screen bg-blue-50">
