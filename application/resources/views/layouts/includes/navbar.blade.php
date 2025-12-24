@@ -311,11 +311,11 @@
                 <a href="#" class="block text-gray-600 hover:text-rose-600 text-sm">About Company</a>
                 <a href="#" class="block text-gray-600 hover:text-rose-600 text-sm">Career</a>
                 <a href="#" class="block text-gray-600 hover:text-rose-600 text-sm">Our Team</a>
-                <a href="#" class="block text-gray-600 hover:text-rose-600 text-sm">Contact Us</a>
+                <a href="{{ route('') }}" class="block text-gray-600 hover:text-rose-600 text-sm">Contact Us</a>
             </div>
 
             <a href="#"
-                class="block mt-6 text-center bg-rose-800 text-white py-3 rounded font-bold shadow-md">ORDER NOW</a>
+                class="block mt-6 text-center bg-indigo-900 text-white py-3 rounded font-bold shadow-md">ORDER NOW</a>
         </div>
     </div>
 </nav>

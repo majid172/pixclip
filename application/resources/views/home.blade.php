@@ -1,15 +1,189 @@
 @extends('layouts.app')
 @section('content')
     <!-- HERO CAROUSEL SECTION -->
-    <section class="relative w-full overflow-hidden bg-white">
-        
+    {{-- <section class="container mx-auto px-4 pt-10 md:px-8">
+        <div id="hero-carousel" class="relative w-full shadow-xl rounded-xl overflow-hidden bg-white border border-gray-100"
+            data-carousel="slide" data-carousel-interval="3000">
 
+            <!-- Carousel wrapper -->
+            <div class="relative h-[650px] md:h-[500px] overflow-hidden">
+
+                <!-- ITEM 1: WATCHES -->
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <div class="grid grid-cols-1 md:grid-cols-2 h-full w-full">
+                        <!-- Text Content -->
+                        <div
+                            class="flex flex-col justify-center px-8 md:px-16 space-y-6 bg-gradient-to-r from-white to-gray-50">
+                            <h1 class="text-4xl md:text-4xl font-extrabold text-slate-700 leading-tight">
+                                Clipping Path Services
+                                <br>
+                                Extract Subject <br>
+                                <span class="text-indigo-900">Keep Accurate Details</span>
+                            </h1>
+                            <p class="text-slate-500 text-md leading-relaxed max-w-md">
+                                Speed up your business giving yourself a break from photo editing services. Our team is
+                                dedicatedly working to give your workflow a speed boost.
+                            </p>
+                            <div class="flex flex-col sm:flex-row gap-4 pt-2">
+                                <a href="{{ route('free.trial') }}"
+                                    class="px-8 py-3.5 bg-indigo-900 text-white font-bold rounded shadow-lg hover:bg-orange-500 hover:-translate-y-1 transition-all text-center">
+                                    Free Trial
+                                </a>
+                                <a href="javascript:void(0)"
+                                    class="px-8 py-3.5 bg-white text-indigo-900 font-bold border border-indigo-200 rounded hover:border-indigo-600 hover:bg-indigo-50 transition-all text-center">
+                                    Get Started
+                                </a>
+                            </div>
+                            <p class="text-xs text-slate-400 font-medium">* No credit card required.</p>
+                        </div>
+                        <!-- Image -->
+                        <div class="relative h-full bg-gray-50 flex items-center justify-center p-8">
+                            <div class="absolute w-[300px] h-[300px] bg-rose-100 rounded-full blur-3xl opacity-50"></div>
+                            <img src="{{ asset('assets/images/banner/clipping.webp') }}"
+                                class="relative z-10 max-h-[350px] w-auto drop-shadow-2xl hover:scale-105 transition duration-500"
+                                alt="Watches">
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <div class="grid grid-cols-1 md:grid-cols-2 h-full w-full">
+                        <!-- Text Content -->
+                        <div
+                            class="flex flex-col justify-center px-8 md:px-16 space-y-6 bg-gradient-to-r from-white to-gray-50">
+                            <h1 class="text-4xl md:text-4xl font-extrabold text-slate-900 leading-tight">
+                                Make Your Photo <br>
+                                Post-Processing <br>
+                                <span class="text-indigo-900">Cost Effective</span>
+                            </h1>
+                            <p class="text-slate-500 text-md leading-relaxed max-w-md">
+                                Speed up your business giving yourself a break from photo editing services. Our team is
+                                dedicatedly working to give your workflow a speed boost.
+                            </p>
+                            <div class="flex flex-col sm:flex-row gap-4 pt-2">
+                                <a href="javascript:void(0)"
+                                    class="px-8 py-3.5 bg-indigo-900 text-white font-bold rounded shadow-lg hover:bg-rose-700 hover:-translate-y-1 transition-all text-center">
+                                    Free Trial
+                                </a>
+                                <a href="javascript:void(0)"
+                                    class="px-8 py-3.5 bg-white text-blue-900 font-bold border border-blue-200 rounded hover:border-blue-600 hover:bg-blue-50 transition-all text-center">
+                                    Get Started
+                                </a>
+                            </div>
+                            <p class="text-xs text-slate-400 font-medium">* No credit card required.</p>
+                        </div>
+                        <!-- Image -->
+                        <div class="relative h-full bg-gray-50 flex items-center justify-center p-8">
+                            <div class="absolute w-[300px] h-[300px] bg-rose-100 rounded-full blur-3xl opacity-50"></div>
+                            <img src="{{ asset('/assets/images/banner/photo-editing-services.webp') }}"
+                                class="relative z-10 max-h-[350px] w-auto drop-shadow-2xl hover:scale-105 transition duration-500"
+                                alt="Watches">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ITEM 2: SHOES -->
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <div class="grid grid-cols-1 md:grid-cols-2 h-full w-full">
+                        <div
+                            class="flex flex-col justify-center px-8 md:px-16 space-y-6 bg-gradient-to-r from-white to-gray-50">
+                            <h1 class="text-4xl md:text-4xl font-extrabold text-slate-900 leading-tight">
+                                Professional <br>
+                                <span class="text-indigo-900">Ghost Mannequin</span> <br>
+                                Services
+                            </h1>
+                            <p class="text-slate-500 text-md leading-relaxed max-w-md">
+                                Enhance your clothing line with our invisible mannequin effects. Perfect for eCommerce
+                                stores
+                                looking to showcase fit.
+                            </p>
+                            <div class="flex flex-col sm:flex-row gap-4 pt-2">
+                                <a href="#"
+                                    class="px-8 py-3.5 bg-indigo-900 text-white font-bold rounded shadow-lg shadow-indigo-200 hover:bg-indigo-700 transition-all text-center">
+                                    See Portfolio
+                                </a>
+                            </div>
+                        </div>
+                        <div class="relative h-full bg-gray-50 flex items-center justify-center p-8">
+                            <div class="absolute w-[300px] h-[300px] bg-indigo-100 rounded-full blur-3xl opacity-50"></div>
+                            <img src="{{ asset('/assets/images/banner/main.png') }}"
+                                class="relative z-10 max-h-[350px] w-auto drop-shadow-2xl hover:scale-105 transition duration-500"
+                                alt="Shoes">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ITEM 3: JEWELRY -->
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <div class="grid grid-cols-1 md:grid-cols-2 h-full w-full">
+                        <div
+                            class="flex flex-col justify-center px-8 md:px-16 space-y-6 bg-gradient-to-r from-white to-gray-50">
+                            <h1 class="text-4xl md:text-4xl font-extrabold text-slate-900 leading-tight">
+                                Jewelry Retouching Services
+                                <br>
+                                <span class="text-indigo-900">Bring natural Shine</span>
+                            </h1>
+                            <p class="text-slate-500 text-md leading-relaxed max-w-md">
+                                We make your diamonds sparkle. Expert color correction and dust removal to make your
+                                products
+                                shine.
+                            </p>
+                            <div class="flex flex-col sm:flex-row gap-4 pt-2">
+                                <a href="javascript:void(0)"
+                                    class="px-8 py-3.5 bg-indigo-900 text-white font-bold rounded shadow-lg shadow-indigo-200 hover:bg-indigo-700 hover:-translate-y-1 transition-all text-center">
+                                    Free Trial
+                                </a>
+                                <a href="javascript:void(0)"
+                                    class="px-8 py-3.5 bg-white text-indigo-900 font-bold border border-indigo-200 rounded hover:border-indigo-600 hover:bg-indigo-50 transition-all text-center">
+                                    Get Started
+                                </a>
+                            </div>
+                        </div>
+                        <div class="relative h-full bg-gray-50 flex items-center justify-center p-8">
+                            <div class="absolute w-[300px] h-[300px] bg-yellow-100 rounded-full blur-3xl opacity-50"></div>
+                            <img src="{{ asset('/assets/images/banner/jewelary.webp') }}"
+                                class="relative z-10 max-h-[300px] w-auto drop-shadow-2xl" alt="Jewelry">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CUSTOM BOTTOM RIGHT CONTROLS -->
+            <div class="absolute bottom-8 right-8 md:bottom-12 md:right-16 z-30 flex gap-3">
+                <button type="button"
+                    class="group flex items-center justify-center w-12 h-12 rounded-full bg-white border border-gray-200 shadow-lg text-gray-500 hover:bg-indigo-900 hover:text-white hover:border-indigo-900 transition-all duration-300 focus:outline-none"
+                    data-carousel-prev>
+                    <svg class="w-5 h-5 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 6 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M5 1 1 5l4 4" />
+                    </svg>
+                    <span class="sr-only">Previous</span>
+                </button>
+
+                <!-- Next Button -->
+                <button type="button"
+                    class="group flex items-center justify-center w-12 h-12 rounded-full bg-white border border-gray-200 shadow-lg text-gray-500 hover:bg-indigo-900 hover:text-white hover:border-indigo-900 transition-all duration-300 focus:outline-none"
+                    data-carousel-next>
+                    <svg class="w-5 h-5 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 6 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="m1 9 4-4-4-4" />
+                    </svg>
+                    <span class="sr-only">Next</span>
+                </button>
+
+            </div>
+
+        </div>
+    </section> --}}
+
+    <section class="relative w-full overflow-hidden bg-white">
         <!-- Background Decoration -->
         <div class="bg-text-giant select-none uppercase">Premium</div>
 
         <div class="container mx-auto px-4 md:px-8 relative z-10">
             <!-- Navigation Row (Visual Only) -->
-           
+
 
             <div class="grid grid-cols-1 lg:grid-cols-12 min-h-[600px] items-center">
 
@@ -19,10 +193,16 @@
 
                         <!-- Content 1 -->
                         <div class="auto-content slide-1">
-                            <h1
-                                class="text-6xl md:text-6xl font-black text-slate-900 tracking-tighter leading-[1] uppercase">
-                                Jewelry   <br> <span class="text-indigo-900">Retouching.</span>
+                            <h1 class="uppercase tracking-tighter leading-[1]">
+                                <span class="block text-5xl font-medium text-slate-600">
+                                    Jewelry
+                                </span>
+
+                                <span class="block text-5xl font-medium text-indigo-900">
+                                    Retouching.
+                                </span>
                             </h1>
+
                             <p class="mt-6 text-slate-500 text-lg leading-relaxed max-w-sm">
                                 Hand-drawn clipping path services for complex shapes. We define the boundary of your
                                 products with surgical precision.
@@ -37,9 +217,15 @@
 
                         <!-- Content 2 -->
                         <div class="auto-content slide-2">
-                            <h1
-                                class="text-7xl md:text-6xl font-black text-slate-900 tracking-tighter leading-[0.9] uppercase">
-                                Cost  <br> <span class="text-indigo-900">Effective.</span>
+                           
+                             <h1 class="uppercase tracking-tighter leading-[1]">
+                                <span class="block text-5xl font-medium text-slate-600">
+                                    Cost
+                                </span>
+
+                                <span class="block text-5xl font-medium text-indigo-900">
+                                    Effective.
+                                </span>
                             </h1>
                             <p class="mt-6 text-slate-500 text-lg leading-relaxed max-w-sm">
                                 Professional invisible mannequin effects that showcase the volume and fit of your apparel
@@ -55,10 +241,16 @@
 
                         <!-- Content 3 -->
                         <div class="auto-content slide-3">
-                            <h1
-                                class="text-7xl md:text-6xl font-black text-slate-900 tracking-tighter leading-[0.9] uppercase">
-                                Clipping <br> <span class="text-indigo-900">Path.</span>
+                             <h1 class="uppercase tracking-tighter leading-[1]">
+                                <span class="block text-5xl font-medium text-slate-600">
+                                    Clipping
+                                </span>
+
+                                <span class="block text-5xl font-medium text-indigo-900">
+                                    Path.
+                                </span>
                             </h1>
+                           
                             <p class="mt-6 text-slate-500 text-lg leading-relaxed max-w-sm">
                                 High-end jewelry retouching for luxury brands. We enhance reflections and remove
                                 imperfections from every gemstone.
@@ -91,25 +283,75 @@
 
             <!-- STATS SECTION -->
             <div class="grid grid-cols-2 md:grid-cols-4 border-t border-gray-100 py-12">
-                <div class="space-y-1">
-                    <span class="block text-[10px] font-black uppercase text-indigo-900 tracking-widest">Quality</span>
-                    <span class="text-sm font-bold text-slate-500">100% Hand-Drawn</span>
+
+                <div class="flex items-center gap-4 border-l border-gray-100 pl-8">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="icon icon-tabler icons-tabler-outline icon-tabler-circle-percentage text-indigo-900">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+                        <path d="M9 15.075l6 -6" />
+                        <path d="M9 9.105v.015" />
+                        <path d="M15 15.12v.015" />
+                    </svg>
+                    <div>
+                        <span class="block text-[10px] font-black uppercase text-indigo-900 tracking-widest">Quality</span>
+                        <span class="text-sm font-bold text-slate-500">100% Hand-Drawn</span>
+                    </div>
                 </div>
-                <div class="space-y-1 border-l border-gray-100 pl-8">
-                    <span class="block text-[10px] font-black uppercase text-indigo-900 tracking-widest">Speed</span>
-                    <span class="text-sm font-bold text-slate-500">12h Turnaround</span>
+                <div class="flex items-center gap-4 border-l border-gray-100 pl-8">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="text-indigo-900">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M20.984 12.53a9 9 0 1 0 -7.552 8.355" />
+                        <path d="M12 7v5l3 3" />
+                        <path d="M19 16l-2 3h4l-2 3" />
+                    </svg>
+                    <div>
+                        <span class="block text-[10px] font-black uppercase text-indigo-900 tracking-widest">Speed</span>
+                        <span class="text-sm font-bold text-slate-500">12h Turnaround</span>
+                    </div>
                 </div>
-                <div class="space-y-1 border-l border-gray-100 pl-8 hidden md:block">
-                    <span class="block text-[10px] font-black uppercase text-indigo-900 tracking-widest">Support</span>
-                    <span class="text-sm font-bold text-slate-500">24/7 Direct Chat</span>
+                <div class="flex items-center gap-4 border-l border-gray-100 pl-8">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="text-indigo-900 icon icon-tabler icons-tabler-outline icon-tabler-hours-24 ">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M4 13c.325 2.532 1.881 4.781 4 6" />
+                        <path d="M20 11a8.1 8.1 0 0 0 -15.5 -2" />
+                        <path d="M4 5v4h4" />
+                        <path d="M12 15h2a1 1 0 0 1 1 1v1a1 1 0 0 1 -1 1h-1a1 1 0 0 0 -1 1v1a1 1 0 0 0 1 1h2" />
+                        <path d="M18 15v2a1 1 0 0 0 1 1h1" />
+                        <path d="M21 15v6" />
+                    </svg>
+                    <div>
+                        <span class="block text-[10px] font-black uppercase text-indigo-900 tracking-widest">Support</span>
+                        <span class="text-sm font-bold text-slate-500">24/7 Direct Chat</span>
+                    </div>
                 </div>
-                <div class="space-y-1 border-l border-gray-100 pl-8 hidden md:block">
-                    <span class="block text-[10px] font-black uppercase text-indigo-900 tracking-widest">Pricing</span>
-                    <span class="text-sm font-bold text-slate-500">From $0.25/Image</span>
+                <div class="flex items-center gap-4 border-l border-gray-100 pl-8">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="icon icon-tabler icons-tabler-outline icon-tabler-premium-rights text-indigo-900">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
+                        <path
+                            d="M13.867 9.75c-.246 -.48 -.708 -.769 -1.2 -.75h-1.334c-.736 0 -1.333 .67 -1.333 1.5c0 .827 .597 1.499 1.333 1.499h1.334c.736 0 1.333 .671 1.333 1.5c0 .828 -.597 1.499 -1.333 1.499h-1.334c-.492 .019 -.954 -.27 -1.2 -.75" />
+                        <path d="M12 7v2" />
+                        <path d="M12 15v2" />
+                    </svg>
+                    <div>
+                        <span class="block text-[10px] font-black uppercase text-indigo-900 tracking-widest">Pricing</span>
+                        <span class="text-sm font-bold text-slate-500">From $0.25/Image</span>
+                    </div>
                 </div>
+
+
             </div>
         </div>
     </section>
+
     {{-- <section class="bg-white py-24 mt-10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
@@ -310,8 +552,8 @@
 
                 <!-- Left Side: Illustration Image -->
                 <div class="relative flex justify-center lg:justify-start">
-                    <img src="https://img.freepik.com/free-vector/business-team-brainstorming-discussing-startup-project_74855-6564.jpg"
-                        alt="Team meeting and discussion" class="w-full max-w-lg h-auto object-contain">
+                    <img src="{{ asset('/assets/images/home/benefit.webp') }}" alt="Team meeting and discussion"
+                        class="w-full max-w-lg h-auto object-contain">
                 </div>
 
                 <!-- Right Side: Content -->
@@ -421,7 +663,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-20">
                 <span
-                    class="inline-flex items-center justify-center bg-indigo-50 text-indigo-900 text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-6 border border-indigo-100">
+                    class="inline-flex items-center justify-center bg-amber-50 text-indigo-900 text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-6 border border-indigo-100">
                     Our Services
                 </span>
                 <h2 class="text-4xl md:text-4xl font-bold text-slate-800 mb-6 tracking-tight">
@@ -992,30 +1234,30 @@
                     </div>
 
                     <ul class="mt-10 space-y-4 text-sm text-slate-600">
-                        <li class="flex justify-between border-b pb-4">First image free <svg class="w-5 text-rose-500"
+                        <li class="flex justify-between border-b pb-4">First image free <svg class="w-5 text-indigo-900"
                                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                                     d="M5 13l4 4L19 7" />
                             </svg></li>
-                        <li class="flex justify-between border-b pb-4">12-hour delivery <svg class="w-5 text-rose-500"
+                        <li class="flex justify-between border-b pb-4">12-hour delivery <svg class="w-5 text-indigo-900"
                                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                                     d="M5 13l4 4L19 7" />
                             </svg></li>
-                        <li class="flex justify-between border-b pb-4">Quick response <svg class="w-5 text-rose-500"
+                        <li class="flex justify-between border-b pb-4">Quick response <svg class="w-5 text-indigo-900"
                                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                                     d="M5 13l4 4L19 7" />
                             </svg></li>
                         <li class="flex justify-between border-b pb-4">No credit card required <svg
-                                class="w-5 text-rose-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                class="w-5 text-indigo-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                                     d="M5 13l4 4L19 7" />
                             </svg></li>
                     </ul>
 
                     <div class="mt-10 text-center">
-                        <a href="#"
+                        <a href="{{ route('free.trial') }}"
                             class="bg-indigo-900 hover:bg-indigo-700 text-white px-8 py-3 rounded-lg shadow-lg text-sm font-semibold transition">Get
                             Free Trial</a>
                     </div>
@@ -1158,7 +1400,7 @@
                         <!-- Floating elements simulation (if you don't have a single image) -->
                         <div class="absolute -top-10 -right-10 bg-gray-50 rounded-full p-4 animate-bounce delay-700"></div>
 
-                        <img src="{{ asset('/assets/images/home/workflow.png') }}" alt="Dashboard Illustration"
+                        <img src="{{ asset('/assets/images/home/efficiant.webp') }}" alt="Dashboard Illustration"
                             class="w-full h-auto object-contain drop-shadow-xl z-10 relative">
                     </div>
                 </div>
@@ -1243,111 +1485,111 @@
 
 @push('css')
     <style>
-            /* 15s Total Loop (3 Slides x 5s) */
-            @keyframes autoCycle {
+        /* 15s Total Loop (3 Slides x 5s) */
+        @keyframes autoCycle {
 
-                0%,
-                28% {
-                    opacity: 1;
-                    transform: translateX(0);
-                    visibility: visible;
-                }
-
-                33.33%,
-                100% {
-                    opacity: 0;
-                    transform: translateX(-40px);
-                    visibility: hidden;
-                }
+            0%,
+            28% {
+                opacity: 1;
+                transform: translateX(0);
+                visibility: visible;
             }
 
-            @keyframes autoImage {
-
-                0%,
-                28% {
-                    opacity: 1;
-                    transform: scale(1);
-                    visibility: visible;
-                }
-
-                33.33%,
-                100% {
-                    opacity: 0;
-                    transform: scale(1.1);
-                    visibility: hidden;
-                }
-            }
-
-            /* Progress Bar for Navigation */
-            @keyframes navProgress {
-                0% {
-                    width: 0%;
-                }
-
-                28%,
-                33.33% {
-                    width: 100%;
-                }
-
-                33.34%,
-                100% {
-                    width: 0%;
-                }
-            }
-
-            .auto-content {
-                position: absolute;
-                inset: 0;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
+            33.33%,
+            100% {
                 opacity: 0;
+                transform: translateX(-40px);
                 visibility: hidden;
-                animation: autoCycle 15s infinite;
+            }
+        }
+
+        @keyframes autoImage {
+
+            0%,
+            28% {
+                opacity: 1;
+                transform: scale(1);
+                visibility: visible;
             }
 
-            .auto-image-item {
-                position: absolute;
-                inset: 0;
+            33.33%,
+            100% {
                 opacity: 0;
+                transform: scale(1.1);
                 visibility: hidden;
-                object-fit: contain;
-                animation: autoImage 15s infinite;
+            }
+        }
+
+        /* Progress Bar for Navigation */
+        @keyframes navProgress {
+            0% {
+                width: 0%;
             }
 
-            /* Delays for Slide 2 */
-            .slide-2 {
-                animation-delay: 5s;
+            28%,
+            33.33% {
+                width: 100%;
             }
 
-            /* Delays for Slide 3 */
-            .slide-3 {
-                animation-delay: 10s;
+            33.34%,
+            100% {
+                width: 0%;
             }
+        }
 
-            /* Navigation Underline Animation */
-            .nav-indicator {
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                height: 2px;
-                background: #1e1b4b;
-                width: 0;
-                animation: navProgress 15s infinite;
-            }
+        .auto-content {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            animation: autoCycle 15s infinite;
+        }
 
-            /* Large Background Text Styling */
-            .bg-text-giant {
-                position: absolute;
-                font-size: 20vw;
-                font-weight: 900;
-                color: #f8fafc;
-                line-height: 1;
-                pointer-events: none;
-                z-index: 0;
-                white-space: nowrap;
-                bottom: -2vw;
-                right: -5vw;
-            }
-        </style>
+        .auto-image-item {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            visibility: hidden;
+            object-fit: contain;
+            animation: autoImage 15s infinite;
+        }
+
+        /* Delays for Slide 2 */
+        .slide-2 {
+            animation-delay: 5s;
+        }
+
+        /* Delays for Slide 3 */
+        .slide-3 {
+            animation-delay: 10s;
+        }
+
+        /* Navigation Underline Animation */
+        .nav-indicator {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 2px;
+            background: #1e1b4b;
+            width: 0;
+            animation: navProgress 15s infinite;
+        }
+
+        /* Large Background Text Styling */
+        .bg-text-giant {
+            position: absolute;
+            font-size: 20vw;
+            font-weight: 900;
+            color: #f8fafc;
+            line-height: 1;
+            pointer-events: none;
+            z-index: 0;
+            white-space: nowrap;
+            bottom: -2vw;
+            right: -5vw;
+        }
+    </style>
 @endpush
