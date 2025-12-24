@@ -51,6 +51,25 @@ class PaymentController extends Controller
         $validated = $request->validated();
 
         try {
+            $order = Order::findOrFail($validated['order_id']);
+
+            // Check if user has permission to pay for this order
+            if (!$this->paymentService->canAccessOrder($order, auth()->id(), auth()->user()->is_admin == 1)) {
+                abort(403, 'Unauthorized access to this order');
+            }
+
+            // Check if order is already paid
+            if ($this->paymentService->isOrderPaid($order)) {
+                return redirect()->route('order.details', $order->id)
+                    ->with('info', 'This order has already been paid.');
+            }
+
+            // Redirect to PayPal integration if PayPal is selected
+            if ($validated['payment_method'] === 'PayPal') {
+                return redirect()->route('paypal.pay', ['order' => $order->id]);
+            }
+
+            // Process other payment methods normally
             $paymentData = [
                 'user_id'        => auth()->id(),
                 'admin_id'       => 1,
@@ -60,7 +79,6 @@ class PaymentController extends Controller
             ];
 
             $transaction = $this->paymentService->processPayment($paymentData);
-            $order = Order::find($validated['order_id']);
 
             return redirect()->route('order.details', $order->id)
                 ->with('success', 'Payment processed successfully! Transaction ID: ' . $transaction->transaction_id);

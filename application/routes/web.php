@@ -1,21 +1,22 @@
 <?php
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ContactController;
-use App\Http\Controllers\ServiceController;
-use App\Http\Controllers\FreeTrialController;
+use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
-use App\Http\Controllers\Backend\OrderController;
-use App\Http\Controllers\Backend\NoticeController;
-use App\Http\Controllers\Backend\InvoiceController;
-use App\Http\Controllers\Backend\UserListController;
-use App\Http\Controllers\Backend\DashboardController;
-use App\Http\Controllers\Auth\ForgotPasswordController;
-use App\Http\Controllers\Backend\TransactionController;
-use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use App\Http\Controllers\Backend\ChangePasswordController;
+use App\Http\Controllers\Backend\DashboardController;
+use App\Http\Controllers\Backend\InvoiceController;
+use App\Http\Controllers\Backend\NoticeController;
+use App\Http\Controllers\Backend\OrderController;
+use App\Http\Controllers\Backend\PaypalController;
+use App\Http\Controllers\Backend\TransactionController;
+use App\Http\Controllers\Backend\UserListController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\FreeTrialController;
+use App\Http\Controllers\ServiceController;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -95,8 +96,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::delete('/remove/{user}', [UserListController::class, 'destroy'])->name('user.destroy');
     });
 
-    Route::get('change-password',[ChangePasswordController::class,'password'])->name('password');
-    Route::put('change-password',[ChangePasswordController::class,'changePassword'])->name('change.password');
+    Route::get('change-password', [ChangePasswordController::class, 'password'])->name('password');
+    Route::put('change-password', [ChangePasswordController::class, 'changePassword'])->name('change.password');
 
     // Billing Address
     Route::get('billing', [\App\Http\Controllers\Backend\BillingController::class, 'index'])->name('billing.index');
@@ -117,7 +118,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::get('invoiced', 'invoiced')->name('invoiced');
         Route::get('processing', 'processing')->name('processing');
         Route::get('finalized', 'finalized')->name('finalized');
-        Route::get('finalize/{order}', 'finalizeView')->name('finalize'); // New Route
+        Route::get('finalize/{order}', 'finalizeView')->name('finalize');         // New Route
         Route::post('finalize/{order}', 'finalizeStore')->name('finalize.store'); // New Route
         Route::get('completed', 'completed')->name('completed');
         Route::get('downloaded', 'downloaded')->name('downloaded');
@@ -150,4 +151,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
     // Free Trial Admin
     Route::resource('free-trial-list', \App\Http\Controllers\Backend\FreeTrialController::class);
+
+    // PayPal Payment Routes
+    Route::get('/paypal/pay/{order}', [PaypalController::class, 'payment'])->name('paypal.pay');
+    Route::get('/paypal/success', [PaypalController::class, 'success'])->name('paypal.success');
+    Route::get('/paypal/cancel', [PaypalController::class, 'cancel'])->name('paypal.cancel');
+
 });
