@@ -127,8 +127,10 @@
                 <!-- Right Column: Illustration -->
                 <div class="order-1 lg:order-2 flex justify-center">
 
-                    <img src="{{ asset('/assets/images/banner/home2.png') }}" alt="Portal Illustration"
+                    <img src="{{ asset('/assets/images/home/efficient.webp') }}" alt="Portal Illustration"
                         class="w-full max-w-lg lg:max-w-xl h-auto object-contain drop-shadow-xl">
+                    {{-- <img src="{{ asset('/assets/images/banner/home2.png') }}" alt="Portal Illustration"
+                        class="w-full max-w-lg lg:max-w-xl h-auto object-contain drop-shadow-xl"> --}}
                 </div>
 
             </div>

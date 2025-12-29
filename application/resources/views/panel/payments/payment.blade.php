@@ -81,8 +81,8 @@
                             <option value="" disabled selected>Choose a payment gateway</option>
                             <option value="PayPal" {{ old('payment_method') == 'PayPal' ? 'selected' : '' }}>PayPal
                             </option>
-                            <option value="Stripe" {{ old('payment_method') == 'Stripe' ? 'selected' : '' }}>Stripe
-                            </option>
+                            {{-- <option value="Stripe" {{ old('payment_method') == 'Stripe' ? 'selected' : '' }}>Stripe
+                            </option> --}}
                         </select>
                         @error('payment_method')
                             <label class="label">

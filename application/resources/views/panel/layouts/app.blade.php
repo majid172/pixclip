@@ -1,6 +1,6 @@
 <!doctype html>
 
-<html lang="en" data-theme="light" data-assets-path="../assets/" data-layout-path="dashboard-free/" dir="ltr"
+<html lang="en" data-assets-path="../assets/" data-layout-path="dashboard-free/" dir="ltr"
     class="scroll-smooth">
 
 <head>
@@ -11,9 +11,9 @@
     <title> Dashboards || PixClipping</title>
 
     <meta name="description"
-        content=" FlyonUIPro is the best FlyonUI dashboard for responsive web apps. Streamline your app development process with ease." />
+        content="PixClipping is the best dashboard for responsive web apps. Streamline your app development process with ease." />
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="{{ asset('/assets/img/favicon/favicon.ico') }}" />
+    <link rel="icon" type="image/x-icon" href="{{ asset('/assets/images/logo_2.png') }}" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -31,8 +31,10 @@
     <!-- build:css -->
     <link rel="stylesheet" href="{{ asset('/assets/dist/css/output.css') }}" />
 
+    <!-- Page CSS -->
+
     <!-- Theme JS -->
-    <script type="text/javascript">
+    {{-- <script type="text/javascript">
         (function() {
             try {
                 const root = document.documentElement;
@@ -78,15 +80,22 @@
                 console.warn('Early theme script error:', e);
             }
         })();
-    </script>
+    </script> --}}
 </head>
 
 <body>
     <!-- Layout wrapper -->
     <div class="bg-base-200 flex min-h-screen flex-col">
-        @include('panel.partials.header')
-        @include('panel.partials.aside')
+        <!-- Layout Navbar -->
 
+        <!-- ---------- HEADER ---------- -->
+        @include('panel.partials.header')
+
+
+        @include('panel.partials.aside')
+        <!-- / Menu -->
+
+        <!-- Layout Container -->
         <div class="lg:ps-75 flex grow flex-col">
             <!-- Content -->
             <main class="mx-auto w-full max-w-[1280px] flex-1 grow space-y-6 p-6">
@@ -99,7 +108,7 @@
             @include('panel.partials.footer')
             <!-- Footer: End -->
         </div>
-
+        <!-- / Layout Container -->
     </div>
     <!-- / Layout Wrapper -->
     @stack('css')
@@ -113,7 +122,7 @@
     <script src="{{ asset('/assets/dist/libs/flyonui/flyonui.js') }}"></script>
 
     <!-- Theme Utils JS -->
-    <script src="{{ asset('/assets/dist/js/theme-utils.js') }}"></script>
+    {{-- <script src="{{ asset('/assets/dist/js/theme-utils.js') }}"></script> --}}
 
     <!-- Main JS -->
     <script src="{{ asset('/assets/dist/js/main.js') }}"></script>
@@ -123,8 +132,7 @@
 
     <button id="scrollToTopBtn"
         class="btn btn-circle btn-soft btn-secondary/20 bottom-15 end-15 motion-preset-slide-right motion-duration-800 motion-delay-100 fixed absolute z-[3] hidden"
-        aria-label="Circle Soft Icon Button"><span class="icon-[tabler--chevron-up] size-5 shrink-0"></span>
-    </button>
+        aria-label="Circle Soft Icon Button"><span class="icon-[tabler--chevron-up] size-5 shrink-0"></span></button>
 </body>
 
 </html>

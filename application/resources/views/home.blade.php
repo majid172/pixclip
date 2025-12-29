@@ -217,8 +217,8 @@
 
                         <!-- Content 2 -->
                         <div class="auto-content slide-2">
-                           
-                             <h1 class="uppercase tracking-tighter leading-[1]">
+
+                            <h1 class="uppercase tracking-tighter leading-[1]">
                                 <span class="block text-5xl font-medium text-slate-600">
                                     Cost
                                 </span>
@@ -241,7 +241,7 @@
 
                         <!-- Content 3 -->
                         <div class="auto-content slide-3">
-                             <h1 class="uppercase tracking-tighter leading-[1]">
+                            <h1 class="uppercase tracking-tighter leading-[1]">
                                 <span class="block text-5xl font-medium text-slate-600">
                                     Clipping
                                 </span>
@@ -250,7 +250,7 @@
                                     Path.
                                 </span>
                             </h1>
-                           
+
                             <p class="mt-6 text-slate-500 text-lg leading-relaxed max-w-sm">
                                 High-end jewelry retouching for luxury brands. We enhance reflections and remove
                                 imperfections from every gemstone.
@@ -659,535 +659,249 @@
         </div>
     </section>
 
-    <section class="py-24 ">
+    <section class="py-24 bg-slate-50/50 overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-20">
-                <span
-                    class="inline-flex items-center justify-center bg-amber-50 text-indigo-900 text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-6 border border-indigo-100">
-                    Our Services
-                </span>
-                <h2 class="text-4xl md:text-4xl font-bold text-slate-800 mb-6 tracking-tight">
-                    Get Editing <span class="text-indigo-900">Effortlessly</span> Services
-                </h2>
-                <p class="text-slate-500 text-md leading-relaxed max-w-2xl mx-auto">
-                    Choose the professional photo editing services you need to make your images outstanding and enhance
-                    perfection.
-                </p>
+            <!-- Header Section -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end mb-16">
+                <div>
+                    <div class="flex items-center gap-3 mb-6">
+                        <span class="h-px w-8 bg-indigo-600"></span>
+                        <span class="text-xs font-bold uppercase tracking-[0.2em] text-indigo-600">Our Expertise</span>
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-extrabold text-slate-900 leading-[1.15]">
+                        Get Editing <span class="relative inline-block text-indigo-600">Effortlessly
+                            <svg class="absolute -bottom-2 left-0 w-full" viewBox="0 0 100 10"
+                                preserveAspectRatio="none">
+                                <path d="M0 5 Q 25 0 50 5 T 100 5" stroke="currentColor" stroke-width="2" fill="none"
+                                    class="opacity-30" />
+                            </svg>
+                        </span><br />Services
+                    </h2>
+                </div>
+                <div class="lg:border-l border-slate-200 lg:pl-12">
+                    <p class="text-slate-500 text-lg leading-relaxed max-w-md">
+                        Choose the professional photo editing services you need to make your images outstanding and enhance
+                        perfection.
+                    </p>
+                </div>
             </div>
 
+            <!-- FUNCTIONAL LOGIC (Hidden Radios) -->
             <input type="radio" name="serviceTabs" id="tab-editing" class="hidden peer/editing" checked>
             <input type="radio" name="serviceTabs" id="tab-retouching" class="hidden peer/retouching">
             <input type="radio" name="serviceTabs" id="tab-photography" class="hidden peer/photography">
             <input type="radio" name="serviceTabs" id="tab-ecommerce" class="hidden peer/ecommerce">
 
-            <!-- TABS NAVIGATION -->
-            <div class="bg-white rounded-2xl shadow-sm border border-slate-100 p-2 mb-16 overflow-x-auto">
-                <div class="flex min-w-max md:w-full gap-2">
-
-                    <!-- Editing Tab Label -->
+            <!-- TABS NAVIGATION (Premium Pill Style) -->
+            <div class="relative z-10 mb-20 flex justify-center">
+                <div class="inline-flex p-1.5 bg-white rounded-2xl shadow-sm border border-slate-200 overflow-x-auto">
                     <label for="tab-editing"
-                        class="flex-1 flex items-center justify-center space-x-2 py-4 px-6 rounded-xl transition-all duration-300 cursor-pointer text-slate-500 hover:bg-slate-50 hover:text-indigo-900 peer-checked/editing:bg-indigo-50 peer-checked/editing:text-indigo-700 peer-checked/editing:shadow-sm">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z">
-                            </path>
-                        </svg>
-                        <span class="font-semibold text-sm">Editing</span>
+                        class="flex items-center gap-2 px-8 py-3 rounded-xl cursor-pointer transition-all duration-300 font-bold text-sm text-slate-400 hover:text-indigo-600 peer-checked/editing:bg-indigo-600 peer-checked/editing:text-white peer-checked/editing:shadow-lg peer-checked/editing:shadow-indigo-200">
+                        Editing
                     </label>
-
-                    <!-- Retouching Tab Label -->
                     <label for="tab-retouching"
-                        class="flex-1 flex items-center justify-center space-x-2 py-4 px-6 rounded-xl transition-all duration-300 cursor-pointer text-slate-500 hover:bg-slate-50 hover:text-indigo-900 peer-checked/retouching:bg-indigo-50 peer-checked/retouching:text-indigo-700 peer-checked/retouching:shadow-sm">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                        </svg>
-                        <span class="font-semibold text-sm">Retouching</span>
+                        class="flex items-center gap-2 px-8 py-3 rounded-xl cursor-pointer transition-all duration-300 font-bold text-sm text-slate-400 hover:text-indigo-600 peer-checked/retouching:bg-indigo-600 peer-checked/retouching:text-white peer-checked/retouching:shadow-lg peer-checked/retouching:shadow-indigo-200">
+                        Retouching
                     </label>
-
-                    <!-- Photography Tab Label -->
                     <label for="tab-photography"
-                        class="flex-1 flex items-center justify-center space-x-2 py-4 px-6 rounded-xl transition-all duration-300 cursor-pointer text-slate-500 hover:bg-slate-50 hover:text-indigo-900 peer-checked/photography:bg-indigo-50 peer-checked/photography:text-indigo-700 peer-checked/photography:shadow-sm">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z">
-                            </path>
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z">
-                            </path>
-                        </svg>
-                        <span class="font-semibold text-sm">Photography</span>
+                        class="flex items-center gap-2 px-8 py-3 rounded-xl cursor-pointer transition-all duration-300 font-bold text-sm text-slate-400 hover:text-indigo-600 peer-checked/photography:bg-indigo-600 peer-checked/photography:text-white peer-checked/photography:shadow-lg peer-checked/photography:shadow-indigo-200">
+                        Photography
                     </label>
-
-                    <!-- E-commerce Tab Label -->
                     <label for="tab-ecommerce"
-                        class="flex-1 flex items-center justify-center space-x-2 py-4 px-6 rounded-xl transition-all duration-300 cursor-pointer text-slate-500 hover:bg-slate-50 hover:text-indigo-900 peer-checked/ecommerce:bg-indigo-50 peer-checked/ecommerce:text-indigo-700 peer-checked/ecommerce:shadow-sm">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z">
-                            </path>
-                        </svg>
-                        <span class="font-semibold text-sm">E-commerce</span>
+                        class="flex items-center gap-2 px-8 py-3 rounded-xl cursor-pointer transition-all duration-300 font-bold text-sm text-slate-400 hover:text-indigo-600 peer-checked/ecommerce:bg-indigo-600 peer-checked/ecommerce:text-white peer-checked/ecommerce:shadow-lg peer-checked/ecommerce:shadow-indigo-200">
+                        E-commerce
                     </label>
-
                 </div>
             </div>
 
-            <!-- 1. EDITING CONTENT (3 Columns) -->
+            <!-- 1. EDITING CONTENT -->
             <div class="hidden peer-checked/editing:block animate-fade-in">
-                <div class="grid grid-cols-1 lg:grid-cols-3 gap-10 items-center">
-
-                    <!-- Left List -->
-                    <div class="space-y-12">
-                        <!-- Item -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    <!-- Left: Card List -->
+                    <div class="lg:col-span-7 space-y-6">
                         <div
-                            class="flex gap-5 group items-start hover:bg-white hover:shadow-lg hover:shadow-indigo-50/50 p-4 rounded-2xl transition-all duration-300">
-                            <div class="flex-shrink-0">
-                                <div
-                                    class="w-14 h-14 rounded-xl bg-indigo-50 text-indigo-900 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                                    <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd"
-                                            d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"
-                                            clip-rule="evenodd"></path>
-                                    </svg>
-                                </div>
-                            </div>
+                            class="p-8 bg-white border border-slate-100 rounded-[2.5rem] shadow-sm hover:shadow-xl transition-all duration-300 flex items-center gap-8 group">
+                            <div
+                                class="text-indigo-600/20 font-black text-5xl leading-none group-hover:text-indigo-600/40 transition-colors">
+                                01</div>
                             <div>
                                 <a href="{{ route('services.slug', 'clipping-path') }}"
-                                    class="text-slate-800 font-bold text-lg mb-2 group-hover:text-indigo-900 transition-colors">
-                                    Clipping Path</a>
-                                <p class="text-slate-500 text-sm leading-relaxed">Hand-drawn photo clipping service
-                                    expertly shapes and isolates subjects for a perfect cut.</p>
+                                    class="block text-xl font-bold text-slate-900 mb-1 group-hover:text-indigo-600 transition-colors">Clipping
+                                    Path</a>
+                                <p class="text-slate-500 text-sm">Hand-drawn clipping service expertly shapes and isolates
+                                    subjects.</p>
                             </div>
                         </div>
-
-                        <!-- Item -->
                         <div
-                            class="flex gap-5 group items-start hover:bg-white hover:shadow-lg hover:shadow-indigo-50/50 p-4 rounded-2xl transition-all duration-300">
-                            <div class="flex-shrink-0">
-                                <div
-                                    class="w-14 h-14 rounded-xl bg-indigo-50 text-indigo-900 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                        stroke-width="1.5">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
-                                    </svg>
-                                </div>
-                            </div>
+                            class="p-8 bg-white border border-slate-100 rounded-[2.5rem] shadow-sm hover:shadow-xl transition-all duration-300 flex items-center gap-8 group">
+                            <div
+                                class="text-indigo-600/20 font-black text-5xl leading-none group-hover:text-indigo-600/40 transition-colors">
+                                02</div>
                             <div>
                                 <a href="{{ route('services.slug', 'background-remove') }}"
-                                    class="text-slate-800 font-bold text-lg mb-2 group-hover:text-indigo-900 transition-colors">
-                                    Background Remove</a>
-                                <p class="text-slate-500 text-sm leading-relaxed">Refine your images by eliminating
-                                    background distractions, allowing your subject to shine.</p>
+                                    class="block text-xl font-bold text-slate-900 mb-1 group-hover:text-indigo-600 transition-colors">Background
+                                    Remove</a>
+                                <p class="text-slate-500 text-sm">Refine images by eliminating background distractions.</p>
                             </div>
                         </div>
-
-                        <!-- Item -->
                         <div
-                            class="flex gap-5 group items-start hover:bg-white hover:shadow-lg hover:shadow-indigo-50/50 p-4 rounded-2xl transition-all duration-300">
-                            <div class="flex-shrink-0">
-                                <div
-                                    class="w-14 h-14 rounded-xl bg-indigo-50 text-indigo-900 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                        stroke-width="1.5">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-                                    </svg>
-                                </div>
-                            </div>
+                            class="p-8 bg-white border border-slate-100 rounded-[2.5rem] shadow-sm hover:shadow-xl transition-all duration-300 flex items-center gap-8 group">
+                            <div
+                                class="text-indigo-600/20 font-black text-5xl leading-none group-hover:text-indigo-600/40 transition-colors">
+                                03</div>
                             <div>
                                 <a href="{{ route('services.slug', 'shadow-making') }}"
-                                    class="text-slate-800 font-bold text-lg mb-2 group-hover:text-indigo-900 transition-colors">
-                                    Shadow Making</a>
-                                <p class="text-slate-500 text-sm leading-relaxed">Enhance realism by adding natural-looking
-                                    shadows and depth to your images.</p>
+                                    class="block text-xl font-bold text-slate-900 mb-1 group-hover:text-indigo-600 transition-colors">Shadow
+                                    Making</a>
+                                <p class="text-slate-500 text-sm">Enhance realism by adding natural-looking shadows.</p>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Center Image -->
-                    <div class="flex justify-center items-center py-10 lg:py-0 order-first lg:order-none">
-                        <div class="relative w-full max-w-sm">
-                            <div class="absolute inset-0 bg-rose-200 rounded-full blur-3xl opacity-30 animate-pulse"></div>
-                            <!-- Replace with your actual asset -->
-                            <img src="{{ asset('/assets/images/home/home_service_tab.png') }}" alt="Retouching"
-                                class="relative z-10 w-full h-auto object-cover rounded-2xl ">
-                        </div>
-                    </div>
-
-                    <!-- Right List -->
-                    <div class="space-y-12 text-right lg:text-left">
-                        <!-- Item -->
+                    <!-- Right: Large Image -->
+                    <div class="lg:col-span-5 relative flex justify-center order-first lg:order-none">
+                        <div class="absolute inset-0 bg-indigo-100 rounded-full blur-3xl opacity-30 scale-110"></div>
                         <div
-                            class="flex gap-5 group items-start flex-row-reverse lg:flex-row hover:bg-white hover:shadow-lg hover:shadow-indigo-50/50 p-4 rounded-2xl transition-all duration-300">
-                            <div class="flex-shrink-0">
-                                <div
-                                    class="w-14 h-14 rounded-xl bg-indigo-50 text-indigo-900 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                        stroke-width="1.5">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                                    </svg>
-                                </div>
-                            </div>
-                            <div>
-                                <a href="{{ route('services.slug', 'ghost-mannequin') }}"
-                                    class="text-slate-800 font-bold text-lg mb-2 group-hover:text-indigo-900 transition-colors">
-                                    Ghost Mannequin</a>
-                                <p class="text-slate-500 text-sm leading-relaxed">Enhance visual impact for apparel by
-                                    replacing mannequins with tailored hollow fits.</p>
-                            </div>
-                        </div>
-
-                        <!-- Item -->
-                        <div
-                            class="flex gap-5 group items-start flex-row-reverse lg:flex-row hover:bg-white hover:shadow-lg hover:shadow-indigo-50/50 p-4 rounded-2xl transition-all duration-300">
-                            <div class="flex-shrink-0">
-                                <div
-                                    class="w-14 h-14 rounded-xl bg-indigo-50 text-indigo-900 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                        stroke-width="1.5">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
-                                    </svg>
-                                </div>
-                            </div>
-                            <div>
-                                <a href="{{ route('services.slug', 'photo-recoloring') }}"
-                                    class="text-slate-800 font-bold text-lg mb-2 group-hover:text-indigo-900 transition-colors">
-                                    Photo Recoloring</a>
-                                <p class="text-slate-500 text-sm leading-relaxed">Capture a single photo and transform it
-                                    with endless color possibilities.</p>
-                            </div>
-                        </div>
-
-                        <!-- Item -->
-                        <div
-                            class="flex gap-5 group items-start flex-row-reverse lg:flex-row hover:bg-white hover:shadow-lg hover:shadow-indigo-50/50 p-4 rounded-2xl transition-all duration-300">
-                            <div class="flex-shrink-0">
-                                <div
-                                    class="w-14 h-14 rounded-xl bg-indigo-50 text-indigo-900 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                        stroke-width="1.5">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-                                    </svg>
-                                </div>
-                            </div>
-                            <div>
-                                <h4
-                                    class="text-slate-800 font-bold text-lg mb-2 group-hover:text-indigo-900 transition-colors">
-                                    Real Estate Editing</h4>
-                                <p class="text-slate-500 text-sm leading-relaxed">Represent infrastructures, buildings &
-                                    interiors attractively with HDR blending.</p>
-                            </div>
+                            class="relative z-10 p-4 bg-white rounded-[3rem] shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-500 border border-slate-100">
+                            <img src="{{ asset('/assets/images/home/home_service_tab.png') }}" alt="Editing"
+                                class="w-full h-auto object-cover rounded-[2.5rem]">
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- 2. RETOUCHING CONTENT (3 Columns - Reusing Structure) -->
+            <!-- 2. RETOUCHING CONTENT -->
             <div class="hidden peer-checked/retouching:block animate-fade-in">
-                <div class="grid grid-cols-1 lg:grid-cols-3 gap-10 items-center">
-                    <!-- Left List -->
-                    <div class="space-y-12">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    <!-- Left: Large Image -->
+                    <div class="lg:col-span-5 relative flex justify-center py-12">
+                        <div class="absolute inset-0 bg-violet-100 rounded-full blur-3xl opacity-30 scale-110"></div>
                         <div
-                            class="flex gap-5 group items-start hover:bg-white hover:shadow-lg hover:shadow-indigo-50/50 p-4 rounded-2xl transition-all duration-300">
-                            <div class="flex-shrink-0">
-                                <div
-                                    class="w-14 h-14 rounded-xl bg-indigo-50 text-indigo-900 flex items-center justify-center">
-                                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                        stroke-width="1.5">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
-                                    </svg>
-                                </div>
-                            </div>
-                            <div>
-                                <h4
-                                    class="text-slate-800 font-bold text-lg mb-2 group-hover:text-indigo-900 transition-colors">
-                                    High-End Retouching</h4>
-                                <p class="text-slate-500 text-sm leading-relaxed">Skin smoothing, blemish removal, and
-                                    advanced frequency separation.</p>
-                            </div>
-                        </div>
-                        <div
-                            class="flex gap-5 group items-start hover:bg-white hover:shadow-lg hover:shadow-indigo-50/50 p-4 rounded-2xl transition-all duration-300">
-                            <div class="flex-shrink-0">
-                                <div
-                                    class="w-14 h-14 rounded-xl bg-indigo-50 text-indigo-900 flex items-center justify-center">
-                                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                        stroke-width="1.5">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                                    </svg>
-                                </div>
-                            </div>
-                            <div>
-                                <h4
-                                    class="text-slate-800 font-bold text-lg mb-2 group-hover:text-indigo-900 transition-colors">
-                                    Jewelry Enhancement</h4>
-                                <p class="text-slate-500 text-sm leading-relaxed">Make diamonds sparkle and metals shine
-                                    with careful stone correction.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Center Image -->
-                    <div class="flex justify-center items-center py-10 lg:py-0 order-first lg:order-none">
-                        <div class="relative w-full max-w-sm">
-                            <div class="absolute inset-0 bg-rose-200 rounded-full blur-3xl opacity-30 animate-pulse">
-                            </div>
+                            class="relative z-10 p-2 bg-slate-900 rounded-[3rem] shadow-2xl -rotate-2 hover:rotate-0 transition-transform duration-500">
                             <img src="{{ asset('/assets/images/home/retouching.webp') }}" alt="Retouching"
-                                class="relative z-10 w-full h-auto object-cover rounded-2xl ">
+                                class="w-full h-auto object-cover rounded-[2.5rem] opacity-90">
                         </div>
                     </div>
-
-                    <!-- Right List -->
-                    <div class="space-y-12 text-right lg:text-left">
+                    <!-- Right: Card List -->
+                    <div class="lg:col-span-7 space-y-6">
                         <div
-                            class="flex gap-5 group items-start hover:bg-white hover:shadow-lg hover:shadow-indigo-50/50 p-4 rounded-2xl transition-all duration-300">
-                            <div class="flex-shrink-0">
-                                <div
-                                    class="w-14 h-14 rounded-xl bg-indigo-50 text-indigo-900 flex items-center justify-center">
-                                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                        stroke-width="1.5">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                    </svg>
-                                </div>
-                            </div>
+                            class="p-8 bg-white border border-slate-100 rounded-[2.5rem] shadow-sm hover:shadow-xl transition-all duration-300 flex items-center gap-8 group">
+                            <div
+                                class="text-indigo-600/20 font-black text-5xl group-hover:text-indigo-600/40 transition-colors">
+                                01</div>
                             <div>
-                                <h4
-                                    class="text-slate-800 font-bold text-lg mb-2 group-hover:text-indigo-900 transition-colors">
-                                    Headshot Editing</h4>
-                                <p class="text-slate-500 text-sm leading-relaxed">Professional corporate or editorial
-                                    headshot cleanup for a perfect look.</p>
+                                <h4 class="text-xl font-bold text-slate-900 mb-1">High-End Retouching</h4>
+                                <p class="text-slate-500 text-sm">Advanced skin smoothing and frequency separation for
+                                    portraits.</p>
                             </div>
                         </div>
                         <div
-                            class="flex gap-5 group items-start hover:bg-white hover:shadow-lg hover:shadow-indigo-50/50 p-4 rounded-2xl transition-all duration-300">
-                            <div class="flex-shrink-0">
-                                <div
-                                    class="w-14 h-14 rounded-xl bg-indigo-50 text-indigo-900 flex items-center justify-center">
-                                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                        stroke-width="1.5">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M21 15.546c-.523 0-1.046.151-1.5.454a2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.701 2.701 0 00-1.5-.454M9 6v2m3-2v2m3-2v2M9 3h.01M12 3h.01M15 3h.01M21 21v-7a2 2 0 00-2-2H5a2 2 0 00-2 2v7h18zm-3-9v-2a2 2 0 00-2-2H8a2 2 0 00-2 2v2h12z" />
-                                    </svg>
-                                </div>
-                            </div>
+                            class="p-8 bg-white border border-slate-100 rounded-[2.5rem] shadow-sm hover:shadow-xl transition-all duration-300 flex items-center gap-8 group">
+                            <div
+                                class="text-indigo-600/20 font-black text-5xl group-hover:text-indigo-600/40 transition-colors">
+                                02</div>
                             <div>
-                                <h4
-                                    class="text-slate-800 font-bold text-lg mb-2 group-hover:text-indigo-900 transition-colors">
-                                    Food Retouching</h4>
-                                <p class="text-slate-500 text-sm leading-relaxed">Make food look fresh, steaming, and
-                                    appetizing with color grading.</p>
+                                <h4 class="text-xl font-bold text-slate-900 mb-1">Jewelry Enhancement</h4>
+                                <p class="text-slate-500 text-sm">Make diamonds sparkle and metals shine with stone
+                                    cleaning.</p>
+                            </div>
+                        </div>
+                        <div
+                            class="p-8 bg-white border border-slate-100 rounded-[2.5rem] shadow-sm hover:shadow-xl transition-all duration-300 flex items-center gap-8 group">
+                            <div
+                                class="text-indigo-600/20 font-black text-5xl group-hover:text-indigo-600/40 transition-colors">
+                                03</div>
+                            <div>
+                                <h4 class="text-xl font-bold text-slate-900 mb-1">Food Retouching</h4>
+                                <p class="text-slate-500 text-sm">Make food look fresh, steaming, and appetizing with color
+                                    grading.</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- 3. PHOTOGRAPHY CONTENT (2 Columns) -->
+            <!-- 3. PHOTOGRAPHY CONTENT -->
             <div class="hidden peer-checked/photography:block animate-fade-in">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-
-                    <!-- Left Column: Image -->
-                    <div class="relative group">
-                        <div
-                            class="absolute -inset-2 bg-indigo-100 rounded-2xl opacity-50 blur-lg group-hover:opacity-75 transition duration-500">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    <div class="lg:col-span-7">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div
+                                class="p-8 bg-white border border-slate-100 rounded-[2rem] shadow-sm hover:shadow-md transition-all group">
+                                <span class="text-indigo-600/20 font-black text-4xl block mb-4">01</span>
+                                <h4 class="text-xl font-bold text-slate-900 mb-2">Product</h4>
+                                <p class="text-slate-500 text-sm">High-fidelity photos preserving natural textures.</p>
+                            </div>
+                            <div
+                                class="p-8 bg-white border border-slate-100 rounded-[2rem] shadow-sm hover:shadow-md transition-all group">
+                                <span class="text-indigo-600/20 font-black text-4xl block mb-4">02</span>
+                                <h4 class="text-xl font-bold text-slate-900 mb-2">Apparel</h4>
+                                <p class="text-slate-500 text-sm">Professional brand storytelling with premium imagery.</p>
+                            </div>
+                            <div
+                                class="p-8 bg-white border border-slate-100 rounded-[2rem] shadow-sm hover:shadow-md transition-all group">
+                                <span class="text-indigo-600/20 font-black text-4xl block mb-4">03</span>
+                                <h4 class="text-xl font-bold text-slate-900 mb-2">Jewelry</h4>
+                                <p class="text-slate-500 text-sm">Macro photography capturing the sparkle of gems.</p>
+                            </div>
+                            <div
+                                class="p-8 bg-white border border-slate-100 rounded-[2rem] shadow-sm hover:shadow-md transition-all group">
+                                <span class="text-indigo-600/20 font-black text-4xl block mb-4">04</span>
+                                <h4 class="text-xl font-bold text-slate-900 mb-2">School</h4>
+                                <p class="text-slate-500 text-sm">Portraits or groups for schools in your preferred style.
+                                </p>
+                            </div>
                         </div>
-                        <!-- Replace with asset -->
-                        <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&q=80&w=800"
-                            alt="Photography Service"
-                            class="relative rounded-2xl shadow-xl w-full object-cover transform transition duration-500 hover:scale-[1.01]">
                     </div>
-
-                    <!-- Right Column: List -->
-                    <div class="space-y-12">
-
-                        <!-- Item -->
-                        <div class="flex gap-5">
-                            <div class="flex-shrink-0">
-                                <div
-                                    class="w-14 h-14 rounded-xl bg-indigo-50 text-indigo-900 flex items-center justify-center">
-                                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                        stroke-width="1.5">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
-                                    </svg>
-                                </div>
-                            </div>
-                            <div>
-                                <a href="javascript:void(0)"
-                                    class="text-slate-800 hover:text-rose-600 font-bold text-lg mb-1">Product
-                                    Photography</a>
-                                <p class="text-slate-500 text-sm">We capture high-fidelity product photos preserving
-                                    natural colors and textures.</p>
-                            </div>
-                        </div>
-
-                        <!-- Item -->
-                        <div class="flex gap-5">
-                            <div class="flex-shrink-0">
-                                <div
-                                    class="w-14 h-14 rounded-xl bg-indigo-50 text-indigo-900 flex items-center justify-center">
-                                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                        stroke-width="1.5">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
-                                    </svg>
-                                </div>
-                            </div>
-                            <div>
-                                <a href="javascript:void(0)"
-                                    class="text-slate-800 hover:text-rose-600 font-bold text-lg mb-1">Apparel
-                                    Photography</a>
-                                <p class="text-slate-500 text-sm">Need your brand with our professional apparel
-                                    photography.</p>
-                            </div>
-                        </div>
-
-                        <!-- Item -->
-                        <div class="flex gap-5">
-                            <div class="flex-shrink-0">
-                                <div
-                                    class="w-14 h-14 rounded-xl bg-indigo-50 text-indigo-900 flex items-center justify-center">
-                                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                        stroke-width="1.5">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                    </svg>
-                                </div>
-                            </div>
-                            <div>
-                                <a href="javascript:void(0)"
-                                    class="text-slate-800 hover:text-rose-600 font-bold text-lg mb-1">Jewelry
-                                    Photography</a>
-                                <p class="text-slate-500 text-sm">Macro photography that captures the luxurious sparkle of
-                                    ornaments and gems.</p>
-                            </div>
-                        </div>
-                        <div class="flex gap-5">
-                            <div class="flex-shrink-0">
-                                <div
-                                    class="w-14 h-14 rounded-xl bg-indigo-50 text-indigo-900 flex items-center justify-center">
-                                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                        stroke-width="1.5">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                    </svg>
-                                </div>
-                            </div>
-                            <div>
-                                <a href="javascript:void(0)"
-                                    class="text-slate-800 hover:text-rose-600 font-bold text-lg mb-1">School
-                                    Photography</a>
-                                <p class="text-slate-500 text-sm">We shoot portraits or groups for entire school in your
-                                    preferred style.</p>
+                    <div class="lg:col-span-5">
+                        <div class="relative aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl group">
+                            <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&q=80&w=800"
+                                class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-indigo-900/10 group-hover:bg-transparent transition-colors">
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- 4. E-COMMERCE CONTENT (2 Columns) -->
+            <!-- 4. E-COMMERCE CONTENT -->
             <div class="hidden peer-checked/ecommerce:block animate-fade-in">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-
-                    <!-- Left Column: Illustration -->
-                    <div class="relative flex justify-center">
-                        <!-- Background circle decoration -->
-                        <div
-                            class="absolute w-80 h-80 bg-indigo-50 rounded-full -z-10 blur-xl top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                        </div>
-                        <!-- Replace with asset -->
-                        <img src="{{ asset('/assets/images/home/ecommerce-service.png') }}" alt="Photography Service"
-                            class="relative rounded-2xl w-full object-cover transform transition duration-500 hover:scale-[1.01]">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    <div class="lg:col-span-5 flex justify-center order-last lg:order-none">
+                        <img src="{{ asset('/assets/images/home/ecommerce-service.png') }}"
+                            class="w-full h-auto drop-shadow-2xl animate-float" alt="Ecommerce">
                     </div>
-
-                    <!-- Right Column: Services List -->
-                    <div class="space-y-10">
-                        <!-- Item -->
+                    <div class="lg:col-span-7 space-y-6">
                         <div
-                            class="flex gap-5 group items-start hover:bg-white hover:shadow-lg hover:shadow-indigo-50/50 p-4 rounded-2xl transition-all duration-300">
-
-                            <div class="flex-shrink-0">
-                                <div
-                                    class="w-14 h-14 rounded-xl bg-indigo-50 text-indigo-900 flex items-center justify-center">
-                                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                        stroke-width="1.5">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5" />
-                                    </svg>
-                                </div>
-                            </div>
+                            class="p-8 bg-white border border-slate-100 rounded-[2.5rem] shadow-sm hover:shadow-xl transition-all duration-300 flex items-center gap-8 group">
+                            <div
+                                class="text-indigo-600/20 font-black text-5xl group-hover:text-indigo-600/40 transition-colors">
+                                01</div>
                             <div>
-                                <a href="{{ route('services.slug', 'amazon') }}"
-                                    class="text-slate-800 font-bold text-lg mb-1">Amazon & Shopify Ready</a>
-                                <p class="text-slate-500 text-sm">Optimized images that meet strict marketplace guidelines
-                                    for white backgrounds and dimensions.</p>
+                                <h4 class="text-xl font-bold text-slate-900 mb-1">Marketplace Ready</h4>
+                                <p class="text-slate-500 text-sm">Optimized images that meet strict Amazon & Shopify
+                                    standards.</p>
                             </div>
                         </div>
-
-                        <!-- Item -->
                         <div
-                            class="flex gap-5 group items-start hover:bg-white hover:shadow-lg hover:shadow-indigo-50/50 p-4 rounded-2xl transition-all duration-300">
-                            <div class="flex-shrink-0">
-                                <div
-                                    class="w-14 h-14 rounded-xl bg-indigo-50 text-indigo-900 flex items-center justify-center">
-                                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                        stroke-width="1.5">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
-                                    </svg>
-                                </div>
-                            </div>
+                            class="p-8 bg-white border border-slate-100 rounded-[2.5rem] shadow-sm hover:shadow-xl transition-all duration-300 flex items-center gap-8 group">
+                            <div
+                                class="text-indigo-600/20 font-black text-5xl group-hover:text-indigo-600/40 transition-colors">
+                                02</div>
                             <div>
-                                <a href="{{ route('services.slug', 'ecommerce') }}"
-                                    class="text-slate-800 font-bold text-lg mb-1">360° Degree Editing</a>
-                                <p class="text-slate-500 text-sm">Create symmetrical, rotatable product visuals by
-                                    perfectly aligning and adjusting perspectives.</p>
+                                <h4 class="text-xl font-bold text-slate-900 mb-1">360° Degree Editing</h4>
+                                <p class="text-slate-500 text-sm">Create symmetrical, rotatable visuals by perfectly
+                                    aligning perspectives.</p>
                             </div>
                         </div>
-
-                        <!-- Item -->
                         <div
-                            class="flex gap-5 group items-start hover:bg-white hover:shadow-lg hover:shadow-indigo-50/50 p-4 rounded-2xl transition-all duration-300">
-                            <div class="flex-shrink-0">
-                                <div
-                                    class="w-14 h-14 rounded-xl bg-indigo-50 text-indigo-900 flex items-center justify-center">
-                                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                        stroke-width="1.5">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M13 10V3L4 14h7v7l9-11h-7z" />
-                                    </svg>
-                                </div>
-                            </div>
+                            class="p-8 bg-white border border-slate-100 rounded-[2.5rem] shadow-sm hover:shadow-xl transition-all duration-300 flex items-center gap-8 group">
+                            <div
+                                class="text-indigo-600/20 font-black text-5xl group-hover:text-indigo-600/40 transition-colors">
+                                03</div>
                             <div>
-                                <a href="{{ route('services.slug', 'essential-editing') }}"
-                                    class="text-slate-800 font-bold text-lg mb-1">Essential Editing</a>
+                                <h4 class="text-xl font-bold text-slate-900 mb-1">Image Optimization</h4>
                                 <p class="text-slate-500 text-sm">Web-ready compression that loads fast without sacrificing
-                                    visual quality.</p>
-                            </div>
-                        </div>
-                        <div
-                            class="flex gap-5 group items-start hover:bg-white hover:shadow-lg hover:shadow-indigo-50/50 p-4 rounded-2xl transition-all duration-300">
-                            <div class="flex-shrink-0">
-                                <div
-                                    class="w-14 h-14 rounded-xl bg-indigo-50 text-indigo-900 flex items-center justify-center">
-                                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                        stroke-width="1.5">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M13 10V3L4 14h7v7l9-11h-7z" />
-                                    </svg>
-                                </div>
-                            </div>
-                            <div>
-                                <a href="{{ route('services.slug', 'image-optimization') }}"
-                                    class="text-slate-800 font-bold text-lg mb-1">Image Optimization</a>
-                                <p class="text-slate-500 text-sm">Web-ready compression that loads fast without sacrificing
-                                    visual quality.</p>
+                                    quality.</p>
                             </div>
                         </div>
                     </div>
@@ -1400,7 +1114,7 @@
                         <!-- Floating elements simulation (if you don't have a single image) -->
                         <div class="absolute -top-10 -right-10 bg-gray-50 rounded-full p-4 animate-bounce delay-700"></div>
 
-                        <img src="{{ asset('/assets/images/home/efficiant.webp') }}" alt="Dashboard Illustration"
+                        <img src="{{ asset('/assets/images/home/workflow.png') }}" alt="Dashboard Illustration"
                             class="w-full h-auto object-contain drop-shadow-xl z-10 relative">
                     </div>
                 </div>
@@ -1590,6 +1304,42 @@
             white-space: nowrap;
             bottom: -2vw;
             right: -5vw;
+        }
+    </style>
+
+    <!-- Required Custom Animation -->
+
+    <style>
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        .animate-float {
+            animation: float 5s ease-in-out infinite;
         }
     </style>
 @endpush

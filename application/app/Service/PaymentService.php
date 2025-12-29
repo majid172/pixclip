@@ -25,7 +25,7 @@ class PaymentService
             return true;
         }
 
-        return $order->user_id === $userId;
+        return $order->user_id == $userId;
     }
 
 
@@ -84,7 +84,7 @@ class PaymentService
                 'amount'         => $paymentData['amount'],
                 'payment_method' => $paymentData['payment_method'],
                 'transaction_id' => $transactionId,
-                'status'         => 1, // 1 = Success
+                'status'         => 2, // 1 = Success
             ]);
 
             $order->update(['is_paid' => 1]);

@@ -18,7 +18,7 @@
                                 <th class="text-left">Transaction ID</th>
                                 <th class="text-left">Order ID</th>
                                 <th class="text-left">Amount</th>
-                                <th class="text-left">Payment Method</th>
+                                <th class="text-center">Payment Method</th>
                                 <th class="text-left">Status</th>
                                 <th class="text-left">Date</th>
                                 <th class="text-center">Actions</th>
@@ -43,11 +43,33 @@
                                             ${{ number_format($transaction->amount, 2) }}
                                         </span>
                                     </td>
-                                    <td>
-                                        <span class="badge badge-outline badge-info">
-                                            {{ $transaction->payment_method }}
-                                        </span>
-                                    </td>
+                                    <td class="text-center">
+    <div class="flex items-center justify-center">
+        @if (strtolower($transaction->payment_method) == 'paypal')
+            <div class="flex items-center justify-center
+                        h-10 w-10
+                        rounded-full
+                        bg-white
+                        shadow-sm">
+                <img src="{{ asset('assets/images/gateway/paypal.png') }}"
+                     alt="PayPal"
+                     class="h-6 w-6 object-contain">
+            </div>
+        @else
+            <div class="px-3 py-1
+                        rounded-full
+                        bg-info/10
+                        text-info
+                        text-sm
+                        font-semibold
+                        shadow-sm">
+                {{ strtoupper($transaction->payment_method) }}
+            </div>
+        @endif
+    </div>
+</td>
+
+
                                     <td>
                                         @if ($transaction->status == 1)
                                             <span class="badge badge-info">Pending </span>
@@ -86,9 +108,37 @@
                 </div>
 
                 <!-- Pagination -->
-                <div class="p-4 border-t">
-                    {{ $transactions->links() }}
+                 @if ($transactions->hasPages())
+            <div class="flex justify-center items-center gap-2 p-4">
+                <div class="join">
+                    {{-- Previous Button --}}
+                    @if ($transactions->onFirstPage())
+                        <button class="join-item btn btn-disabled" disabled>«</button>
+                    @else
+                        <a href="{{ $transactions->previousPageUrl() }}" class="join-item btn">«</a>
+                    @endif
+
+                    {{-- Page Numbers --}}
+                    @foreach ($transactions->getUrlRange(1, $transactions->lastPage()) as $page => $url)
+                        @if ($page == $transactions->currentPage())
+                            <button class="join-item btn btn-active">{{ $page }}</button>
+                        @else
+                            <a href="{{ $url }}" class="join-item btn">{{ $page }}</a>
+                        @endif
+                    @endforeach
+
+                    {{-- Next Button --}}
+                    @if ($transactions->hasMorePages())
+                        <a href="{{ $transactions->nextPageUrl() }}" class="join-item btn">»</a>
+                    @else
+                        <button class="join-item btn btn-disabled" disabled>»</button>
+                    @endif
                 </div>
+            </div>
+        @endif
+                <!-- <div class="p-4 border-t">
+                    {{ $transactions->links() }}
+                </div> -->
            
         </div>
 

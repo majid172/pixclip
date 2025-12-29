@@ -311,7 +311,7 @@
                 <a href="#" class="block text-gray-600 hover:text-rose-600 text-sm">About Company</a>
                 <a href="#" class="block text-gray-600 hover:text-rose-600 text-sm">Career</a>
                 <a href="#" class="block text-gray-600 hover:text-rose-600 text-sm">Our Team</a>
-                <a href="{{ route('') }}" class="block text-gray-600 hover:text-rose-600 text-sm">Contact Us</a>
+                <a href="{{ url('/contact') }}" class="block text-gray-600 hover:text-rose-600 text-sm">Contact Us</a>
             </div>
 
             <a href="#"

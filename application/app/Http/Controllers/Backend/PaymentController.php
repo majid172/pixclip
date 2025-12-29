@@ -28,19 +28,29 @@ class PaymentController extends Controller
         $order = Order::findOrFail($orderId);
 
         // Check if user has permission to pay for this order
-        if (!$this->paymentService->canAccessOrder($order, auth()->id(), auth()->user()->is_admin == 1)) {
-            abort(403, 'Unauthorized access to this order');
+        if (
+            !$this->paymentService->canAccessOrder(
+                $order,
+                auth()->id(),
+                auth()->user()->is_admin == 1,
+            )
+        ) {
+            abort(403, "Unauthorized access to this order");
         }
 
         // Check if order is already paid
         if ($this->paymentService->isOrderPaid($order)) {
-            return redirect()->route('order.details', $order->id)
-                ->with('info', 'This order has already been paid.');
+            return redirect()
+                ->route("order.details", $order->id)
+                ->with("info", "This order has already been paid.");
         }
 
         $paymentMethods = $this->paymentService->getPaymentMethods();
 
-        return view('panel.payments.payment', compact('order', 'paymentMethods'));
+        return view(
+            "panel.payments.payment",
+            compact("order", "paymentMethods"),
+        );
     }
 
     /**
@@ -51,65 +61,86 @@ class PaymentController extends Controller
         $validated = $request->validated();
 
         try {
-            $order = Order::findOrFail($validated['order_id']);
+            $order = Order::findOrFail($validated["order_id"]);
 
             // Check if user has permission to pay for this order
-            if (!$this->paymentService->canAccessOrder($order, auth()->id(), auth()->user()->is_admin == 1)) {
-                abort(403, 'Unauthorized access to this order');
+            if (
+                !$this->paymentService->canAccessOrder(
+                    $order,
+                    auth()->id(),
+                    auth()->user()->is_admin == 1,
+                )
+            ) {
+                abort(403, "Unauthorized access to this order");
             }
 
             // Check if order is already paid
             if ($this->paymentService->isOrderPaid($order)) {
-                return redirect()->route('order.details', $order->id)
-                    ->with('info', 'This order has already been paid.');
+                return redirect()
+                    ->route("order.details", $order->id)
+                    ->with("info", "This order has already been paid.");
             }
 
             // Redirect to PayPal integration if PayPal is selected
-            if ($validated['payment_method'] === 'PayPal') {
-                return redirect()->route('paypal.pay', ['order' => $order->id]);
+            if ($validated["payment_method"] === "PayPal") {
+                return redirect()->route("paypal.pay", ["order" => $order->id]);
             }
 
             // Process other payment methods normally
             $paymentData = [
-                'user_id'        => auth()->id(),
-                'admin_id'       => 1,
-                'order_id'       => $validated['order_id'],
-                'amount'         => $validated['amount'],
-                'payment_method' => $validated['payment_method'],
+                "user_id" => auth()->id(),
+                "admin_id" => 1,
+                "order_id" => $validated["order_id"],
+                "amount" => $validated["amount"],
+                "payment_method" => $validated["payment_method"],
             ];
 
             $transaction = $this->paymentService->processPayment($paymentData);
 
-            return redirect()->route('order.details', $order->id)
-                ->with('success', 'Payment processed successfully! Transaction ID: ' . $transaction->transaction_id);
+            return redirect()
+                ->route("order.details", $order->id)
+                ->with(
+                    "success",
+                    "Payment processed successfully! Transaction ID: " .
+                        $transaction->transaction_id,
+                );
         } catch (Exception $e) {
-            return back()
-                ->with('error', $e->getMessage())
-                ->withInput();
+            return back()->with("error", $e->getMessage())->withInput();
         }
     }
 
     public function history()
     {
-        $transactions = $this->paymentService->getUserPaymentHistory(auth()->id(), 15);
+        $transactions = $this->paymentService->getUserPaymentHistory(
+            auth()->id(),
+            2,
+        );
 
-        return view('panel.payments.history', compact('transactions'));
+        return view("panel.payments.history", compact("transactions"));
     }
 
     public function show($transactionId)
     {
-        $transaction = $this->paymentService->getTransactionById($transactionId);
+        $transaction = $this->paymentService->getTransactionById(
+            $transactionId,
+        );
 
         if (!$transaction) {
-            abort(404, 'Transaction not found');
+            abort(404, "Transaction not found");
         }
 
         // Check if user has permission to view this transaction
-        if (!$this->paymentService->canAccessOrder($transaction->order, auth()->id(), auth()->user()->is_admin == 1)) {
-            abort(403, 'Unauthorized access to this transaction');
+        if (
+            !$this->paymentService->canAccessOrder(
+                $transaction->order,
+                auth()->id(),
+                auth()->user()->is_admin == 1,
+            )
+        ) {
+            abort(403, "Unauthorized access to this transaction");
         }
 
-        return view('panel.payments.transaction', compact('transaction'));
+        return view("panel.payments.transaction", compact("transaction"));
     }
 
     public function refund(RefundRequest $request, $transactionId)
@@ -117,10 +148,13 @@ class PaymentController extends Controller
         $validated = $request->validated();
 
         try {
-            $this->paymentService->refundPayment($transactionId, $validated['reason'] ?? '');
-            return back()->with('success', 'Payment refunded successfully.');
+            $this->paymentService->refundPayment(
+                $transactionId,
+                $validated["reason"] ?? "",
+            );
+            return back()->with("success", "Payment refunded successfully.");
         } catch (Exception $e) {
-            return back()->with('error', $e->getMessage());
+            return back()->with("error", $e->getMessage());
         }
     }
 }
