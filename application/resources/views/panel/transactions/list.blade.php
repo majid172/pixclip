@@ -11,60 +11,48 @@
         </div>
 
         <!-- Filters -->
-        <!-- <div class="bg-white rounded-lg shadow-md p-4 mb-6">
-            <form method="GET" action="{{ route('transactions.index') }}" class="grid grid-cols-1 md:grid-cols-4 gap-4">
-         
-                <div class="form-control">
+        <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+            <form method="GET" action="{{ route('transactions.index') }}" class="flex flex-3 flex-wrap gap-4">
+
+                <!-- Search -->
+                <div class="flex-1 form-control w-full md:w-1/2 lg:w-1/5">
                     <label class="label">
-                        <span class="label-text font-semibold">Search</span>
+                        <span class="label-text font-semibold text-slate-700">Search</span>
                     </label>
-                    <input type="text" name="search" value="{{ request('search') }}" 
-                        placeholder="Transaction ID or User Name" class="input input-bordered w-full">
+                    <input type="text" name="search" value="{{ request('search') }}" placeholder="Transaction ID"
+                        class="input input-bordered w-full focus:input-primary transition-all">
                 </div>
 
-                <div class="form-control">
+
+
+                <!-- Date Range -->
+                <div class="flex-1 form-control w-full md:w-1/2 lg:w-1/5">
                     <label class="label">
-                        <span class="label-text font-semibold">Status</span>
+                        <span class="label-text font-semibold text-slate-700">Date Range</span>
                     </label>
-                    <select name="status" class="select select-bordered w-full">
-                        <option value="">All Status</option>
-                        <option value="1" {{ request('status') == '1' ? 'selected' : '' }}>Pending</option>
-                        <option value="2" {{ request('status') == '2' ? 'selected' : '' }}>Completed</option>
-                        <option value="3" {{ request('status') == '3' ? 'selected' : '' }}>Failed</option>
-                    </select>
+
+                    <input type="text" id="date_range" name="date_range" value="{{ request('date_range') }}"
+                        placeholder="Select date range"
+                        class="input input-bordered w-full focus:input-primary transition-all text-xs px-2">
                 </div>
 
-            
-                <div class="form-control">
-                    <label class="label">
-                        <span class="label-text font-semibold">Payment Method</span>
-                    </label>
-                    <select name="payment_method" class="select select-bordered w-full">
-                        <option value="">All Methods</option>
-                        <option value="PayPal" {{ request('payment_method') == 'PayPal' ? 'selected' : '' }}>PayPal</option>
-                        <option value="Stripe" {{ request('payment_method') == 'Stripe' ? 'selected' : '' }}>Stripe</option>
-                    </select>
-                </div>
 
-              
-                <div class="form-control">
+                <!-- Actions -->
+                <div class="flex-1 form-control w-full md:w-1/2 lg:w-1/5">
                     <label class="label">
                         <span class="label-text">&nbsp;</span>
                     </label>
-                    <div class="flex gap-2">
-                        <button type="submit" class="btn btn-primary flex-1">
-                            <span class="icon-[tabler--filter] size-5"></span>
-                            Filter
-                        </button>
-                        <a href="{{ route('transactions.index') }}" class="btn btn-outline">
-                            <span class="icon-[tabler--x] size-5"></span>
-                        </a>
-                    </div>
+                    <button type="submit" class="btn btn-primary text-white shadow-lg shadow-primary/30">
+                        <span class="icon-[tabler--search] size-5"></span>
+                        Filter
+                    </button>
                 </div>
-            </form>
-        </div> -->
 
-       
+            </form>
+        </div>
+
+
+
         <div class="bg-white rounded-lg shadow-md overflow-hidden">
             <div class="overflow-x-auto">
                 <table class="table table-zebra w-full">
@@ -97,8 +85,8 @@
                                     </div>
                                 </td>
                                 <td>
-                                    @if($transaction->order)
-                                        <a href="{{ route('order.details', $transaction->order_id) }}" 
+                                    @if ($transaction->order)
+                                        <a href="{{ route('order.details', $transaction->order_id) }}"
                                             class="link link-hover text-info">
                                             {{ $transaction->order->order_id }}
                                         </a>
@@ -117,7 +105,7 @@
                                     </span>
                                 </td>
                                 <td>
-                                    <select class="select select-sm select-bordered status-select" 
+                                    <select class="select select-sm select-bordered status-select"
                                         data-transaction-id="{{ $transaction->id }}"
                                         data-old-status="{{ $transaction->status }}">
                                         <option value="1" {{ $transaction->status == 1 ? 'selected' : '' }}>
@@ -142,12 +130,12 @@
                                 </td>
                                 <td>
                                     <div class="flex gap-2">
-                                        <a href="{{ route('transactions.show', $transaction->id) }}" 
+                                        <a href="{{ route('transactions.show', $transaction->id) }}"
                                             class="btn btn-sm btn-outline btn-info" title="View Details">
                                             <span class="icon-[tabler--eye] size-4"></span>
                                         </a>
-                                        <form action="{{ route('transactions.destroy', $transaction->id) }}" 
-                                            method="POST" class="inline"
+                                        <form action="{{ route('transactions.destroy', $transaction->id) }}" method="POST"
+                                            class="inline"
                                             onsubmit="return confirm('Are you sure you want to delete this transaction?');">
                                             @csrf
                                             @method('DELETE')
@@ -181,54 +169,54 @@
 
         <!-- Summary Cards -->
         <!-- @if ($transactions->total() > 0)
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mt-6">
-                <div class="bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg shadow-md p-6 text-white">
-                    <div class="flex items-center justify-between">
-                        <div>
-                            <p class="text-sm opacity-90">Total Transactions</p>
-                            <h3 class="text-3xl font-bold mt-1">{{ $transactions->total() }}</h3>
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mt-6">
+                        <div class="bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg shadow-md p-6 text-white">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <p class="text-sm opacity-90">Total Transactions</p>
+                                    <h3 class="text-3xl font-bold mt-1">{{ $transactions->total() }}</h3>
+                                </div>
+                                <span class="icon-[tabler--receipt] size-12 opacity-50"></span>
+                            </div>
                         </div>
-                        <span class="icon-[tabler--receipt] size-12 opacity-50"></span>
-                    </div>
-                </div>
 
-                <div class="bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-lg shadow-md p-6 text-white">
-                    <div class="flex items-center justify-between">
-                        <div>
-                            <p class="text-sm opacity-90">Pending</p>
-                            <h3 class="text-3xl font-bold mt-1">
-                                {{ $transactions->where('status', 1)->count() }}
-                            </h3>
+                        <div class="bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-lg shadow-md p-6 text-white">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <p class="text-sm opacity-90">Pending</p>
+                                    <h3 class="text-3xl font-bold mt-1">
+                                        {{ $transactions->where('status', 1)->count() }}
+                                    </h3>
+                                </div>
+                                <span class="icon-[tabler--clock] size-12 opacity-50"></span>
+                            </div>
                         </div>
-                        <span class="icon-[tabler--clock] size-12 opacity-50"></span>
-                    </div>
-                </div>
 
-                <div class="bg-gradient-to-br from-green-500 to-green-600 rounded-lg shadow-md p-6 text-white">
-                    <div class="flex items-center justify-between">
-                        <div>
-                            <p class="text-sm opacity-90">Completed</p>
-                            <h3 class="text-3xl font-bold mt-1">
-                                {{ $transactions->where('status', 2)->count() }}
-                            </h3>
+                        <div class="bg-gradient-to-br from-green-500 to-green-600 rounded-lg shadow-md p-6 text-white">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <p class="text-sm opacity-90">Completed</p>
+                                    <h3 class="text-3xl font-bold mt-1">
+                                        {{ $transactions->where('status', 2)->count() }}
+                                    </h3>
+                                </div>
+                                <span class="icon-[tabler--check] size-12 opacity-50"></span>
+                            </div>
                         </div>
-                        <span class="icon-[tabler--check] size-12 opacity-50"></span>
-                    </div>
-                </div>
 
-                <div class="bg-gradient-to-br from-red-500 to-red-600 rounded-lg shadow-md p-6 text-white">
-                    <div class="flex items-center justify-between">
-                        <div>
-                            <p class="text-sm opacity-90">Failed</p>
-                            <h3 class="text-3xl font-bold mt-1">
-                                {{ $transactions->where('status', 3)->count() }}
-                            </h3>
+                        <div class="bg-gradient-to-br from-red-500 to-red-600 rounded-lg shadow-md p-6 text-white">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <p class="text-sm opacity-90">Failed</p>
+                                    <h3 class="text-3xl font-bold mt-1">
+                                        {{ $transactions->where('status', 3)->count() }}
+                                    </h3>
+                                </div>
+                                <span class="icon-[tabler--x] size-12 opacity-50"></span>
+                            </div>
                         </div>
-                        <span class="icon-[tabler--x] size-12 opacity-50"></span>
                     </div>
-                </div>
-            </div>
-        @endif -->
+    @endif -->
     </div>
 
     <!-- AJAX Status Update Script -->
@@ -252,36 +240,36 @@
             });
 
             function updateTransactionStatus(transactionId, status, selectElement) {
-                fetch('{{ route("transactions.update.status") }}', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'X-CSRF-TOKEN': '{{ csrf_token() }}'
-                    },
-                    body: JSON.stringify({
-                        transaction_id: transactionId,
-                        status: status
+                fetch('{{ route('transactions.update.status') }}', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                        },
+                        body: JSON.stringify({
+                            transaction_id: transactionId,
+                            status: status
+                        })
                     })
-                })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.success) {
-                        // Update old status
-                        selectElement.dataset.oldStatus = status;
-                        
-                        // Show success message
-                        showToast('Success', data.message, 'success');
-                    } else {
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            // Update old status
+                            selectElement.dataset.oldStatus = status;
+
+                            // Show success message
+                            showToast('Success', data.message, 'success');
+                        } else {
+                            // Revert to old status
+                            selectElement.value = selectElement.dataset.oldStatus;
+                            showToast('Error', data.message, 'error');
+                        }
+                    })
+                    .catch(error => {
                         // Revert to old status
                         selectElement.value = selectElement.dataset.oldStatus;
-                        showToast('Error', data.message, 'error');
-                    }
-                })
-                .catch(error => {
-                    // Revert to old status
-                    selectElement.value = selectElement.dataset.oldStatus;
-                    showToast('Error', 'Failed to update transaction status', 'error');
-                });
+                        showToast('Error', 'Failed to update transaction status', 'error');
+                    });
             }
 
             function showToast(title, message, type) {
@@ -291,3 +279,21 @@
         });
     </script>
 @endsection
+@push('plugins')
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/airbnb.css">
+
+    <script src="{{ asset('/assets/js/jquery.min.js') }}"></script>
+@endpush
+@push('js')
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            flatpickr("#date_range", {
+                mode: "range",
+                dateFormat: "Y-m-d",
+                maxDate: "today",
+            });
+        });
+    </script>
+@endpush

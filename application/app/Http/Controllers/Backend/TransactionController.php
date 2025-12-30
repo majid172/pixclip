@@ -46,6 +46,20 @@ class TransactionController extends Controller
             });
         }
 
+        // Filter by date range
+        if ($request->has('date_range') && $request->date_range !== '') {
+            $dates = explode(' to ', $request->date_range);
+            
+            if (count($dates) == 1) {
+                // Single date selected
+                $query->whereDate('created_at', $dates[0]);
+            } elseif (count($dates) == 2) {
+                // Date range selected
+                $query->whereDate('created_at', '>=', $dates[0])
+                      ->whereDate('created_at', '<=', $dates[1]);
+            }
+        }
+
         // Sort by date
         $query->orderBy('created_at', 'desc');
 

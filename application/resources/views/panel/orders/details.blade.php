@@ -19,7 +19,7 @@
                         <div class="flex flex-wrap gap-3">
 
                             {{-- TOTAL ORDERS --}}
-                            <div class="flex bg-primary items-center gap-3 shadow px-4 py-2 rounded-md">
+                            <div class="flex-1 min-w-[200px] flex bg-primary items-center gap-3 shadow px-4 py-2 rounded-md">
                                 <i class="fa-solid fa-cart-shopping text-primary"></i>
                                 <div>
                                     <p class="font-semibold text-success">{{ $total_orders }}</p>
@@ -28,7 +28,7 @@
                             </div>
 
                             {{-- UNPAID ORDERS --}}
-                            <div class="flex items-center gap-3 bg-yellow-100 border border-primary px-4 py-2 rounded-md">
+                            <div class="flex-1 min-w-[200px] flex items-center gap-3 bg-yellow-100 border border-primary px-4 py-2 rounded-md">
                                 <i class="fa-solid fa-file-invoice-dollar text-yellow-600"></i>
                                 <div>
                                     <p class="font-semibold text-primary">{{ $total_orders }}</p>
@@ -37,7 +37,7 @@
                             </div>
 
                             {{-- TOTAL DUE --}}
-                            <div class="flex items-center gap-3 bg-red-100 border border-red-300 px-4 py-2 rounded-md">
+                            <div class="flex-1 min-w-[200px] flex items-center gap-3 bg-red-100 border border-red-300 px-4 py-2 rounded-md">
                                 <i class="fa-solid fa-credit-card text-red-600"></i>
                                 <div>
                                     <p class="font-semibold text-warning">${{ numberFormat($order->price) }}</p>
@@ -51,47 +51,31 @@
                     {{-- RIGHT SIDE: STATUS BADGE --}}
                     <div class="mt-4 md:mt-0">
                         @php
-                            $status = '';
-                            if ($order->status === 'In Review') {
-                                $status =
-                                    '<span class="float-end" style="padding: 5px 30px; color: white; background-color: #079bc4; border-radius: 5px;">' .
-                                    $order->status .
-                                    '</span>';
-                            } elseif ($order->status === 'Received') {
-                                $status =
-                                    '<span class="float-end" style="padding: 5px 30px; color: white; background-color: #5fac05; border-radius: 5px;">' .
-                                    $order->status .
-                                    '</span>';
-                            } elseif ($order->status === 'Pending') {
-                                $status =
-                                    '<span class="float-end" style="padding: 5px 30px; color: white; background-color: #9c27b0; border-radius: 5px;">' .
-                                    $order->status .
-                                    '</span>';
-                            } elseif ($order->status === 'Invoiced') {
-                                $status =
-                                    '<span class="float-end" style="padding: 5px 30px; color: white; background-color: #00bcd4; border-radius: 5px;">' .
-                                    $order->status .
-                                    '</span>';
-                            } elseif ($order->status === 'Delivered') {
-                                $status =
-                                    '<span class="float-end" style="padding: 5px 30px; color: white; background-color: #0ab210; border-radius: 5px;">' .
-                                    $order->status .
-                                    '</span>';
-                            }
-                            echo $status;
+                            $badgeClass = 'badge badge-lg text-white border-0';
+                            $colorClass = match($order->status) {
+                                'In Review' => 'bg-[#079bc4]',
+                                'Received' => 'bg-[#5fac05]',
+                                'Pending' => 'bg-[#9c27b0]',
+                                'Invoiced' => 'bg-[#00bcd4]',
+                                'Delivered' => 'bg-[#0ab210]',
+                                default => 'bg-gray-500',
+                            };
                         @endphp
+                        <span class="{{ $badgeClass }} {{ $colorClass }} px-6 py-4 rounded-md">
+                            {{ $order->status }}
+                        </span>
                     </div>
                 </div>
 
                 <hr>
                 <div class="mb-4"></div>
                 <!-- Tabs for Overview, Chat, Redo, and Output -->
-                <div class="flex space-x-4 gap-4 mb-4">
-                    <button class="tab-btn btn px-4 py-2 rounded-lg btn-primary" data-target="overviewContent">Overview</button>
-                    <button class="tab-btn btn px-4 py-2 rounded-lg" data-target="invoiceContent">Invoice</button>
-                    <button class="tab-btn btn px-4 py-2 rounded-lg" data-target="redoContent">Redo</button>
-                    <button class="tab-btn btn px-4 py-2 rounded-lg" data-target="chatContent">Chat</button>
-                    <button class="tab-btn btn px-4 py-2 rounded-lg" data-target="outputContent">Output</button>
+                <div class="flex overflow-x-auto pb-2 space-x-4 gap-4 mb-4 whitespace-nowrap scrollbar-hide">
+                    <button class="tab-btn btn px-4 py-2 rounded-lg btn-primary flex-shrink-0" data-target="overviewContent">Overview</button>
+                    <button class="tab-btn btn px-4 py-2 rounded-lg flex-shrink-0" data-target="invoiceContent">Invoice</button>
+                    <button class="tab-btn btn px-4 py-2 rounded-lg flex-shrink-0" data-target="redoContent">Redo</button>
+                    <button class="tab-btn btn px-4 py-2 rounded-lg flex-shrink-0" data-target="chatContent">Chat</button>
+                    <button class="tab-btn btn px-4 py-2 rounded-lg flex-shrink-0" data-target="outputContent">Output</button>
                 </div>
             </div>
 

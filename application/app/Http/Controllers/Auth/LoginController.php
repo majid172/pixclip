@@ -44,7 +44,7 @@ class LoginController extends Controller
                 'last_access_at' => now(),
             ]
         );
-
+        flash()->success('User logged in successfully!');
         return redirect()->route('dashboard');
     }
 
@@ -53,7 +53,7 @@ class LoginController extends Controller
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-
+        flash()->success('User logged out successfully!');
         return redirect('/');
     }
 }
