@@ -4,7 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PixClipping Clone Structure</title>
+    <title>@yield('title', 'Professional Image Editing Services | PixClipping')</title>
+
+    <meta name="description"
+        content="High-quality clipping path, background removal, and image editing services for eCommerce and photographers.">
+    <link rel="canonical" href="{{ url()->current() }}">
+<meta name="robots" content="index, follow">
+
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -14,7 +20,7 @@
 
     <!-- Laravel Vite CSS -->
     @vite('resources/css/app.css')
-{{-- <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> --}}
+    {{-- <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> --}}
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -43,13 +49,11 @@
     @include('layouts.includes.footer')
 
     <!-- Back to Top Button -->
-<button
-    id="backToTop"
-    class="hidden fixed bottom-5 right-5 md:bottom-6 md:right-6 z-50 w-12 h-12 rounded-full bg-orange-400 text-xl text-white shadow-xl hover:shadow-2xl active:bg-orange-600 focus:outline-none flex items-center justify-center"
-    aria-label="Back to top"
->
-    ↑
-</button>
+    <button id="backToTop"
+        class="hidden fixed bottom-5 right-5 md:bottom-6 md:right-6 z-50 w-12 h-12 rounded-full bg-orange-400 text-xl text-white shadow-xl hover:shadow-2xl active:bg-orange-600 focus:outline-none flex items-center justify-center"
+        aria-label="Back to top">
+        ↑
+    </button>
 
 
     <!-- Mobile Menu Script -->

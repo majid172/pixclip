@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title', 'Pixclipping Professional Image Editing Services ')
 @section('content')
     <!-- HERO CAROUSEL SECTION -->
     {{-- <section class="container mx-auto px-4 pt-10 md:px-8">
@@ -273,11 +274,11 @@
                     </div>
 
                     <img src="{{ asset('assets/images/banner/banner1.webp') }}"
-                        class="auto-image-item slide-1 w-full max-h-[500px]">
+                        class="auto-image-item slide-1 w-full max-h-[500px]" loading="lazy">
                     <img src="{{ asset('/assets/images/banner/banner3.webp') }}"
-                        class="auto-image-item slide-2 w-full max-h-[500px]">
+                        class="auto-image-item slide-2 w-full max-h-[500px]" loading="lazy">
                     <img src="{{ asset('/assets/images/banner/clipping.png') }}"
-                        class="auto-image-item slide-3 w-full max-h-[500px]">
+                        class="auto-image-item slide-3 w-full max-h-[500px]" loading="lazy">
                 </div>
             </div>
 
