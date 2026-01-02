@@ -6,16 +6,14 @@
 
             <div class="lg:col-span-4 space-y-6">
                 <!-- Logo -->
-                <a href="javascript:void(0);" class="inline-flex items-center gap-3 group">
-                    <div class="w-12 h-12 relative transition-transform duration-500 group-hover:rotate-180">
-                        <div class="absolute inset-0 bg-gradient-to-br from-amber-500 to-orange-500 rounded-lg transform rotate-45 shadow-lg shadow-rose-500/20"></div>
-                        <div class="absolute inset-0 flex items-center justify-center text-white font-bold text-3xl drop-shadow-md">P</div>
-                    </div>
-                    <div class="flex flex-col leading-none">
-                        <span class="text-white font-bold text-xl tracking-tight group-hover:text-orange-400 transition-colors">Pix Clipping</span>
-                        <span class="text-[0.6rem] text-slate-500 uppercase tracking-[0.2em] font-medium mt-1">Exceeding Expectation</span>
-                    </div>
-                </a>
+                <a href="{{url('/')}}" class="inline-flex items-center gap-3 group transform transition hover:scale-105">
+    <img src="{{asset('assets/images/logo_2.png')}}" class="w-30 h-30 object-contain" loading="lazy">
+    <div class="flex flex-col leading-tight">
+        <span class="text-white font-semibold text-xl tracking-tight group-hover:text-orange-400 transition-colors">Pix Clipping</span>
+        <span class="text-[0.65rem] text-slate-400 uppercase tracking-[0.15em] font-medium mt-1">Exceeding Expectation</span>
+    </div>
+</a>
+
 
                 <p class="text-slate-400 text-sm leading-relaxed pr-4">
                     Welcome to PixClipping, where excellence meets efficiency! We bring you unparalleled outsourcing solutions tailored to elevate your business. Embrace cost-effective efficiency with us.
@@ -61,11 +59,11 @@
                     <span class="absolute -bottom-2 left-0 w-8 h-1 bg-orange-400 rounded-full"></span>
                 </h3>
                 <ul class="space-y-4 text-slate-400 text-sm">
-                    <li><a href="#" class="hover:text-orange-400 transition-all duration-300 hover:pl-2 flex items-center gap-2"><svg class="w-3 h-3 text-rose-500/50" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg> Clipping Path</a></li>
-                    <li><a href="#" class="hover:text-orange-400 transition-all duration-300 hover:pl-2 flex items-center gap-2"><svg class="w-3 h-3 text-rose-500/50" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg> Background Remove</a></li>
-                    <li><a href="#" class="hover:text-orange-400 transition-all duration-300 hover:pl-2 flex items-center gap-2"><svg class="w-3 h-3 text-rose-500/50" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg> Image Masking</a></li>
-                    <li><a href="#" class="hover:text-orange-400 transition-all duration-300 hover:pl-2 flex items-center gap-2"><svg class="w-3 h-3 text-rose-500/50" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg> Ghost Mannequin</a></li>
-                    <li><a href="#" class="hover:text-orange-400 transition-all duration-300 hover:pl-2 flex items-center gap-2"><svg class="w-3 h-3 text-rose-500/50" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg> Photo Retouching</a></li>
+                    <li><a href="#" class="hover:text-orange-400 transition-all duration-300 hover:pl-2 flex items-center gap-2"><svg class="w-3 h-3 " fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg> Clipping Path</a></li>
+                    <li><a href="#" class="hover:text-orange-400 transition-all duration-300 hover:pl-2 flex items-center gap-2"><svg class="w-3 h-3 " fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg> Background Remove</a></li>
+                    <li><a href="#" class="hover:text-orange-400 transition-all duration-300 hover:pl-2 flex items-center gap-2"><svg class="w-3 h-3 " fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg> Image Masking</a></li>
+                    <li><a href="#" class="hover:text-orange-400 transition-all duration-300 hover:pl-2 flex items-center gap-2"><svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg> Ghost Mannequin</a></li>
+                    <li><a href="#" class="hover:text-orange-400 transition-all duration-300 hover:pl-2 flex items-center gap-2"><svg class="w-3 h-3 " fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg> Photo Retouching</a></li>
                 </ul>
             </div>
 

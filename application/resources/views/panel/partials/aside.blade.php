@@ -13,13 +13,12 @@
 
                   </button>
 
-                  <div
-                      class="flex flex-col items-center justify-center gap-3  px-6 py-10 bg-base-200/30">
+                  <div class="flex flex-col items-center justify-center gap-3  px-6 py-10 bg-base-200/30">
                       <a href="{{ url('/dashboard') }}" class="transition-all duration-300 hover:opacity-80">
                           <img src="{{ asset('/assets/images/logo.png') }}" alt="Pix Clipping"
                               class="h-16 w-20 object-contain" style="width: 200px;" />
                       </a>
-                     
+
                   </div>
 
                   <div class="h-full overflow-y-auto">
@@ -75,135 +74,118 @@
 
                                   <ul class="space-y-1">
 
-                                      <!-- Simple Link Item (for nested items) -->
-
                                       <li>
-
                                           <a href="{{ route('order.list') }}"
-                                              class="inline-flex w-full items-center px-2">
-
+                                              class="inline-flex w-full items-center justify-between px-2">
                                               <span>Order List</span>
-
+                                              <span class="badge badge-sm badge-neutral">
+                                                  {{ $orderCounts['all'] ?? 0 }}
+                                              </span>
                                           </a>
-
                                       </li>
 
-
-
-                                      <!-- Simple Link Item (for nested items) -->
-
                                       <li>
-
                                           <a href="{{ route('order.tracking') }}"
-                                              class="inline-flex w-full items-center px-2">
-
+                                              class="inline-flex w-full items-center justify-between px-2">
                                               <span>Tracking Order</span>
-
+                                              <span class="badge badge-sm badge-info">
+                                                  {{ $orderCounts['inreview'] ?? 0 }}
+                                              </span>
                                           </a>
-
                                       </li>
 
-
-
-                                      <!-- Simple Link Item (for nested items) -->
-
                                       <li>
-
                                           <a href="{{ route('order.pending') }}"
-                                              class="inline-flex w-full items-center px-2">
+                                              class="inline-flex w-full items-center justify-between px-2">
+                                              <span>Pending Order</span>
 
-                                              <span>Pending Order </span>
+                                                  <span class="badge badge-sm badge-warning">
+                                                      {{ $orderCounts['pending'] ?? 0 }}
+                                                  </span>
 
                                           </a>
-
                                       </li>
 
                                       <li>
-
                                           <a href="{{ route('order.received') }}"
-                                              class="inline-flex w-full items-center px-2">
+                                              class="inline-flex w-full items-center justify-between px-2">
+                                              <span>Received Order</span>
 
-                                              <span>Recieved Order </span>
+                                                  <span class="badge badge-sm badge-info">
+                                                      {{ $orderCounts['received'] ?? 0 }}
+                                                  </span>
 
                                           </a>
-
                                       </li>
 
                                       <li>
-
                                           <a href="{{ route('order.invoiced') }}"
-                                              class="inline-flex w-full items-center px-2">
-
-                                              <span>Invoiced Order </span>
-
+                                              class="inline-flex w-full items-center justify-between px-2">
+                                              <span>Invoiced Order</span>
+                                              <span class="badge badge-sm badge-primary">
+                                                  {{ $orderCounts['invoiced'] ?? 0 }}
+                                              </span>
                                           </a>
-
                                       </li>
 
                                       <li>
-
                                           <a href="{{ route('order.processing') }}"
-                                              class="inline-flex w-full items-center px-2">
-
-                                              <span>Processing Order </span>
-
+                                              class="inline-flex w-full items-center justify-between px-2">
+                                              <span>Processing Order</span>
+                                              <span class="badge badge-sm badge-accent">
+                                                  {{ $orderCounts['processing'] ?? 0 }}
+                                              </span>
                                           </a>
-
                                       </li>
 
                                       <li>
-
                                           <a href="{{ route('order.finalized') }}"
-                                              class="inline-flex w-full items-center px-2">
-
-                                              <span>Finalizing Order </span>
-
+                                              class="inline-flex w-full items-center justify-between px-2">
+                                              <span>Finalizing Order</span>
+                                              <span class="badge badge-sm badge-secondary">
+                                                  {{ $orderCounts['finalized'] ?? 0 }}
+                                              </span>
                                           </a>
-
                                       </li>
 
                                       <li>
-
                                           <a href="{{ route('order.completed') }}"
-                                              class="inline-flex w-full items-center px-2">
-
-                                              <span> Completed Order </span>
-
+                                              class="inline-flex w-full items-center justify-between px-2">
+                                              <span>Completed Order</span>
+                                              <span class="badge badge-sm badge-success">
+                                                  {{ $orderCounts['completed'] ?? 0 }}
+                                              </span>
                                           </a>
-
                                       </li>
 
                                       <li>
-
                                           <a href="{{ route('order.downloaded') }}"
-                                              class="inline-flex w-full items-center px-2">
-
-                                              <span> Downloaded Order </span>
-
+                                              class="inline-flex w-full items-center justify-between px-2">
+                                              <span>Downloaded Order</span>
+                                              <span class="badge badge-sm badge-success">
+                                                  {{ $orderCounts['downloaded'] ?? 0 }}
+                                              </span>
                                           </a>
-
                                       </li>
 
                                       <li>
-
                                           <a href="{{ route('order.canceled') }}"
-                                              class="inline-flex w-full items-center px-2">
-
-                                              <span>Canceled Order </span>
-
+                                              class="inline-flex w-full items-center justify-between px-2">
+                                              <span>Canceled Order</span>
+                                              <span class="badge badge-sm badge-error">
+                                                  {{ $orderCounts['canceled'] ?? 0 }}
+                                              </span>
                                           </a>
-
                                       </li>
 
                                       <li>
-
                                           <a href="{{ route('order.paid') }}"
-                                              class="inline-flex w-full items-center px-2">
-
-                                              <span>Paid Order </span>
-
+                                              class="inline-flex w-full items-center justify-between px-2">
+                                              <span>Paid Order</span>
+                                              <span class="badge badge-sm badge-success">
+                                                  {{ $orderCounts['paid'] ?? 0 }}
+                                              </span>
                                           </a>
-
                                       </li>
 
                                   </ul>
@@ -220,8 +202,7 @@
                                   <a href="{{ route('transactions.index') }}"
                                       class="inline-flex w-full items-center px-2">
 
-                                      <span
-                                          class=" flex size-6 items-center justify-center">
+                                      <span class=" flex size-6 items-center justify-center">
 
                                           <span class="icon-[tabler--credit-card] size-4.5"></span>
 
@@ -234,8 +215,7 @@
                                   <a href="{{ route('payment.history') }}"
                                       class="inline-flex w-full items-center px-2">
 
-                                      <span
-                                          class="flex size-6 items-center justify-center">
+                                      <span class="flex size-6 items-center justify-center">
 
                                           <span class="icon-[tabler--credit-card] size-4.5"></span>
 
@@ -345,8 +325,7 @@
                                       class="accordion-toggle accordion-item-active:bg-neutral/10 inline-flex w-full items-center p-2 text-start text-sm font-normal"
                                       aria-controls="app-user-collapse-app-user" aria-expanded="true">
 
-                                      <span
-                                          class=" flex size-6 items-center justify-center">
+                                      <span class=" flex size-6 items-center justify-center">
 
                                           <span class="icon-[tabler--user] size-4.5"></span>
 
