@@ -135,8 +135,6 @@
     <!-- Page JS -->
     <script src="{{ asset('/assets/dist/js/common-dashboard-free.js') }}"></script>
 
-        class="btn btn-circle btn-soft btn-secondary/20 bottom-15 end-15 motion-preset-slide-right motion-duration-800 motion-delay-100 fixed absolute z-[3] hidden"
-        aria-label="Circle Soft Icon Button"><span class="icon-[tabler--chevron-up] size-5 shrink-0"></span></button>
     @flasher_render
 </body>
 

@@ -1,3 +1,9 @@
+@php
+    $unreadCount = auth()->user()->unreadNotifications()->count();
+    $unreadNotifications = auth()->user()->unreadNotifications()->latest()->take(3)->get();
+    $readNotifications = auth()->user()->readNotifications()->latest()->take(3)->get();
+@endphp
+
 <div class="bg-base-100 border-base-content/20 lg:ps-75 sticky top-0 z-50 flex border-b">
     <div class="mx-auto w-full max-w-7xl">
         <nav class="navbar py-2">
@@ -18,72 +24,7 @@
 
             <div class="navbar-end items-end gap-6">
                 <!-- Notification Dropdown -->
-                <div class="dropdown dropdown-end relative">
-                    <button type="button" aria-haspopup="menu"
-                        aria-expanded="false">
 
-                        <!-- Bell Icon -->
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-bell-ringing"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 5a2 2 0 0 1 4 0a7 7 0 0 1 4 6v3a4 4 0 0 0 2 3h-16a4 4 0 0 0 2 -3v-3a7 7 0 0 1 4 -6" /><path d="M9 17v1a3 3 0 0 0 6 0v-1" /><path d="M21 6.727a11.05 11.05 0 0 0 -2.794 -3.727" /><path d="M3 6.727a11.05 11.05 0 0 1 2.792 -3.727" /></svg>
-
-                        <!-- Unread badge -->
-                        {{-- <span class="badge badge-error badge-xs absolute top-1 right-1"></span> --}}
-                    </button>
-
-
-                    <ul class="dropdown-menu dropdown-open:opacity-100 hidden w-80 rounded-box border border-base-content/20 bg-base-100 shadow-lg"
-                        role="menu">
-
-                        <!-- Header -->
-                        <li class="px-4 py-3 border-b border-base-content/20">
-                            <h6 class="font-semibold text-base">Notifications</h6>
-                            <p class="text-sm text-base-content/70">You have 3 new notifications</p>
-                        </li>
-
-                        <!-- Notification item -->
-                        <li>
-                            <a class="flex gap-3 px-4 py-3 hover:bg-base-200">
-                                <span class="badge badge-primary badge-sm mt-1"></span>
-                                <div>
-                                    <p class="font-medium text-sm">New Order Placed</p>
-                                    <p class="text-xs text-base-content/70">
-                                        Order #1234 has been successfully created.
-                                    </p>
-                                </div>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a class="flex gap-3 px-4 py-3 hover:bg-base-200">
-                                <span class="badge badge-success badge-sm mt-1"></span>
-                                <div>
-                                    <p class="font-medium text-sm">Payment Successful</p>
-                                    <p class="text-xs text-base-content/70">
-                                        Your last invoice has been paid.
-                                    </p>
-                                </div>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a class="flex gap-3 px-4 py-3 hover:bg-base-200">
-                                <span class="badge badge-warning badge-sm mt-1"></span>
-                                <div>
-                                    <p class="font-medium text-sm">Profile Update</p>
-                                    <p class="text-xs text-base-content/70">
-                                        Please complete your profile details.
-                                    </p>
-                                </div>
-                            </a>
-                        </li>
-
-                        <!-- Footer -->
-                        <li class="border-t border-base-content/20 p-2">
-                            <a href="" class="btn btn-text btn-sm btn-block">
-                                View All Notifications
-                            </a>
-                        </li>
-                    </ul>
-                </div>
 
                 <!-- GitHub Button -->
                 @if (!auth()->user()->is_admin)
@@ -91,6 +32,144 @@
                         <a class="btn btn-primary" href="{{ route('order.place') }}">@lang('Order Place')</a>
                     </div>
                 @endif
+
+                <div class="dropdown dropdown-end relative">
+                    <button type="button" class="relative inline-flex" aria-haspopup="menu" aria-expanded="false">
+
+                        <!-- Bell Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="icon icon-tabler icons-tabler-outline icon-tabler-bell-ringing">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path
+                                d="M10 5a2 2 0 0 1 4 0a7 7 0 0 1 4 6v3a4 4 0 0 0 2 3h-16a4 4 0 0 0 2 -3v-3a7 7 0 0 1 4 -6" />
+                            <path d="M9 17v1a3 3 0 0 0 6 0v-1" />
+                            <path d="M21 6.727a11.05 11.05 0 0 0 -2.794 -3.727" />
+                            <path d="M3 6.727a11.05 11.05 0 0 1 2.792 -3.727" />
+                        </svg>
+
+                        <!-- 2. Updated Badge Classes for perfect corner positioning -->
+                        @if ($unreadCount > 0)
+                            <span id="notification-count"
+                                class="badge badge-error badge-xs absolute !top-0 !right-0 left-auto -translate-y-1/2 translate-x-1/2 flex h-4 w-4 items-center justify-center text-[10px]">
+                                {{ $unreadCount }}
+                            </span>
+                        @endif
+                    </button>
+
+                    <script>
+                        document.addEventListener('DOMContentLoaded', function() {
+                            const notificationBtn = document.querySelector('.dropdown-end button[aria-haspopup="menu"]');
+                            const notificationCount = document.getElementById('notification-count');
+
+                            if (notificationBtn && notificationCount) {
+                                notificationBtn.addEventListener('click', function() {
+                                  
+                                    const isExpanded = notificationBtn.getAttribute('aria-expanded') === 'true';
+                                    if (isExpanded) {
+                                        // Dropdown is now open, hide the badge
+                                        notificationCount.style.display = 'none';
+                                    } else {
+                                        // Dropdown is now closed, show the badge
+                                        notificationCount.style.display = 'flex';
+                                    }
+                                    setTimeout(() => {
+                                        const isNowExpanded = notificationBtn.getAttribute('aria-expanded') ===
+                                            'true';
+                                        if (isNowExpanded) {
+                                            notificationCount.style.display = 'none';
+                                        } else {
+                                            notificationCount.style.display = 'flex';
+                                        }
+                                    }, 50);
+                                });
+
+                                // Also handle clicking outside which closes the dropdown but might not trigger the button click if handled by document listener
+                                document.addEventListener('click', function(event) {
+                                    if (!notificationBtn.contains(event.target)) {
+                                       
+                                        setTimeout(() => {
+                                            const isNowExpanded = notificationBtn.getAttribute('aria-expanded') ===
+                                                'true';
+                                            if (!isNowExpanded) {
+                                                notificationCount.style.display = 'flex';
+                                            }
+                                        }, 50);
+                                    }
+                                });
+                            }
+                        });
+                    </script>
+
+                    <ul class="dropdown-menu dropdown-open:opacity-100 hidden w-80 max-h-[500px] overflow-y-auto rounded-box border border-base-content/20 bg-base-100 shadow-lg"
+                        role="menu">
+
+                        <!-- Header -->
+                        <li class="px-4 py-3 border-b border-base-content/20 bg-base-100 sticky top-0 z-10">
+                            <h6 class="font-semibold text-base">Notifications</h6>
+                            <p class="text-sm text-base-content/70">You have
+                                {{ $unreadCount }} new notifications</p>
+                        </li>
+
+                        <!-- Unread Notifications -->
+                        @if ($unreadNotifications->count() > 0)
+                            <li class="px-4 py-2 bg-base-200/50 text-xs font-semibold text-base-content/70">Unread</li>
+                            @foreach ($unreadNotifications as $notification)
+                                <li>
+                                    <a href="{{ route('notifications.read', $notification->id) }}"
+                                        class="flex gap-3 px-4 py-3 hover:bg-base-200 bg-base-100 border-l-4 border-primary">
+                                        <span class="badge badge-primary badge-sm mt-1"></span>
+                                        <div>
+                                            <p class="font-medium text-sm">
+                                                {{ $notification->data['title'] ?? 'Notification' }}</p>
+                                            <p class="text-xs text-base-content/70">
+                                                {{ $notification->data['message'] ?? '' }}
+                                            </p>
+                                            <p class="text-xs text-base-content/50 mt-1">
+                                                {{ $notification->created_at->diffForHumans() }}</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            @endforeach
+                        @endif
+
+                        <!-- Read Notifications -->
+                        @if ($readNotifications->count() > 0)
+                            <li class="px-4 py-2 bg-base-200/50 text-xs font-semibold text-base-content/70">Read</li>
+                            @foreach ($readNotifications as $notification)
+                                <li>
+                                    <a href="{{ route('notifications.read', $notification->id) }}"
+                                        class="flex gap-3 px-4 py-3 hover:bg-base-200 opacity-75">
+                                        <span class="badge badge-neutral badge-sm mt-1"></span>
+                                        <div>
+                                            <p class="font-medium text-sm">
+                                                {{ $notification->data['title'] ?? 'Notification' }}</p>
+                                            <p class="text-xs text-base-content/70">
+                                                {{ $notification->data['message'] ?? '' }}
+                                            </p>
+                                            <p class="text-xs text-base-content/50 mt-1">
+                                                {{ $notification->created_at->diffForHumans() }}</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            @endforeach
+                        @endif
+
+                        @if ($unreadNotifications->isEmpty() && $readNotifications->isEmpty())
+                            <li class="px-4 py-3">
+                                <p class="text-sm text-base-content/70">No notifications</p>
+                            </li>
+                        @endif
+
+                        <!-- Footer -->
+                        <li class="border-t border-base-content/20 p-2">
+                            <a href="{{ route('notifications.index') }}" class="btn btn-text btn-sm btn-block">
+                                View All Notifications
+                            </a>
+                        </li>
+                    </ul>
+                </div>
                 <script async defer src="https://buttons.github.io/buttons.js"></script>
 
                 <!-- Profile Dropdown -->

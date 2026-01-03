@@ -7,6 +7,7 @@ use App\Http\Controllers\Backend\ChangePasswordController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\InvoiceController;
 use App\Http\Controllers\Backend\NoticeController;
+use App\Http\Controllers\Backend\NotificationController;
 use App\Http\Controllers\Backend\OrderController;
 use App\Http\Controllers\Backend\PaypalController;
 use App\Http\Controllers\Backend\TransactionController;
@@ -151,6 +152,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
     // Free Trial Admin
     Route::resource('free-trial-list', \App\Http\Controllers\Backend\FreeTrialController::class);
+
+    Route::get('/notifications', [NotificationController::class, 'index'])->name('notifications.index');
+    Route::get('/notifications/{id}/read', [NotificationController::class, 'read'])->name('notifications.read');
 
     // PayPal Payment Routes
     Route::get('/paypal/pay/{order}', [PaypalController::class, 'payment'])->name('paypal.pay');
