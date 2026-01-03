@@ -667,16 +667,16 @@
                 <div>
                     <div class="flex items-center gap-3 mb-6">
                         <span class="h-px w-8 bg-indigo-600"></span>
-                        <span class="text-xs font-bold uppercase tracking-[0.2em] text-indigo-600">Our Expertise</span>
+                        <span class="text-xs font-bold uppercase tracking-[0.2em] text-indigo-900">Our Expertise</span>
                     </div>
-                    <h2 class="text-4xl md:text-5xl font-extrabold text-slate-900 leading-[1.15]">
-                        Get Editing <span class="relative inline-block text-indigo-600">Effortlessly
+                    <h2 class="text-4xl md:text-5xl font-semibold text-slate-900 leading-[1.15]">
+                        Get Editing Services<span class="relative inline-block text-indigo-900">Effortlessly
                             <svg class="absolute -bottom-2 left-0 w-full" viewBox="0 0 100 10"
                                 preserveAspectRatio="none">
                                 <path d="M0 5 Q 25 0 50 5 T 100 5" stroke="currentColor" stroke-width="2" fill="none"
                                     class="opacity-30" />
                             </svg>
-                        </span><br />Services
+                        </span><br />
                     </h2>
                 </div>
                 <div class="lg:border-l border-slate-200 lg:pl-12">
@@ -721,39 +721,62 @@
                     <!-- Left: Card List -->
                     <div class="lg:col-span-7 space-y-6">
                         <div
-                            class="p-8 bg-white border border-slate-100 rounded-[2.5rem] shadow-sm hover:shadow-xl transition-all duration-300 flex items-center gap-8 group">
+                            class="p-4 bg-white border border-slate-100 rounded-[2.5rem] shadow-sm hover:shadow-xl transition-all duration-300 flex items-center gap-8 group">
                             <div
-                                class="text-indigo-600/20 font-black text-5xl leading-none group-hover:text-indigo-600/40 transition-colors">
+                                class="text-indigo-600/20 font-black text-4xl leading-none group-hover:text-indigo-600/40 transition-colors">
                                 01</div>
                             <div>
                                 <a href="{{ route('services.slug', 'clipping-path') }}"
-                                    class="block text-xl font-bold text-slate-900 mb-1 group-hover:text-indigo-600 transition-colors">Clipping
+                                    class="block text-xl font-bold text-slate-900 mb-1 group-hover:text-amber-600 transition-colors">Clipping
                                     Path</a>
                                 <p class="text-slate-500 text-sm">Hand-drawn clipping service expertly shapes and isolates
                                     subjects.</p>
                             </div>
                         </div>
                         <div
-                            class="p-8 bg-white border border-slate-100 rounded-[2.5rem] shadow-sm hover:shadow-xl transition-all duration-300 flex items-center gap-8 group">
+                            class="p-4 bg-white border border-slate-100 rounded-[2.5rem] shadow-sm hover:shadow-xl transition-all duration-300 flex items-center gap-8 group">
                             <div
-                                class="text-indigo-600/20 font-black text-5xl leading-none group-hover:text-indigo-600/40 transition-colors">
+                                class="text-indigo-600/20 font-black text-4xl leading-none group-hover:text-indigo-600/40 transition-colors">
                                 02</div>
                             <div>
                                 <a href="{{ route('services.slug', 'background-remove') }}"
-                                    class="block text-xl font-bold text-slate-900 mb-1 group-hover:text-indigo-600 transition-colors">Background
+                                    class="block text-xl font-bold text-slate-900 mb-1 group-hover:text-amber-600 transition-colors">Background
                                     Remove</a>
                                 <p class="text-slate-500 text-sm">Refine images by eliminating background distractions.</p>
                             </div>
                         </div>
                         <div
-                            class="p-8 bg-white border border-slate-100 rounded-[2.5rem] shadow-sm hover:shadow-xl transition-all duration-300 flex items-center gap-8 group">
+                            class="p-4 bg-white border border-slate-100 rounded-[2.5rem] shadow-sm hover:shadow-xl transition-all duration-300 flex items-center gap-8 group">
                             <div
-                                class="text-indigo-600/20 font-black text-5xl leading-none group-hover:text-indigo-600/40 transition-colors">
+                                class="text-indigo-600/20 font-black text-4xl leading-none group-hover:text-indigo-600/40 transition-colors">
                                 03</div>
                             <div>
                                 <a href="{{ route('services.slug', 'shadow-making') }}"
-                                    class="block text-xl font-bold text-slate-900 mb-1 group-hover:text-indigo-600 transition-colors">Shadow
+                                    class="block text-xl font-bold text-slate-900 mb-1 group-hover:text-amber-600 transition-colors">Shadow
                                     Making</a>
+                                <p class="text-slate-500 text-sm">Enhance realism by adding natural-looking shadows.</p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="p-4 bg-white border border-slate-100 rounded-[2.5rem] shadow-sm hover:shadow-xl transition-all duration-300 flex items-center gap-8 group">
+                            <div
+                                class="text-indigo-600/20 font-black text-4xl leading-none group-hover:text-indigo-600/40 transition-colors">
+                                04</div>
+                            <div>
+                                <a href="{{ route('services.slug', 'ghost-mannequin') }}"
+                                    class="block text-xl font-bold text-slate-900 mb-1 group-hover:text-amber-600 transition-colors">Ghost Mannequin</a>
+                                <p class="text-slate-500 text-sm">Enhance realism by adding natural-looking shadows.</p>
+                            </div>
+                        </div>
+                         <div
+                            class="p-4 bg-white border border-slate-100 rounded-[2.5rem] shadow-sm hover:shadow-xl transition-all duration-300 flex items-center gap-8 group">
+                            <div
+                                class="text-indigo-600/20 font-black text-4xl leading-none group-hover:text-indigo-600/40 transition-colors">
+                                05</div>
+                            <div>
+                                <a href="{{ route('services.slug', 'photo-recoloring') }}"
+                                    class="block text-xl font-bold text-slate-900 mb-1 group-hover:text-amber-600 transition-colors">Photo Recoloring</a>
                                 <p class="text-slate-500 text-sm">Enhance realism by adding natural-looking shadows.</p>
                             </div>
                         </div>
@@ -785,7 +808,7 @@
                     <!-- Right: Card List -->
                     <div class="lg:col-span-7 space-y-6">
                         <div
-                            class="p-8 bg-white border border-slate-100 rounded-[2.5rem] shadow-sm hover:shadow-xl transition-all duration-300 flex items-center gap-8 group">
+                            class="p-4 bg-white border border-slate-100 rounded-[2.5rem] shadow-sm hover:shadow-xl transition-all duration-300 flex items-center gap-8 group">
                             <div
                                 class="text-indigo-600/20 font-black text-5xl group-hover:text-indigo-600/40 transition-colors">
                                 01</div>
@@ -796,7 +819,7 @@
                             </div>
                         </div>
                         <div
-                            class="p-8 bg-white border border-slate-100 rounded-[2.5rem] shadow-sm hover:shadow-xl transition-all duration-300 flex items-center gap-8 group">
+                            class="p-4 bg-white border border-slate-100 rounded-[2.5rem] shadow-sm hover:shadow-xl transition-all duration-300 flex items-center gap-8 group">
                             <div
                                 class="text-indigo-600/20 font-black text-5xl group-hover:text-indigo-600/40 transition-colors">
                                 02</div>
@@ -807,10 +830,21 @@
                             </div>
                         </div>
                         <div
-                            class="p-8 bg-white border border-slate-100 rounded-[2.5rem] shadow-sm hover:shadow-xl transition-all duration-300 flex items-center gap-8 group">
+                            class="p-4 bg-white border border-slate-100 rounded-[2.5rem] shadow-sm hover:shadow-xl transition-all duration-300 flex items-center gap-8 group">
                             <div
                                 class="text-indigo-600/20 font-black text-5xl group-hover:text-indigo-600/40 transition-colors">
                                 03</div>
+                            <div>
+                                <h4 class="text-xl font-bold text-slate-900 mb-1">Headshot Editing</h4>
+                                <p class="text-slate-500 text-sm">Make headshot look fresh, steaming, and appetizing with color
+                                    grading.</p>
+                            </div>
+                        </div>
+                        <div
+                            class="p-4 bg-white border border-slate-100 rounded-[2.5rem] shadow-sm hover:shadow-xl transition-all duration-300 flex items-center gap-8 group">
+                            <div
+                                class="text-indigo-600/20 font-black text-5xl group-hover:text-indigo-600/40 transition-colors">
+                                04</div>
                             <div>
                                 <h4 class="text-xl font-bold text-slate-900 mb-1">Food Retouching</h4>
                                 <p class="text-slate-500 text-sm">Make food look fresh, steaming, and appetizing with color

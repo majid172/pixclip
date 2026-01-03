@@ -17,6 +17,74 @@
             </div>
 
             <div class="navbar-end items-end gap-6">
+                <!-- Notification Dropdown -->
+                <div class="dropdown dropdown-end relative">
+                    <button type="button" aria-haspopup="menu"
+                        aria-expanded="false">
+
+                        <!-- Bell Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-bell-ringing"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 5a2 2 0 0 1 4 0a7 7 0 0 1 4 6v3a4 4 0 0 0 2 3h-16a4 4 0 0 0 2 -3v-3a7 7 0 0 1 4 -6" /><path d="M9 17v1a3 3 0 0 0 6 0v-1" /><path d="M21 6.727a11.05 11.05 0 0 0 -2.794 -3.727" /><path d="M3 6.727a11.05 11.05 0 0 1 2.792 -3.727" /></svg>
+
+                        <!-- Unread badge -->
+                        {{-- <span class="badge badge-error badge-xs absolute top-1 right-1"></span> --}}
+                    </button>
+
+
+                    <ul class="dropdown-menu dropdown-open:opacity-100 hidden w-80 rounded-box border border-base-content/20 bg-base-100 shadow-lg"
+                        role="menu">
+
+                        <!-- Header -->
+                        <li class="px-4 py-3 border-b border-base-content/20">
+                            <h6 class="font-semibold text-base">Notifications</h6>
+                            <p class="text-sm text-base-content/70">You have 3 new notifications</p>
+                        </li>
+
+                        <!-- Notification item -->
+                        <li>
+                            <a class="flex gap-3 px-4 py-3 hover:bg-base-200">
+                                <span class="badge badge-primary badge-sm mt-1"></span>
+                                <div>
+                                    <p class="font-medium text-sm">New Order Placed</p>
+                                    <p class="text-xs text-base-content/70">
+                                        Order #1234 has been successfully created.
+                                    </p>
+                                </div>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="flex gap-3 px-4 py-3 hover:bg-base-200">
+                                <span class="badge badge-success badge-sm mt-1"></span>
+                                <div>
+                                    <p class="font-medium text-sm">Payment Successful</p>
+                                    <p class="text-xs text-base-content/70">
+                                        Your last invoice has been paid.
+                                    </p>
+                                </div>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="flex gap-3 px-4 py-3 hover:bg-base-200">
+                                <span class="badge badge-warning badge-sm mt-1"></span>
+                                <div>
+                                    <p class="font-medium text-sm">Profile Update</p>
+                                    <p class="text-xs text-base-content/70">
+                                        Please complete your profile details.
+                                    </p>
+                                </div>
+                            </a>
+                        </li>
+
+                        <!-- Footer -->
+                        <li class="border-t border-base-content/20 p-2">
+                            <a href="" class="btn btn-text btn-sm btn-block">
+                                View All Notifications
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
                 <!-- GitHub Button -->
                 @if (!auth()->user()->is_admin)
                     <div class="max-md:hidden">
@@ -49,7 +117,15 @@
                         </li>
                         <li>
                             <a class="dropdown-item px-3" href="{{ url('/') }}">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-home"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l-2 0l9 -9l9 9l-2 0" /><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" /><path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" /></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round"
+                                    class="icon icon-tabler icons-tabler-outline icon-tabler-home">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <path d="M5 12l-2 0l9 -9l9 9l-2 0" />
+                                    <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+                                    <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+                                </svg>
                                 Home
                             </a>
                         </li>
@@ -83,7 +159,7 @@
                         <li>
                             <hr class="border-base-content/20 -mx-2 my-1" />
                         </li>
-                       
+
 
                         <li class="dropdown-footer p-2 pt-1">
                             <a class="btn btn-text btn-error btn-block h-11 justify-start px-3 font-normal"
