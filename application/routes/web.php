@@ -25,6 +25,12 @@ use Illuminate\Support\Facades\Route;
 |--------------------------------------------------------------------------
 */
 Route::view('/', 'home');
+
+Route::get('/test-broadcast', function () {
+    broadcast(new \App\Events\TestNotification('Hello World'));
+    return 'Event Broadcasted!';
+});
+
 Route::view('/workflow', 'workflow');
 Route::view('/price', 'price');
 Route::view('/about', 'about');

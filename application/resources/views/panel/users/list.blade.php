@@ -24,8 +24,10 @@
                             <span class="text-xs">{{ __($item->email) }}</span>
                             </td>
                             <td>{{ $item->userDetail?->ip}}</td>
-                            <td><span
-                                    class="badge badge-soft badge-{{ $item->status == 1 ? 'success' : 'error' }}  text-xs">{{ $item->status == 1 ? 'Active' : 'Inactive' }}</span>
+                            <td>
+                                <span
+                                    class="badge badge-soft badge-{{ $item->status == 1 ? 'success' : 'error' }}  text-xs">{{ $item->status == 1 ? 'Active' : 'Inactive' }}
+                                </span>
                             </td>
                             <td>{{ $item->created_at }}</td>
                             <td>{{ $item->userDetail?->last_access_at }}</td>

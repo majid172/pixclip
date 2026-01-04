@@ -116,7 +116,20 @@
         <!-- / Layout Container -->
     </div>
     <!-- / Layout Wrapper -->
-    @stack('css')
+    @stack('styles')
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+    <script type="module">
+        setTimeout(() => {
+            if (window.Echo) {
+                window.Echo.channel('test-channel')
+                    .listen('TestNotification', (e) => {
+                        console.log('Realtime Notification Received:', e.message);
+                        alert('Realtime Notification: ' + e.message);
+                    });
+            }
+        }, 1000);
+    </script>
     @stack('js')
     @stack('plugins')
     <!-- Vendors JS -->
