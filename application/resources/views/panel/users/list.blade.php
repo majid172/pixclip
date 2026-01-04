@@ -34,21 +34,19 @@
                                 <a class="btn btn-circle btn-text btn-sm" href="{{ route('user.show', $item->id) }}"
                                     aria-label="View Profile"><span class="icon-[tabler--eye] size-5"></span></a>
 
-                                @if ($item->is_admin == 1)
-                                    {{-- Admin: Delete --}}
-                                    <form action="{{ route('user.destroy', $item->id) }}" method="POST" style="display: inline;"
-                                        onsubmit="return confirm('Are you sure you want to delete this user?');">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="btn btn-circle btn-text btn-sm" aria-label="Delete user">
-                                            <span class="icon-[tabler--trash] size-5"></span>
-                                        </button>
-                                    </form>
-                                @else
-                                    {{-- Customer: Edit --}}
-                                    <a class="btn btn-circle btn-text btn-sm" href="{{ route('user.edit', $item->id) }}"
-                                        aria-label="Action button"><span class="icon-[tabler--pencil] size-5"></span></a>
-                                @endif
+                                {{-- Edit --}}
+                                <a class="btn btn-circle btn-text btn-sm" href="{{ route('user.edit', $item->id) }}"
+                                    aria-label="Edit User"><span class="icon-[tabler--pencil] size-5"></span></a>
+
+                                {{-- Delete --}}
+                                <form action="{{ route('user.destroy', $item->id) }}" method="POST" style="display: inline;"
+                                    onsubmit="return confirm('Are you sure you want to delete this user?');">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-circle btn-text btn-sm" aria-label="Delete user">
+                                        <span class="icon-[tabler--trash] size-5"></span>
+                                    </button>
+                                </form>
                             </td>
                         </tr>
                     @endforeach
