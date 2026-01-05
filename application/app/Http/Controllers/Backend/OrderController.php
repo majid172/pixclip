@@ -7,7 +7,9 @@ use App\Models\Invoice;
 use App\Models\Media;
 use App\Models\Order;
 use App\Models\PathService;
+use App\Models\User;
 use App\Notifications\Order as NotificationsOrder;
+use App\Notifications\OrderNotification;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
@@ -174,7 +176,9 @@ class OrderController extends Controller
             $details['endText']    = '';
 
             $user = auth()->user();
-            $user->notify(new NotificationsOrder($create));
+            $admin = User::where('is_admin', 1)->first();
+            // $user->notify(new OrderNotification($create));
+            $admin->notify(new NotificationsOrder($create));
 
             // Notification::send(auth()->user(), new SendEmailNotification($details));
 

@@ -107,9 +107,19 @@
 
                         <!-- Header -->
                         <li class="px-4 py-3 border-b border-base-content/20 bg-base-100 sticky top-0 z-10">
-                            <h6 class="font-semibold text-base">Notifications</h6>
-                            <p class="text-sm text-base-content/70">You have
-                                {{ $unreadCount }} new notifications</p>
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h6 class="font-semibold text-base">Notifications</h6>
+                                    <p class="text-sm text-base-content/70" id="notification-header-count">You have
+                                        {{ $unreadCount }} new notifications</p>
+                                </div>
+                                @if($unreadCount > 0)
+                                <button type="button" id="mark-all-read-btn" 
+                                        class="btn btn-xs btn-ghost text-primary hover:text-primary-focus">
+                                    Mark all read
+                                </button>
+                                @endif
+                            </div>
                         </li>
 
                         <!-- Unread Notifications -->
@@ -453,3 +463,73 @@
         </ul>
     </div>
 </div> --}}
+
+<script>
+    // Mark All as Read functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        const markAllReadBtn = document.getElementById('mark-all-read-btn');
+        
+        if (markAllReadBtn) {
+            markAllReadBtn.addEventListener('click', function() {
+                // Disable button during request
+                this.disabled = true;
+                this.textContent = 'Marking...';
+                
+                fetch('{{ route("notifications.markAllAsRead") }}', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
+                        'Accept': 'application/json'
+                    }
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        // Update badge count to 0
+                        const badge = document.getElementById('notification-count');
+                        if (badge) {
+                            badge.style.display = 'none';
+                        }
+                        
+                        // Update header count
+                        const headerCount = document.getElementById('notification-header-count');
+                        if (headerCount) {
+                            headerCount.textContent = 'You have 0 new notifications';
+                        }
+                        
+                        // Hide the button
+                        this.style.display = 'none';
+                        
+                        // Update all unread notifications to read style
+                        const unreadNotifications = document.querySelectorAll('.border-l-4.border-primary');
+                        unreadNotifications.forEach(notification => {
+                            notification.classList.remove('border-l-4', 'border-primary', 'bg-base-100');
+                            notification.classList.add('opacity-75');
+                            
+                            const badge = notification.querySelector('.badge-primary');
+                            if (badge) {
+                                badge.classList.remove('badge-primary');
+                                badge.classList.add('badge-neutral');
+                            }
+                        });
+                        
+                        // Show success message
+                        if (typeof flasher !== 'undefined') {
+                            flasher.success('All notifications marked as read');
+                        }
+                    }
+                })
+                .catch(error => {
+                    console.error('Error marking notifications as read:', error);
+                    this.disabled = false;
+                    this.textContent = 'Mark all read';
+                    
+                    if (typeof flasher !== 'undefined') {
+                        flasher.error('Failed to mark notifications as read');
+                    }
+                });
+            });
+        }
+    });
+</script>

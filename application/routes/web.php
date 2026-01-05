@@ -26,11 +26,6 @@ use Illuminate\Support\Facades\Route;
 */
 Route::view('/', 'home');
 
-Route::get('/test-broadcast', function () {
-    broadcast(new \App\Events\TestNotification('Hello World'));
-    return 'Event Broadcasted!';
-});
-
 Route::view('/workflow', 'workflow');
 Route::view('/price', 'price');
 Route::view('/about', 'about');
@@ -161,6 +156,12 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
     Route::get('/notifications', [NotificationController::class, 'index'])->name('notifications.index');
     Route::get('/notifications/{id}/read', [NotificationController::class, 'read'])->name('notifications.read');
+    Route::post('/notifications/mark-all-read', [NotificationController::class, 'markAllAsRead'])->name('notifications.markAllAsRead');
+    Route::get('/notifications/unread-count', [NotificationController::class, 'getUnreadCount'])->name('notifications.unreadCount');
+
+    // Test Notification Routes (Development/Testing)
+    Route::get('/test/notification', [\App\Http\Controllers\Backend\NotificationTestController::class, 'sendTestNotification'])->name('test.notification');
+    Route::get('/test/order-notification', [\App\Http\Controllers\Backend\NotificationTestController::class, 'sendOrderNotification'])->name('test.order.notification');
 
     // PayPal Payment Routes
     Route::get('/paypal/pay/{order}', [PaypalController::class, 'payment'])->name('paypal.pay');
