@@ -57,7 +57,7 @@
                             <td>
                                 <select class="select select-bordered select-sm w-full max-w-xs js-status-action text-primary border-primary focus:border-primary focus:ring-primary font-semibold"
                                     data-id="{{ $item->id }}">
-                                    @foreach (['In Review', 'Pending','Received','Invoiced', 'Processing',  'Finalizing', 'Completed',  'Downloaded', 'Canceled'] as $status)
+                                    @foreach (['In Review', 'Pending','Received','Invoiced', 'Processing',  'Finalizing', 'Completed',  'Downloaded', 'Canceled', 'Redo'] as $status)
                                         <option value="{{ $status }}"
                                             {{ $item->status == $status ? 'selected' : '' }}>
                                             {{ $status }}
@@ -87,6 +87,8 @@
                                     <span class="badge badge-soft badge-warning text-xs">Downloaded</span>
                                 @elseif ($item->status == 'Canceled')
                                     <span class="badge badge-soft badge-error text-xs">Canceled</span>
+                                @elseif ($item->status == 'Redo')
+                                    <span class="badge badge-soft badge-error text-xs">Redo</span>
                                 @endif
                             </td>
                             @endif
@@ -111,8 +113,14 @@
                                             class="icon-[tabler--dots-vertical] size-5"></span></button> --}}
                                 @else
                                     <a class="btn btn-circle btn-text btn-sm"
-                                        href="{{ route('order.details', $item->id) }}">
+                                        href="{{ route('order.details', $item->id) }}" title="View Details">
                                         <span class="icon-[tabler--eye] size-5"></span></a>
+                                    
+                                    @if($item->status == 'Completed')
+                                    <a class="btn btn-circle btn-text btn-sm text-error"
+                                        href="{{ route('order.redo', $item->id) }}" title="Request Redo">
+                                        <span class="icon-[tabler--refresh] size-5"></span></a>
+                                    @endif
                                 @endif
 
                             </td>

@@ -136,6 +136,11 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
         // Order Status Update
         Route::post('update-status', 'updateStatus')->name('status.update');
+
+        // Redo Routes
+        Route::get('redo/{order}', 'redoView')->name('redo');
+        Route::post('redo/{order}', 'redoStore')->name('redo.store');
+        Route::get('redo-list', 'redoList')->name('redo.list');
     });
     Route::resource('invoice', InvoiceController::class);
 

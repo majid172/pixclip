@@ -179,6 +179,16 @@
                                       </li>
 
                                       <li>
+                                          <a href="{{ route('order.redo.list') }}"
+                                              class="inline-flex w-full items-center justify-between px-2">
+                                              <span>Redo Order</span>
+                                              <span class="badge badge-sm badge-error">
+                                                  {{ $orderCounts['redo'] ?? 0 }}
+                                              </span>
+                                          </a>
+                                      </li>
+
+                                      <li>
                                           <a href="{{ route('order.paid') }}"
                                               class="inline-flex w-full items-center justify-between px-2">
                                               <span>Paid Order</span>
