@@ -73,8 +73,9 @@ Route::middleware('auth')->group(function () {
     })->middleware(['signed'])->name('verification.verify');
 
     // Resend verification email
-    Route::post('/email/verification-notification', function (Request $request) {
+    Route::get('/email/verification-notification', function (Request $request) {
         $request->user()->sendEmailVerificationNotification();
+        // dd('Verification link sent!');
         return back()->with('success', 'Verification link sent!');
     })->middleware('throttle:6,1')->name('verification.send');
 });
