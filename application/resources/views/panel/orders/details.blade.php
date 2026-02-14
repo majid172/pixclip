@@ -107,7 +107,6 @@
 
 
     </div>
-
     @push('js')
         <script>
             const tabs = document.querySelectorAll('.tab-btn');

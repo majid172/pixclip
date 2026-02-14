@@ -113,7 +113,7 @@ class PaymentController extends Controller
     {
         $transactions = $this->paymentService->getUserPaymentHistory(
             auth()->id(),
-            2,
+            10,
         );
 
         return view("panel.payments.history", compact("transactions"));

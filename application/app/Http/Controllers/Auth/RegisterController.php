@@ -34,7 +34,7 @@ class RegisterController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'status' => 1,
+            'status' => 0,
         ]);
 
         $user->userDetail()->create([
@@ -43,8 +43,18 @@ class RegisterController extends Controller
 
         event(new Registered($user));
 
+        $admins = \App\Models\User::where('is_admin', 1)->get();
+        try {
+            // Wait 2 seconds to avoid Mailtrap rate limit (550 Too many emails per second)
+            sleep(2);
+            \Illuminate\Support\Facades\Notification::send($admins, new \App\Notifications\NewUserRegistered($user));
+        } catch (\Exception $e) {
+            // Log error or ignore to prevent crashing registration on rate limit
+            \Illuminate\Support\Facades\Log::error('Admin notification failed: ' . $e->getMessage());
+        }
+
         Auth::login($user);
 
-        return redirect()->route('verification.notice');
+        return redirect()->route('verification.notice')->with('status', 'Registration successful!');
     }
 }

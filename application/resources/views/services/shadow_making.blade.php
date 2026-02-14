@@ -249,7 +249,7 @@
                 <!-- Left Column: Illustration -->
                 <!-- Ideally, place your isometric vector image here -->
                 <div class="flex justify-center lg:justify-end">
-                    <img src="{{ asset('/assets/images/images/background_remove/mocup.webp') }}"
+                    <img src="{{ asset('/assets/images/images/shadow/mocup.webp') }}"
                         alt="Designer Workspace Illustration"
                         class="w-full max-w-lg object-contain drop-shadow-xl hover:scale-[1.02] transition-transform duration-500 rounded-lg">
 

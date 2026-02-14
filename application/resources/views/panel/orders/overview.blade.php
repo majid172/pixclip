@@ -62,7 +62,7 @@
                     </span>
                 @endforeach
             @endif
-           
+
         </div>
     </div>
 
@@ -83,7 +83,7 @@
 </div>
 
 <!-- ✅ INSTRUCTION -->
-<div class="bg-white p-6 rounded-xl shadow-sm border-l-4 border-blue-500">
+<div class="bg-white p-6 rounded-xl shadow-sm border-l-4 border-indigo-500">
     <h3 class="text-sm font-medium text-slate-500 mb-2">Special Instruction</h3>
     <p class="text-slate-700 text-sm leading-relaxed">
         {!! $order->instruction !!}

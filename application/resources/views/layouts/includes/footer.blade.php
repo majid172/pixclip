@@ -11,7 +11,7 @@
     <div class="flex flex-col leading-tight">
         <span class="text-white font-semibold text-xl tracking-tight group-hover:text-orange-400 transition-colors">Pix Clipping</span>
         <span class="text-[0.65rem] text-slate-400 uppercase tracking-[0.15em] font-medium mt-1">Exceeding Expectation</span>
-    </div>
+    </div> 
 </a>
 
 

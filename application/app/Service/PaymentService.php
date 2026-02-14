@@ -114,7 +114,7 @@ class PaymentService
     {
         return [
             'PayPal' => 'PayPal',
-            'Stripe' => 'Stripe',
+            // 'Stripe' => 'Stripe',
         ];
     }
 
@@ -165,7 +165,7 @@ class PaymentService
      */
     public function calculateRevenue(array $filters = []): float
     {
-        $query = Transaction::where('status', 1);
+        $query = Transaction::where('status', 2);
 
         if (isset($filters['start_date'])) {
             $query->where('created_at', '>=', $filters['start_date']);

@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Models\Order;
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
@@ -21,20 +22,25 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        Paginator::useTailwind();
+        
         View::composer('*', function ($view) {
-        $view->with('orderCounts', [
-            'all'        => Order::count(),
-            'inreview'    => Order::status('In Review')->count(),
-            'pending'    => Order::status('Pending')->count(),
-            'received'   => Order::status('Received')->count(),
-            'invoiced'   => Order::status('Invoiced')->count(),
-            'processing' => Order::status('Processing')->count(),
-            'finalized'  => Order::status('Finalizing')->count(),
-            'completed'  => Order::status('Completed')->count(),
-            'downloaded' => Order::status('Downloaded')->count(),
-            'canceled'   => Order::status('Canceled')->count(),
-            'paid'       => Order::where('is_paid', 1)->count(),
-        ]);
-    });
+            if (auth()->check()) {
+                $view->with('orderCounts', [
+                    'all'        => Order::checkUser()->count(),
+                    'inreview'   => Order::status('In Review')->checkUser()->count(),
+                    'pending'    => Order::status('Pending')->checkUser()->count(),
+                    'received'   => Order::status('Received')->checkUser()->count(),
+                    'invoiced'   => Order::status('Invoiced')->checkUser()->count(),
+                    'processing' => Order::status('Processing')->checkUser()->count(),
+                    'finalized'  => Order::status('Finalizing')->checkUser()->count(),
+                    'redo'       => Order::status('Redo')->checkUser()->count(),
+                    'completed'  => Order::status('Completed')->checkUser()->count(),
+                    'downloaded' => Order::status('Downloaded')->checkUser()->count(),
+                    'canceled'   => Order::status('Canceled')->checkUser()->count(),
+                    'paid'       => Order::where('is_paid', 1)->checkUser()->count(),
+                ]);
+            }
+        });
     }
 }

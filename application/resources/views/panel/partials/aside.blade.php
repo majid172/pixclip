@@ -99,9 +99,9 @@
                                               class="inline-flex w-full items-center justify-between px-2">
                                               <span>Pending Order</span>
 
-                                                  <span class="badge badge-sm badge-warning">
-                                                      {{ $orderCounts['pending'] ?? 0 }}
-                                                  </span>
+                                              <span class="badge badge-sm badge-warning">
+                                                  {{ $orderCounts['pending'] ?? 0 }}
+                                              </span>
 
                                           </a>
                                       </li>
@@ -111,9 +111,9 @@
                                               class="inline-flex w-full items-center justify-between px-2">
                                               <span>Received Order</span>
 
-                                                  <span class="badge badge-sm badge-info">
-                                                      {{ $orderCounts['received'] ?? 0 }}
-                                                  </span>
+                                              <span class="badge badge-sm badge-info">
+                                                  {{ $orderCounts['received'] ?? 0 }}
+                                              </span>
 
                                           </a>
                                       </li>
@@ -174,6 +174,16 @@
                                               <span>Canceled Order</span>
                                               <span class="badge badge-sm badge-error">
                                                   {{ $orderCounts['canceled'] ?? 0 }}
+                                              </span>
+                                          </a>
+                                      </li>
+
+                                      <li>
+                                          <a href="{{ route('order.redo.list') }}"
+                                              class="inline-flex w-full items-center justify-between px-2">
+                                              <span>Redo Order</span>
+                                              <span class="badge badge-sm badge-error">
+                                                  {{ $orderCounts['redo'] ?? 0 }}
                                               </span>
                                           </a>
                                       </li>
@@ -290,37 +300,23 @@
                           </li>
 
                           <li>
-
-
                               <a href="{{ route('free-trial-list.index') }}"
                                   class="inline-flex w-full items-center px-2">
 
                                   <span class=" flex size-6 items-center justify-center">
 
                                       <span class="icon-[tabler--credit-card] size-4.5"></span>
-
                                   </span>
-
                                   <span>Free Trial</span>
-
                               </a>
-
                           </li>
-
-                          <!-- Section Divider -->
-
                           <!-- Accordion Menu Item (Level 0) -->
 
                           @if (auth()->user()->is_admin)
                               <li
-                                  class="text-base-content/50 before:bg-base-content/20 mt-2 p-2 text-xs uppercase before:absolute before:-start-3 before:top-1/2 before:h-0.5 before:w-2.5">
-
-                                  Applications</li>
-
-
+                                  class="text-base-content/50 before:bg-base-content/20 mt-2 p-2 text-xs uppercase before:absolute before:-start-3 before:top-1/2 before:h-0.5 before:w-2.5">Applications</li>
 
                               <li class="accordion-item" id="app-user">
-
                                   <button
                                       class="accordion-toggle accordion-item-active:bg-neutral/10 inline-flex w-full items-center p-2 text-start text-sm font-normal"
                                       aria-controls="app-user-collapse-app-user" aria-expanded="true">
@@ -330,11 +326,7 @@
                                           <span class="icon-[tabler--user] size-4.5"></span>
 
                                       </span>
-
                                       <span class="grow">User</span>
-
-
-
                                       <span
                                           class="icon-[tabler--chevron-right] accordion-item-active:rotate-90 size-4.5 shrink-0 transition-transform duration-300 rtl:rotate-180"></span>
 
@@ -345,9 +337,7 @@
                                       aria-labelledby="app-user" role="region">
 
                                       <ul class="accordion space-y-1">
-
                                           <!-- Simple Link Item (for nested items) -->
-
                                           <li>
 
                                               <a href="{{ route('users.list') }}"
@@ -356,44 +346,23 @@
                                                   <span>List</span>
 
                                               </a>
-
                                           </li>
-
-
-
                                       </ul>
-
                                   </div>
-
                               </li>
                           @endif
 
                           <li>
-
-
                               <a href="{{ route('logout') }}" class="inline-flex w-full items-center px-2">
-
                                   <span class=" flex size-6 items-center justify-center">
-
                                       <span class="icon-[tabler--logout] size-4.5"></span>
-
                                   </span>
-
                                   <span>Logout</span>
-
                               </a>
-
                           </li>
-
-
                       </ul>
-
                   </div>
 
-
-
               </div>
-
           </div>
-
       </aside>

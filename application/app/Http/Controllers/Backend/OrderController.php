@@ -2,12 +2,18 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Backend\StoreOrderRequest;
+use App\Http\Requests\Backend\StoreRedoRequest;
+use App\Http\Requests\Backend\UpdateOrderStatusRequest;
 use App\Models\BillingAddress;
 use App\Models\Invoice;
 use App\Models\Media;
 use App\Models\Order;
 use App\Models\PathService;
+use App\Models\User;
+use App\Notifications\Order as NotificationsOrder;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class OrderController extends Controller
 {
@@ -83,6 +89,14 @@ class OrderController extends Controller
         return view('panel.orders.list', compact('orders', 'title'));
     }
 
+    public function redoList()
+    {
+        $title  = 'Redo Orders';
+        $orders = Order::status('Redo')->checkUser()->get();
+
+        return view('panel.orders.list', compact('orders', 'title'));
+    }
+
     public function canceled()
     {
         $title  = 'Canceled Orders';
@@ -106,98 +120,110 @@ class OrderController extends Controller
         return view('panel.orders.create', compact('pathservices'));
     }
 
-    public function orderStore(Request $request)
+    public function orderStore(StoreOrderRequest $request)
     {
-        $data = $request->except('_token');
+        DB::beginTransaction();
 
-        $create = Order::create([
-            'job_title'             => $data['title'],
-            'user_id'               => auth()->user()->id,
-            'service_id'            => json_encode($data['service_id']),
-            'image_quantity'        => $data['image_quantity'],
-            'instruction'           => $data['instruction'],
-            'image_complexity'      => $data['complexity'],
-            'return_file_extension' => json_encode($data['return_file_extension']),
-            'turnaround'            => $data['turnaround'],
-            // 'image_link'            => json_encode($data["image_link"])??"",
-        ]);
+        try {
+            $data = $request->validated();
 
-        if ($create) {
-            $create->order_id = 'PIXC-' . date('ym') . '-' . sprintf('%04d', $create->id);
-            $create->save();
-        }
+            // Create Order
+            $order = Order::create([
+                'job_title'             => $data['title'],
+                'user_id'               => auth()->id(),
+                'service_id'            => json_encode($data['service_id']),
+                'image_quantity'        => $data['image_quantity'],
+                'instruction'           => $data['instruction'] ?? null,
+                'image_complexity'      => $data['complexity'],
+                'return_file_extension' => json_encode($data['return_file_extension']),
+                'turnaround'            => $data['turnaround'],
+                'image_link'            => ! empty($data['image_links'])
+                    ? json_encode(array_filter($data['image_links']))
+                    : null,
+            ]);
 
-        $media_ids = [];
-
-        // Handle File Uploads - Save to filesystem
-        if ($request->hasFile('upload_files')) {
-            $files           = $request->file('upload_files');
-            $destinationPath = base_path('../assets/order/' . $create->order_id . '/uploads/');
-
-            if (! file_exists($destinationPath)) {
-                mkdir($destinationPath, 0755, true);
+            if (! $order) {
+                throw new \Exception('Order creation failed');
             }
 
-            foreach ($files as $file) {
-                if (! $file->isValid()) {
-                    continue; // skip invalid uploads
+            // Generate Order ID
+            $order->order_id = 'PIXC-' . date('ym') . '-' . str_pad($order->id, 4, '0', STR_PAD_LEFT);
+            $order->save();
+
+            $mediaIds = [];
+
+            // Handle File Uploads
+            if ($request->hasFile('upload_files')) {
+
+                $destinationPath = base_path('../assets/order/' . $order->order_id . '/uploads/');
+
+                if (! file_exists($destinationPath)) {
+                    mkdir($destinationPath, 0755, true);
                 }
 
-                $fileName = time() . '_' . $file->getClientOriginalName();
-                $file->move($destinationPath, $fileName);
+                foreach ($request->file('upload_files') as $file) {
 
-                $media_create = Media::create([
-                    'user_id'   => auth()->id(),
-                    'file_name' => $file->getClientOriginalName(),
-                    'file'      => 'assets/order/' . $create->order_id . '/uploads/' . $fileName,
-                    'extension' => $file->getClientOriginalExtension(),
-                ]);
+                    if (! $file->isValid()) {
+                        continue;
+                    }
 
-                if ($media_create) {
-                    $media_ids[] = $media_create->id;
+                    $fileName = time() . '_' . $file->getClientOriginalName();
+                    $file->move($destinationPath, $fileName);
+
+                    $media = Media::create([
+                        'user_id'   => auth()->id(),
+                        'file_name' => $file->getClientOriginalName(),
+                        'file'      => 'assets/order/' . $order->order_id . '/uploads/' . $fileName,
+                        'extension' => $file->getClientOriginalExtension(),
+                    ]);
+
+                    if ($media) {
+                        $mediaIds[] = $media->id;
+                    }
                 }
             }
-        }
 
-        if ($create && $media_ids) {
-            $create->media_id = json_encode($media_ids);
-            $create->save();
+            // Save media IDs only if uploads exist
+            if (! empty($mediaIds)) {
+                $order->media_id = json_encode($mediaIds);
+                $order->save();
+            }
 
-            // send mail to user
-            $body                  = 'Greeting From PIX Clipping Ltd. Your order #PIXC-' . date('ym') . '-' . sprintf('%04d', $create->id) . ' has submitted successfully. Your order status in now Received. Please wait while our team will review your order soon.';
-            $details['subject']    = 'Order Submitted';
-            $details['greeting']   = 'Hello ' . auth()->user()->name;
-            $details['body']       = $body;
-            $details['actionText'] = 'View Order';
-            $details['actionUrl']  = url('/order/' . $create->id . '/');
-            $details['endText']    = '';
-            // Notification::send(auth()->user(), new SendEmailNotification($details));
+            // Notify Admin
+            $admin = User::where('is_admin', 1)->first();
+            $user  = auth()->user();
 
-            // //send mail to admin
-            // $admin_user                  = User::where('is_admin', 1)->first();
-            // $admin_body                  = 'New order #PIXC-' . date('ym') . '-' . sprintf('%04d', $create->id) . ' has submitted. Please review the order soon.';
-            // $admin_details['subject']    = 'Submitted New Order';
-            // $admin_details['greeting']   = 'Hello ' . $admin_user->name;
-            // $admin_details['body']       = $admin_body;
-            // $admin_details['actionText'] = 'View Order';
-            // $admin_details['actionUrl']  = url('/admin/order/' . $create->id);
-            // $admin_details['endText']    = '';
-            // Notification::send($admin_user, new SendEmailNotification($admin_details));
-            return redirect()->route('order.list')
-                ->with('success', 'Transaction updated successfully');
+            if ($admin) {
+                $admin->notify(new NotificationsOrder($order));
+            }
 
-            // return view('user.order.order-success', compact('create'));
-        } else {
-            return view('user.order.order-success', compact('create'));
+            if ($user) {
+                $user->notify(new NotificationsOrder($order));
+            }
+
+            DB::commit();
+
+            return redirect()
+                ->route('order.list')
+                ->with('success', 'Order submitted successfully.');
+
+        } catch (\Throwable $e) {
+
+            DB::rollBack();
+
+            // optional: log error
+            // Log::error($e->getMessage());
+
+            return back()->with('error', 'Something went wrong! Please try again.');
         }
     }
-
     public function details(Order $order)
     {
         $selected_services = PathService::whereIn('id', json_decode($order->service_id))->get();
-        $services          = PathService::where('status', '1')->get();
-        $total_orders      = $order->where('id', $order->id)->count();
-        $total_unpaid      = $order->where(['id' => $order->id, 'is_paid' => 0])->count();
+        $services          = PathService::get();
+
+        $total_orders = $order->where('id', $order->id)->count();
+        $total_unpaid = $order->where(['id' => $order->id, 'is_paid' => 0])->count();
         // $order_details = $order;
         $invoice = Invoice::where('order_id', $order->id)->first();
         $images  = null;
@@ -303,12 +329,69 @@ class OrderController extends Controller
         return redirect()->route('order.list')->with('success', 'Order finalized successfully');
     }
 
-    public function updateStatus(Request $request)
+    public function redoView(Order $order)
     {
-        $request->validate([
-            'order_id' => 'required|exists:orders,id',
-            'status'   => 'required|in:In Review,Pending,Processing,Received,Finalizing,Completed,Invoiced,Downloaded,Canceled',
+        return view('panel.orders.details', [
+            'order'      => $order,
+            'active_tab' => 'redoContent',
         ]);
+    }
+
+    public function redoStore(StoreRedoRequest $request, Order $order)
+    {
+        $validated = $request->validated();
+
+        $media_ids = [];
+
+        // Handle File Uploads
+        if ($request->hasFile('upload_files')) {
+            $files           = $request->file('upload_files');
+            $destinationPath = base_path('../assets/order/' . $order->order_id . '/redo');
+
+            if (! file_exists($destinationPath)) {
+                mkdir($destinationPath, 0755, true);
+            }
+
+            foreach ($files as $file) {
+                if (! $file->isValid()) {
+                    continue;
+                }
+                $fileName = time() . '_' . $file->getClientOriginalName();
+                $file->move($destinationPath, $fileName);
+                $media_create = Media::create([
+                    'user_id'   => auth()->id(),
+                    'file_name' => $file->getClientOriginalName(),
+                    'file'      => 'assets/order/' . $order->order_id . '/redo/' . $fileName,
+                    'extension' => $file->getClientOriginalExtension(),
+                ]);
+
+                if ($media_create) {
+                    $media_ids[] = $media_create->id;
+                }
+            }
+        }
+
+        // Update Order
+        $order->status           = 'Redo';
+        $order->is_redo          = 1;
+        $order->redo_instruction = $request->instruction;
+
+        if ($request->filled('redo_image_links')) {
+            $order->redo_image_link = json_encode(array_filter($request->redo_image_links));
+        }
+
+        if (! empty($media_ids)) {
+            $order->redo_media_id = json_encode($media_ids);
+        }
+
+        $order->save();
+
+        return redirect()->route('order.list')->with('success', 'Redo request submitted successfully');
+    }
+
+    public function updateStatus(UpdateOrderStatusRequest $request)
+    {
+        // Validation handled by Form Request
 
         $order = Order::find($request->order_id);
         $order->update([

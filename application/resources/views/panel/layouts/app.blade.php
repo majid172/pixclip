@@ -1,7 +1,6 @@
 <!doctype html>
 
-<html lang="en" data-assets-path="../assets/" data-layout-path="dashboard-free/" dir="ltr"
-    class="scroll-smooth">
+<html lang="en" data-assets-path="../assets/" data-layout-path="dashboard-free/" dir="ltr" class="scroll-smooth">
 
 <head>
     <meta charset="utf-8" />
@@ -33,8 +32,6 @@
 
     <!-- Page CSS -->
     <link rel="stylesheet" href="{{ asset('assets/vendor/flasher/flasher.min.css') }}">
-
-    <!-- Flasher JS -->
     <script src="{{ asset('assets/vendor/flasher/flasher.min.js') }}"></script>
 
 
@@ -117,8 +114,11 @@
     </div>
     <!-- / Layout Wrapper -->
     @stack('css')
+    @stack('styles')
     @stack('js')
     @stack('plugins')
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <!-- Vendors JS -->
     <script src="{{ asset('/assets/dist/libs/apexcharts/dist/apexcharts.min.js') }}"></script>
     <script src="{{ asset('/assets/dist/libs/flyonui/dist/helper-apexcharts.js') }}"></script>
@@ -135,9 +135,35 @@
     <!-- Page JS -->
     <script src="{{ asset('/assets/dist/js/common-dashboard-free.js') }}"></script>
 
-        class="btn btn-circle btn-soft btn-secondary/20 bottom-15 end-15 motion-preset-slide-right motion-duration-800 motion-delay-100 fixed absolute z-[3] hidden"
-        aria-label="Circle Soft Icon Button"><span class="icon-[tabler--chevron-up] size-5 shrink-0"></span></button>
-    @flasher_render
+
+    {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>  --}}
+    {{-- <script> 
+        toastr.options = {
+            "closeButton": true,
+            "progressBar": true,
+            "positionClass": "toast-top-right",
+            "timeOut": "3000",
+        };
+    </script>
+    <script>
+        @if (Session::has('success'))
+            toastr.success("{{ Session::get('success') }}");
+        @endif
+
+        @if (Session::has('error'))
+            toastr.error("{{ Session::get('error') }}");
+        @endif
+
+        @if (Session::has('info'))
+            toastr.info("{{ Session::get('info') }}");
+        @endif
+
+        @if (Session::has('warning'))
+            toastr.warning("{{ Session::get('warning') }}");
+        @endif
+    </script> --}}
 </body>
 
 </html>

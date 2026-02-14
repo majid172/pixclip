@@ -1,6 +1,5 @@
 <!doctype html>
-<html lang="en"  data-assets-path="../assets/" data-layout-path="dashboard-free/" dir="ltr"
-    class="scroll-smooth">
+<html lang="en" data-assets-path="../assets/" data-layout-path="dashboard-free/" dir="ltr" class="scroll-smooth">
 
 <head>
     <meta charset="utf-8" />
@@ -9,8 +8,7 @@
     <meta name="robots" content="noindex, nofollow" />
     <title>Login | PixClipping</title>
 
-    <meta name="description"
-        content="PixClipping is a platform for image editing and clipping." />
+    <meta name="description" content="PixClipping is a platform for image editing and clipping." />
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="{{ asset('/assets/images/logo_2.png') }}" />
 
@@ -22,7 +20,8 @@
 
     <!-- Core CSS -->
     <link rel="stylesheet" href="{{ asset('/assets/dist/css/output.css') }}" />
-
+    <link rel="stylesheet" href="{{ asset('assets/vendor/flasher/flasher.min.css') }}">
+    <script src="{{ asset('assets/vendor/flasher/flasher.min.js') }}"></script>
     <!-- Theme JS -->
     {{-- <script type="text/javascript">
       (function () {
@@ -163,7 +162,6 @@
     <button id="scrollToTopBtn"
         class="btn btn-circle btn-soft btn-secondary/20 bottom-15 end-15 motion-preset-slide-right motion-duration-800 motion-delay-100 fixed z-[3] hidden"
         aria-label="Scroll Top"><span class="icon-[tabler--chevron-up] size-5 shrink-0"></span></button>
-    @flasher_render
 </body>
 
 </html>

@@ -17,7 +17,6 @@ class DashboardController extends Controller
             ? Order::query()
             : Order::where('user_id', auth()->user()->id);
 
-
         $data = [
             'orders'        => (clone $orderQuery)->where('status', '!=', 'Redo')->latest()->take(5)->get(),
             'recent_orders' => (clone $orderQuery)->latest()->take(10)->get(),

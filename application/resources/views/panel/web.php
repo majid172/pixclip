@@ -68,27 +68,22 @@ Route::middleware('auth')->group(function () {
     // Handle verification link
     Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
         $request->fulfill();
-        
         return redirect()->route('dashboard');
     })->middleware(['signed'])->name('verification.verify');
 
     // Resend verification email
-    Route::get('/email/verification-notification', function (Request $request) {
+    Route::post('/email/verification-notification', function (Request $request) {
         $request->user()->sendEmailVerificationNotification();
         return back()->with('success', 'Verification link sent!');
     })->middleware('throttle:6,1')->name('verification.send');
 });
 
-Route::get('/approval', function () {
-    return view('auth.approval');
-})->middleware('auth')->name('approval.notice');
-
 /*
 |--------------------------------------------------------------------------
-| Protected Backend Routes (auth + verified + approved)
+| Protected Backend Routes (auth + verified)
 |--------------------------------------------------------------------------
 */
-Route::middleware(['auth', 'verified', 'check.status'])->group(function () {
+Route::middleware(['auth', 'verified'])->group(function () {
 
     // Dashboard
     Route::get('dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
@@ -98,7 +93,6 @@ Route::middleware(['auth', 'verified', 'check.status'])->group(function () {
         Route::get('/list', [UserListController::class, 'list'])->name('users.list');
         Route::get('/show/{user}', [UserListController::class, 'show'])->name('user.show');
         Route::get('/edit/{user}', [UserListController::class, 'edit'])->name('user.edit');
-        Route::get('/approve/{user}', [UserListController::class, 'approve'])->middleware('signed')->name('user.approve.signed');
         Route::put('/update/{user}', [UserListController::class, 'update'])->name('user.update');
         Route::delete('/remove/{user}', [UserListController::class, 'destroy'])->name('user.destroy');
     });
@@ -141,11 +135,6 @@ Route::middleware(['auth', 'verified', 'check.status'])->group(function () {
 
         // Order Status Update
         Route::post('update-status', 'updateStatus')->name('status.update');
-
-        // Redo Routes
-        Route::get('redo/{order}', 'redoView')->name('redo');
-        Route::post('redo/{order}', 'redoStore')->name('redo.store');
-        Route::get('redo-list', 'redoList')->name('redo.list');
     });
     Route::resource('invoice', InvoiceController::class);
 

@@ -20,9 +20,10 @@ class LoginController extends Controller
         ]);
 
         if (! Auth::attempt(array_merge($credentials, ['status' => 1]))) {
-            return back()->withErrors([
-                'email' => 'Invalid credentials or account is inactive.',
-            ]);
+            // return back()->withErrors([
+            //     'email' => 'Invalid credentials or account is inactive.',
+            // ]);
+            return back()->with('error', 'Invalid credentials or account is inactive.');
         }
 
         $request->session()->regenerate();
@@ -31,9 +32,10 @@ class LoginController extends Controller
 
         if (! $user->hasVerifiedEmail()) {
             Auth::logout();
-            return back()->withErrors([
-                'email' => 'Please verify your email before logging in.',
-            ]);
+            return back()->with('error', 'Please verify your email before logging in.');
+            // return back()->withErrors([
+            //     'email' => 'Please verify your email before logging in.',
+            // ]);
         }
 
         $user->userDetail()->updateOrCreate(
@@ -44,8 +46,8 @@ class LoginController extends Controller
                 'last_access_at' => now(),
             ]
         );
-        flash()->success('User logged in successfully!');
-        return redirect()->route('dashboard');
+
+        return redirect()->intended('dashboard')->with('success', 'Login successfully!');
     }
 
     public function logout(Request $request)
@@ -53,7 +55,7 @@ class LoginController extends Controller
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-        flash()->success('User logged out successfully!');
-        return redirect('/');
+
+        return redirect()->route('login')->with('warning', 'Logged out successfully!');
     }
 }

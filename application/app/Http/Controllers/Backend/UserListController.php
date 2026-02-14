@@ -17,6 +17,13 @@ class UserListController extends Controller
         // dd($users);
         return view("panel.users.list", compact("users"));
     }
+
+    public function approve(Request $request, User $user)
+    {
+        $user->update(['status' => 1]);
+        
+        return redirect()->route('user.show', $user->id)->with('success', 'User approved successfully!');
+    }
     public function show(User $user)
     {
 

@@ -42,6 +42,16 @@
                             <span class="badge badge-soft badge-warning">Inactive</span>
                         @endif
                     </div>
+                    @if ($user->status == 0)
+                        <div class="mt-4">
+                            <form action="{{ route('user.update', $user->id) }}" method="POST">
+                                @csrf
+                                @method('PUT')
+                                <input type="hidden" name="status" value="1">
+                                <button type="submit" class="btn btn-success btn-sm w-full">Approve User</button>
+                            </form>
+                        </div>
+                    @endif
                 </div>
             </div>
 

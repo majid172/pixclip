@@ -22,6 +22,9 @@
     <!-- build:css -->
     <link rel="stylesheet" href="{{ asset('/assets/dist/css/output.css') }}" />
 
+    <link rel="stylesheet" href="{{ asset('assets/vendor/flasher/flasher.min.css') }}">
+    <script src="{{ asset('assets/vendor/flasher/flasher.min.js') }}"></script>
+
     {{-- <script type="text/javascript">
       (function () {
         try {

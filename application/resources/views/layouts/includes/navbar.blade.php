@@ -92,7 +92,7 @@
                                     <a href="#"
                                         class="block px-4 py-2 text-sm text-gray-600 hover:bg-orange-50 hover:text-orange-600 rounded transition">Headshot
                                         Editing</a>
-                                    <a href="#"
+                                    <a href="{{ route('services.slug', 'food-photo-retouching') }}"
                                         class="block px-4 py-2 text-sm text-gray-600 hover:bg-orange-50 hover:text-orange-600 rounded transition">Food
                                         Retouching</a>
                                 </div>
@@ -242,7 +242,7 @@
                         <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke-width="2"></line>
                     </svg></a>
             </div>
-            <a href="#"
+            <a href="{{ route('order.place') }}"
                 class="bg-indigo-900 text-white px-6 py-2.5 rounded shadow-lg shadow-indigo-200 font-bold text-sm flex items-center gap-2 transition transform hover:-translate-y-0.5">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"

@@ -1,3 +1,9 @@
+@php
+    $unreadCount = auth()->user()->unreadNotifications()->count();
+    $unreadNotifications = auth()->user()->unreadNotifications()->latest()->take(3)->get();
+    $readNotifications = auth()->user()->readNotifications()->latest()->take(3)->get();
+@endphp
+
 <div class="bg-base-100 border-base-content/20 lg:ps-75 sticky top-0 z-50 flex border-b">
     <div class="mx-auto w-full max-w-7xl">
         <nav class="navbar py-2">
@@ -17,12 +23,169 @@
             </div>
 
             <div class="navbar-end items-end gap-6">
+                <!-- Notification Dropdown -->
+
+
                 <!-- GitHub Button -->
                 @if (!auth()->user()->is_admin)
                     <div class="max-md:hidden">
                         <a class="btn btn-primary" href="{{ route('order.place') }}">@lang('Order Place')</a>
                     </div>
                 @endif
+
+                <div class="dropdown dropdown-end relative">
+                    <button type="button" class="relative inline-flex" aria-haspopup="menu" aria-expanded="false">
+
+                        <!-- Bell Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="icon icon-tabler icons-tabler-outline icon-tabler-bell-ringing">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path
+                                d="M10 5a2 2 0 0 1 4 0a7 7 0 0 1 4 6v3a4 4 0 0 0 2 3h-16a4 4 0 0 0 2 -3v-3a7 7 0 0 1 4 -6" />
+                            <path d="M9 17v1a3 3 0 0 0 6 0v-1" />
+                            <path d="M21 6.727a11.05 11.05 0 0 0 -2.794 -3.727" />
+                            <path d="M3 6.727a11.05 11.05 0 0 1 2.792 -3.727" />
+                        </svg>
+
+                        <!-- 2. Updated Badge Classes for perfect corner positioning -->
+                        @if ($unreadCount > 0)
+                            <span id="notification-count"
+                                class="badge badge-error badge-xs absolute !top-0 !right-0 left-auto -translate-y-1/2 translate-x-1/2 flex h-4 w-4 items-center justify-center text-[10px]">
+                                {{ $unreadCount }}
+                            </span>
+                        @endif
+                    </button>
+
+                    <script>
+                        document.addEventListener('DOMContentLoaded', function() {
+                            const notificationBtn = document.querySelector('.dropdown-end button[aria-haspopup="menu"]');
+                            const notificationCount = document.getElementById('notification-count');
+
+                            if (notificationBtn && notificationCount) {
+                                notificationBtn.addEventListener('click', function() {
+                                  
+                                    const isExpanded = notificationBtn.getAttribute('aria-expanded') === 'true';
+                                    if (isExpanded) {
+                                        // Dropdown is now open, hide the badge
+                                        notificationCount.style.display = 'none';
+                                    } else {
+                                        // Dropdown is now closed, show the badge
+                                        notificationCount.style.display = 'flex';
+                                    }
+                                    setTimeout(() => {
+                                        const isNowExpanded = notificationBtn.getAttribute('aria-expanded') ===
+                                            'true';
+                                        if (isNowExpanded) {
+                                            notificationCount.style.display = 'none';
+                                        } else {
+                                            notificationCount.style.display = 'flex';
+                                        }
+                                    }, 50);
+                                });
+
+                                // Also handle clicking outside which closes the dropdown but might not trigger the button click if handled by document listener
+                                document.addEventListener('click', function(event) {
+                                    if (!notificationBtn.contains(event.target)) {
+                                       
+                                        setTimeout(() => {
+                                            const isNowExpanded = notificationBtn.getAttribute('aria-expanded') ===
+                                                'true';
+                                            if (!isNowExpanded) {
+                                                notificationCount.style.display = 'flex';
+                                            }
+                                        }, 50);
+                                    }
+                                });
+                            }
+                        });
+                    </script>
+
+                    <ul class="dropdown-menu dropdown-open:opacity-100 hidden w-80 max-h-[500px] overflow-y-auto rounded-box border border-base-content/20 bg-base-100 shadow-lg"
+                        role="menu">
+
+                        <!-- Header -->
+                        <li class="px-4 py-3 border-b border-base-content/20 bg-base-100 sticky top-0 z-10">
+                            <h6 class="font-semibold text-base">Notifications</h6>
+                            <p class="text-sm text-base-content/70">You have
+                                {{ $unreadCount }} new notifications</p>
+                        </li>
+
+                        <!-- Unread Notifications -->
+                        @if ($unreadNotifications->count() > 0)
+                            <li class="px-4 py-2 bg-base-200/50 text-xs font-semibold text-base-content/70">Unread</li>
+                            @foreach ($unreadNotifications as $notification)
+                                <li>
+                                    @php
+                                        $isNewUser = $notification->type === 'App\Notifications\NewUserRegistered' && isset($notification->data['user_id']);
+                                    @endphp
+                                    <div class="flex flex-col px-4 py-3 hover:bg-base-200 bg-base-100 border-l-4 {{ $isNewUser ? 'border-info' : 'border-primary' }}">
+                                        <a href="{{ route('notifications.read', $notification->id) }}" class="flex gap-3">
+                                            <span class="badge {{ $isNewUser ? 'badge-info' : 'badge-success' }} mt-1 h-2 w-2 rounded-full p-0 flex-shrink-0"></span>
+                                            <div>
+                                                <p class="font-medium text-sm">
+                                                    {{ $notification->data['title'] ?? 'Notification' }}
+                                                </p>
+                                                <p class="text-xs text-base-content/70">
+                                                    {{ $notification->data['message'] ?? '' }}
+                                                </p>
+                                                <p class="text-xs text-base-content/50 mt-1">
+                                                    {{ $notification->created_at->diffForHumans() }}
+                                                </p>
+                                            </div>
+                                        </a>
+                                        
+                                        @if($isNewUser)
+                                            <div class="mt-2 ms-5">
+                                                 <a href="{{ \Illuminate\Support\Facades\URL::signedRoute('user.approve.signed', ['user' => $notification->data['user_id']]) }}" 
+                                                    class="btn btn-xs btn-success w-full">
+                                                    Approve User
+                                                 </a>
+                                            </div>
+                                        @endif
+                                    </div>
+                                </li>
+                            @endforeach
+                        @endif
+
+                        <!-- Read Notifications -->
+                        @if ($readNotifications->count() > 0)
+                            <li class="px-4 py-2 bg-base-200/50 text-xs font-semibold text-base-content/70">Read</li>
+                            @foreach ($readNotifications as $notification)
+                                <li>
+                                    <a href="{{ route('notifications.read', $notification->id) }}"
+                                        class="flex gap-3 px-4 py-3 hover:bg-base-200 opacity-75">
+                                        <span class="badge badge-neutral mt-1 h-2 w-2 rounded-full p-0"></span>
+
+                                        <div>
+                                            <p class="font-medium text-sm">
+                                                {{ $notification->data['title'] ?? 'Notification' }}</p>
+                                            <p class="text-xs text-base-content/70">
+                                                {{ $notification->data['message'] ?? '' }}
+                                            </p>
+                                            <p class="text-xs text-base-content/50 mt-1">
+                                                {{ $notification->created_at->diffForHumans() }}</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            @endforeach
+                        @endif
+
+                        @if ($unreadNotifications->isEmpty() && $readNotifications->isEmpty())
+                            <li class="px-4 py-3">
+                                <p class="text-sm text-base-content/70">No notifications</p>
+                            </li>
+                        @endif
+
+                        <!-- Footer -->
+                        <li class="border-t border-base-content/20 p-2">
+                            <a href="{{ route('notifications.index') }}" class="btn btn-text btn-sm btn-block">
+                                View All Notifications
+                            </a>
+                        </li>
+                    </ul>
+                </div>
                 <script async defer src="https://buttons.github.io/buttons.js"></script>
 
                 <!-- Profile Dropdown -->
@@ -49,7 +212,15 @@
                         </li>
                         <li>
                             <a class="dropdown-item px-3" href="{{ url('/') }}">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-home"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l-2 0l9 -9l9 9l-2 0" /><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" /><path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" /></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round"
+                                    class="icon icon-tabler icons-tabler-outline icon-tabler-home">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <path d="M5 12l-2 0l9 -9l9 9l-2 0" />
+                                    <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+                                    <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+                                </svg>
                                 Home
                             </a>
                         </li>
@@ -83,7 +254,7 @@
                         <li>
                             <hr class="border-base-content/20 -mx-2 my-1" />
                         </li>
-                       
+
 
                         <li class="dropdown-footer p-2 pt-1">
                             <a class="btn btn-text btn-error btn-block h-11 justify-start px-3 font-normal"
@@ -99,202 +270,3 @@
     </div>
 </div>
 
-{{-- <div id="activity-drawer" class="overlay overlay-open:translate-x-0 drawer drawer-end sm:max-w-104 hidden"
-    role="dialog" tabindex="-1">
-    <div class="drawer-header border-base-content/20 border-b p-4">
-        <h3 class="drawer-title text-base font-semibold">Activity</h3>
-        <button type="button" class="btn btn-text btn-circle btn-xs" aria-label="Close"
-            data-overlay="#activity-drawer">
-            <span class="icon-[tabler--x] size-4"></span>
-        </button>
-    </div>
-    <div class="drawer-body p-0">
-        <ul class="space-y-0">
-            <!-- Joe Lincoln Activity -->
-            <li class="flex items-start gap-4 p-4">
-                <div class="avatar">
-                    <div class="size-8 rounded-full">
-                        <img src="{{ asset('/assets/img/avatars/1.png') }}" alt="avatar" />
-                    </div>
-                </div>
-                <div class="flex-1">
-                    <div class="mb-1">
-                        <span class="text-base-content font-semibold">joe Lincoln</span>
-                        <span class="text-base-content text-sm">mentioned you in last trends topic</span>
-                    </div>
-                    <p class="text-base-content/50 mb-3 text-sm">18 Mins ago</p>
-
-                    <div class="bg-base-200 rounded-box border-base-content/20 border px-4 py-2.5">
-                        <p class="text-base-content mb-4 text-sm font-medium">@Flyonui For an expert opinion, check out
-                            what Mike has to say on this topic!</p>
-                        <div class="input input-sm">
-                            <input type="text" class="grow" placeholder="Reply" id="flyonuiReply" />
-                            <span class="icon-[tabler--photo] text-base-content/80 my-auto ms-2 size-4 shrink-0"></span>
-                        </div>
-                    </div>
-                </div>
-            </li>
-
-            <li>
-                <div class="divider"></div>
-            </li>
-
-            <!-- Sofia -->
-            <li class="flex items-start gap-4 p-4">
-                <div class="avatar">
-                    <div class="size-8 rounded-full">
-                        <img src="../assets/img/avatars/2.png" alt="Sofia" />
-                    </div>
-                </div>
-                <div class="flex-1">
-                    <div class="mb-1">
-                        <span class="text-base-content font-semibold">Sofia</span>
-                        <span class="text-base-content text-sm">requested feedback on her design.</span>
-                    </div>
-                    <p class="text-base-content/50 text-sm">1 Hour ago</p>
-                </div>
-            </li>
-
-            <li>
-                <div class="divider"></div>
-            </li>
-
-            <!-- Jane Perez File Review -->
-            <li class="flex items-start gap-4 p-4">
-                <div class="avatar">
-                    <div class="size-8 rounded-full">
-                        <img src="../assets/img/avatars/3.png" alt="Jane Perez" />
-                    </div>
-                </div>
-                <div class="flex-1">
-                    <div class="mb-1">
-                        <span class="text-base-content font-semibold">Jane Perez</span>
-                        <span class="text-base-content text-sm">invites you to review a file.</span>
-                    </div>
-                    <p class="text-base-content/50 mb-2.5 text-sm">3 Hours ago</p>
-                    <span class="badge badge-soft badge-lg">
-                        <span class="icon-[tabler--file-type-pdf] text-error"></span>
-                        invoices.pdf
-                    </span>
-                </div>
-            </li>
-
-            <li>
-                <div class="divider"></div>
-            </li>
-
-            <!-- Liam -->
-            <li class="flex items-start gap-4 p-4">
-                <div class="avatar">
-                    <div class="size-8 rounded-full">
-                        <img src="../assets/img/avatars/11.png" alt="Liam" />
-                    </div>
-                </div>
-                <div class="flex-1">
-                    <div class="mb-1">
-                        <span class="text-base-content font-semibold">Liam</span>
-                        <span class="text-base-content text-sm">has shared a project update.</span>
-                    </div>
-                    <p class="text-base-content/50 text-sm">5 Hours ago</p>
-                </div>
-            </li>
-
-            <li>
-                <div class="divider"></div>
-            </li>
-
-            <!-- Tyler Hero Design Project -->
-            <li class="flex items-start gap-4 p-4">
-                <div class="avatar">
-                    <div class="size-8 rounded-full">
-                        <img src="../assets/img/avatars/9.png" alt="Tyler Hero" />
-                    </div>
-                </div>
-                <div class="flex-1">
-                    <div class="mb-1">
-                        <span class="text-base-content font-semibold">Tyler Hero</span>
-                        <span class="text-base-content text-sm">wants to view your design project</span>
-                    </div>
-                    <p class="text-base-content/50 mb-3 text-sm">18 Mins ago</p>
-
-                    <div
-                        class="bg-base-200 rounded-box border-base-content/20 flex items-center gap-4 border px-4 py-2.5">
-                        <div class="avatar avatar-placeholder">
-                            <div class="bg-base-100 text-primary rounded-box size-8 p-2">
-                                <img src="https://cdn.flyonui.com/fy-assets/blocks/marketing-ui/brand-logo/figma-icon.png"
-                                    alt="avatar" />
-                            </div>
-                        </div>
-                        <span class="text-sm font-medium">Launcher-UIkit.fig</span>
-                    </div>
-                </div>
-            </li>
-
-            <li>
-                <div class="divider"></div>
-            </li>
-
-            <!-- Denial Invite -->
-            <li class="flex items-start gap-4 p-4">
-                <div class="avatar">
-                    <div class="size-8 rounded-full">
-                        <img src="../assets/img/avatars/4.png" alt="Denial" />
-                    </div>
-                </div>
-                <div class="flex-1">
-                    <div class="mb-1">
-                        <span class="text-base-content font-semibold">Denial</span>
-                        <span class="text-base-content text-sm">Invite from invite link</span>
-                    </div>
-                    <p class="text-base-content/50 text-sm">3 Hours ago</p>
-                </div>
-            </li>
-
-            <li>
-                <div class="divider"></div>
-            </li>
-
-            <!-- Leslie Alexander Tags -->
-            <li class="flex items-start gap-4 p-4">
-                <div class="avatar">
-                    <div class="size-8 rounded-full">
-                        <img src="../assets/img/avatars/5.png" alt="Leslie Alexander" />
-                    </div>
-                </div>
-                <div class="flex-1">
-                    <div class="mb-1">
-                        <span class="text-base-content font-semibold">Leslie Alexander</span>
-                        <span class="text-base-content text-sm">new tags to Web Redesign</span>
-                    </div>
-                    <p class="text-base-content/50 mb-3 text-sm">18 Mins ago</p>
-
-                    <div class="flex gap-2.5">
-                        <span class="badge badge-soft badge-primary badge-sm">Client - Request</span>
-                        <span class="badge badge-soft badge-warning badge-sm">Figma</span>
-                        <span class="badge badge-soft badge-info badge-sm">Redesign</span>
-                    </div>
-                </div>
-            </li>
-
-            <li>
-                <div class="divider"></div>
-            </li>
-
-            <!-- Miya File Review -->
-            <li class="flex items-start gap-4 p-4">
-                <div class="avatar">
-                    <div class="size-8 rounded-full">
-                        <img src="../assets/img/avatars/6.png" alt="Miya" />
-                    </div>
-                </div>
-                <div class="flex-1">
-                    <div class="mb-1">
-                        <span class="text-base-content font-semibold">Miya</span>
-                        <span class="text-base-content text-sm">invites you to review a file.</span>
-                    </div>
-                    <p class="text-base-content/50 text-sm">10 Hours ago</p>
-                </div>
-            </li>
-        </ul>
-    </div>
-</div> --}}
