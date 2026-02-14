@@ -848,8 +848,12 @@
                                 class="text-indigo-600/20 font-black text-5xl group-hover:text-indigo-600/40 transition-colors">
                                 04</div>
                             <div>
+<<<<<<< HEAD
                                 <a href="{{ route('services.slug', 'food-photo-retouching') }}"
                                     class="block text-xl font-bold text-slate-900 mb-1 group-hover:text-amber-600 transition-colors">Food Retouching</h4>
+=======
+                                <h4 class="text-xl font-bold text-slate-900 mb-1">Food Retouching</h4>
+>>>>>>> f4487809c6336aa094a5037239790f3f6100af79
                                 <p class="text-slate-500 text-sm">Make food look fresh, steaming, and appetizing with color
                                     grading.</p>
                             </div>

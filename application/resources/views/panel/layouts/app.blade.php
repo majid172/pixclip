@@ -7,6 +7,7 @@
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
     <meta name="robots" content="noindex, nofollow" />
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title> Dashboards || PixClipping</title>
 
     <meta name="description"
@@ -89,11 +90,8 @@
     <!-- Layout wrapper -->
     <div class="bg-base-200 flex min-h-screen flex-col">
         <!-- Layout Navbar -->
-
         <!-- ---------- HEADER ---------- -->
         @include('panel.partials.header')
-
-
         @include('panel.partials.aside')
         <!-- / Menu -->
 
@@ -101,7 +99,6 @@
         <div class="lg:ps-75 flex grow flex-col">
             <!-- Content -->
             <main class="mx-auto w-full max-w-[1280px] flex-1 grow space-y-6 p-6">
-                <!-- Stats -->
                 @yield('content')
             </main>
             <!-- / Content -->
@@ -113,8 +110,112 @@
         <!-- / Layout Container -->
     </div>
     <!-- / Layout Wrapper -->
+<<<<<<< HEAD
     @stack('css')
     @stack('styles')
+=======
+    @stack('styles')
+    {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script type="module">
+        // Wait for Echo to be ready
+        setTimeout(() => {
+            if (window.Echo) {
+                const userId = {{ auth()->id() }};
+
+                // Listen to user's private notification channel
+                window.Echo.private(`notifications.${userId}`)
+                    .notification((notification) => {
+                        console.log('Realtime Notification Received:', notification);
+
+                        // Update notification badge count
+                        const badge = document.getElementById('notification-count');
+                        if (badge) {
+                            const currentCount = parseInt(badge.textContent) || 0;
+                            badge.textContent = currentCount + 1;
+                            badge.style.display = 'flex';
+                        } else {
+                            // Create badge if it doesn't exist
+                            const bellButton = document.querySelector(
+                                '.dropdown-end button[aria-haspopup="menu"]');
+                            if (bellButton) {
+                                const newBadge = document.createElement('span');
+                                newBadge.id = 'notification-count';
+                                newBadge.className =
+                                    'badge badge-error badge-xs absolute !top-0 !right-0 left-auto -translate-y-1/2 translate-x-1/2 flex h-4 w-4 items-center justify-center text-[10px]';
+                                newBadge.textContent = '1';
+                                bellButton.appendChild(newBadge);
+                            }
+                        }
+
+                        // Prepend notification to dropdown
+                        const notificationList = document.querySelector('.dropdown-menu[role="menu"]');
+                        if (notificationList) {
+                            // Find or create unread section
+                            let unreadSection = Array.from(notificationList.children).find(li =>
+                                li.textContent.includes('Unread') && li.classList.contains('bg-base-200/50')
+                            );
+
+                            if (!unreadSection) {
+                                // Create unread section header
+                                unreadSection = document.createElement('li');
+                                unreadSection.className =
+                                    'px-4 py-2 bg-base-200/50 text-xs font-semibold text-base-content/70';
+                                unreadSection.textContent = 'Unread';
+
+                                // Insert after header
+                                const header = notificationList.querySelector('.border-b');
+                                if (header && header.nextElementSibling) {
+                                    notificationList.insertBefore(unreadSection, header.nextElementSibling);
+                                }
+                            }
+
+                            // Create notification item
+                            const notificationItem = document.createElement('li');
+                            notificationItem.innerHTML = `
+                                <a href="/notifications/${notification.id}/read" 
+                                   class="flex gap-3 px-4 py-3 hover:bg-base-200 bg-base-100 border-l-4 border-primary">
+                                    <span class="badge badge-primary badge-sm mt-1"></span>
+                                    <div>
+                                        <p class="font-medium text-sm">${notification.title || 'Notification'}</p>
+                                        <p class="text-xs text-base-content/70">${notification.message || ''}</p>
+                                        <p class="text-xs text-base-content/50 mt-1">Just now</p>
+                                    </div>
+                                </a>
+                            `;
+
+                            // Insert after unread section
+                            if (unreadSection.nextElementSibling) {
+                                notificationList.insertBefore(notificationItem, unreadSection
+                                    .nextElementSibling);
+                            }
+                        }
+
+                        // Update header count text
+                        const headerCount = notificationList?.querySelector('p.text-sm');
+                        if (headerCount) {
+                            const match = headerCount.textContent.match(/(\d+)/);
+                            const count = match ? parseInt(match[1]) + 1 : 1;
+                            headerCount.textContent = `You have ${count} new notifications`;
+                        }
+
+                        // Show toast notification using Flasher
+                        if (typeof flasher !== 'undefined') {
+                            flasher.info(notification.message, notification.title);
+                        }
+
+                        // Optional: Play notification sound
+                        // const audio = new Audio('/assets/sounds/notification.mp3');
+                        // audio.play().catch(e => console.log('Audio play failed:', e));
+                    });
+
+                console.log('Echo connected and listening to notifications channel');
+            } else {
+                console.error('Echo is not available');
+            }
+        }, 1000);
+    </script>
+>>>>>>> f4487809c6336aa094a5037239790f3f6100af79
     @stack('js')
     @stack('plugins')
 
@@ -135,6 +236,7 @@
     <!-- Page JS -->
     <script src="{{ asset('/assets/dist/js/common-dashboard-free.js') }}"></script>
 
+<<<<<<< HEAD
 
     {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -164,6 +266,9 @@
             toastr.warning("{{ Session::get('warning') }}");
         @endif
     </script> --}}
+=======
+    @flasher_render
+>>>>>>> f4487809c6336aa094a5037239790f3f6100af79
 </body>
 
 </html>

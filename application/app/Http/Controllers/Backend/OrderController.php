@@ -12,6 +12,10 @@ use App\Models\Order;
 use App\Models\PathService;
 use App\Models\User;
 use App\Notifications\Order as NotificationsOrder;
+<<<<<<< HEAD
+=======
+use App\Notifications\OrderNotification;
+>>>>>>> f4487809c6336aa094a5037239790f3f6100af79
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -189,9 +193,27 @@ class OrderController extends Controller
                 $order->save();
             }
 
+<<<<<<< HEAD
             // Notify Admin
             $admin = User::where('is_admin', 1)->first();
             $user  = auth()->user();
+=======
+            // send mail to user
+            $body                  = 'Greeting From PIX Clipping Ltd. Your order #PIXC-' . date('ym') . '-' . sprintf('%04d', $create->id) . ' has submitted successfully. Your order status in now Received. Please wait while our team will review your order soon.';
+            $details['subject']    = 'Order Submitted';
+            $details['greeting']   = 'Hello ' . auth()->user()->name;
+            $details['body']       = $body;
+            $details['actionText'] = 'View Order';
+            $details['actionUrl']  = url('/order/' . $create->id . '/');
+            $details['endText']    = '';
+
+            $user = auth()->user();
+            $admin = User::where('is_admin', 1)->first();
+            // $user->notify(new OrderNotification($create));
+            $admin->notify(new NotificationsOrder($create));
+
+            // Notification::send(auth()->user(), new SendEmailNotification($details));
+>>>>>>> f4487809c6336aa094a5037239790f3f6100af79
 
             if ($admin) {
                 $admin->notify(new NotificationsOrder($order));
@@ -330,10 +352,76 @@ class OrderController extends Controller
     }
 
     public function redoView(Order $order)
+<<<<<<< HEAD
     {
         return view('panel.orders.details', [
             'order'      => $order,
             'active_tab' => 'redoContent',
+=======
+    {
+        return view('panel.orders.details', [
+            'order' => $order,
+            'active_tab' => 'redoContent'
+        ]);
+    }
+
+    public function redoStore(Request $request, Order $order)
+    {
+        $request->validate([
+            'upload_files.*' => 'nullable|file|max:10240',
+            'instruction'    => 'required|string',
+        ]);
+
+        $media_ids = [];
+
+        // Handle File Uploads
+        if ($request->hasFile('upload_files')) {
+            $files           = $request->file('upload_files');
+            $destinationPath = base_path('../assets/order/' . $order->order_id . '/redo');
+
+            if (! file_exists($destinationPath)) {
+                mkdir($destinationPath, 0755, true);
+            }
+
+            foreach ($files as $file) {
+                if (! $file->isValid()) {
+                    continue;
+                }
+                $fileName = time() . '_' . $file->getClientOriginalName();
+                $file->move($destinationPath, $fileName);
+                $media_create = Media::create([
+                    'user_id'   => auth()->id(),
+                    'file_name' => $file->getClientOriginalName(),
+                    'file'      => 'assets/order/' . $order->order_id . '/redo/' . $fileName,
+                    'extension' => $file->getClientOriginalExtension(),
+                ]);
+
+                if ($media_create) {
+                    $media_ids[] = $media_create->id;
+                }
+            }
+        }
+
+        // Update Order
+        $order->status = 'Redo';
+        $order->is_redo = 1;
+        $order->redo_instruction = $request->instruction;
+        
+        if (! empty($media_ids)) {
+            $order->redo_media_id = json_encode($media_ids);
+        }
+
+        $order->save();
+
+        return redirect()->route('order.list')->with('success', 'Redo request submitted successfully');
+    }
+
+    public function updateStatus(Request $request)
+    {
+        $request->validate([
+            'order_id' => 'required|exists:orders,id',
+            'status'   => 'required|in:Redo,In Review,Pending,Processing,Received,Finalizing,Completed,Invoiced,Downloaded,Canceled',
+>>>>>>> f4487809c6336aa094a5037239790f3f6100af79
         ]);
     }
 

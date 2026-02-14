@@ -3,26 +3,23 @@
 namespace App\Notifications;
 
 use Illuminate\Bus\Queueable;
-<<<<<<< HEAD
 use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Notifications\Messages\MailMessage;
-use Illuminate\Notifications\Notification;
-=======
-use Illuminate\Notifications\Notification;
-use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Messages\BroadcastMessage;
->>>>>>> f4487809c6336aa094a5037239790f3f6100af79
+use Illuminate\Notifications\Notification;
 
-class Order extends Notification
+class OrderNotification extends Notification implements ShouldQueue
 {
     use Queueable;
 
-    protected $order;
+    public $notificationData;
 
-    public function __construct($order)
+    /**
+     * Create a new notification instance.
+     */
+    public function __construct(array $data)
     {
-        $this->order = $order;
+        dd(123);
+        $this->notificationData = $data;
     }
 
     /**
@@ -32,24 +29,7 @@ class Order extends Notification
      */
     public function via(object $notifiable): array
     {
-<<<<<<< HEAD
-        return ['database'];
-=======
         return ['database', 'broadcast'];
->>>>>>> f4487809c6336aa094a5037239790f3f6100af79
-    }
-
-    /**
-     * Get the mail representation of the notification.
-     */
-    public function toDatabase($notifiable): array
-    {
-
-        return [
-            'title'   => $this->order->job_title,
-            'message' => 'Order #' . $this->order->order_id . ' has been placed',
-            'order_id'=> $this->order->id,
-        ];
     }
 
     /**
@@ -60,11 +40,17 @@ class Order extends Notification
     public function toArray(object $notifiable): array
     {
         return [
-            //
+            'title' => $this->notificationData['title'] ?? 'New Notification',
+            'message' => $this->notificationData['message'] ?? '',
+            'order_id' => $this->notificationData['order_id'] ?? null,
+            'type' => $this->notificationData['type'] ?? 'general',
+            'icon' => $this->notificationData['icon'] ?? 'bell',
         ];
     }
-<<<<<<< HEAD
-=======
+
+    /**
+     * Get the broadcastable representation of the notification.
+     */
     public function toBroadcast(object $notifiable): BroadcastMessage
     {
         return new BroadcastMessage([
@@ -84,5 +70,4 @@ class Order extends Notification
     {
         return 'order.notification';
     }
->>>>>>> f4487809c6336aa094a5037239790f3f6100af79
 }

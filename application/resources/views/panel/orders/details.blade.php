@@ -58,6 +58,7 @@
                                 'Pending' => 'bg-[#9c27b0]',
                                 'Invoiced' => 'bg-[#00bcd4]',
                                 'Delivered' => 'bg-[#0ab210]',
+                                'Redo' => 'bg-red-500',
                                 default => 'bg-gray-500',
                             };
                         @endphp
@@ -71,11 +72,12 @@
                 <div class="mb-4"></div>
                 <!-- Tabs for Overview, Chat, Redo, and Output -->
                 <div class="flex overflow-x-auto pb-2 space-x-4 gap-4 mb-4 whitespace-nowrap scrollbar-hide">
-                    <button class="tab-btn btn px-4 py-2 rounded-lg btn-primary flex-shrink-0" data-target="overviewContent">Overview</button>
-                    <button class="tab-btn btn px-4 py-2 rounded-lg flex-shrink-0" data-target="invoiceContent">Invoice</button>
-                    <button class="tab-btn btn px-4 py-2 rounded-lg flex-shrink-0" data-target="redoContent">Redo</button>
-                    <button class="tab-btn btn px-4 py-2 rounded-lg flex-shrink-0" data-target="chatContent">Chat</button>
-                    <button class="tab-btn btn px-4 py-2 rounded-lg flex-shrink-0" data-target="outputContent">Output</button>
+                    @php $activeTab = $active_tab ?? 'overviewContent'; @endphp
+                    <button class="tab-btn btn px-4 py-2 rounded-lg {{ $activeTab == 'overviewContent' ? 'btn-primary' : '' }} flex-shrink-0" data-target="overviewContent">Overview</button>
+                    <button class="tab-btn btn px-4 py-2 rounded-lg {{ $activeTab == 'invoiceContent' ? 'btn-primary' : '' }} flex-shrink-0" data-target="invoiceContent">Invoice</button>
+                    <button class="tab-btn btn px-4 py-2 rounded-lg {{ $activeTab == 'redoContent' ? 'btn-primary' : '' }} flex-shrink-0" data-target="redoContent">Redo</button>
+                    <button class="tab-btn btn px-4 py-2 rounded-lg {{ $activeTab == 'chatContent' ? 'btn-primary' : '' }} flex-shrink-0" data-target="chatContent">Chat</button>
+                    <button class="tab-btn btn px-4 py-2 rounded-lg {{ $activeTab == 'outputContent' ? 'btn-primary' : '' }} flex-shrink-0" data-target="outputContent">Output</button>
                 </div>
             </div>
 
@@ -84,19 +86,19 @@
 
 
             <div id="tabContent" class="rounded-xl">
-                <div id="overviewContent" class="tab-panel">
+                <div id="overviewContent" class="tab-panel {{ $activeTab == 'overviewContent' ? '' : 'hidden' }}">
                     @include('panel.orders.overview')
                 </div>
-                <div id="invoiceContent" class="tab-panel hidden">
+                <div id="invoiceContent" class="tab-panel {{ $activeTab == 'invoiceContent' ? '' : 'hidden' }}">
                     @include('panel.orders.invoice')
                 </div>
-                <div id="redoContent" class="tab-panel hidden">
+                <div id="redoContent" class="tab-panel {{ $activeTab == 'redoContent' ? '' : 'hidden' }}">
                     @include('panel.orders.redo')
                 </div>
-                <div id="chatContent" class="tab-panel hidden">
+                <div id="chatContent" class="tab-panel {{ $activeTab == 'chatContent' ? '' : 'hidden' }}">
                     @include('panel.orders.chat')
                 </div>
-                <div id="outputContent" class="tab-panel hidden">
+                <div id="outputContent" class="tab-panel {{ $activeTab == 'outputContent' ? '' : 'hidden' }}">
                     @include('panel.orders.output')
                 </div>
             </div>
@@ -132,7 +134,9 @@
             });
 
             // Optionally, set the first tab as active on page load
+            @if(!isset($active_tab))
             tabs[0].classList.add('btn-primary', 'text-white');
+            @endif
         </script>
     @endpush
 @endsection

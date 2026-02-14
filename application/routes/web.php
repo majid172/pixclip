@@ -25,6 +25,7 @@ use Illuminate\Support\Facades\Route;
 |--------------------------------------------------------------------------
 */
 Route::view('/', 'home');
+
 Route::view('/workflow', 'workflow');
 Route::view('/price', 'price');
 Route::view('/about', 'about');
@@ -75,6 +76,7 @@ Route::middleware('auth')->group(function () {
     // Resend verification email
     Route::get('/email/verification-notification', function (Request $request) {
         $request->user()->sendEmailVerificationNotification();
+        // dd('Verification link sent!');
         return back()->with('success', 'Verification link sent!');
     })->middleware('throttle:6,1')->name('verification.send');
 });
@@ -166,6 +168,15 @@ Route::middleware(['auth', 'verified', 'check.status'])->group(function () {
 
     Route::get('/notifications', [NotificationController::class, 'index'])->name('notifications.index');
     Route::get('/notifications/{id}/read', [NotificationController::class, 'read'])->name('notifications.read');
+<<<<<<< HEAD
+=======
+    Route::post('/notifications/mark-all-read', [NotificationController::class, 'markAllAsRead'])->name('notifications.markAllAsRead');
+    Route::get('/notifications/unread-count', [NotificationController::class, 'getUnreadCount'])->name('notifications.unreadCount');
+
+    // Test Notification Routes (Development/Testing)
+    Route::get('/test/notification', [\App\Http\Controllers\Backend\NotificationTestController::class, 'sendTestNotification'])->name('test.notification');
+    Route::get('/test/order-notification', [\App\Http\Controllers\Backend\NotificationTestController::class, 'sendOrderNotification'])->name('test.order.notification');
+>>>>>>> f4487809c6336aa094a5037239790f3f6100af79
 
     // PayPal Payment Routes
     Route::get('/paypal/pay/{order}', [PaypalController::class, 'payment'])->name('paypal.pay');

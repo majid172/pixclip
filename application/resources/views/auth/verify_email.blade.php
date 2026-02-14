@@ -64,7 +64,10 @@
 
 <html lang="en" data-theme="light" data-assets-path="../assets/" data-layout-path="dashboard-free/" dir="ltr"
     class="scroll-smooth">
+<<<<<<< HEAD
 
+=======
+>>>>>>> f4487809c6336aa094a5037239790f3f6100af79
 <head>
     <meta charset="utf-8" />
     <meta name="viewport"
@@ -72,7 +75,12 @@
     <meta name="robots" content="noindex, nofollow" />
     <title>Verify Email - PixClipping</title>
 
+<<<<<<< HEAD
     <meta name="description" content="PixClipping is a platform for image editing and clipping." />
+=======
+    <meta name="description"
+        content="PixClipping is a platform for image editing and clipping." />
+>>>>>>> f4487809c6336aa094a5037239790f3f6100af79
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="{{ asset('/assets/images/logo_2.png') }}" />
 
@@ -163,8 +171,13 @@
                     <p class="text-base-content/80">Thanks for signing up! Before continuing, please check your email
                         and click the verification link we sent you.</p>
                 </div>
+<<<<<<< HEAD
                 <a href="{{ url('/') }}" class="btn btn-lg btn-primary btn-gradient btn-block" type="submit">Skip
                     for now</a>
+=======
+                <a href="{{ url('/') }}" class="btn btn-lg btn-primary btn-gradient btn-block"
+                    type="submit">Skip for now</a>
+>>>>>>> f4487809c6336aa094a5037239790f3f6100af79
                 <p class="text-base-content/80 text-center">
                     Didn't get the mail?
                     @if (session('status') == 'verification-link-sent')
@@ -173,7 +186,11 @@
                         </div>
                     @endif
 
+<<<<<<< HEAD
                     {{-- <form method="POST" action="{{ route('verification.send') }}" class="mb-4">
+=======
+                {{-- <form method="POST" action="{{ route('verification.send') }}" class="mb-4">
+>>>>>>> f4487809c6336aa094a5037239790f3f6100af79
                     @csrf
                     <button type="submit"
                         class="w-full bg-rose-600 hover:bg-rose-500 text-white font-bold py-3 rounded-lg transition">
@@ -181,12 +198,17 @@
                     </button>
                 </form> --}}
 
+<<<<<<< HEAD
                     <a href="{{ route('verification.send') }}"
                         class="link link-animated link-primary font-normal">Resend</a>
+=======
+                <a href="{{ route('verification.send') }}" class="link link-animated link-primary font-normal">Resend</a>
+>>>>>>> f4487809c6336aa094a5037239790f3f6100af79
                 </p>
             </div>
         </div>
     </div>
+<<<<<<< HEAD
 
 
 
@@ -198,6 +220,26 @@
     <button id="scrollToTopBtn"
         class="btn btn-circle btn-soft btn-secondary/20 bottom-15 end-15 motion-preset-slide-right motion-duration-800 motion-delay-100 fixed z-[3] hidden"
         aria-label="Scroll Top"><span class="icon-[tabler--chevron-up] size-5 shrink-0"></span></button>
+=======
+    <!-- / Content -->
+
+    <!-- Vendors JS -->
+
+    <!-- FlyonUI JS -->
+    <script src="../assets/dist/libs/flyonui/flyonui.js"></script>
+
+    <!-- Theme Utils JS -->
+    <script src="../assets/dist/js/theme-utils.js"></script>
+
+    <!-- Main JS -->
+    <script src="../assets/dist/js/main.js"></script>
+
+    <!-- Page JS -->
+
+    <button id="scrollToTopBtn"
+        class="btn btn-circle btn-soft btn-secondary/20 bottom-15 end-15 motion-preset-slide-right motion-duration-800 motion-delay-100 fixed absolute z-[3] hidden"
+        aria-label="Circle Soft Icon Button"><span class="icon-[tabler--chevron-up] size-5 shrink-0"></span></button>
+>>>>>>> f4487809c6336aa094a5037239790f3f6100af79
 </body>
 
 </html>

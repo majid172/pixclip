@@ -107,9 +107,25 @@
 
                         <!-- Header -->
                         <li class="px-4 py-3 border-b border-base-content/20 bg-base-100 sticky top-0 z-10">
+<<<<<<< HEAD
                             <h6 class="font-semibold text-base">Notifications</h6>
                             <p class="text-sm text-base-content/70">You have
                                 {{ $unreadCount }} new notifications</p>
+=======
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h6 class="font-semibold text-base">Notifications</h6>
+                                    <p class="text-sm text-base-content/70" id="notification-header-count">You have
+                                        {{ $unreadCount }} new notifications</p>
+                                </div>
+                                @if($unreadCount > 0)
+                                <button type="button" id="mark-all-read-btn" 
+                                        class="btn btn-xs btn-ghost text-primary hover:text-primary-focus">
+                                    Mark all read
+                                </button>
+                                @endif
+                            </div>
+>>>>>>> f4487809c6336aa094a5037239790f3f6100af79
                         </li>
 
                         <!-- Unread Notifications -->
@@ -117,6 +133,7 @@
                             <li class="px-4 py-2 bg-base-200/50 text-xs font-semibold text-base-content/70">Unread</li>
                             @foreach ($unreadNotifications as $notification)
                                 <li>
+<<<<<<< HEAD
                                     @php
                                         $isNewUser = $notification->type === 'App\Notifications\NewUserRegistered' && isset($notification->data['user_id']);
                                     @endphp
@@ -145,6 +162,21 @@
                                             </div>
                                         @endif
                                     </div>
+=======
+                                    <a href="{{ route('notifications.read', $notification->id) }}"
+                                        class="flex gap-3 px-4 py-3 hover:bg-base-200 bg-base-100 border-l-4 border-primary">
+                                        <span class="badge badge-primary badge-sm mt-1"></span>
+                                        <div>
+                                            <p class="font-medium text-sm">
+                                                {{ $notification->data['title'] ?? 'Notification' }}</p>
+                                            <p class="text-xs text-base-content/70">
+                                                {{ $notification->data['message'] ?? '' }}
+                                            </p>
+                                            <p class="text-xs text-base-content/50 mt-1">
+                                                {{ $notification->created_at->diffForHumans() }}</p>
+                                        </div>
+                                    </a>
+>>>>>>> f4487809c6336aa094a5037239790f3f6100af79
                                 </li>
                             @endforeach
                         @endif
@@ -156,8 +188,12 @@
                                 <li>
                                     <a href="{{ route('notifications.read', $notification->id) }}"
                                         class="flex gap-3 px-4 py-3 hover:bg-base-200 opacity-75">
+<<<<<<< HEAD
                                         <span class="badge badge-neutral mt-1 h-2 w-2 rounded-full p-0"></span>
 
+=======
+                                        <span class="badge badge-neutral badge-sm mt-1"></span>
+>>>>>>> f4487809c6336aa094a5037239790f3f6100af79
                                         <div>
                                             <p class="font-medium text-sm">
                                                 {{ $notification->data['title'] ?? 'Notification' }}</p>
@@ -270,3 +306,275 @@
     </div>
 </div>
 
+<<<<<<< HEAD
+=======
+{{-- <div id="activity-drawer" class="overlay overlay-open:translate-x-0 drawer drawer-end sm:max-w-104 hidden"
+    role="dialog" tabindex="-1">
+    <div class="drawer-header border-base-content/20 border-b p-4">
+        <h3 class="drawer-title text-base font-semibold">Activity</h3>
+        <button type="button" class="btn btn-text btn-circle btn-xs" aria-label="Close"
+            data-overlay="#activity-drawer">
+            <span class="icon-[tabler--x] size-4"></span>
+        </button>
+    </div>
+    <div class="drawer-body p-0">
+        <ul class="space-y-0">
+            <!-- Joe Lincoln Activity -->
+            <li class="flex items-start gap-4 p-4">
+                <div class="avatar">
+                    <div class="size-8 rounded-full">
+                        <img src="{{ asset('/assets/img/avatars/1.png') }}" alt="avatar" />
+                    </div>
+                </div>
+                <div class="flex-1">
+                    <div class="mb-1">
+                        <span class="text-base-content font-semibold">joe Lincoln</span>
+                        <span class="text-base-content text-sm">mentioned you in last trends topic</span>
+                    </div>
+                    <p class="text-base-content/50 mb-3 text-sm">18 Mins ago</p>
+
+                    <div class="bg-base-200 rounded-box border-base-content/20 border px-4 py-2.5">
+                        <p class="text-base-content mb-4 text-sm font-medium">@Flyonui For an expert opinion, check out
+                            what Mike has to say on this topic!</p>
+                        <div class="input input-sm">
+                            <input type="text" class="grow" placeholder="Reply" id="flyonuiReply" />
+                            <span class="icon-[tabler--photo] text-base-content/80 my-auto ms-2 size-4 shrink-0"></span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li>
+                <div class="divider"></div>
+            </li>
+
+            <!-- Sofia -->
+            <li class="flex items-start gap-4 p-4">
+                <div class="avatar">
+                    <div class="size-8 rounded-full">
+                        <img src="../assets/img/avatars/2.png" alt="Sofia" />
+                    </div>
+                </div>
+                <div class="flex-1">
+                    <div class="mb-1">
+                        <span class="text-base-content font-semibold">Sofia</span>
+                        <span class="text-base-content text-sm">requested feedback on her design.</span>
+                    </div>
+                    <p class="text-base-content/50 text-sm">1 Hour ago</p>
+                </div>
+            </li>
+
+            <li>
+                <div class="divider"></div>
+            </li>
+
+            <!-- Jane Perez File Review -->
+            <li class="flex items-start gap-4 p-4">
+                <div class="avatar">
+                    <div class="size-8 rounded-full">
+                        <img src="../assets/img/avatars/3.png" alt="Jane Perez" />
+                    </div>
+                </div>
+                <div class="flex-1">
+                    <div class="mb-1">
+                        <span class="text-base-content font-semibold">Jane Perez</span>
+                        <span class="text-base-content text-sm">invites you to review a file.</span>
+                    </div>
+                    <p class="text-base-content/50 mb-2.5 text-sm">3 Hours ago</p>
+                    <span class="badge badge-soft badge-lg">
+                        <span class="icon-[tabler--file-type-pdf] text-error"></span>
+                        invoices.pdf
+                    </span>
+                </div>
+            </li>
+
+            <li>
+                <div class="divider"></div>
+            </li>
+
+            <!-- Liam -->
+            <li class="flex items-start gap-4 p-4">
+                <div class="avatar">
+                    <div class="size-8 rounded-full">
+                        <img src="../assets/img/avatars/11.png" alt="Liam" />
+                    </div>
+                </div>
+                <div class="flex-1">
+                    <div class="mb-1">
+                        <span class="text-base-content font-semibold">Liam</span>
+                        <span class="text-base-content text-sm">has shared a project update.</span>
+                    </div>
+                    <p class="text-base-content/50 text-sm">5 Hours ago</p>
+                </div>
+            </li>
+
+            <li>
+                <div class="divider"></div>
+            </li>
+
+            <!-- Tyler Hero Design Project -->
+            <li class="flex items-start gap-4 p-4">
+                <div class="avatar">
+                    <div class="size-8 rounded-full">
+                        <img src="../assets/img/avatars/9.png" alt="Tyler Hero" />
+                    </div>
+                </div>
+                <div class="flex-1">
+                    <div class="mb-1">
+                        <span class="text-base-content font-semibold">Tyler Hero</span>
+                        <span class="text-base-content text-sm">wants to view your design project</span>
+                    </div>
+                    <p class="text-base-content/50 mb-3 text-sm">18 Mins ago</p>
+
+                    <div
+                        class="bg-base-200 rounded-box border-base-content/20 flex items-center gap-4 border px-4 py-2.5">
+                        <div class="avatar avatar-placeholder">
+                            <div class="bg-base-100 text-primary rounded-box size-8 p-2">
+                                <img src="https://cdn.flyonui.com/fy-assets/blocks/marketing-ui/brand-logo/figma-icon.png"
+                                    alt="avatar" />
+                            </div>
+                        </div>
+                        <span class="text-sm font-medium">Launcher-UIkit.fig</span>
+                    </div>
+                </div>
+            </li>
+
+            <li>
+                <div class="divider"></div>
+            </li>
+
+            <!-- Denial Invite -->
+            <li class="flex items-start gap-4 p-4">
+                <div class="avatar">
+                    <div class="size-8 rounded-full">
+                        <img src="../assets/img/avatars/4.png" alt="Denial" />
+                    </div>
+                </div>
+                <div class="flex-1">
+                    <div class="mb-1">
+                        <span class="text-base-content font-semibold">Denial</span>
+                        <span class="text-base-content text-sm">Invite from invite link</span>
+                    </div>
+                    <p class="text-base-content/50 text-sm">3 Hours ago</p>
+                </div>
+            </li>
+
+            <li>
+                <div class="divider"></div>
+            </li>
+
+            <!-- Leslie Alexander Tags -->
+            <li class="flex items-start gap-4 p-4">
+                <div class="avatar">
+                    <div class="size-8 rounded-full">
+                        <img src="../assets/img/avatars/5.png" alt="Leslie Alexander" />
+                    </div>
+                </div>
+                <div class="flex-1">
+                    <div class="mb-1">
+                        <span class="text-base-content font-semibold">Leslie Alexander</span>
+                        <span class="text-base-content text-sm">new tags to Web Redesign</span>
+                    </div>
+                    <p class="text-base-content/50 mb-3 text-sm">18 Mins ago</p>
+
+                    <div class="flex gap-2.5">
+                        <span class="badge badge-soft badge-primary badge-sm">Client - Request</span>
+                        <span class="badge badge-soft badge-warning badge-sm">Figma</span>
+                        <span class="badge badge-soft badge-info badge-sm">Redesign</span>
+                    </div>
+                </div>
+            </li>
+
+            <li>
+                <div class="divider"></div>
+            </li>
+
+            <!-- Miya File Review -->
+            <li class="flex items-start gap-4 p-4">
+                <div class="avatar">
+                    <div class="size-8 rounded-full">
+                        <img src="../assets/img/avatars/6.png" alt="Miya" />
+                    </div>
+                </div>
+                <div class="flex-1">
+                    <div class="mb-1">
+                        <span class="text-base-content font-semibold">Miya</span>
+                        <span class="text-base-content text-sm">invites you to review a file.</span>
+                    </div>
+                    <p class="text-base-content/50 text-sm">10 Hours ago</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div> --}}
+
+<script>
+    // Mark All as Read functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        const markAllReadBtn = document.getElementById('mark-all-read-btn');
+        
+        if (markAllReadBtn) {
+            markAllReadBtn.addEventListener('click', function() {
+                // Disable button during request
+                this.disabled = true;
+                this.textContent = 'Marking...';
+                
+                fetch('{{ route("notifications.markAllAsRead") }}', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
+                        'Accept': 'application/json'
+                    }
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        // Update badge count to 0
+                        const badge = document.getElementById('notification-count');
+                        if (badge) {
+                            badge.style.display = 'none';
+                        }
+                        
+                        // Update header count
+                        const headerCount = document.getElementById('notification-header-count');
+                        if (headerCount) {
+                            headerCount.textContent = 'You have 0 new notifications';
+                        }
+                        
+                        // Hide the button
+                        this.style.display = 'none';
+                        
+                        // Update all unread notifications to read style
+                        const unreadNotifications = document.querySelectorAll('.border-l-4.border-primary');
+                        unreadNotifications.forEach(notification => {
+                            notification.classList.remove('border-l-4', 'border-primary', 'bg-base-100');
+                            notification.classList.add('opacity-75');
+                            
+                            const badge = notification.querySelector('.badge-primary');
+                            if (badge) {
+                                badge.classList.remove('badge-primary');
+                                badge.classList.add('badge-neutral');
+                            }
+                        });
+                        
+                        // Show success message
+                        if (typeof flasher !== 'undefined') {
+                            flasher.success('All notifications marked as read');
+                        }
+                    }
+                })
+                .catch(error => {
+                    console.error('Error marking notifications as read:', error);
+                    this.disabled = false;
+                    this.textContent = 'Mark all read';
+                    
+                    if (typeof flasher !== 'undefined') {
+                        flasher.error('Failed to mark notifications as read');
+                    }
+                });
+            });
+        }
+    });
+</script>
+>>>>>>> f4487809c6336aa094a5037239790f3f6100af79
